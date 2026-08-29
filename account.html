@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8"/>
@@ -38,7 +38,7 @@
           <div class="form-group">
             <label>Password</label>
             <div class="password-field-wrap">
-              <input type="password" name="password" id="signin-password" placeholder="••••••••" required/>
+              <input type="password" name="password" id="signin-password" placeholder="��������" required/>
               <button type="button" class="password-toggle-btn" onclick="toggleTOVESSAPassword('signin-password', this)" aria-label="Show password">
                 <i class="fa-regular fa-eye"></i>
               </button>
@@ -111,10 +111,10 @@
           <h2 class="ck-panel-title" style="text-align:center">Hello, <em id="acc-name-disp">there</em></h2>
           <div class="gold-rule" style="margin:16px auto 28px"></div>
         </div>
-        <!-- ORDER HISTORY — shown above quick links -->
+        <!-- ORDER HISTORY � shown above quick links -->
         <div id="order-history-wrap" style="margin-bottom:24px;display:none">
           <p class="section-label" style="margin-bottom:12px">Your Orders</p>
-          <div id="order-history-list"><p style="color:var(--muted);font-size:.8rem">Loading orders…</p></div>
+          <div id="order-history-list"><p style="color:var(--muted);font-size:.8rem">Loading orders�</p></div>
           <div class="gold-rule" style="margin-top:20px"></div>
         </div>
         <div class="account-dashboard">
@@ -146,7 +146,7 @@
   <!-- REVIEW MODAL -->
   <div id="review-modal" style="display:none;position:fixed;inset:0;z-index:2500;background:rgba(0,0,0,0.75);align-items:center;justify-content:center;padding:20px;">
     <div style="background:var(--card,#111);border:1px solid var(--border,#2a2a2a);border-radius:16px;padding:32px;max-width:460px;width:100%;position:relative;">
-      <button onclick="closeReviewModal()" style="position:absolute;top:16px;right:16px;background:none;border:none;color:var(--muted,#888);font-size:1.2rem;cursor:pointer;">✕</button>
+      <button onclick="closeReviewModal()" style="position:absolute;top:16px;right:16px;background:none;border:none;color:var(--muted,#888);font-size:1.2rem;cursor:pointer;">?</button>
       <p class="section-label" style="margin-bottom:4px">Order <span id="review-order-label"></span></p>
       <h3 style="color:var(--gold,#c9a84c);margin:0 0 4px;font-size:1.1rem">Leave a Review</h3>
       <p style="font-size:.75rem;color:var(--muted,#888);margin:0 0 20px" id="review-product-label"></p>
@@ -154,17 +154,17 @@
       <div style="margin-bottom:16px;">
         <p style="font-size:.78rem;color:var(--muted,#888);margin-bottom:8px;">Your Rating</p>
         <div style="display:flex;gap:6px;">
-          <button class="star-btn" onclick="setReviewStars(1)" style="background:none;border:none;font-size:1.6rem;cursor:pointer;color:#c9a84c;padding:0;">★</button>
-          <button class="star-btn" onclick="setReviewStars(2)" style="background:none;border:none;font-size:1.6rem;cursor:pointer;color:#c9a84c;padding:0;">★</button>
-          <button class="star-btn" onclick="setReviewStars(3)" style="background:none;border:none;font-size:1.6rem;cursor:pointer;color:#c9a84c;padding:0;">★</button>
-          <button class="star-btn" onclick="setReviewStars(4)" style="background:none;border:none;font-size:1.6rem;cursor:pointer;color:#c9a84c;padding:0;">★</button>
-          <button class="star-btn" onclick="setReviewStars(5)" style="background:none;border:none;font-size:1.6rem;cursor:pointer;color:#c9a84c;padding:0;">★</button>
+          <button class="star-btn" onclick="setReviewStars(1)" style="background:none;border:none;font-size:1.6rem;cursor:pointer;color:#c9a84c;padding:0;">?</button>
+          <button class="star-btn" onclick="setReviewStars(2)" style="background:none;border:none;font-size:1.6rem;cursor:pointer;color:#c9a84c;padding:0;">?</button>
+          <button class="star-btn" onclick="setReviewStars(3)" style="background:none;border:none;font-size:1.6rem;cursor:pointer;color:#c9a84c;padding:0;">?</button>
+          <button class="star-btn" onclick="setReviewStars(4)" style="background:none;border:none;font-size:1.6rem;cursor:pointer;color:#c9a84c;padding:0;">?</button>
+          <button class="star-btn" onclick="setReviewStars(5)" style="background:none;border:none;font-size:1.6rem;cursor:pointer;color:#c9a84c;padding:0;">?</button>
         </div>
       </div>
       <!-- Review text -->
       <div style="margin-bottom:14px;">
         <label style="font-size:.78rem;color:var(--muted,#888);display:block;margin-bottom:6px;">Your Review</label>
-        <textarea id="review-text" rows="4" placeholder="Tell us about your experience with this product…"
+        <textarea id="review-text" rows="4" placeholder="Tell us about your experience with this product�"
           style="width:100%;background:rgba(255,255,255,0.04);border:1px solid var(--border,#2a2a2a);border-radius:8px;color:var(--text,#f0f0f0);padding:12px;font-family:inherit;font-size:.82rem;resize:vertical;box-sizing:border-box;cursor:text;caret-color:var(--gold,#c9a84c);"></textarea>
       </div>
       <!-- City -->
@@ -184,7 +184,7 @@
   <script src="js/api.js"></script>
   <script src="js/main.js"></script>
   <script>
-    /* ── Tab switcher ── */
+    /* -- Tab switcher -- */
     function switchTab(tab) {
       document.querySelectorAll('.account-panel').forEach(p => p.classList.add('hidden'));
       document.querySelectorAll('.acc-tab').forEach(t => t.classList.remove('active'));
@@ -192,7 +192,7 @@
       document.getElementById('tab-' + tab)?.classList.add('active');
     }
 
-    /* ── Check if already logged in ── */
+    /* -- Check if already logged in -- */
     const storedUser = getCurrentUser();
     if (storedUser) {
       document.querySelectorAll('.account-panel').forEach(p => p.classList.add('hidden'));
@@ -203,13 +203,13 @@
       loadOrderHistory(storedUser.email);
     }
 
-    /* ── Load Order History ── */
+    /* -- Load Order History -- */
     async function loadOrderHistory(email) {
       const wrap = document.getElementById('order-history-wrap');
       const list = document.getElementById('order-history-list');
       if (!wrap || !list) return;
       wrap.style.display = 'block';
-      list.innerHTML = '<p style="color:var(--muted);font-size:.8rem">Loading your orders…</p>';
+      list.innerHTML = '<p style="color:var(--muted);font-size:.8rem">Loading your orders�</p>';
       try {
         const data = await apiGetUserOrders(email);
         const orders = data.orders || [];
@@ -221,7 +221,7 @@
               <p style="color:var(--muted);font-size:.76rem;line-height:1.7;margin:0 0 10px;">
                 If you placed an order using a different email address, your orders will be linked to that email.
               </p>
-              <a href="policy?page=track" style="color:var(--gold);font-size:.76rem;">Track your order by reference number →</a>
+              <a href="policy?page=track" style="color:var(--gold);font-size:.76rem;">Track your order by reference number ?</a>
             </div>`;
           return;
         }
@@ -232,7 +232,7 @@
               <strong style="color:var(--gold);font-size:.82rem">${o.id}</strong>
               <span style="font-size:.7rem;color:var(--muted)">${new Date(o.createdAt).toLocaleDateString('en-PK',{dateStyle:'medium'})}</span>
             </div>
-            <div style="font-size:.78rem;color:var(--muted)">${o.items?.length || 0} item(s) — <strong style="color:var(--text)">PKR ${(o.total||0).toLocaleString()}</strong></div>
+            <div style="font-size:.78rem;color:var(--muted)">${o.items?.length || 0} item(s) � <strong style="color:var(--text)">PKR ${(o.total||0).toLocaleString()}</strong></div>
             <div style="margin-top:8px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;">
               <span style="padding:2px 10px;border-radius:10px;font-weight:600;font-size:.72rem;
                 background:${o.status==='Delivered'?'rgba(76,175,130,.15)':o.status==='Shipped'?'rgba(201,168,76,.15)':'rgba(76,140,224,.15)'};
@@ -241,12 +241,12 @@
               </span>
               ${o.status === 'Delivered' ? (
                 isOrderReviewed(o.id)
-                ? `<span style="font-size:.72rem;color:#4caf82;padding:4px 12px;border:1px solid rgba(76,175,130,.4);border-radius:10px;">✓ Review Submitted</span>`
+                ? `<span style="font-size:.72rem;color:#4caf82;padding:4px 12px;border:1px solid rgba(76,175,130,.4);border-radius:10px;">? Review Submitted</span>`
                 : `<button onclick="openReviewModal('${o.id}', '${(o.items?.map(i=>i.name)||[]).join(', ').replace(/'/g,"&#39;")}')"
                 style="background:transparent;border:1px solid var(--gold);color:var(--gold);font-size:.72rem;padding:4px 12px;border-radius:10px;cursor:pointer;font-family:inherit;transition:all .2s;"
                 onmouseover="this.style.background='var(--gold)';this.style.color='#000'"
                 onmouseout="this.style.background='transparent';this.style.color='var(--gold)'">
-                ✦ Leave a Review
+                ? Leave a Review
               </button>`
               ) : ''}
             </div>
@@ -256,12 +256,12 @@
           <div style="background:rgba(201,168,76,0.06);border:1px solid var(--border);border-radius:8px;padding:16px;">
             <p style="color:var(--text);font-size:.82rem;margin:0 0 8px;font-weight:600;">Could not load orders</p>
             <p style="color:var(--muted);font-size:.76rem;line-height:1.7;margin:0 0 10px;">Please check your connection and try refreshing the page.</p>
-            <a href="policy?page=track" style="color:var(--gold);font-size:.76rem;">Track your order by reference number →</a>
+            <a href="policy?page=track" style="color:var(--gold);font-size:.76rem;">Track your order by reference number ?</a>
           </div>`;
       }
     }
 
-    /* ── Review Modal ── */
+    /* -- Review Modal -- */
     let _reviewOrderId = null;
 
     /* Track which orders the customer has already reviewed.
@@ -315,12 +315,12 @@
       const user = getCurrentUser();
       const btn = document.getElementById('review-submit-btn');
       const orderIdAtSubmit = _reviewOrderId;
-      btn.disabled = true; btn.textContent = 'Submitting…';
+      btn.disabled = true; btn.textContent = 'Submitting�';
 
-      /* Our server can take 30–60s to wake up if it's been idle.
+      /* Our server can take 30�60s to wake up if it's been idle.
          Let the customer know instead of leaving them staring at silence. */
       const slowNoticeTimer = setTimeout(() => {
-        showToast('Still connecting — server is waking up, please wait…');
+        showToast('Still connecting � server is waking up, please wait�');
       }, 6000);
 
       try {
@@ -335,11 +335,11 @@
         clearTimeout(slowNoticeTimer);
         if (result.ok) {
           markOrderReviewed(orderIdAtSubmit);
-          showToast('Thank you for your review! ✓');
+          showToast('Thank you for your review! ?');
           closeReviewModal();
           if (user?.email) loadOrderHistory(user.email); /* refresh so button becomes "Review Submitted" */
         } else if (result.status === 409) {
-          markOrderReviewed(orderIdAtSubmit); /* backend confirms one already exists — sync local flag too */
+          markOrderReviewed(orderIdAtSubmit); /* backend confirms one already exists � sync local flag too */
           showToast('You\'ve already reviewed this order.');
           closeReviewModal();
           if (user?.email) loadOrderHistory(user.email);
@@ -349,20 +349,20 @@
       } catch (err) {
         clearTimeout(slowNoticeTimer);
         console.error('Review submit failed:', err);
-        showToast('Connection error — please check your internet and try again.');
+        showToast('Connection error � please check your internet and try again.');
       } finally {
         btn.disabled = false; btn.textContent = 'Submit Review';
       }
     });
 
-    /* ── Sign In (real backend with localStorage fallback) ── */
+    /* -- Sign In (real backend with localStorage fallback) -- */
     document.getElementById('signin-form')?.addEventListener('submit', async e => {
       e.preventDefault();
       const fd       = new FormData(e.target);
       const email    = fd.get('email').trim().toLowerCase();
       const password = fd.get('password');
       const btn      = e.target.querySelector('button[type="submit"]');
-      if (btn) { btn.disabled = true; btn.textContent = 'Signing in…'; }
+      if (btn) { btn.disabled = true; btn.textContent = 'Signing in�'; }
 
       try {
         const backendAvailable = await checkBackend();
@@ -371,7 +371,7 @@
           if (result.ok) {
             saveSession(result.data.token, result.data.user);
             clearSigninError();
-            showToast('Welcome back to TOVESSA ✓');
+            showToast('Welcome back to TOVESSA ?');
             setTimeout(() => location.reload(), 900);
           } else {
             showSigninError(result.data.error || 'Sign in failed.');
@@ -384,7 +384,7 @@
           else if (stored.password !== password) { showSigninError('Incorrect password. Please try again.'); }
           else {
             clearSigninError();
-            showToast('Welcome back to TOVESSA ✓');
+            showToast('Welcome back to TOVESSA ?');
             setTimeout(() => location.reload(), 900);
           }
           if (btn) { btn.disabled = false; btn.textContent = 'Sign In'; }
@@ -407,13 +407,13 @@
     }
     function clearSigninError() { document.getElementById('signin-error')?.remove(); }
 
-    /* ── Sign Up (real backend with localStorage fallback) ── */
+    /* -- Sign Up (real backend with localStorage fallback) -- */
     document.getElementById('signup-form')?.addEventListener('submit', async e => {
       e.preventDefault();
       const fd = new FormData(e.target);
       if (fd.get('password') !== fd.get('confirm')) { showToast('Passwords do not match'); return; }
       const btn = e.target.querySelector('button[type="submit"]');
-      if (btn) { btn.disabled = true; btn.textContent = 'Creating account…'; }
+      if (btn) { btn.disabled = true; btn.textContent = 'Creating account�'; }
 
       const payload = {
         fname: fd.get('fname'), lname: fd.get('lname'),
@@ -426,7 +426,7 @@
           const result = await apiRegister(payload);
           if (result.ok) {
             saveSession(result.data.token, result.data.user);
-            showToast('Account created! Welcome to TOVESSA 💛');
+            showToast('Account created! Welcome to TOVESSA ??');
             setTimeout(() => location.reload(), 900);
           } else {
             showToast(result.data.error || 'Registration failed.');
@@ -434,7 +434,7 @@
           }
         } else {
           localStorage.setItem('tovessa_user', JSON.stringify({ ...payload }));
-          showToast('Account created! Welcome to TOVESSA 💛');
+          showToast('Account created! Welcome to TOVESSA ??');
           setTimeout(() => location.reload(), 900);
         }
       } catch {
@@ -443,14 +443,14 @@
       }
     });
 
-    /* ── Sign Out ── */
+    /* -- Sign Out -- */
     function signOut() {
       clearSession();
       showToast('Signed out. See you soon!');
       setTimeout(() => location.reload(), 900);
     }
 
-    /* ── 3D Account Animation ── */
+    /* -- 3D Account Animation -- */
     (function() {
       const canvas = document.getElementById('account-canvas');
       if (!canvas || typeof THREE === 'undefined') return;
@@ -489,6 +489,7 @@
   </script>
 </body>
 </html>
+
 
 
 

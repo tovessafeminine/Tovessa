@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -42,7 +42,7 @@
   <div class="search-box">
     <div class="search-inner">
       <span class="search-icon-big"><i class="fa-solid fa-magnifying-glass"></i></span>
-      <input type="text" id="search-input" placeholder="Search skincare, serums, toners…" autocomplete="off" />
+      <input type="text" id="search-input" placeholder="Search skincare, serums, toners�" autocomplete="off" />
       <button id="search-close">&#10005;</button>
     </div>
     <div id="search-results"></div>
@@ -51,7 +51,7 @@
 
 <section class="container">
   <div id="pd-root">
-    <p style="padding:160px 0;text-align:center;opacity:0.6;">Loading product…</p>
+    <p style="padding:160px 0;text-align:center;opacity:0.6;">Loading product�</p>
   </div>
 </section>
 
@@ -122,7 +122,7 @@
         </div>
     </div>
     <div class="footer-bottom">
-      <p>© 2026 <span class="gold-text">TOVESSA</span>. All rights reserved.</p>
+      <p>� 2026 <span class="gold-text">TOVESSA</span>. All rights reserved.</p>
       <div class="footer-pay">
         <span class="pay-badge">COD</span>
         <span class="pay-badge">Bank Deposit</span>
@@ -153,7 +153,7 @@
 <script src="js/products-render.js"></script>
 <script>
 /* ============================================================
-   Product Detail Page — loads the product matching ?id= from
+   Product Detail Page � loads the product matching ?id= from
    the backend and renders the detail layout dynamically.
    ============================================================ */
 (async function () {
@@ -162,7 +162,7 @@
   const root = document.getElementById('pd-root');
 
   if (!id) {
-    root.innerHTML = `<p style="padding:160px 0;text-align:center;">No product specified. <a href="shop" style="color:var(--gold);">Browse the shop →</a></p>`;
+    root.innerHTML = `<p style="padding:160px 0;text-align:center;">No product specified. <a href="shop" style="color:var(--gold);">Browse the shop ?</a></p>`;
     return;
   }
 
@@ -175,32 +175,32 @@
   }
 
   if (!product) {
-    root.innerHTML = `<p style="padding:160px 0;text-align:center;">Sorry, we couldn't find that product. <a href="shop" style="color:var(--gold);">Browse the shop →</a></p>`;
+    root.innerHTML = `<p style="padding:160px 0;text-align:center;">Sorry, we couldn't find that product. <a href="shop" style="color:var(--gold);">Browse the shop ?</a></p>`;
     return;
   }
 
 
-  document.title = `${product.name} — TOVESSA`;
+  document.title = `${product.name} � TOVESSA`;
 
-  /* ── Dynamic OG meta update ── */
+  /* -- Dynamic OG meta update -- */
   const metaDesc = document.querySelector('meta[name="description"]');
   if (metaDesc) metaDesc.setAttribute('content',
-    `${product.name} — Buy online in Pakistan. PKR ${Number(product.price).toLocaleString()}. ${product.description ? product.description.slice(0,100) + '…' : 'Shop at TOVESSA.'}`
+    `${product.name} � Buy online in Pakistan. PKR ${Number(product.price).toLocaleString()}. ${product.description ? product.description.slice(0,100) + '�' : 'Shop at TOVESSA.'}`
   );
   const ogTitle = document.querySelector('meta[property="og:title"]');
-  if (ogTitle) ogTitle.setAttribute('content', `${product.name} — TOVESSA Pakistan`);
+  if (ogTitle) ogTitle.setAttribute('content', `${product.name} � TOVESSA Pakistan`);
   const ogDesc = document.querySelector('meta[property="og:description"]');
   if (ogDesc) ogDesc.setAttribute('content',
-    `${product.name} — PKR ${Number(product.price).toLocaleString()}. ${product.description ? product.description.slice(0,120) + '…' : 'Shop skincare & jewelry online in Pakistan.'}`
+    `${product.name} � PKR ${Number(product.price).toLocaleString()}. ${product.description ? product.description.slice(0,120) + '�' : 'Shop skincare & jewelry online in Pakistan.'}`
   );
   const ogImg = document.querySelector('meta[property="og:image"]');
   if (ogImg && product.images && product.images[0]) ogImg.setAttribute('content', product.images[0]);
   const twTitle = document.querySelector('meta[name="twitter:title"]');
-  if (twTitle) twTitle.setAttribute('content', `${product.name} — TOVESSA Pakistan`);
+  if (twTitle) twTitle.setAttribute('content', `${product.name} � TOVESSA Pakistan`);
   const twImg = document.querySelector('meta[name="twitter:image"]');
   if (twImg && product.images && product.images[0]) twImg.setAttribute('content', product.images[0]);
 
-  /* ── JSON-LD Product Schema ── */
+  /* -- JSON-LD Product Schema -- */
   const DOMAIN = window.location.origin;
   const existingSchema = document.getElementById('product-schema-ld');
   if (existingSchema) existingSchema.remove();
@@ -215,7 +215,7 @@
     "@context": "https://schema.org",
     "@type": "Product",
     "name": product.name,
-    "description": product.description || `${product.name} — shop online at TOVESSA Pakistan.`,
+    "description": product.description || `${product.name} � shop online at TOVESSA Pakistan.`,
     "image": (product.images && product.images.length) ? product.images : [`${DOMAIN}/images/categories/necklace.jpg`],
     "sku": product.id || product.name.replace(/\s+/g, '-').toLowerCase(),
     "brand": {
@@ -239,7 +239,7 @@
   });
   document.head.appendChild(schemaEl);
 
-  /* ── BreadcrumbList Schema ── */
+  /* -- BreadcrumbList Schema -- */
   const breadcrumbEl = document.createElement('script');
   breadcrumbEl.type = 'application/ld+json';
   breadcrumbEl.textContent = JSON.stringify({
@@ -254,7 +254,7 @@
   });
   document.head.appendChild(breadcrumbEl);
 
-  const emoji = product.emoji || '🛍️';
+  const emoji = product.emoji || '???';
   const oldPriceHTML = product.priceOld
     ? `<span class="product-price-old" style="font-size:1.1rem;margin-left:12px;">PKR ${Number(product.priceOld).toLocaleString()}</span>`
     : '';
@@ -361,18 +361,18 @@
     addBtn.addEventListener('click', () => {
       const size = root.querySelector('.size-opt.active')?.dataset.size;
       const color = root.querySelector('.color-opt.active')?.dataset.color;
-      const variant = [size, color].filter(Boolean).join(' — ') || 'Standard';
+      const variant = [size, color].filter(Boolean).join(' � ') || 'Standard';
       window.addToCart(product.name, Number(product.price), emoji, variant, (product.images && product.images[0]) || '');
     });
   }
 
-  /* Buy it now — straight to checkout with just this item */
+  /* Buy it now � straight to checkout with just this item */
   const buyNowBtn = document.getElementById('pd-buynow-btn');
   if (buyNowBtn && product.inStock !== false) {
     buyNowBtn.addEventListener('click', () => {
       const size = root.querySelector('.size-opt.active')?.dataset.size;
       const color = root.querySelector('.color-opt.active')?.dataset.color;
-      const variant = [size, color].filter(Boolean).join(' — ') || 'Standard';
+      const variant = [size, color].filter(Boolean).join(' � ') || 'Standard';
       window.buyNow(product.name, Number(product.price), emoji, variant, (product.images && product.images[0]) || '');
     });
   }
@@ -407,6 +407,7 @@ function golnisaColorSwatch(name) {
 
 </body>
 </html>
+
 
 
 
