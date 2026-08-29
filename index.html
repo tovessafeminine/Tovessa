@@ -3,92 +3,23 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Home - Tovessa | Botanical Luxury for Elite Womens</title>
-  <meta name="description" content="Shop Pakistan's finest skincare & jewelry online at TOVESSA. serums, cleansers, toners, necklaces, earrings, rings & bracelets. Cash on Delivery across Pakistan." />
-  <meta property="og:title" content="TOVESSA — High-Quality Cosmetics & Premium Jewelry" />
+  <title>Tovessa | Botanical Luxury for Elite Womens</title>
+  <meta name="description" content="Shop Pakistan's finest cosmetics, premium jewelry, handcrafted bags, and Victoria's Secret intimates online at TOVESSA. Cash on Delivery across Pakistan." />
+  <meta property="og:title" content="TOVESSA - High-Quality Cosmetics & Premium Jewelry" />
   <meta property="og:description" content="Shop Pakistan's finest skincare & jewelry online at TOVESSA." />
   <meta property="og:image" content="https://tovessa.com/images/logo.png" />
   <meta property="og:url" content="https://tovessa.com" />
   <meta property="og:type" content="website" />
   <link rel="icon" type="image/png" href="/images/logo.png?v=3" />
-  <link rel="stylesheet" href="css/style.css?v=1785753552384" />
+  <link rel="stylesheet" href="css/style.css?v=2" />
   <link rel="stylesheet" href="css/pages.css?v=3" />
-  <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-
-  <!-- JSON-LD: Organization + WebSite Schema -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Organization",
-        "@id": "https://tovessa.com/#organization",
-        "name": "TOVESSA",
-        "url": "https://tovessa.com",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://tovessa.com/images/logo.svg"
-        },
-        "description": "Premium luxury beauty and jewelry destination. serums, toners, cleansers, necklaces, earrings, bracelets and more.",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Lahore",
-          "addressRegion": "Punjab",
-          "addressCountry": "PK"
-        },
-        "contactPoint": {
-          "@type": "ContactPoint",
-          "contactType": "customer service",
-          "availableLanguage": ["English", "Urdu"]
-        },
-        "sameAs": [
-          "https://www.instagram.com/Tovessa",
-          "https://www.facebook.com/tovessa"
-        ]
-      },
-      {
-        "@type": "WebSite",
-        "@id": "https://tovessa.com/#website",
-        "url": "https://tovessa.com",
-        "name": "TOVESSA",
-        "publisher": { "@id": "https://tovessa.com/#organization" },
-        "potentialAction": {
-          "@type": "SearchAction",
-          "target": { "@type": "EntryPoint", "urlTemplate": "https://tovessa.com/shop?q={search_term_string}" },
-          "query-input": "required name=search_term_string"
-        }
-      },
-      {
-        "@type": "Store",
-        "@id": "https://tovessa.com/#store",
-        "name": "TOVESSA",
-        "url": "https://tovessa.com",
-        "image": "https://tovessa.com/images/categories/necklace.jpg",
-        "priceRange": "PKR 80 - PKR 999",
-        "currenciesAccepted": "PKR",
-        "paymentAccepted": "Cash, Bank Transfer",
-        "openingHours": "Mo-Sa 10:00-19:00",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Lahore",
-          "addressCountry": "PK"
-        }
-      }
-    ]
-  }
-  </script>
-<!-- Favicons -->
-<link rel="icon" type="image/png" href="/images/logo.png?v=3" />
-
-<link rel="apple-touch-icon" sizes="192x192" href="/favicon-192.png"/>
-
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="apple-touch-icon" sizes="192x192" href="/favicon-192.png"/>
 </head>
 <body class="page-home">
-  <!-- Custom Cursor -->
-<!-- NAV -->
+  
   <nav>
-    <a href="/" class="nav-logo nav-logo-link" style="display:inline-flex;align-items:center;text-decoration:none;"><img src="images/logo-light.png" alt="TOVESSA" class="nav-logo-img" /></a>
     <ul class="nav-links">
       <li><a href="/">Home</a></li>
       <li class="nav-dropdown">
@@ -101,8 +32,10 @@
         </ul>
       </li>
       <li><a href="about">Our Story</a></li>
-      <li><a href="contact">Contact</a></li>
     </ul>
+    
+    <a href="/" class="nav-logo" style="text-align:center;"><img src="images/logo.png" alt="TOVESSA" /></a>
+    
     <div class="nav-icons">
       <button id="search-toggle" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
       <a href="account" aria-label="Account"><i class="fa-regular fa-user"></i></a>
@@ -115,300 +48,125 @@
       </button>
     </div>
   </nav>
-  <!-- SEARCH OVERLAY -->
+
   <div id="search-overlay">
     <div class="search-box">
       <div class="search-inner">
         <span class="search-icon-big"><i class="fa-solid fa-magnifying-glass"></i></span>
-        <input type="text" id="search-input" placeholder="Search jewelry, cosmetics, necklaces, earrings…" autocomplete="off" />
+        <input type="text" id="search-input" placeholder="Search jewelry, cosmetics, bags, watches..." autocomplete="off" />
         <button id="search-close">&#10005;</button>
       </div>
       <div id="search-results"></div>
     </div>
   </div>
-    <!-- BENTO GRID HERO -->
-  <section class="bento-hero">
-    <a href="cosmetics.html" class="bento-item bento-main">
-      <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&q=80&w=1000" alt="Cosmetics & Makeup" />
-      <div class="bento-overlay"></div>
-      <div class="bento-content">
-        <h2 class="bento-title">Premium Cosmetics</h2>
-        <p class="bento-subtitle">Lips, Face, Eyes & Nails</p>
-      </div>
-    </a>
-    <a href="jewelry.html" class="bento-item bento-2">
-      <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&q=80&w=600" alt="Luxury Jewelry" />
-      <div class="bento-overlay"></div>
-      <div class="bento-content">
-        <h2 class="bento-title">Fine Jewelry</h2>
-        <p class="bento-subtitle">Rings, Necklaces & More</p>
-      </div>
-    </a>
-    <a href="shop.html" class="bento-item bento-3">
-      <img src="https://images.unsplash.com/photo-1582294101888-02ea0e6203fa?auto=format&fit=crop&q=80&w=600" alt="Undergarments" />
-      <div class="bento-overlay"></div>
-      <div class="bento-content">
-        <h2 class="bento-title">Intimates</h2>
-        <p class="bento-subtitle">Victoria's Secret & Premium</p>
-      </div>
-    </a>
-    <a href="shop.html" class="bento-item bento-4">
-      <img src="https://images.unsplash.com/photo-1584916201218-f4242ceb4809?auto=format&fit=crop&q=80&w=1000" alt="Bags & Accessories" />
-      <div class="bento-overlay"></div>
-      <div class="bento-content">
-        <h2 class="bento-title">Lifestyle Collection</h2>
-        <p class="bento-subtitle">Crafted Bags, Watches & Perfumes</p>
-      </div>
-    </a>
+
+  <header class="tovessa-hero">
+    <div class="hero-glass-box">
+      <h1>Tovessa &mdash;<br>Botanical Luxury.</h1>
+      <p>Discover our curated collection of premium cosmetics, elegant fine jewelry, handcrafted lifestyle bags, and luxury intimates. Crafted for the elite.</p>
+      <a href="shop.html" class="btn-primary">Shop Collection</a>
+    </div>
+  </header>
+
+  <section class="tovessa-categories-section">
+    <h2 class="section-title">The Collections</h2>
+    <div class="tovessa-grid">
+      <a href="cosmetics.html" class="editorial-card">
+        <img src="images/cat_cosmetics.jpg" alt="Premium Cosmetics">
+        <div class="card-label">Cosmetics</div>
+      </a>
+      <a href="jewelry.html" class="editorial-card">
+        <img src="images/cat_jewelry.jpg" alt="Fine Jewelry">
+        <div class="card-label">Fine Jewelry</div>
+      </a>
+      <a href="shop.html?cat=intimates" class="editorial-card">
+        <img src="images/cat_intimates.jpg" alt="Luxury Intimates">
+        <div class="card-label">Intimates</div>
+      </a>
+      <a href="shop.html?cat=lifestyle" class="editorial-card">
+        <img src="images/cat_lifestyle.jpg" alt="Lifestyle Collection">
+        <div class="card-label">Lifestyle</div>
+      </a>
+    </div>
   </section>
-  <!-- CATEGORIES -->
-  <section id="categories">
-    <div class="container">
-      <p class="section-label">Shop by Category</p>
-      <h2 class="section-title">Luxury That Enhances <em>Your Natural Beauty</em></h2>
-      <div class="gold-rule"></div>
-      <div class="premium-cat-grid">
 
-        <a href="jewelry.html" class="premium-cat-card" style="text-decoration:none;">
-          <div class="cat-img-wrap premium-circle">
-            <img src="images/hero_jewelry.jpg" alt="Jewelry Online Pakistan" loading="lazy" />
-          </div>
-          <div class="cat-img-info">
-            <p class="cat-name">Jewelry</p>
-          </div>
-        </a>
+  <section class="tovessa-story-section">
+    <div class="story-image"></div>
+    <div class="story-content">
+      <h2>Crafted with Elegance.</h2>
+      <p>Tovessa was born from a desire to blend botanical purity with elite luxury. Every piece in our collection—from our fine jewelry to our premium cosmetics—is carefully curated for the modern, elegant woman.</p>
+      <p>Experience the highest standard of quality and sophistication.</p>
+      <a href="about.html" class="btn-primary" style="align-self: flex-start; margin-top:20px;">Read Our Story</a>
+    </div>
+  </section>
 
-        <a href="cosmetics.html" class="premium-cat-card" style="text-decoration:none;">
-          <div class="cat-img-wrap premium-circle">
-            <img src="images/hero_cosmetics.jpg" alt="Cosmetics Online Pakistan" loading="lazy" />
-          </div>
-          <div class="cat-img-info">
-            <p class="cat-name">Cosmetics</p>
-          </div>
-        </a>
-        <a href="shop.html?cat=deals" class="premium-cat-card" style="text-decoration:none;">
-          <div class="cat-img-wrap premium-circle">
-            <img src="images/hero_deals.jpg" alt="Deals Online Pakistan" loading="lazy" />
-          </div>
-          <div class="cat-img-info">
-            <p class="cat-name">Deals</p>
-          </div>
-        </a>
-
+  <section class="tovessa-reviews-section">
+    <h2 class="section-title" style="text-align:center;">What Our Clients Say</h2>
+    <div class="masonry-grid" id="fake-reviews">
+      <div class="review-card">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="review-text">"I ordered a Victoria's Secret set and a gold necklace. The packaging was absolutely divine and the quality is premium. Definitely coming back for cosmetics!"</p>
+        <div class="review-author">Ayesha M. - Lahore</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="review-text">"The botanical hair oil is a game changer for me. It smells luxurious and leaves my hair so soft. Very impressed with the quick delivery."</p>
+        <div class="review-author">Zainab T. - Islamabad</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="review-text">"I've been looking for an elite lifestyle brand in Pakistan and Tovessa is exactly it. Bought a handcrafted bag and the finish is just flawless."</p>
+        <div class="review-author">Fatima K. - Karachi</div>
       </div>
     </div>
   </section>
 
-  <!-- BRANDS -->
-  <section id="brands" style="padding-bottom: 60px;">
-    <div class="container">
-      <p class="section-label">Shop by Brand</p>
-      <h2 class="section-title">Discover Premium Cosmetics from <em>Top Brands</em></h2>
-      <div class="gold-rule"></div>
-      <div class="premium-cat-grid" style="grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 20px; justify-content: center;">
-
-        <a href="shop.html?brand=Vaseline" class="premium-cat-card" style="text-decoration:none; max-width: 180px; margin: 0 auto;">
-          <div class="cat-img-wrap premium-circle">
-            <img src="images/brand_vaseline.jpg" alt="Vaseline Cosmetics Pakistan" loading="lazy" />
-          </div>
-          <div class="cat-img-info">
-            <p class="cat-name" style="font-size: 1.1rem;">Vaseline</p>
-          </div>
-        </a>
-
-        <a href="shop.html?brand=Medora" class="premium-cat-card" style="text-decoration:none; max-width: 180px; margin: 0 auto;">
-          <div class="cat-img-wrap premium-circle">
-            <img src="images/brand_medora.jpg" alt="Medora Cosmetics Pakistan" loading="lazy" />
-          </div>
-          <div class="cat-img-info">
-            <p class="cat-name" style="font-size: 1.1rem;">Medora</p>
-          </div>
-        </a>
-
-        <a href="shop.html?brand=Rivaj" class="premium-cat-card" style="text-decoration:none; max-width: 180px; margin: 0 auto;">
-          <div class="cat-img-wrap premium-circle">
-            <img src="images/brand_rivaj.jpg" alt="Rivaj Cosmetics Pakistan" loading="lazy" />
-          </div>
-          <div class="cat-img-info">
-            <p class="cat-name" style="font-size: 1.1rem;">Rivaj</p>
-          </div>
-        </a>
-
-        <a href="shop.html?brand=Huda beauty" class="premium-cat-card" style="text-decoration:none; max-width: 180px; margin: 0 auto;">
-          <div class="cat-img-wrap premium-circle">
-            <img src="images/brand_huda.jpg" alt="Huda Beauty Cosmetics Pakistan" loading="lazy" />
-          </div>
-          <div class="cat-img-info">
-            <p class="cat-name" style="font-size: 1.1rem;">Huda beauty</p>
-          </div>
-        </a>
-
-        <a href="shop.html?brand=Mac Cosmetics" class="premium-cat-card" style="text-decoration:none; max-width: 180px; margin: 0 auto;">
-          <div class="cat-img-wrap premium-circle">
-            <img src="images/brand_mac.jpg" alt="Mac Cosmetics Pakistan" loading="lazy" />
-          </div>
-          <div class="cat-img-info">
-            <p class="cat-name" style="font-size: 1.1rem;">Mac Cosmetics</p>
-          </div>
-        </a>
-
-        <a href="shop.html?brand=Miss Rose" class="premium-cat-card" style="text-decoration:none; max-width: 180px; margin: 0 auto;">
-          <div class="cat-img-wrap premium-circle">
-            <img src="images/brand_missrose.jpg" alt="Miss Rose Cosmetics Pakistan" loading="lazy" />
-          </div>
-          <div class="cat-img-info">
-            <p class="cat-name" style="font-size: 1.1rem;">Miss Rose</p>
-          </div>
-        </a>
-
-        <a href="shop.html?brand=Maybelline" class="premium-cat-card" style="text-decoration:none; max-width: 180px; margin: 0 auto;">
-          <div class="cat-img-wrap premium-circle">
-            <img src="images/brand_maybelline.jpg" alt="Maybelline Cosmetics Pakistan" loading="lazy" />
-          </div>
-          <div class="cat-img-info">
-            <p class="cat-name" style="font-size: 1.1rem;">Maybelline</p>
-          </div>
-        </a>
-
-      </div>
-    </div>
+  <section id="newsletter" style="background: var(--bg-deep); padding: 80px 40px; text-align: center;">
+    <h2 class="section-title" style="margin-bottom: 20px;">Join the Tovessa Circle</h2>
+    <p style="margin-bottom: 30px; font-family: var(--font-body); letter-spacing: 1px;">Subscribe for exclusive previews and early access to new arrivals.</p>
+    <form class="newsletter-form" style="display:flex; justify-content:center; gap:10px;">
+      <input type="email" placeholder="Your email address" required style="padding: 15px; width: 300px; border: 1px solid #ccc; font-family:var(--font-body);" />
+      <button type="submit" class="btn-primary">Subscribe</button>
+    </form>
   </section>
-  <!-- FEATURED PRODUCTS -->
-  
-<div id="pinned-collections-wrapper"></div>
 
-<!-- Featured Jewelry -->
-<section id="featured-jewelry" style="padding:60px 0; background:var(--bg);">
-  <div class="container">
-    <div class="section-header" style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;">
-      <h2 style="font-size:2rem;margin:0;">Featured <em style="color: var(--text);">Jewelry</em></h2>
-      <div style="display:flex; gap: 8px; align-items:center;">
-        <a href="jewelry.html" style="font-size:0.75rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);text-decoration:none;font-family:var(--font-ui); margin-left: 12px;">View All ?</a>
-      </div>
-    </div>
-    <div class="horizontal-scroll-grid" id="featured-jewelry-grid" style="display:flex; overflow-x:auto; gap:20px; padding-bottom:20px; scroll-snap-type:x mandatory; scrollbar-width:none; -ms-overflow-style:none;">
-      <div style="grid-column:1/-1;text-align:center;padding:40px;opacity:0.5;">Loading products...</div>
-    </div>
-  </div>
-</section>
-
-<!-- Featured Cosmetics -->
-<section id="featured-cosmetics" style="padding:0 0 60px 0; background:var(--bg);">
-  <div class="container">
-    <div class="section-header" style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;">
-      <h2 style="font-size:2rem;margin:0;">Featured <em style="color: var(--text);">Cosmetics</em></h2>
-      <div style="display:flex; gap: 8px; align-items:center;">
-        <a href="cosmetics.html" style="font-size:0.75rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);text-decoration:none;font-family:var(--font-ui); margin-left: 12px;">View All ?</a>
-      </div>
-    </div>
-    <div class="horizontal-scroll-grid" id="featured-cosmetics-grid" style="display:flex; overflow-x:auto; gap:20px; padding-bottom:20px; scroll-snap-type:x mandatory; scrollbar-width:none; -ms-overflow-style:none;">
-      <div style="grid-column:1/-1;text-align:center;padding:40px;opacity:0.5;">Loading products...</div>
-    </div>
-  </div>
-</section>
-
-  <!-- BRAND STORY -->
-  <section id="story">
-    <div class="container">
-      <div class="story-grid">
-        <div class="story-visual reveal">
-          <img src="images/hero_passion_new_v2.jpg" alt="TOVESSA — Handcrafted skincare and Jewelry for Women in Pakistan" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy" />
-          <div class="story-accent"></div>
-        </div>
-        <div class="story-text reveal reveal-delay-2">
-          <p class="section-label">The Tovessa Story</p>
-          <h2 class="section-title">Born From a Passion<br>for <em>Beauty</em></h2>
-          <div class="gold-rule"></div>
-          <p>
-        Tovessa was founded in the heart of Lahore with one simple belief — that every woman deserves premium fashion and accessories that are as beautiful as she is. Every necklace, lipstick, and blush is curated with intention, so you don't just dress up — you express your soul.
-      </p>
-      <p>
-        We partner with skilled artisans and carefully selected suppliers to bring you pieces that elevate your entire look. We believe in quality over quantity, pieces that last beyond a season, and customer trust above all.
-      </p>
-          <a href="about.html" class="btn btn-outline" style="margin-top:20px;">Discover Our Story</a>
-          <div class="story-stats">
-            <div><div class="stat-num">200+</div><div class="stat-label">Accessories</div></div>
-            <div><div class="stat-num">5K+</div><div class="stat-label">Happy Customers</div></div>
-            <div><div class="stat-num">100%</div><div class="stat-label">Gentle Quality</div></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- REVIEWS (Dynamic — real customer reviews only) -->
-  <section id="testimonials">
-    <div class="container">
-      <p class="section-label" style="text-align:center">What Our Clients Say</p>
-      <h2 class="section-title" style="text-align:center;margin-bottom:48px">Voices of <em>TOVESSA</em></h2>
-      <div class="testimonial-slider" id="reviews-container">
-        <p style="text-align:center;color:var(--muted);padding:40px 0;font-size:.9rem">Loading reviews…</p>
-      </div>
-    </div>
-  </section>
-  <!-- NEWSLETTER -->
-  <section id="newsletter" style="background: var(--bg-deep); position:relative; overflow:hidden;">
-    <div style="position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=1400&q=60&fit=crop') center/cover no-repeat;opacity:0.07;pointer-events:none;z-index:0;"></div>
-    <div class="container" style="position:relative;z-index:1;">
-      <div class="newsletter-inner reveal">
-        <p class="section-label">Stay In The Loop</p>
-        <h2 class="section-title">Join the <em>TOVESSA</em> Circle</h2>
-        <p>Subscribe for exclusive previews and early access to new arrivals — be the first to know about new drops.</p>
-        <form class="newsletter-form">
-          <input type="email" placeholder="Your email address" required />
-          <button type="submit" class="btn-primary">Subscribe</button>
-        </form>
-      </div>
-    </div>
-  </section>
-  <!-- FOOTER -->
   <footer>
-    <div class="container">
-      <div class="footer-grid">
+    <div class="container" style="padding: 60px 40px;">
+      <div class="footer-grid" style="display:grid; grid-template-columns: repeat(4, 1fr); gap: 40px;">
         <div class="footer-brand">
-          <a href="/" class="nav-logo nav-logo-link" style="display:inline-flex;align-items:center;text-decoration:none;"><img src="images/logo-light.png" alt="TOVESSA" class="nav-logo-img" /></a>
-          <p>Pakistan's premier destination for botanical luxury skincare and premium jewelry. Crafted with elegance for elite women.</p>
-          <div class="footer-social" id="footer-social-links">
-            <!-- filled by JS from config -->
-          </div>
+          <img src="images/logo.png" alt="TOVESSA" style="height: 50px; margin-bottom: 20px;" />
+          <p style="line-height:1.6;">Pakistan's premier destination for botanical luxury skincare, fine jewelry, and elite fashion.</p>
         </div>
         <div class="footer-col">
           <h4>Shop</h4>
-          <ul>
+          <ul style="list-style:none; padding:0; line-height:2;">
             <li><a href="jewelry.html">Jewelry</a></li>
             <li><a href="cosmetics.html">Cosmetics</a></li>
-          <li><a href="shop.html?cat=deals">Deals</a></li>
+            <li><a href="shop.html">Intimates</a></li>
           </ul>
         </div>
         <div class="footer-col">
           <h4>Help</h4>
-          <ul>
-            <li><a href="contact">Contact Us</a></li>
-            <li><a href="policy?page=shipping">Shipping Info</a></li>
-            <li><a href="policy?page=returns">Returns Policy</a></li>
-            <li><a href="policy?page=faqs">FAQs</a></li>
-            <li><a href="policy?page=track">Track Order</a></li>
+          <ul style="list-style:none; padding:0; line-height:2;">
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="policy.html">Shipping & Returns</a></li>
           </ul>
         </div>
         <div class="footer-col get-in-touch-col">
           <h4>Get In Touch</h4>
-          <ul class="get-in-touch-list">
-            <li><i class="fa-regular fa-envelope" style="color:var(--gold); width: 16px; text-align: center; font-size: 1.1rem;"></i> <span data-tovessa="email">hello@tovessa.com</span></li>
-            <li><i class="fa-brands fa-whatsapp" style="color:var(--gold); width: 16px; text-align: center; font-size: 1.1rem;"></i> <span data-tovessa="phone">+92 315 0727131</span></li>
-            <li><i class="fa-solid fa-location-dot" style="color:var(--gold); width: 16px; text-align: center; font-size: 1.1rem;"></i> <span data-tovessa="location">Lahore, Pakistan</span></li>
-            <li><i class="fa-regular fa-clock" style="color:var(--gold); width: 16px; text-align: center; font-size: 1.1rem;"></i> <span data-tovessa="hours">Mon-Sat: 10am - 7pm</span></li>
+          <ul class="get-in-touch-list" style="list-style:none; padding:0; line-height:2;">
+            <li><i class="fa-regular fa-envelope"></i> hello@tovessa.com</li>
+            <li><i class="fa-brands fa-whatsapp"></i> +92 315 0727131</li>
+            <li><i class="fa-solid fa-location-dot"></i> Lahore, Pakistan</li>
           </ul>
         </div>
       </div>
-      <div class="footer-bottom">
-        <p>© 2026 <span class="gold-text">TOVESSA</span>. All rights reserved.</p>
-        <div class="footer-pay">
-          <span class="pay-badge">COD</span>
-          <span class="pay-badge">Bank Deposit</span>
-        </div>
+      <div class="footer-bottom" style="text-align:center; margin-top: 40px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.2);">
+        <p>c 2026 TOVESSA. All rights reserved.</p>
       </div>
     </div>
   </footer>
-  <!-- CART DRAWER -->
+
   <div id="cart-drawer">
     <div class="cart-header">
       <h3>Your Bag</h3>
@@ -425,74 +183,12 @@
       <button onclick="proceedToCheckout()" class="btn-primary cart-checkout" style="width:100%;cursor:pointer;">Proceed to Checkout</button>
     </div>
   </div>
-  <!-- OVERLAY -->
-  <div id="overlay"></div>
-  <!-- TOAST -->
-  <div id="toast"></div>
-  <!-- WHATSAPP BUTTON -->
-  <div id="whatsapp-btn-wrap">
-    <a id="whatsapp-float" href="#" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
-      <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-      </svg>
-      <span class="wa-tooltip">Chat with us</span>
-    </a>
-  </div>
 
-  <script src="js/whatsapp-config.js"></script>
+  <div id="overlay"></div>
+  <div id="toast"></div>
+
   <script src="js/api.js"></script>
   <script src="js/main.js"></script>
-  <script src="js/products-render.js"></script>
   <script src="js/search.js"></script>
-  <script>
-    /* -- Load Real Reviews on Homepage -- */
-    (async function loadReviews() {
-      const container = document.getElementById('reviews-container');
-      if (!container) return;
-      try {
-        const data = await apiGetReviews();
-        const reviews = data.reviews || [];
-        if (!reviews.length) {
-          container.innerHTML = '<p style="text-align:center;color:var(--muted);padding:40px 0;font-size:.9rem">No reviews yet — be the first to share your experience!</p>';
-          return;
-        }
-        container.innerHTML = reviews.map((r, i) => `
-          <div class="testimonial-card reveal${i===1?' reveal-delay-2':i===2?' reveal-delay-3':''}">
-            <div class="t-stars">${'?'.repeat(r.rating)}${'?'.repeat(5 - r.rating)}</div>
-            <p class="t-text">&ldquo;${r.text}&rdquo;</p>
-            <div class="t-author">${r.customerName}</div>
-            <div class="t-loc">${r.city ? r.city + ', Pakistan' : 'Pakistan'}</div>
-          </div>`).join('');
-        /* Re-observe new reveal elements */
-        const obs = new IntersectionObserver(entries => {
-          entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
-        }, { threshold: 0.12 });
-        container.querySelectorAll('.reveal').forEach(el => obs.observe(el));
-      } catch {
-        container.innerHTML = '<p style="text-align:center;color:var(--muted);padding:40px 0;font-size:.9rem">No reviews yet.</p>';
-      }
-    })();
-  </script>
-  <!-- Hero carousel sliding script -->
-  <script>
-    (function() {
-      const slides = document.querySelectorAll('.carousel-slide');
-      if (slides.length === 0) return;
-      let currentSlide = 0;
-      setInterval(() => {
-        slides[currentSlide].classList.remove('active');
-        currentSlide = (currentSlide + 1) % slides.length;
-        slides[currentSlide].classList.add('active');
-      }, 4000);
-    })();
-  </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
