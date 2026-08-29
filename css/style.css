@@ -1464,3 +1464,21 @@ footer p, footer a, footer li, footer span, footer i {
   background: var(--gold);
   color: #fff !important;
 }
+
+/* FINAL HERO FIXES */
+.hero-glass-box {
+  background: transparent !important;
+  border: none !important;
+  color: #fff !important;
+}
+.hero-glass-box h1, .hero-glass-box p {
+  color: #fff !important;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+.tovessa-hero::before {
+  background: rgba(0,0,0,0.4) !important; /* Darken image to make white text pop */
+}
+.hero-glass-box .btn-primary {
+  background: #fff !important;
+  color: var(--gold) !important;
+}

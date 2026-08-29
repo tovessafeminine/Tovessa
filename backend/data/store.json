@@ -1,10 +1,10 @@
-{
+﻿{
     "adminUsers":  [
                        {
                            "id":  "super-admin-1",
                            "username":  "admin",
                            "email":  "admin",
-                           "passwordHash":  null,
+                           "passwordHash":  "$2a$10$hmLVxAZuvWMma6V3bdPJCeJz1ozGhwQQbooCwNNOwapHAdITb7GYq",
                            "role":  "ceo",
                            "fname":  "Super",
                            "lname":  "Admin",

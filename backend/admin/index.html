@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8"/>
@@ -10,19 +10,12 @@
 <!-- SheetJS for Excel export -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
 <style>
-:root {
-  --font-display: "Playfair Display", serif;
-  --font-body: "Lato", sans-serif;
-  --bg:#faf8f5; --card:#ffffff; --card2:#fdfbf8; --border:rgba(201,168,76,0.20);
-  --gold:#c9a84c; --gold2:#e8d48b; --text:#2c2824; --muted:#9a928a;
-  --green:#22c55e; --red:#ef4444; --blue:#3b82f6; --orange:#f59e0b;
-  --sidebar:240px;
-}
+:root { --font-display: "Cormorant Garamond", serif; --font-body: "Montserrat", sans-serif; --bg:#fdf8fb; --card:#ffffff; --card2:#f9eef5; --border:rgba(96,36,66,0.20); --gold:#602442; --gold2:#a04a74; --text:#2B101E; --muted:#88697A; --green:#22c55e; --red:#ef4444; --blue:#3b82f6; --orange:#f59e0b; --sidebar:240px; }
 * { margin: 0; padding: 0; box-sizing: border-box; }
 h1, h2, h3, h4, h5, h6 { font-family: var(--font-display); font-weight: 600; }
 body{background:var(--bg);color:var(--text);font-family:var(--font-body);display:flex;min-height:100vh;}
 
-/* ── Login Screen ── */
+/* â”€â”€ Login Screen â”€â”€ */
 #login-screen{
   position:fixed;inset:0;z-index:9999;
   background:linear-gradient(135deg,#faf8f5 60%,#f2ede6);
@@ -39,7 +32,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--font-body);display
 .login-box button:hover{opacity:.85;}
 .login-error{color:var(--red);font-size:0.82rem;margin-top:-8px;margin-bottom:8px;display:none;}
 
-/* ── Sidebar ── */
+/* â”€â”€ Sidebar â”€â”€ */
 #sidebar{
   width:var(--sidebar);min-height:100vh;background:var(--card);border-right:1px solid var(--border);
   display:flex;flex-direction:column;position:fixed;left:0;top:0;bottom:0;z-index:100;
@@ -60,7 +53,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--font-body);display
 .logout-btn{margin-top:10px;background:transparent;border:1px solid var(--border);color:var(--muted);padding:8px 14px;border-radius:6px;cursor:pointer;font-size:0.8rem;width:100%;transition:all .2s;}
 .logout-btn:hover{border-color:var(--red);color:var(--red);}
 
-/* ── Notification Bell ── */
+/* â”€â”€ Notification Bell â”€â”€ */
 .notif-wrap{position:relative;cursor:pointer;padding:8px;margin-left:auto;margin-right:4px;}
 .notif-dot{position:absolute;top:8px;right:8px;width:8px;height:8px;background:var(--red);border-radius:50%;display:none;}
 .notif-dot.active{display:block;}
@@ -70,13 +63,13 @@ body{background:var(--bg);color:var(--text);font-family:var(--font-body);display
 .notif-item:last-child{border-bottom:none;}
 .notif-time{color:var(--muted);font-size:0.72rem;margin-top:3px;}
 
-/* ── Main ── */
+/* â”€â”€ Main â”€â”€ */
 #main{margin-left:var(--sidebar);flex:1;padding:32px;overflow:auto;}
 .page-header{display:flex;align-items:center;gap:16px;margin-bottom:28px;}
 .page-header h1{font-size:1.5rem;font-weight:700;}
 .page-header .ml-auto{margin-left:auto;display:flex;align-items:center;gap:10px;}
 
-/* ── Stats Grid ── */
+/* â”€â”€ Stats Grid â”€â”€ */
 .stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px;margin-bottom:32px;}
 .stat-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px;position:relative;overflow:hidden;}
 .stat-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--gold),transparent);}
@@ -85,7 +78,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--font-body);display
 .stat-label{color:var(--muted);font-size:0.78rem;margin-top:4px;}
 .stat-sub{color:var(--green);font-size:0.75rem;margin-top:6px;}
 
-/* ── Table ── */
+/* â”€â”€ Table â”€â”€ */
 .table-wrap{background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;}
 .table-header{padding:16px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:12px;flex-wrap:wrap;}
 .table-header h3{font-size:1rem;font-weight:600;}
@@ -95,7 +88,7 @@ td{padding:13px 16px;font-size:0.85rem;border-bottom:1px solid rgba(0,0,0,.04);}
 tr:last-child td{border-bottom:none;}
 tr:hover td{background:rgba(0,0,0,.02);}
 
-/* ── Badges ── */
+/* â”€â”€ Badges â”€â”€ */
 .badge{display:inline-block;padding:3px 10px;border-radius:20px;font-size:0.72rem;font-weight:600;}
 .badge-pending  {background:rgba(245,158,11,.15);color:var(--orange);}
 .badge-processing{background:rgba(59,130,246,.15);color:var(--blue);}
@@ -107,19 +100,19 @@ tr:hover td{background:rgba(0,0,0,.02);}
 .badge-role-admin{background:rgba(59,130,246,.15);color:var(--blue);}
 .badge-role-supervisor{background:rgba(34,197,94,.15);color:var(--green);}
 .badge-role-investor{background:rgba(168,85,247,.15);color:#a855f7;}
-/* ── Social platform badges ── */
+/* â”€â”€ Social platform badges â”€â”€ */
 .badge-facebook  {background:rgba(24,119,242,.15);color:#1877f2;}
 .badge-instagram {background:rgba(225,48,108,.15);color:#e1306c;}
 .badge-whatsapp  {background:rgba(37,211,102,.15);color:#25d366;}
 .badge-tiktok    {background:rgba(254,44,85,.15);color:#fe2c55;}
 .badge-other     {background:rgba(154,128,112,.15);color:var(--muted);}
 .badge-website   {background:rgba(184,136,58,.15);color:var(--gold);}
-/* ── Dashboard source filter ── */
+/* â”€â”€ Dashboard source filter â”€â”€ */
 .dash-filter-bar{display:flex;align-items:center;gap:8px;margin-bottom:18px;flex-wrap:wrap;}
 .dash-filter-btn{padding:7px 16px;border-radius:20px;border:1px solid var(--border);background:var(--bg);color:var(--muted);font-size:0.78rem;font-weight:600;cursor:pointer;transition:all .2s;}
 .dash-filter-btn:hover{border-color:var(--gold);color:var(--text);}
 .dash-filter-btn.active{background:var(--gold);color:#fff;border-color:var(--gold);}
-/* ── Social order items builder ── */
+/* â”€â”€ Social order items builder â”€â”€ */
 .soc-item-row{display:grid;grid-template-columns:2.2fr 55px 75px 75px 90px 36px 36px;gap:8px;margin-bottom:8px;align-items:center;}
 .soc-item-row input{background:var(--bg);border:1px solid var(--border);border-radius:6px;padding:7px 10px;color:var(--text);font-size:0.82rem;outline:none;width:100%;}
 .soc-item-row input:focus{border-color:var(--gold);}
@@ -137,21 +130,21 @@ tr:hover td{background:rgba(0,0,0,.02);}
 .soc-product-option .opt-stock-out{color:var(--red);font-size:0.68rem;text-transform:uppercase;font-weight:700;}
 .soc-product-empty{padding:10px 12px;font-size:0.8rem;color:var(--muted);}
 
-/* ── Buttons ── */
+/* â”€â”€ Buttons â”€â”€ */
 .btn{padding:8px 16px;border-radius:7px;cursor:pointer;font-size:0.82rem;font-weight:600;border:none;transition:opacity .15s;}
 .btn:hover{opacity:.8;}
-.btn-gold{background:var(--gold);color:#000;}
+.btn-gold{background:var(--gold);color:#ffffff;}
 .btn-outline{background:transparent;border:1px solid var(--border);color:var(--text);}
 .btn-danger{background:rgba(239,68,68,.15);color:var(--red);border:1px solid rgba(239,68,68,.3);}
 .btn-success{background:rgba(34,197,94,.15);color:var(--green);border:1px solid rgba(34,197,94,.3);}
 .btn-sm{padding:5px 10px;font-size:0.75rem;}
 
-/* ── Search & Filter ── */
+/* â”€â”€ Search & Filter â”€â”€ */
 .search-input{background:var(--bg);border:1px solid var(--border);border-radius:7px;padding:8px 14px;color:var(--text);font-size:0.85rem;width:220px;outline:none;}
 .search-input:focus{border-color:var(--gold);}
 select.filter-sel{background:var(--bg);border:1px solid var(--border);border-radius:7px;padding:8px 12px;color:var(--text);font-size:0.82rem;outline:none;cursor:pointer;}
 
-/* ── Modal ── */
+/* â”€â”€ Modal â”€â”€ */
 .modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.8);z-index:500;display:none;align-items:center;justify-content:center;padding:20px;}
 .modal-overlay.open{display:flex;}
 .modal{background:var(--card);border:1px solid var(--border);border-radius:14px;width:100%;max-width:520px;max-height:85vh;overflow-y:auto;}
@@ -166,7 +159,7 @@ select.filter-sel{background:var(--bg);border:1px solid var(--border);border-rad
 .form-group textarea{resize:vertical;min-height:80px;}
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
 
-/* ── Tag chip input (sizes / colors) ── */
+/* â”€â”€ Tag chip input (sizes / colors) â”€â”€ */
 .tag-input-wrap{background:var(--bg);border:1px solid var(--border);border-radius:7px;padding:8px 10px;display:flex;flex-wrap:wrap;gap:6px;align-items:center;}
 .tag-input-wrap:focus-within{border-color:var(--gold);}
 .tag-chips{display:flex;flex-wrap:wrap;gap:6px;}
@@ -175,34 +168,34 @@ select.filter-sel{background:var(--bg);border:1px solid var(--border);border-rad
 .tag-chip button:hover{background:rgba(184,136,58,.25);}
 .tag-input-wrap input{flex:1;min-width:120px;background:transparent;border:none;outline:none;color:var(--text);font-size:0.88rem;padding:4px 2px;}
 
-/* ── Toast ── */
+/* â”€â”€ Toast â”€â”€ */
 #toast{position:fixed;bottom:24px;right:24px;z-index:9999;display:flex;flex-direction:column;gap:8px;}
 .toast-item{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:12px 18px;font-size:0.85rem;transform:translateX(120%);transition:transform .3s;max-width:300px;}
 .toast-item.show{transform:translateX(0);}
 .toast-item.success{border-color:rgba(34,197,94,.4);}
 .toast-item.error{border-color:rgba(239,68,68,.4);}
 
-/* ── Demo Mode Banner ── */
+/* â”€â”€ Demo Mode Banner â”€â”€ */
 .demo-banner{background:rgba(245,158,11,.1);border:1px solid rgba(245,158,11,.3);border-radius:8px;padding:10px 16px;font-size:0.82rem;color:var(--orange);display:flex;align-items:center;gap:8px;margin-bottom:20px;}
 
-/* ── Status select in table ── */
+/* â”€â”€ Status select in table â”€â”€ */
 .status-select{background:var(--bg);border:1px solid var(--border);border-radius:5px;padding:4px 8px;color:var(--text);font-size:0.78rem;cursor:pointer;}
 
-/* ── Empty state ── */
+/* â”€â”€ Empty state â”€â”€ */
 .empty-state{text-align:center;padding:60px 20px;color:var(--muted);}
 .empty-state i{font-size:2.5rem;margin-bottom:12px;opacity:.4;}
 .empty-state p{font-size:0.9rem;}
 
-/* ── Settings ── */
+/* â”€â”€ Settings â”€â”€ */
 .settings-section{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:24px;margin-bottom:20px;}
 .settings-section h3{font-size:1rem;font-weight:600;margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid var(--border);}
 
-/* ── Loading spinner ── */
+/* â”€â”€ Loading spinner â”€â”€ */
 .spinner{display:inline-block;width:20px;height:20px;border:2px solid var(--border);border-top-color:var(--gold);border-radius:50%;animation:spin .6s linear infinite;}
 @keyframes spin{to{transform:rotate(360deg);}}
 @keyframes pulse-dot{0%,100%{opacity:1;transform:scale(1);}50%{opacity:0.5;transform:scale(1.4);}}
 
-/* ── Product Admin Cards Grid ── */
+/* â”€â”€ Product Admin Cards Grid â”€â”€ */
 .product-admin-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px;padding:4px 0;}
 .pac{background:var(--card);border:1px solid var(--border);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;transition:box-shadow .2s,transform .2s;position:relative;}
 .pac:hover{box-shadow:0 6px 24px rgba(0,0,0,.15);transform:translateY(-2px);}
@@ -217,7 +210,7 @@ select.filter-sel{background:var(--bg);border:1px solid var(--border);border-rad
 .pac-actions{display:flex;gap:8px;margin-top:4px;}
 .pac-actions .btn{flex:1;font-size:0.75rem;padding:6px 8px;display:flex;align-items:center;justify-content:center;gap:5px;}
 
-/* ── Responsive — Tablet (<=900px) ── */
+/* â”€â”€ Responsive â€” Tablet (<=900px) â”€â”€ */
 @media(max-width:900px){
   :root{--sidebar:72px;}
   #sidebar{width:72px;}
@@ -234,7 +227,7 @@ select.filter-sel{background:var(--bg);border:1px solid var(--border);border-rad
   .mobile-logout{display:flex !important;}
 }
 
-/* ── Responsive — Mobile (<=640px) ── */
+/* â”€â”€ Responsive â€” Mobile (<=640px) â”€â”€ */
 @media(max-width:640px){
   #sidebar{
     position:fixed;left:0;right:0;bottom:0;top:auto;
@@ -285,7 +278,7 @@ select.filter-sel{background:var(--bg);border:1px solid var(--border);border-rad
 </head>
 <body>
 
-<!-- ═══════════════════════════════════════════ LOGIN SCREEN ═══ -->
+<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• LOGIN SCREEN â•â•â• -->
 <div id="login-screen">
   <div class="login-box">
     <h1>Tovessa <span style="font-weight:300;color:var(--muted)">Admin</span></h1>
@@ -297,7 +290,7 @@ select.filter-sel{background:var(--bg);border:1px solid var(--border);border-rad
   </div>
 </div>
 
-<!-- ═══════════════════════════════════════════ SIDEBAR ════════ -->
+<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• SIDEBAR â•â•â•â•â•â•â•â• -->
 <div id="sidebar">
   <div class="sidebar-logo">
     <img src="../../images/logo-light.png" alt="Tovessa" style="height:40px;width:auto;max-width:160px;display:block;margin-bottom:4px;filter:brightness(0);height:70px;margin-top:-10px;"/>
@@ -372,10 +365,10 @@ select.filter-sel{background:var(--bg);border:1px solid var(--border);border-rad
   </div>
 </div>
 
-<!-- ═══════════════════════════════════════════ MAIN ══════════ -->
+<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• MAIN â•â•â•â•â•â•â•â•â•â• -->
 <div id="main">
 
-<!-- ── DASHBOARD ── -->
+<!-- â”€â”€ DASHBOARD â”€â”€ -->
 <div id="page-dashboard" class="page">
   <div class="page-header">
     <h1>Dashboard</h1>
@@ -391,9 +384,9 @@ select.filter-sel{background:var(--bg);border:1px solid var(--border);border-rad
   </div>
   <div id="demo-banner" class="demo-banner" style="display:none">
     <i class="fa-solid fa-circle-info"></i>
-    <span>Demo Mode — data stored in server memory. Add Firebase credentials to .env for permanent storage.</span>
+    <span>Demo Mode â€” data stored in server memory. Add Firebase credentials to .env for permanent storage.</span>
   </div>
-  <!-- ── Dashboard Source Filter ── -->
+  <!-- â”€â”€ Dashboard Source Filter â”€â”€ -->
   <div class="dash-filter-bar" id="dash-filter-bar">
     <span style="font-size:0.78rem;color:var(--muted);margin-right:4px;"><i class="fa-solid fa-filter"></i> View:</span>
     <button class="dash-filter-btn active" id="dfbtn-combined" onclick="setDashFilter('combined')">Combined (All)</button>
@@ -403,30 +396,30 @@ select.filter-sel{background:var(--bg);border:1px solid var(--border);border-rad
   <div class="stats-grid" id="stats-grid">
     <div class="stat-card" style="cursor:pointer" onclick="showPage('visitors')">
       <div class="stat-icon" style="position:relative">
-        🟢
+        ðŸŸ¢
         <span id="visitor-pulse" style="position:absolute;top:-2px;right:-2px;width:10px;height:10px;background:#22c55e;border-radius:50%;animation:pulse-dot 1.5s infinite"></span>
       </div>
       <div class="stat-val" id="s-visitors" style="color:#22c55e">0</div>
       <div class="stat-label">Live Visitors</div>
       <div class="stat-sub" id="s-visitors-sub" style="color:#22c55e;font-size:0.65rem">on site right now</div>
     </div>
-    <div class="stat-card"><div class="stat-icon">📦</div><div class="stat-val" id="s-orders">—</div><div class="stat-label">Total Orders</div><div class="stat-sub" id="s-pending-text"></div></div>
-    <div class="stat-card"><div class="stat-icon">💰</div><div class="stat-val" id="s-revenue">—</div><div class="stat-label">Total Revenue</div></div>
+    <div class="stat-card"><div class="stat-icon">ðŸ“¦</div><div class="stat-val" id="s-orders">â€”</div><div class="stat-label">Total Orders</div><div class="stat-sub" id="s-pending-text"></div></div>
+    <div class="stat-card"><div class="stat-icon">ðŸ’°</div><div class="stat-val" id="s-revenue">â€”</div><div class="stat-label">Total Revenue</div></div>
     
-    <div class="stat-card"><div class="stat-icon">🧾</div><div class="stat-val" id="s-invoices">—</div><div class="stat-label">Total Invoices</div></div>
-    <div class="stat-card"><div class="stat-icon">💵</div><div class="stat-val" id="s-cod-orders">—</div><div class="stat-label">COD Orders</div></div>
+    <div class="stat-card"><div class="stat-icon">ðŸ§¾</div><div class="stat-val" id="s-invoices">â€”</div><div class="stat-label">Total Invoices</div></div>
+    <div class="stat-card"><div class="stat-icon">ðŸ’µ</div><div class="stat-val" id="s-cod-orders">â€”</div><div class="stat-label">COD Orders</div></div>
 
 
-    <div class="stat-card"><div class="stat-icon">📈</div><div class="stat-val" id="s-profit">—</div><div class="stat-label">Today's Profit</div><div class="stat-sub" id="s-profit-sub"></div></div>
-    <div class="stat-card"><div class="stat-icon">💹</div><div class="stat-val" id="s-total-profit">—</div><div class="stat-label">Total Profit</div><div class="stat-sub" style="color:var(--muted);font-size:0.65rem">all time</div></div>
-    <div class="stat-card" id="card-spendings" style="display:none"><div class="stat-icon">💸</div><div class="stat-val" id="s-spendings" style="color:#ef4444">—</div><div class="stat-label">Total Spendings</div></div>
-    <div class="stat-card"><div class="stat-icon">🛍️</div><div class="stat-val" id="s-products">—</div><div class="stat-label">Products</div></div>
-    <div class="stat-card"><div class="stat-icon">📧</div><div class="stat-val" id="s-subscribers">—</div><div class="stat-label">Subscribers</div></div>
-    <div class="stat-card"><div class="stat-icon">✉️</div><div class="stat-val" id="s-msgs">—</div><div class="stat-label">Unread Messages</div></div>
-    <div class="stat-card"><div class="stat-icon">👤</div><div class="stat-val" id="s-users">—</div><div class="stat-label">Customers</div></div>
+    <div class="stat-card"><div class="stat-icon">ðŸ“ˆ</div><div class="stat-val" id="s-profit">â€”</div><div class="stat-label">Today's Profit</div><div class="stat-sub" id="s-profit-sub"></div></div>
+    <div class="stat-card"><div class="stat-icon">ðŸ’¹</div><div class="stat-val" id="s-total-profit">â€”</div><div class="stat-label">Total Profit</div><div class="stat-sub" style="color:var(--muted);font-size:0.65rem">all time</div></div>
+    <div class="stat-card" id="card-spendings" style="display:none"><div class="stat-icon">ðŸ’¸</div><div class="stat-val" id="s-spendings" style="color:#ef4444">â€”</div><div class="stat-label">Total Spendings</div></div>
+    <div class="stat-card"><div class="stat-icon">ðŸ›ï¸</div><div class="stat-val" id="s-products">â€”</div><div class="stat-label">Products</div></div>
+    <div class="stat-card"><div class="stat-icon">ðŸ“§</div><div class="stat-val" id="s-subscribers">â€”</div><div class="stat-label">Subscribers</div></div>
+    <div class="stat-card"><div class="stat-icon">âœ‰ï¸</div><div class="stat-val" id="s-msgs">â€”</div><div class="stat-label">Unread Messages</div></div>
+    <div class="stat-card"><div class="stat-icon">ðŸ‘¤</div><div class="stat-val" id="s-users">â€”</div><div class="stat-label">Customers</div></div>
     <div class="stat-card" style="cursor:pointer" onclick="showPage('abandoned')">
-      <div class="stat-icon">🛒</div>
-      <div class="stat-val" id="s-abandoned" style="color:#f97316">—</div>
+      <div class="stat-icon">ðŸ›’</div>
+      <div class="stat-val" id="s-abandoned" style="color:#f97316">â€”</div>
       <div class="stat-label">Abandoned Orders</div>
       <div class="stat-sub" id="s-abandoned-sub" style="color:#f97316;font-size:0.65rem">incomplete checkouts</div>
     </div>
@@ -437,21 +430,21 @@ select.filter-sel{background:var(--bg);border:1px solid var(--border);border-rad
     <tbody id="recent-orders-body"><tr><td colspan="6" class="empty-state"><div class="spinner"></div></td></tr></tbody></table>
   </div>
 
-  <!-- ── Lifetime Earnings (super_admin only) ── -->
+  <!-- â”€â”€ Lifetime Earnings (super_admin only) â”€â”€ -->
   <div class="table-wrap" id="lifetime-earnings-wrap" style="margin-top:24px;">
     <div class="table-header"><h3>Lifetime Earnings</h3><span style="color:var(--muted);font-size:0.78rem;margin-left:auto" id="lifetime-since"></span></div>
     <div class="stats-grid" style="padding:20px;margin-bottom:0;">
-      <div class="stat-card"><div class="stat-icon">💵</div><div class="stat-val" id="lt-revenue">—</div><div class="stat-label">Lifetime Revenue</div></div>
-      <div class="stat-card"><div class="stat-icon">📦</div><div class="stat-val" id="lt-cost">—</div><div class="stat-label">Lifetime Cost</div></div>
-      <div class="stat-card"><div class="stat-icon">📈</div><div class="stat-val" id="lt-profit">—</div><div class="stat-label">Lifetime Net Profit</div></div>
-      <div class="stat-card"><div class="stat-icon">🧾</div><div class="stat-val" id="lt-orders">—</div><div class="stat-label">Lifetime Orders Sold</div></div>
+      <div class="stat-card"><div class="stat-icon">ðŸ’µ</div><div class="stat-val" id="lt-revenue">â€”</div><div class="stat-label">Lifetime Revenue</div></div>
+      <div class="stat-card"><div class="stat-icon">ðŸ“¦</div><div class="stat-val" id="lt-cost">â€”</div><div class="stat-label">Lifetime Cost</div></div>
+      <div class="stat-card"><div class="stat-icon">ðŸ“ˆ</div><div class="stat-val" id="lt-profit">â€”</div><div class="stat-label">Lifetime Net Profit</div></div>
+      <div class="stat-card"><div class="stat-icon">ðŸ§¾</div><div class="stat-val" id="lt-orders">â€”</div><div class="stat-label">Lifetime Orders Sold</div></div>
     </div>
   </div>
 
-  <!-- ── Daily Statements — last 30 days (super_admin only) ── -->
+  <!-- â”€â”€ Daily Statements â€” last 30 days (super_admin only) â”€â”€ -->
   <div class="table-wrap" id="daily-statements-wrap" style="margin-top:24px;">
     <div class="table-header">
-      <h3>Daily Statements <span style="color:var(--muted);font-weight:400;font-size:0.78rem;">— last 30 days</span></h3>
+      <h3>Daily Statements <span style="color:var(--muted);font-weight:400;font-size:0.78rem;">â€” last 30 days</span></h3>
       <button class="btn btn-outline" onclick="loadDailyStatements()" style="margin-left:auto"><i class="fa-solid fa-rotate"></i> Refresh</button>
       <button class="btn btn-gold" onclick="exportDailyStatementsExcel()"><i class="fa-solid fa-file-excel"></i> Export 30-Day Statement</button>
     </div>
@@ -459,10 +452,10 @@ select.filter-sel{background:var(--bg);border:1px solid var(--border);border-rad
     <tbody id="daily-statements-body"><tr><td colspan="7" class="empty-state"><div class="spinner"></div></td></tr></tbody></table>
   </div>
 
-  <!-- ── Monthly Statements — since site launch date (super_admin only) ── -->
+  <!-- â”€â”€ Monthly Statements â€” since site launch date (super_admin only) â”€â”€ -->
   <div class="table-wrap" id="monthly-statements-wrap" style="margin-top:24px;">
     <div class="table-header">
-      <h3>Monthly Statements <span style="color:var(--muted);font-weight:400;font-size:0.78rem;" id="monthly-since-label">— since launch</span></h3>
+      <h3>Monthly Statements <span style="color:var(--muted);font-weight:400;font-size:0.78rem;" id="monthly-since-label">â€” since launch</span></h3>
       <button class="btn btn-outline" onclick="loadMonthlyStatements()" style="margin-left:auto"><i class="fa-solid fa-rotate"></i> Refresh</button>
       <button class="btn btn-gold" onclick="exportMonthlyStatementsExcel()"><i class="fa-solid fa-file-excel"></i> Export All Months</button>
     </div>
@@ -471,7 +464,7 @@ select.filter-sel{background:var(--bg);border:1px solid var(--border);border-rad
   </div>
 </div>
 
-<!-- ── ORDERS ── -->
+<!-- â”€â”€ ORDERS â”€â”€ -->
 <div id="page-orders" class="page" style="display:none">
   <div class="page-header">
     <h1>Orders</h1>
@@ -480,7 +473,7 @@ select.filter-sel{background:var(--bg);border:1px solid var(--border);border-rad
         <option value="">All Statuses</option>
         <option>Pending</option><option>Processing</option><option>Shipped</option><option>Delivered</option><option>Cancelled</option>
       </select>
-      <input class="search-input" id="order-search" placeholder="Search order ref…" oninput="filterOrdersTable()"/>
+      <input class="search-input" id="order-search" placeholder="Search order refâ€¦" oninput="filterOrdersTable()"/>
     </div>
   </div>
   <div class="table-wrap">
@@ -489,24 +482,24 @@ select.filter-sel{background:var(--bg);border:1px solid var(--border);border-rad
   </div>
 </div>
 
-<!-- ── SOCIAL MEDIA ORDERS ── -->
+<!-- â”€â”€ SOCIAL MEDIA ORDERS â”€â”€ -->
 <div id="page-social-orders" class="page" style="display:none">
   <div class="page-header">
     <h1><i class="fa-solid fa-share-nodes" style="color:#e1306c;margin-right:8px"></i>Social Media Orders</h1>
     <div class="ml-auto">
       <select class="filter-sel" id="soc-source-filter" onchange="loadSocialOrders()">
         <option value="">All Sources</option>
-        <option value="facebook">🔵 Facebook</option>
-        <option value="instagram">🩷 Instagram</option>
-        <option value="whatsapp">🟢 WhatsApp</option>
-        <option value="tiktok">⚫ TikTok</option>
-        <option value="other">⚪ Other</option>
+        <option value="facebook">ðŸ”µ Facebook</option>
+        <option value="instagram">ðŸ©· Instagram</option>
+        <option value="whatsapp">ðŸŸ¢ WhatsApp</option>
+        <option value="tiktok">âš« TikTok</option>
+        <option value="other">âšª Other</option>
       </select>
       <select class="filter-sel" id="soc-status-filter" onchange="loadSocialOrders()">
         <option value="">All Statuses</option>
         <option>Pending</option><option>Processing</option><option>Shipped</option><option>Delivered</option><option>Cancelled</option>
       </select>
-      <input class="search-input" id="soc-search" placeholder="Search name / ref…" oninput="filterSocialOrdersTable()"/>
+      <input class="search-input" id="soc-search" placeholder="Search name / refâ€¦" oninput="filterSocialOrdersTable()"/>
       <button class="btn btn-gold" id="add-social-order-btn" onclick="openSocialOrderModal()"><i class="fa-solid fa-plus"></i> Add Order</button>
     </div>
   </div>
@@ -514,23 +507,23 @@ select.filter-sel{background:var(--bg);border:1px solid var(--border);border-rad
   <!-- Stats -->
   <div class="stats-grid" style="margin-bottom:24px" id="social-stats-grid">
     <div class="stat-card">
-      <div class="stat-icon">📱</div>
-      <div class="stat-val" id="soc-total" style="color:#e1306c">—</div>
+      <div class="stat-icon">ðŸ“±</div>
+      <div class="stat-val" id="soc-total" style="color:#e1306c">â€”</div>
       <div class="stat-label">Total Social Orders</div>
     </div>
     <div class="stat-card">
-      <div class="stat-icon">⏳</div>
-      <div class="stat-val" id="soc-pending" style="color:var(--orange)">—</div>
+      <div class="stat-icon">â³</div>
+      <div class="stat-val" id="soc-pending" style="color:var(--orange)">â€”</div>
       <div class="stat-label">Pending</div>
     </div>
     <div class="stat-card">
-      <div class="stat-icon">✅</div>
-      <div class="stat-val" id="soc-delivered" style="color:var(--green)">—</div>
+      <div class="stat-icon">âœ…</div>
+      <div class="stat-val" id="soc-delivered" style="color:var(--green)">â€”</div>
       <div class="stat-label">Delivered</div>
     </div>
     <div class="stat-card">
-      <div class="stat-icon">💰</div>
-      <div class="stat-val" id="soc-revenue">—</div>
+      <div class="stat-icon">ðŸ’°</div>
+      <div class="stat-val" id="soc-revenue">â€”</div>
       <div class="stat-label">Total Revenue</div>
       <div class="stat-sub" style="color:var(--muted);font-size:0.65rem">social orders</div>
     </div>
@@ -539,28 +532,28 @@ select.filter-sel{background:var(--bg);border:1px solid var(--border);border-rad
   <!-- Platform breakdown -->
   <div class="stats-grid" style="margin-bottom:24px;grid-template-columns:repeat(5,1fr)" id="social-platform-grid">
     <div class="stat-card" style="text-align:center">
-      <div style="font-size:1.3rem">🔵</div>
-      <div class="stat-val" id="soc-fb" style="font-size:1.3rem">—</div>
+      <div style="font-size:1.3rem">ðŸ”µ</div>
+      <div class="stat-val" id="soc-fb" style="font-size:1.3rem">â€”</div>
       <div class="stat-label" style="font-size:0.68rem">Facebook</div>
     </div>
     <div class="stat-card" style="text-align:center">
-      <div style="font-size:1.3rem">🩷</div>
-      <div class="stat-val" id="soc-ig" style="font-size:1.3rem">—</div>
+      <div style="font-size:1.3rem">ðŸ©·</div>
+      <div class="stat-val" id="soc-ig" style="font-size:1.3rem">â€”</div>
       <div class="stat-label" style="font-size:0.68rem">Instagram</div>
     </div>
     <div class="stat-card" style="text-align:center">
-      <div style="font-size:1.3rem">🟢</div>
-      <div class="stat-val" id="soc-wa" style="font-size:1.3rem">—</div>
+      <div style="font-size:1.3rem">ðŸŸ¢</div>
+      <div class="stat-val" id="soc-wa" style="font-size:1.3rem">â€”</div>
       <div class="stat-label" style="font-size:0.68rem">WhatsApp</div>
     </div>
     <div class="stat-card" style="text-align:center">
-      <div style="font-size:1.3rem">⚫</div>
-      <div class="stat-val" id="soc-tt" style="font-size:1.3rem">—</div>
+      <div style="font-size:1.3rem">âš«</div>
+      <div class="stat-val" id="soc-tt" style="font-size:1.3rem">â€”</div>
       <div class="stat-label" style="font-size:0.68rem">TikTok</div>
     </div>
     <div class="stat-card" style="text-align:center">
-      <div style="font-size:1.3rem">⚪</div>
-      <div class="stat-val" id="soc-ot" style="font-size:1.3rem">—</div>
+      <div style="font-size:1.3rem">âšª</div>
+      <div class="stat-val" id="soc-ot" style="font-size:1.3rem">â€”</div>
       <div class="stat-label" style="font-size:0.68rem">Other</div>
     </div>
   </div>
@@ -586,7 +579,7 @@ select.filter-sel{background:var(--bg);border:1px solid var(--border);border-rad
   </div>
 </div>
 
-<!-- ── COUPONS PAGE (super_admin only) ── -->
+<!-- â”€â”€ COUPONS PAGE (super_admin only) â”€â”€ -->
 <div id="page-coupons" class="page" style="display:none">
   <div class="page-header">
     <h1><i class="fa-solid fa-tag" style="color:var(--gold);margin-right:8px"></i>Discount Coupons</h1>
@@ -614,12 +607,12 @@ select.filter-sel{background:var(--bg);border:1px solid var(--border);border-rad
   </div>
 </div>
 
-<!-- ── ADD/EDIT COUPON MODAL (super_admin only) ── -->
+<!-- â”€â”€ ADD/EDIT COUPON MODAL (super_admin only) â”€â”€ -->
 <div class="modal-overlay" id="coupon-modal">
   <div class="modal" style="max-width:480px">
     <div class="modal-header">
       <h3 id="coupon-modal-title"><i class="fa-solid fa-tag" style="color:var(--gold);margin-right:8px"></i>New Coupon</h3>
-      <button class="btn btn-outline btn-sm" onclick="closeModal('coupon-modal')">✕</button>
+      <button class="btn btn-outline btn-sm" onclick="closeModal('coupon-modal')">âœ•</button>
     </div>
     <div class="modal-body">
       <input type="hidden" id="cpn-id" value=""/>
@@ -656,7 +649,7 @@ select.filter-sel{background:var(--bg);border:1px solid var(--border);border-rad
       </div>
 
       <div class="form-group">
-        <label>Expiry Date <span style="color:var(--muted)">(optional — leave blank for no expiry)</span></label>
+        <label>Expiry Date <span style="color:var(--muted)">(optional â€” leave blank for no expiry)</span></label>
         <input type="date" id="cpn-expires"/>
       </div>
 
@@ -674,12 +667,12 @@ select.filter-sel{background:var(--bg);border:1px solid var(--border);border-rad
   </div>
 </div>
 
-<!-- ── ADD SOCIAL ORDER MODAL ── -->
+<!-- â”€â”€ ADD SOCIAL ORDER MODAL â”€â”€ -->
 <div class="modal-overlay" id="social-order-modal">
   <div class="modal" style="max-width:600px">
     <div class="modal-header">
       <h3 id="social-order-modal-title"><i class="fa-solid fa-share-nodes" style="color:#e1306c;margin-right:8px"></i>Add Social Media Order</h3>
-      <button class="btn btn-outline btn-sm" onclick="closeModal('social-order-modal')">✕</button>
+      <button class="btn btn-outline btn-sm" onclick="closeModal('social-order-modal')">âœ•</button>
     </div>
     <div class="modal-body">
 
@@ -701,11 +694,11 @@ select.filter-sel{background:var(--bg);border:1px solid var(--border);border-rad
         <div class="form-group">
           <label>Source Platform *</label>
           <select id="soc-source">
-            <option value="facebook">🔵 Facebook</option>
-            <option value="instagram">🩷 Instagram</option>
-            <option value="whatsapp">🟢 WhatsApp</option>
-            <option value="tiktok">⚫ TikTok</option>
-            <option value="other">⚪ Other</option>
+            <option value="facebook">ðŸ”µ Facebook</option>
+            <option value="instagram">ðŸ©· Instagram</option>
+            <option value="whatsapp">ðŸŸ¢ WhatsApp</option>
+            <option value="tiktok">âš« TikTok</option>
+            <option value="other">âšª Other</option>
           </select>
         </div>
       </div>
@@ -734,7 +727,7 @@ select.filter-sel{background:var(--bg);border:1px solid var(--border);border-rad
       </div>
 
       <!-- Notes -->
-      <div class="form-group"><label>Notes / Remarks <span style="color:var(--muted)">(optional)</span></label><textarea id="soc-notes" rows="2" placeholder="e.g. Customer wants blue color, urgent delivery…"></textarea></div>
+      <div class="form-group"><label>Notes / Remarks <span style="color:var(--muted)">(optional)</span></label><textarea id="soc-notes" rows="2" placeholder="e.g. Customer wants blue color, urgent deliveryâ€¦"></textarea></div>
 
       <!-- Items Section -->
       <div class="form-group">
@@ -748,7 +741,7 @@ select.filter-sel{background:var(--bg);border:1px solid var(--border);border-rad
           <span style="font-size:0.68rem;color:var(--muted);text-transform:uppercase">Cost</span>
           <span style="font-size:0.68rem;color:var(--muted);text-transform:uppercase">Sale</span>
           <span style="font-size:0.68rem;color:var(--muted);text-transform:uppercase">Total</span>
-          <span style="font-size:0.68rem;color:var(--muted);text-transform:uppercase" title="Toggle custom item">✏️</span>
+          <span style="font-size:0.68rem;color:var(--muted);text-transform:uppercase" title="Toggle custom item">âœï¸</span>
           <span></span>
         </div>
         <div id="soc-items-container"></div>
@@ -800,10 +793,10 @@ select.filter-sel{background:var(--bg);border:1px solid var(--border);border-rad
       <!-- Auto-calculated totals -->
       <div style="background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:14px;font-size:0.88rem;">
         <div style="display:flex;justify-content:space-between;margin-bottom:6px"><span style="color:var(--muted)">Subtotal</span><span id="soc-subtotal">PKR 0</span></div>
-        <div style="display:flex;justify-content:space-between;margin-bottom:6px" id="soc-discount-row"><span style="color:var(--muted)">Discount</span><span id="soc-discount-display" style="color:var(--green)">− PKR 0</span></div>
+        <div style="display:flex;justify-content:space-between;margin-bottom:6px" id="soc-discount-row"><span style="color:var(--muted)">Discount</span><span id="soc-discount-display" style="color:var(--green)">âˆ’ PKR 0</span></div>
         <div style="display:flex;justify-content:space-between;margin-bottom:6px"><span style="color:var(--muted)">Delivery Fee</span><span id="soc-delivery-display" style="color:var(--orange)">PKR 200</span></div>
         <div style="display:flex;justify-content:space-between;font-weight:700;font-size:1rem;border-top:1px solid var(--border);padding-top:8px;margin-top:2px"><span>Total</span><span id="soc-total-display" style="color:var(--gold)">PKR 200</span></div>
-        <div style="display:none;justify-content:space-between;margin-top:6px" id="soc-advance-row"><span style="color:var(--muted)">Advance Paid</span><span id="soc-advance-display" style="color:var(--green)">− PKR 0</span></div>
+        <div style="display:none;justify-content:space-between;margin-top:6px" id="soc-advance-row"><span style="color:var(--muted)">Advance Paid</span><span id="soc-advance-display" style="color:var(--green)">âˆ’ PKR 0</span></div>
         <div style="display:none;justify-content:space-between;font-weight:700;font-size:1rem;margin-top:6px" id="soc-due-row"><span>Amount Due</span><span id="soc-due-display" style="color:var(--red)">PKR 200</span></div>
         <p id="soc-delivery-note" style="font-size:0.72rem;color:var(--muted);margin-top:6px">COD: Free delivery for orders PKR 5,000+, otherwise PKR 200.</p>
       </div>
@@ -816,12 +809,12 @@ select.filter-sel{background:var(--bg);border:1px solid var(--border);border-rad
   </div>
 </div>
 
-<!-- ── SOCIAL ORDER DETAIL MODAL ── -->
+<!-- â”€â”€ SOCIAL ORDER DETAIL MODAL â”€â”€ -->
 <div class="modal-overlay" id="social-detail-modal">
   <div class="modal" style="max-width:520px">
     <div class="modal-header">
       <h3 id="social-detail-title">Social Order Detail</h3>
-      <button class="btn btn-outline btn-sm" onclick="closeModal('social-detail-modal')">✕</button>
+      <button class="btn btn-outline btn-sm" onclick="closeModal('social-detail-modal')">âœ•</button>
     </div>
     <div class="modal-body" id="social-detail-body"></div>
     <div class="modal-footer">
@@ -835,7 +828,7 @@ select.filter-sel{background:var(--bg);border:1px solid var(--border);border-rad
   <div class="modal" style="max-width:400px">
     <div class="modal-header">
       <h3 id="add-stock-title">Add Stock</h3>
-      <button class="btn btn-outline btn-sm" onclick="closeModal('add-stock-modal')">×</button>
+      <button class="btn btn-outline btn-sm" onclick="closeModal('add-stock-modal')">Ã—</button>
     </div>
     <div class="modal-body">
       <input type="hidden" id="add-stock-id" />
@@ -909,7 +902,7 @@ select.filter-sel{background:var(--bg);border:1px solid var(--border);border-rad
       <p id="product-count-label" style="color:var(--muted);font-size:0.8rem;margin-top:2px;"></p>
     </div>
     <div class="ml-auto" style="display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
-      <input class="search-input" id="product-search" placeholder="Search…" oninput="filterProductsTable()"/>
+      <input class="search-input" id="product-search" placeholder="Searchâ€¦" oninput="filterProductsTable()"/>
       <select class="filter-sel" id="product-category-filter" onchange="filterProductsTable()" title="Filter by category">
 
         <option value="">All Categories</option>
@@ -948,7 +941,7 @@ select.filter-sel{background:var(--bg);border:1px solid var(--border);border-rad
   <div id="products-body" class="product-admin-grid"></div>
 </div>
 
-<!-- ── MESSAGES ── -->
+<!-- â”€â”€ MESSAGES â”€â”€ -->
 <div id="page-messages" class="page" style="display:none">
   <div class="page-header">
     <h1>Messages</h1>
@@ -962,7 +955,7 @@ select.filter-sel{background:var(--bg);border:1px solid var(--border);border-rad
   </div>
 </div>
 
-<!-- ── REVIEWS ── -->
+<!-- â”€â”€ REVIEWS â”€â”€ -->
 <div id="page-reviews" class="page" style="display:none">
   <div class="page-header">
     <h1>Reviews</h1>
@@ -981,12 +974,12 @@ select.filter-sel{background:var(--bg);border:1px solid var(--border);border-rad
     </div>
     <table>
       <thead><tr><th>Customer</th><th>Order</th><th>Rating</th><th>Review</th><th>Date</th><th>Status</th><th>Action</th></tr></thead>
-      <tbody id="reviews-body"><tr><td colspan="7" style="text-align:center;padding:40px;color:var(--muted)">Loading…</td></tr></tbody>
+      <tbody id="reviews-body"><tr><td colspan="7" style="text-align:center;padding:40px;color:var(--muted)">Loadingâ€¦</td></tr></tbody>
     </table>
   </div>
 </div>
 
-<!-- ── SUBSCRIBERS ── -->
+<!-- â”€â”€ SUBSCRIBERS â”€â”€ -->
 <div id="page-subscribers" class="page" style="display:none">
   <div class="page-header">
     <h1>Subscribers</h1>
@@ -1006,19 +999,19 @@ select.filter-sel{background:var(--bg);border:1px solid var(--border);border-rad
 
 <div id="promo-modal" style="display:none;position:fixed;inset:0;z-index:9000;background:rgba(44,31,20,0.6);align-items:center;justify-content:center;padding:20px;">
   <div style="background:var(--card);border:1px solid var(--border);border-radius:16px;padding:32px;max-width:560px;width:100%;position:relative;max-height:90vh;overflow-y:auto;">
-    <button onclick="closePromoModal()" style="position:absolute;top:16px;right:16px;background:none;border:none;color:var(--muted);font-size:1.2rem;cursor:pointer;">✕</button>
+    <button onclick="closePromoModal()" style="position:absolute;top:16px;right:16px;background:none;border:none;color:var(--muted);font-size:1.2rem;cursor:pointer;">âœ•</button>
     <h3 style="margin-bottom:4px;color:var(--text);">Send Promotion Email</h3>
     <p style="font-size:.78rem;color:var(--muted);margin-bottom:22px;">This will be sent to <strong id="promo-sub-count" style="color:var(--gold);">all</strong> active subscribers.</p>
 
     <div style="display:flex;flex-direction:column;gap:14px;">
       <div>
         <label style="font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:6px;">Email Subject *</label>
-        <input type="text" id="promo-subject" placeholder="e.g. New Collection is Live 💛"
+        <input type="text" id="promo-subject" placeholder="e.g. New Collection is Live ðŸ’›"
           style="width:100%;background:var(--bg);border:1px solid var(--border);color:var(--text);padding:11px 14px;font-family:inherit;font-size:.85rem;border-radius:6px;outline:none;box-sizing:border-box;">
       </div>
       <div>
         <label style="font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:6px;">Message Body *</label>
-        <textarea id="promo-body" rows="6" placeholder="Write your promotional message here…"
+        <textarea id="promo-body" rows="6" placeholder="Write your promotional message hereâ€¦"
           style="width:100%;background:var(--bg);border:1px solid var(--border);color:var(--text);padding:11px 14px;font-family:inherit;font-size:.85rem;border-radius:6px;outline:none;resize:vertical;box-sizing:border-box;"></textarea>
       </div>
       <div>
@@ -1036,7 +1029,7 @@ select.filter-sel{background:var(--bg);border:1px solid var(--border);border-rad
   </div>
 </div>
 
-<!-- ── USERS & ROLES ── -->
+<!-- â”€â”€ USERS & ROLES â”€â”€ -->
 <div id="page-visitors" class="page" style="display:none">
   <div class="page-header">
     <h1><i class="fa-solid fa-signal" style="color:#22c55e;margin-right:8px"></i>Live Visitors</h1>
@@ -1052,19 +1045,19 @@ select.filter-sel{background:var(--bg);border:1px solid var(--border);border-rad
   <!-- Summary cards -->
   <div class="stats-grid" style="margin-bottom:24px">
     <div class="stat-card">
-      <div class="stat-icon">🟢</div>
+      <div class="stat-icon">ðŸŸ¢</div>
       <div class="stat-val" id="v-count" style="color:#22c55e;font-size:2.4rem">0</div>
       <div class="stat-label">Active Right Now</div>
       <div class="stat-sub" style="color:var(--muted)">last 35 seconds</div>
     </div>
     <div class="stat-card">
-      <div class="stat-icon">📄</div>
-      <div class="stat-val" id="v-pages-count" style="font-size:2rem">—</div>
+      <div class="stat-icon">ðŸ“„</div>
+      <div class="stat-val" id="v-pages-count" style="font-size:2rem">â€”</div>
       <div class="stat-label">Pages Being Viewed</div>
     </div>
     <div class="stat-card">
-      <div class="stat-icon">🕐</div>
-      <div class="stat-val" id="v-last-update" style="font-size:1rem;color:var(--muted)">—</div>
+      <div class="stat-icon">ðŸ•</div>
+      <div class="stat-val" id="v-last-update" style="font-size:1rem;color:var(--muted)">â€”</div>
       <div class="stat-label">Last Updated</div>
     </div>
   </div>
@@ -1092,7 +1085,7 @@ select.filter-sel{background:var(--bg);border:1px solid var(--border);border-rad
   </div>
 </div>
 
-<!-- ── ABANDONED ORDERS ── -->
+<!-- â”€â”€ ABANDONED ORDERS â”€â”€ -->
 <div id="page-abandoned" class="page" style="display:none">
   <div class="page-header">
     <h1><i class="fa-solid fa-cart-arrow-down" style="color:#f97316;margin-right:8px"></i>Abandoned Orders</h1>
@@ -1110,17 +1103,17 @@ select.filter-sel{background:var(--bg);border:1px solid var(--border);border-rad
   <!-- Summary cards -->
   <div class="stats-grid" style="margin-bottom:24px" id="abandoned-stats-grid">
     <div class="stat-card">
-      <div class="stat-icon">🛒</div>
+      <div class="stat-icon">ðŸ›’</div>
       <div class="stat-val" id="ab-total" style="color:#f97316">0</div>
       <div class="stat-label">Total Abandoned</div>
     </div>
     <div class="stat-card">
-      <div class="stat-icon">✅</div>
+      <div class="stat-icon">âœ…</div>
       <div class="stat-val" id="ab-converted" style="color:#22c55e">0</div>
       <div class="stat-label">Recovered</div>
     </div>
     <div class="stat-card">
-      <div class="stat-icon">💰</div>
+      <div class="stat-icon">ðŸ’°</div>
       <div class="stat-val" id="ab-lost-value">PKR 0</div>
       <div class="stat-label">Lost Revenue</div>
       <div class="stat-sub" style="color:var(--muted);font-size:0.65rem">abandoned only</div>
@@ -1179,7 +1172,7 @@ select.filter-sel{background:var(--bg);border:1px solid var(--border);border-rad
   </div>
 </div>
 
-<!-- ── SETTINGS ── -->
+<!-- â”€â”€ SETTINGS â”€â”€ -->
 <div id="page-settings" class="page" style="display:none">
   <div class="page-header"><h1>Settings</h1></div>
 
@@ -1240,7 +1233,7 @@ select.filter-sel{background:var(--bg);border:1px solid var(--border);border-rad
   </div>
 </div>
 
-<!-- ── INVOICES PAGE ── -->
+<!-- â”€â”€ INVOICES PAGE â”€â”€ -->
 <div id="page-invoices" class="page" style="display:none; width: 100%;">
   <div class="page-header">
     <h1><i class="fa-solid fa-file-invoice" style="color:var(--gold);margin-right:8px"></i>Invoice History</h1>
@@ -1266,7 +1259,7 @@ select.filter-sel{background:var(--bg);border:1px solid var(--border);border-rad
   </div>
 </div>
 
-<!-- ── SPENDINGS PAGE ── -->
+<!-- â”€â”€ SPENDINGS PAGE â”€â”€ -->
 <div id="page-spendings" class="page" style="display:none; width: 100%;">
   <div class="page-header">
     <h1><i class="fa-solid fa-money-bill-transfer" style="color:var(--gold);margin-right:8px"></i>Spendings & Investments</h1>
@@ -1292,14 +1285,14 @@ select.filter-sel{background:var(--bg);border:1px solid var(--border);border-rad
 
 </div><!-- /main -->
 
-<!-- ════════════════════════════ MODALS ════════════════════════ -->
+<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• MODALS â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
 
 <!-- Add Spending Modal -->
 <div class="modal-overlay" id="spending-modal">
   <div class="modal" style="max-width:400px">
     <div class="modal-header">
       <h3 id="spending-modal-title">Add Spending</h3>
-      <button class="btn btn-outline btn-sm" onclick="closeModal('spending-modal')">✕</button>
+      <button class="btn btn-outline btn-sm" onclick="closeModal('spending-modal')">âœ•</button>
     </div>
     <div class="modal-body">
       <div class="form-group">
@@ -1328,7 +1321,7 @@ select.filter-sel{background:var(--bg);border:1px solid var(--border);border-rad
   <div class="modal" style="max-width:520px;">
     <div class="modal-header">
       <h2>Pinned Collections</h2>
-      <button class="btn btn-outline btn-sm" onclick="closePinnedModal()">✕</button>
+      <button class="btn btn-outline btn-sm" onclick="closePinnedModal()">âœ•</button>
     </div>
     <div class="modal-body">
       <p style="margin-bottom:15px;color:var(--muted);font-size:0.9rem;">Pinned collections appear as horizontal scrolling rows on the homepage before the featured sections.</p>
@@ -1379,7 +1372,7 @@ select.filter-sel{background:var(--bg);border:1px solid var(--border);border-rad
   <div class="modal">
     <div class="modal-header">
       <h3 id="product-modal-title">Add Product</h3>
-      <button class="btn btn-outline btn-sm" onclick="closeModal('product-modal')">✕</button>
+      <button class="btn btn-outline btn-sm" onclick="closeModal('product-modal')">âœ•</button>
     </div>
     <div class="modal-body">
       <input type="hidden" id="product-edit-id"/>
@@ -1402,7 +1395,7 @@ select.filter-sel{background:var(--bg);border:1px solid var(--border);border-rad
       <div class="form-row">
         <div class="form-group"><label>Product Icon</label>
           <div id="emoji-picker" style="display:flex;flex-wrap:wrap;gap:8px;margin-top:4px;"></div>
-          <input type="hidden" id="p-emoji" value="👗"/>
+          <input type="hidden" id="p-emoji" value="ðŸ‘—"/>
           <p style="font-size:.73rem;color:var(--muted);margin-top:6px;">Icon auto-suggests based on category. Click to change.</p>
         </div>
       </div>
@@ -1476,7 +1469,7 @@ select.filter-sel{background:var(--bg);border:1px solid var(--border);border-rad
         </div>
       </div>
       <div class="form-row">
-        <div class="form-group"><label>Purchase Price (PKR) * <span style="color:var(--muted);font-weight:400;">— cost you paid</span></label><input id="p-purchase-price" type="number" placeholder="6000"/></div>
+        <div class="form-group"><label>Purchase Price (PKR) * <span style="color:var(--muted);font-weight:400;">â€” cost you paid</span></label><input id="p-purchase-price" type="number" placeholder="6000"/></div>
         <div class="form-group"><label>Sale Price (PKR) *</label><input id="p-price" type="number" placeholder="12500"/></div>
       </div>
       <div class="form-row">
@@ -1491,7 +1484,7 @@ select.filter-sel{background:var(--bg);border:1px solid var(--border);border-rad
           <select id="p-instock"><option value="true">Yes</option><option value="false">No</option></select>
         </div>
       </div>
-      <div class="form-group"><label>Description</label><textarea id="p-desc" rows="3" placeholder="Product description…"></textarea></div>
+      <div class="form-group"><label>Description</label><textarea id="p-desc" rows="3" placeholder="Product descriptionâ€¦"></textarea></div>
       <div class="form-row">
         <div class="form-group">
           <label>Sizes <span style="color:var(--muted);font-weight:400">(type a size, press Enter to add)</span></label>
@@ -1509,9 +1502,9 @@ select.filter-sel{background:var(--bg);border:1px solid var(--border);border-rad
         </div>
       </div>
 
-      <!-- ── Gallery: Images ── -->
+      <!-- â”€â”€ Gallery: Images â”€â”€ -->
       <div class="form-group">
-        <label>Product Images (gallery — first image is the main photo)</label>
+        <label>Product Images (gallery â€” first image is the main photo)</label>
         <input type="file" id="p-image-input" accept="image/*" multiple style="display:none" onchange="handleImageSelect(event)"/>
         <button type="button" class="btn btn-outline" onclick="document.getElementById('p-image-input').click()">
           <i class="fa-solid fa-images"></i> Browse Images
@@ -1520,7 +1513,7 @@ select.filter-sel{background:var(--bg);border:1px solid var(--border);border-rad
         <div id="image-gallery-preview" style="display:flex;flex-wrap:wrap;gap:10px;margin-top:12px;"></div>
       </div>
 
-      <!-- ── Video ── -->
+      <!-- â”€â”€ Video â”€â”€ -->
       <div class="form-group">
         <label>Product Video (optional)</label>
         <input type="file" id="p-video-input" accept="video/*" style="display:none" onchange="handleVideoSelect(event)"/>
@@ -1543,7 +1536,7 @@ select.filter-sel{background:var(--bg);border:1px solid var(--border);border-rad
   <div class="modal">
     <div class="modal-header">
       <h3>Message Detail</h3>
-      <button class="btn btn-outline btn-sm" onclick="closeModal('message-modal')">✕</button>
+      <button class="btn btn-outline btn-sm" onclick="closeModal('message-modal')">âœ•</button>
     </div>
     <div class="modal-body" id="message-modal-body"></div>
     <div class="modal-footer">
@@ -1557,7 +1550,7 @@ select.filter-sel{background:var(--bg);border:1px solid var(--border);border-rad
   <div class="modal">
     <div class="modal-header">
       <h3 id="order-modal-title">Order Detail</h3>
-      <button class="btn btn-outline btn-sm" onclick="closeModal('order-modal')">✕</button>
+      <button class="btn btn-outline btn-sm" onclick="closeModal('order-modal')">âœ•</button>
     </div>
     <div class="modal-body" id="order-modal-body"></div>
     <div class="modal-footer">
@@ -1571,7 +1564,7 @@ select.filter-sel{background:var(--bg);border:1px solid var(--border);border-rad
   <div class="modal" style="max-width:640px;">
     <div class="modal-header">
       <h3 id="day-statement-title">Daily Statement</h3>
-      <button class="btn btn-outline btn-sm" onclick="closeModal('day-statement-modal')">✕</button>
+      <button class="btn btn-outline btn-sm" onclick="closeModal('day-statement-modal')">âœ•</button>
     </div>
     <div class="modal-body" id="day-statement-body"></div>
     <div class="modal-footer">
@@ -1585,7 +1578,7 @@ select.filter-sel{background:var(--bg);border:1px solid var(--border);border-rad
   <div class="modal">
     <div class="modal-header">
       <h3>Edit User</h3>
-      <button class="btn btn-outline btn-sm" onclick="closeModal('edit-user-modal')">✕</button>
+      <button class="btn btn-outline btn-sm" onclick="closeModal('edit-user-modal')">âœ•</button>
     </div>
     <div class="modal-body">
       <input type="hidden" id="e-user-id" />
@@ -1612,7 +1605,7 @@ select.filter-sel{background:var(--bg);border:1px solid var(--border);border-rad
   <div class="modal">
     <div class="modal-header">
       <h3>Add Admin User</h3>
-      <button class="btn btn-outline btn-sm" onclick="closeModal('role-modal')">✕</button>
+      <button class="btn btn-outline btn-sm" onclick="closeModal('role-modal')">âœ•</button>
     </div>
     <div class="modal-body">
       <div class="form-row">
@@ -1623,10 +1616,10 @@ select.filter-sel{background:var(--bg);border:1px solid var(--border);border-rad
       <div class="form-group"><label>Password *</label><input type="password" id="r-password" placeholder="Min 8 characters"/></div>
       <div class="form-group"><label>Role *</label>
         <select id="r-role">
-          <option value="super_admin">Super Admin — Full access to everything, including finance and deleting other roles</option>
-          <option value="admin">Admin — Sees all data &amp; can modify, except earnings &amp; Excel exports</option>
-          <option value="supervisor">Support Staff — Messages, orders (view + status + reply), and review approvals only</option>
-          <option value="investor">Investor — 100% Read-only access. Can view everything but cannot change anything.</option>
+          <option value="super_admin">Super Admin â€” Full access to everything, including finance and deleting other roles</option>
+          <option value="admin">Admin â€” Sees all data &amp; can modify, except earnings &amp; Excel exports</option>
+          <option value="supervisor">Support Staff â€” Messages, orders (view + status + reply), and review approvals only</option>
+          <option value="investor">Investor â€” 100% Read-only access. Can view everything but cannot change anything.</option>
         </select>
       </div>
     </div>
@@ -1642,13 +1635,13 @@ select.filter-sel{background:var(--bg);border:1px solid var(--border);border-rad
   <div class="modal">
     <div class="modal-header">
       <h3>Reply To Message</h3>
-      <button class="btn btn-outline btn-sm" onclick="closeModal('reply-modal')">✕</button>
+      <button class="btn btn-outline btn-sm" onclick="closeModal('reply-modal')">âœ•</button>
     </div>
     <div class="modal-body">
       <input type="hidden" id="reply-message-id"/>
       <div class="form-group">
         <label>Your Reply</label>
-        <textarea id="reply-text" rows="5" placeholder="Type your reply to this message…"></textarea>
+        <textarea id="reply-text" rows="5" placeholder="Type your reply to this messageâ€¦"></textarea>
       </div>
     </div>
     <div class="modal-footer">
@@ -1661,7 +1654,7 @@ select.filter-sel{background:var(--bg);border:1px solid var(--border);border-rad
 <!-- Toast Container -->
 <div id="toast"></div>
 
-<!-- ════════════════════════════ JAVASCRIPT ═════════════════════ -->
+<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• JAVASCRIPT â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
 <script>
 const IS_LOCAL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || window.location.protocol === 'file:';
 const API = IS_LOCAL ? 'http://localhost:3001/api' : 'https://tovessa.com/api';
@@ -1675,7 +1668,7 @@ let allMessages  = [];
 let allSubscribers = [];
 let allCoupons   = [];
 
-/* ═══════════════════ BOOT ═══════════════════ */
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• BOOT â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 window.addEventListener('DOMContentLoaded', () => {
   document.getElementById('login-password').addEventListener('keydown', e => {
     if (e.key === 'Enter') doLogin();
@@ -1696,14 +1689,14 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-/* ═══════════════════ AUTH ═══════════════════ */
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• AUTH â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 function showLogin() {
-  /* FIX: use style.display directly — NOT classList, which gets overridden by inline styles */
+  /* FIX: use style.display directly â€” NOT classList, which gets overridden by inline styles */
   document.getElementById('login-screen').style.display = 'flex';
 }
 
 function hideLogin() {
-  /* FIX: directly set display:none — this overrides any CSS class */
+  /* FIX: directly set display:none â€” this overrides any CSS class */
   document.getElementById('login-screen').style.display = 'none';
 }
 
@@ -1728,7 +1721,7 @@ async function doLogin() {
   errEl.style.display = 'none';
   if (!username || !password) { errEl.textContent = 'Enter username and password.'; errEl.style.display = 'block'; return; }
 
-  btn.innerHTML = '<span class="spinner"></span> Signing in…';
+  btn.innerHTML = '<span class="spinner"></span> Signing inâ€¦';
   btn.disabled  = true;
 
   try {
@@ -1751,7 +1744,7 @@ async function doLogin() {
     currentUser = data.user;
     localStorage.setItem('tovessa_admin_token', adminToken);
 
-    /* ← THE FIX: hide login screen BEFORE calling initDashboard */
+    /* â† THE FIX: hide login screen BEFORE calling initDashboard */
     hideLogin();
     onLoginSuccess();
 
@@ -1771,7 +1764,7 @@ function onLoginSuccess() {
   applyRolePermissions(currentUser.role);
 
   /* Supervisors don't have dashboard access (server blocks /admin/stats for
-     them) — they're redirected to the Orders page by applyRolePermissions,
+     them) â€” they're redirected to the Orders page by applyRolePermissions,
      so skip the dashboard fetch entirely for them. */
   if (currentUser.role !== 'supervisor') loadDashboard();
 
@@ -1781,14 +1774,14 @@ function onLoginSuccess() {
 function applyRolePermissions(role) {
   const existingStyle = document.getElementById('investor-styles');
   if (existingStyle) existingStyle.remove();
-  /* Super Admin & CEO — sees everything */
+  /* Super Admin & CEO â€” sees everything */
   if (['ceo', 'super_admin'].includes(role)) {
     document.getElementById('activity-btn').style.display = 'inline-flex';
     document.getElementById('nav-spendings').style.display = 'flex';
     document.getElementById('card-spendings').style.display = 'flex';
     return;
   }
-  /* Investor — sees everything (read-only), including spendings */
+  /* Investor â€” sees everything (read-only), including spendings */
   if (role === 'investor') {
     document.getElementById('nav-spendings').style.display = 'flex';
     document.getElementById('card-spendings').style.display = 'flex';
@@ -1796,11 +1789,11 @@ function applyRolePermissions(role) {
   /* Hide Add User button for non-super admins */
   document.getElementById('add-user-btn').style.display = 'none';
 
-  /* Admin — hide earnings stats + Excel export buttons */
+  /* Admin â€” hide earnings stats + Excel export buttons */
   if (role === 'admin') {
-    /* Hide Settings nav entirely — Change Password access is super_admin only now */
+    /* Hide Settings nav entirely â€” Change Password access is super_admin only now */
     document.getElementById('nav-settings')?.style.setProperty('display', 'none');
-    /* Coupons are super_admin-only — discount decisions stay with the owner */
+    /* Coupons are super_admin-only â€” discount decisions stay with the owner */
     document.getElementById('nav-coupons')?.style.setProperty('display', 'none');
     document.getElementById('launch-date-section')?.style.setProperty('display', 'none');
     /* Hide revenue stat card */
@@ -1813,15 +1806,15 @@ function applyRolePermissions(role) {
     if (totalProfitCard) totalProfitCard.style.display = 'none';
     /* Hide Excel export buttons */
     document.querySelectorAll('[onclick*="exportExcel"]').forEach(btn => btn.style.display = 'none');
-    /* Hide cost/purchase-price column in products table — only super admin sees margins */
+    /* Hide cost/purchase-price column in products table â€” only super admin sees margins */
     document.querySelectorAll('.cost-cell').forEach(el => el.style.display = 'none');
-    /* Hide lifetime earnings + daily statements sections — super admin only */
+    /* Hide lifetime earnings + daily statements sections â€” super admin only */
     document.getElementById('lifetime-earnings-wrap')?.style.setProperty('display', 'none');
     document.getElementById('daily-statements-wrap')?.style.setProperty('display', 'none');
     document.getElementById('monthly-statements-wrap')?.style.setProperty('display', 'none');
   }
 
-  /* Supervisor — restrict to only Orders + Messages in sidebar */
+  /* Supervisor â€” restrict to only Orders + Messages in sidebar */
   if (role === 'supervisor') {
     /* Hide sidebar items not allowed */
     ['nav-dashboard','nav-products','nav-subscribers','nav-roles','nav-settings','nav-coupons'].forEach(id => {
@@ -1846,7 +1839,7 @@ function applyRolePermissions(role) {
     showPage('orders');
   }
 
-  /* Investor — 100% read-only. Hide all action buttons using a global style injection */
+  /* Investor â€” 100% read-only. Hide all action buttons using a global style injection */
   if (role === 'investor') {
     const style = document.createElement('style');
     style.id = 'investor-styles';
@@ -1897,7 +1890,7 @@ function clearSession() {
   if (sseSource) { sseSource.close(); sseSource = null; }
 }
 
-/* ═══════════════════ API HELPER ═══════════════════ */
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• API HELPER â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 function apiFetch(path, options = {}) {
   let finalPath = path;
   if (!options.method || options.method === 'GET') {
@@ -1907,7 +1900,7 @@ function apiFetch(path, options = {}) {
     ...options,
     headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${adminToken}`, ...(options.headers || {}) },
   }).then(res => {
-    /* Global session-kill handler — if the server says this token is no
+    /* Global session-kill handler â€” if the server says this token is no
        longer valid (password changed elsewhere, account deactivated,
        deleted, etc.) force the user back to the login screen right away
        instead of leaving them on a broken page. Skip this for the
@@ -1916,7 +1909,7 @@ function apiFetch(path, options = {}) {
     if (res.status === 401 && !path.includes('/auth/change-password') && !path.includes('/auth/login')) {
       res.clone().json().then(data => {
         /* Only force-logout + show error if there is an active session.
-           If currentUser is already null the user logged out intentionally — don't show anything. */
+           If currentUser is already null the user logged out intentionally â€” don't show anything. */
         if (!currentUser) return;
         clearSession();
         showLogin();
@@ -1935,7 +1928,7 @@ function apiFetch(path, options = {}) {
   });
 }
 
-/* ═══════════════════ SSE NOTIFICATIONS ═══════════════════ */
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• SSE NOTIFICATIONS â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 function connectSSE() {
   if (!adminToken) return;
   if (sseSource) sseSource.close();
@@ -1955,19 +1948,19 @@ function connectSSE() {
       if (payload.event === 'new_social_order') {
         const d = payload.data;
         const srcLabel = {facebook:'Facebook',instagram:'Instagram',whatsapp:'WhatsApp',tiktok:'TikTok',other:'Other'}[d?.source] || d?.source || 'Social';
-        toast(`📱 New ${srcLabel} order from ${d?.customer} — PKR ${(d?.total||0).toLocaleString()}`, 'success');
+        toast(`ðŸ“± New ${srcLabel} order from ${d?.customer} â€” PKR ${(d?.total||0).toLocaleString()}`, 'success');
         loadStats();
         const badge = document.getElementById('social-badge');
         if (badge) { badge.style.display = 'flex'; badge.textContent = parseInt(badge.textContent || '0') + 1; }
         if (document.getElementById('page-social-orders').style.display !== 'none') loadSocialOrders();
       }
       if (payload.event === 'new_order') {
-        toast(`🛍️ New order: ${payload.data?.id} from ${payload.data?.customer}`, 'success');
+        toast(`ðŸ›ï¸ New order: ${payload.data?.id} from ${payload.data?.customer}`, 'success');
         loadStats();
         if (document.getElementById('page-orders').style.display !== 'none') loadOrders();
       }
       if (payload.event === 'new_message') {
-        toast(`✉️ New message from ${payload.data?.from}`, 'success');
+        toast(`âœ‰ï¸ New message from ${payload.data?.from}`, 'success');
         loadStats();
         if (document.getElementById('page-messages').style.display !== 'none') loadMessages();
       }
@@ -1977,7 +1970,7 @@ function connectSSE() {
 
       if (payload.event === 'new_abandoned') {
         const d = payload.data;
-        toast(`🛒 Abandoned checkout — ${d?.delivery?.fname || 'Someone'} left without ordering`, 'warning');
+        toast(`ðŸ›’ Abandoned checkout â€” ${d?.delivery?.fname || 'Someone'} left without ordering`, 'warning');
         /* Update badge */
         const badge = document.getElementById('abandoned-badge');
         if (badge) { badge.style.display = 'flex'; badge.textContent = parseInt(badge.textContent || '0') + 1; }
@@ -2020,15 +2013,15 @@ function renderNotifPanel() {
 }
 
 function eventLabel(e) {
-  return { new_order:'New Order 📦', new_message:'New Message ✉️', new_subscriber:'New Subscriber 📧', order_status_changed:'Order Updated 🔄', product_added:'Product Added 🛍️', new_social_order:'Social Order 📱' }[e] || e;
+  return { new_order:'New Order ðŸ“¦', new_message:'New Message âœ‰ï¸', new_subscriber:'New Subscriber ðŸ“§', order_status_changed:'Order Updated ðŸ”„', product_added:'Product Added ðŸ›ï¸', new_social_order:'Social Order ðŸ“±' }[e] || e;
 }
 
 function notifDesc(n) {
-  if (n.event === 'new_order') return `${n.data?.id} — ${n.data?.customer} — PKR ${(n.data?.total || 0).toLocaleString()}`;
-  if (n.event === 'new_social_order') return `${n.data?.customer} — PKR ${(n.data?.total || 0).toLocaleString()} via ${n.data?.source}`;
-  if (n.event === 'new_message') return `From ${n.data?.from} (${n.data?.email}) — ${n.data?.subject}`;
+  if (n.event === 'new_order') return `${n.data?.id} â€” ${n.data?.customer} â€” PKR ${(n.data?.total || 0).toLocaleString()}`;
+  if (n.event === 'new_social_order') return `${n.data?.customer} â€” PKR ${(n.data?.total || 0).toLocaleString()} via ${n.data?.source}`;
+  if (n.event === 'new_message') return `From ${n.data?.from} (${n.data?.email}) â€” ${n.data?.subject}`;
   if (n.event === 'new_subscriber') return `${n.data?.email} subscribed`;
-  if (n.event === 'order_status_changed') return `${n.data?.id} → ${n.data?.status}`;
+  if (n.event === 'order_status_changed') return `${n.data?.id} â†’ ${n.data?.status}`;
   return '';
 }
 
@@ -2044,7 +2037,7 @@ function toggleNotifPanel() {
   document.getElementById('notif-panel').classList.toggle('open');
 }
 
-/* ═════════════════════ DASHBOARD ═════════════════════ */
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• DASHBOARD â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 let _dashFilter = 'combined'; /* combined | website | social */
 
 function setDashFilter(f) {
@@ -2065,7 +2058,7 @@ document.addEventListener('click', (e) => {
   }
 });
 
-/* ═══════════════════ PAGE NAVIGATION ═══════════════════ */
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• PAGE NAVIGATION â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 function showPage(name) {
   document.querySelectorAll('.page').forEach(p => p.style.display = 'none');
   document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
@@ -2096,7 +2089,7 @@ function showPage(name) {
   if (name === 'invoices')      loadInvoices();
 }
 
-/* ═══════════════════ DASHBOARD ═══════════════════ */
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• DASHBOARD â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 async function loadDashboard() {
   /* Run these concurrently without waiting for all to finish before rendering each */
   loadStats();
@@ -2200,7 +2193,7 @@ function renderDashStats(data) {
     document.getElementById('s-outstanding-cod').textContent = 'PKR ' + out.toLocaleString();
   }
 
-  /* Pending badge — always from website orders */
+  /* Pending badge â€” always from website orders */
   const pending = data.orders?.statuses?.Pending || 0;
   document.getElementById('s-pending-text').textContent = pending ? `${pending} pending` : '';
   const badge = document.getElementById('pending-badge');
@@ -2259,7 +2252,7 @@ async function loadRecentOrders() {
       return `
       <tr style="cursor:pointer" onclick="${clickFn}">
         <td><code style="color:var(--gold)">${o.id}</code>${badge}</td>
-        <td>${o.delivery?.fname || o.customerName || '—'} ${o.delivery?.lname || ''}</td>
+        <td>${o.delivery?.fname || o.customerName || 'â€”'} ${o.delivery?.lname || ''}</td>
         <td>PKR ${(o.total || 0).toLocaleString()}</td>
         <td>${(o.paymentMethod || 'cod').toUpperCase()}</td>
         <td><span class="badge badge-${o.status?.toLowerCase()}">${o.status}</span></td>
@@ -2269,7 +2262,7 @@ async function loadRecentOrders() {
   } catch {}
 }
 
-/* ═══════════════════ PROFIT — LIFETIME EARNINGS (super_admin only) ═══════════════════ */
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• PROFIT â€” LIFETIME EARNINGS (super_admin only) â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 let lifetimeEarningsData = null;
 
 async function loadLifetimeEarnings() {
@@ -2286,7 +2279,7 @@ async function loadLifetimeEarnings() {
   } catch {}
 }
 
-/* ═══════════════════ PROFIT — DAILY STATEMENTS (super_admin only) ═══════════════════ */
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• PROFIT â€” DAILY STATEMENTS (super_admin only) â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 let dailyStatementsData = [];
 
 async function loadDailyStatements() {
@@ -2322,7 +2315,7 @@ function renderDailyStatements(statements) {
 function viewDayStatement(dateStr) {
   const s = dailyStatementsData.find(x => x.date === dateStr);
   if (!s) return;
-  document.getElementById('day-statement-title').textContent = `Statement — ${new Date(dateStr).toLocaleDateString('en-PK', { day:'2-digit', month:'long', year:'numeric' })}`;
+  document.getElementById('day-statement-title').textContent = `Statement â€” ${new Date(dateStr).toLocaleDateString('en-PK', { day:'2-digit', month:'long', year:'numeric' })}`;
   if (!s.lines.length) {
     document.getElementById('day-statement-body').innerHTML = `<div class="empty-state"><i class="fa-solid fa-receipt"></i><p>No sales recorded on this day.</p></div>`;
   } else {
@@ -2357,7 +2350,7 @@ function exportDailyStatementsExcel() {
   try {
     const wb = XLSX.utils.book_new();
 
-    /* ── Sheet 1: Daily Summary ── */
+    /* â”€â”€ Sheet 1: Daily Summary â”€â”€ */
     const summaryRows = dailyStatementsData.map(s => ({
       Date:            s.date,
       'Items Sold':    s.lines.reduce((sum, l) => sum + (l.qty || 0), 0),
@@ -2378,7 +2371,7 @@ function exportDailyStatementsExcel() {
     wsSummary['!cols'] = [{wch:14},{wch:12},{wch:10},{wch:15},{wch:13},{wch:16}];
     XLSX.utils.book_append_sheet(wb, wsSummary, 'Daily Summary');
 
-    /* ── Sheet 2: Itemised line-by-line sales (every product sold each day) ── */
+    /* â”€â”€ Sheet 2: Itemised line-by-line sales (every product sold each day) â”€â”€ */
     const lineRows = [];
     dailyStatementsData.forEach(s => {
       s.lines.forEach(l => {
@@ -2399,10 +2392,10 @@ function exportDailyStatementsExcel() {
     wsLines['!cols'] = [{wch:13},{wch:14},{wch:24},{wch:6},{wch:18},{wch:15},{wch:14},{wch:12},{wch:13}];
     XLSX.utils.book_append_sheet(wb, wsLines, 'Itemised Sales');
 
-    /* ── Sheet 3: Lifetime totals snapshot (for context, not just the 30-day window) ── */
+    /* â”€â”€ Sheet 3: Lifetime totals snapshot (for context, not just the 30-day window) â”€â”€ */
     if (lifetimeEarningsData) {
       const wsLifetime = XLSX.utils.json_to_sheet([{
-        'Tracking Since':        lifetimeEarningsData.since || '—',
+        'Tracking Since':        lifetimeEarningsData.since || 'â€”',
         'Lifetime Revenue (PKR)': lifetimeEarningsData.totals?.revenue || 0,
         'Lifetime Cost (PKR)':    lifetimeEarningsData.totals?.cost || 0,
         'Lifetime Net Profit (PKR)': lifetimeEarningsData.totals?.profit || 0,
@@ -2413,13 +2406,13 @@ function exportDailyStatementsExcel() {
     }
 
     XLSX.writeFile(wb, `Tovessa - Daily Statement - ${today()}.xlsx`);
-    toast('30-day statement exported ✓', 'success');
+    toast('30-day statement exported âœ“', 'success');
   } catch (err) {
     toast('Export failed: ' + err.message, 'error');
   }
 }
 
-/* ═══════════════════ PROFIT — MONTHLY STATEMENTS (super_admin only) ═══════════════════ */
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• PROFIT â€” MONTHLY STATEMENTS (super_admin only) â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 let monthlyStatementsData = [];
 
 async function loadMonthlyStatements() {
@@ -2430,7 +2423,7 @@ async function loadMonthlyStatements() {
     const data = await res.json();
     if (!res.ok) { tbody.innerHTML = `<tr><td colspan="7"><div class="empty-state"><p>${data.error || 'Failed to load statements.'}</p></div></td></tr>`; return; }
     monthlyStatementsData = data.statements || [];
-    document.getElementById('monthly-since-label').textContent = data.since ? `— since ${new Date(data.since).toLocaleDateString('en-PK', { day:'2-digit', month:'short', year:'numeric' })}` : '— since launch';
+    document.getElementById('monthly-since-label').textContent = data.since ? `â€” since ${new Date(data.since).toLocaleDateString('en-PK', { day:'2-digit', month:'short', year:'numeric' })}` : 'â€” since launch';
     renderMonthlyStatements(monthlyStatementsData);
   } catch { tbody.innerHTML = `<tr><td colspan="7"><div class="empty-state"><p>Failed to load statements.</p></div></td></tr>`; }
 }
@@ -2462,7 +2455,7 @@ function exportMonthlyStatementsExcel() {
   try {
     const wb = XLSX.utils.book_new();
 
-    /* ── Sheet 1: Monthly Summary ── */
+    /* â”€â”€ Sheet 1: Monthly Summary â”€â”€ */
     const summaryRows = monthlyStatementsData.map(s => ({
       Month:           s.month,
       'Items Sold':    s.lines.reduce((sum, l) => sum + (l.qty || 0), 0),
@@ -2483,7 +2476,7 @@ function exportMonthlyStatementsExcel() {
     wsSummary['!cols'] = [{wch:14},{wch:12},{wch:10},{wch:15},{wch:13},{wch:16}];
     XLSX.utils.book_append_sheet(wb, wsSummary, 'Monthly Summary');
 
-    /* ── Sheet 2: Itemised line-by-line sales for every month ── */
+    /* â”€â”€ Sheet 2: Itemised line-by-line sales for every month â”€â”€ */
     const lineRows = [];
     monthlyStatementsData.forEach(s => {
       s.lines.forEach(l => {
@@ -2506,16 +2499,16 @@ function exportMonthlyStatementsExcel() {
     XLSX.utils.book_append_sheet(wb, wsLines, 'Itemised Sales');
 
     XLSX.writeFile(wb, `Tovessa - Monthly Statement - ${today()}.xlsx`);
-    toast('Monthly statement exported ✓', 'success');
+    toast('Monthly statement exported âœ“', 'success');
   } catch (err) {
     toast('Export failed: ' + err.message, 'error');
   }
 }
 
-/* Export a single month's full statement — summary + all days + itemised sales */
+/* Export a single month's full statement â€” summary + all days + itemised sales */
 async function exportSingleMonthExcel(monthStr, monthLabel) {
   try {
-    toast('Preparing statement…', 'info');
+    toast('Preparing statementâ€¦', 'info');
     const res  = await apiFetch(`/admin/monthly-statements?month=${monthStr}`);
     const data = await res.json();
     const stmt = (data.statements || [])[0];
@@ -2525,7 +2518,7 @@ async function exportSingleMonthExcel(monthStr, monthLabel) {
     const [y, m] = monthStr.split('-').map(Number);
     const daysInMonth = new Date(y, m, 0).getDate();
 
-    /* ── Sheet 1: Day-by-day breakdown ── */
+    /* â”€â”€ Sheet 1: Day-by-day breakdown â”€â”€ */
     const dayMap = {};
     (stmt.lines || []).forEach(l => {
       const day = (l.date || '').slice(0, 10);
@@ -2558,7 +2551,7 @@ async function exportSingleMonthExcel(monthStr, monthLabel) {
       });
     }
     dayRows.push({
-      'Date':             `TOTAL — ${monthLabel}`,
+      'Date':             `TOTAL â€” ${monthLabel}`,
       'Items Sold':       totItems,
       'Orders':           totOrders,
       'Revenue (PKR)':    totRev,
@@ -2570,7 +2563,7 @@ async function exportSingleMonthExcel(monthStr, monthLabel) {
     wsDays['!cols'] = [{wch:14},{wch:12},{wch:10},{wch:15},{wch:13},{wch:16}];
     XLSX.utils.book_append_sheet(wb, wsDays, 'Daily Breakdown');
 
-    /* ── Sheet 2: Itemised sales ── */
+    /* â”€â”€ Sheet 2: Itemised sales â”€â”€ */
     const lineRows = (stmt.lines || []).map(l => ({
       'Date':                  (l.date || '').slice(0,10),
       'Order Ref':             l.orderId,
@@ -2586,7 +2579,7 @@ async function exportSingleMonthExcel(monthStr, monthLabel) {
     wsLines['!cols'] = [{wch:13},{wch:14},{wch:26},{wch:6},{wch:18},{wch:15},{wch:14},{wch:12},{wch:13}];
     XLSX.utils.book_append_sheet(wb, wsLines, 'Itemised Sales');
 
-    /* ── Sheet 3: Month summary ── */
+    /* â”€â”€ Sheet 3: Month summary â”€â”€ */
     const wsSummary = XLSX.utils.json_to_sheet([{
       'Month':              monthLabel,
       'Total Items Sold':   totItems,
@@ -2599,13 +2592,13 @@ async function exportSingleMonthExcel(monthStr, monthLabel) {
     XLSX.utils.book_append_sheet(wb, wsSummary, 'Month Summary');
 
     XLSX.writeFile(wb, `Tovessa - ${monthLabel} Statement.xlsx`);
-    toast(`${monthLabel} statement exported ✓`, 'success');
+    toast(`${monthLabel} statement exported âœ“`, 'success');
   } catch (err) {
     toast('Export failed: ' + err.message, 'error');
   }
 }
 
-/* ═══════════════════ SOCIAL MEDIA ORDERS ═══════════════════ */
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• SOCIAL MEDIA ORDERS â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 let allSocialOrders = [];
 
 const SOC_SOURCE_LABELS = {
@@ -2703,7 +2696,7 @@ function renderSocialOrders(orders) {
     <tr>
       <td><code style="color:#e1306c;cursor:pointer" onclick="viewSocialOrder('${o.id}')">${o.id}</code></td>
       <td>${socSourceBadge(o.source)}</td>
-      <td><strong>${esc(o.customerName || '—')}</strong><br><small style="color:var(--muted)">${esc(o.phone || '')}</small></td>
+      <td><strong>${esc(o.customerName || 'â€”')}</strong><br><small style="color:var(--muted)">${esc(o.phone || '')}</small></td>
       <td style="color:var(--muted)">${(o.items || []).length} item(s)</td>
       <td style="color:var(--gold);font-weight:600">PKR ${(o.total || 0).toLocaleString()}</td>
       <td style="color:${profitColor};font-weight:600">${profitLabel}</td>
@@ -2727,13 +2720,13 @@ async function updateSocialOrderStatus(id, status) {
   try {
     const res = await apiFetch(`/social-orders/${id}/status`, { method: 'PATCH', body: JSON.stringify({ status }) });
     const d   = await res.json();
-    if (res.ok) { toast(`Order ${id} → ${status}`, 'success'); loadStats(); }
+    if (res.ok) { toast(`Order ${id} â†’ ${status}`, 'success'); loadStats(); }
     else toast(d.error || 'Update failed', 'error');
   } catch { toast('Update failed', 'error'); }
 }
 
 async function deleteSocialOrder(id) {
-  const ok = await bktConfirm({ title: 'Delete Social Order?', message: 'This social media order will be permanently deleted.', confirmText: 'Delete Order', icon: '🗑️' });
+  const ok = await bktConfirm({ title: 'Delete Social Order?', message: 'This social media order will be permanently deleted.', confirmText: 'Delete Order', icon: 'ðŸ—‘ï¸' });
   if (!ok) return;
   try {
     const res = await apiFetch(`/social-orders/${id}`, { method: 'DELETE' });
@@ -2750,23 +2743,23 @@ async function deleteSocialOrder(id) {
 function viewSocialOrder(id) {
   const o = allSocialOrders.find(x => x.id === id);
   if (!o) return;
-  document.getElementById('social-detail-title').textContent = `Social Order — ${o.id}`;
+  document.getElementById('social-detail-title').textContent = `Social Order â€” ${o.id}`;
   document.getElementById('social-detail-body').innerHTML = `
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;">
-      <div><small style="color:var(--muted)">Customer</small><p><strong>${esc(o.customerName||'—')}</strong></p></div>
-      <div><small style="color:var(--muted)">Email</small><p>${esc(o.customerEmail||'—')}</p></div>
-      <div><small style="color:var(--muted)">Phone</small><p>${esc(o.phone||'—')}</p></div>
-      <div><small style="color:var(--muted)">City</small><p>${esc(o.city||'—')}</p></div>
-      <div><small style="color:var(--muted)">Address</small><p>${esc(o.address||'—')}</p></div>
+      <div><small style="color:var(--muted)">Customer</small><p><strong>${esc(o.customerName||'â€”')}</strong></p></div>
+      <div><small style="color:var(--muted)">Email</small><p>${esc(o.customerEmail||'â€”')}</p></div>
+      <div><small style="color:var(--muted)">Phone</small><p>${esc(o.phone||'â€”')}</p></div>
+      <div><small style="color:var(--muted)">City</small><p>${esc(o.city||'â€”')}</p></div>
+      <div><small style="color:var(--muted)">Address</small><p>${esc(o.address||'â€”')}</p></div>
       <div><small style="color:var(--muted)">Source</small><p>${socSourceBadge(o.source)}</p></div>
       <div><small style="color:var(--muted)">Payment</small><p>${(o.paymentMethod||'').toUpperCase()}</p></div>
       <div><small style="color:var(--muted)">Status</small><p><span class="badge badge-${o.status?.toLowerCase()}">${o.status}</span></p></div>
       ${o.notes ? `<div style="grid-column:1/-1"><small style="color:var(--muted)">Notes</small><p style="font-size:0.85rem;color:var(--muted)">${esc(o.notes)}</p></div>` : ''}
     </div>
     <h4 style="margin-bottom:10px;font-size:0.88rem;color:var(--muted)">Items</h4>
-    ${(o.items||[]).map(i => `<div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--border);font-size:0.85rem"><span>🛍️ ${esc(i.name)} (×${i.qty})</span><span>PKR ${(i.price*i.qty).toLocaleString()}</span></div>`).join('')}
+    ${(o.items||[]).map(i => `<div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--border);font-size:0.85rem"><span>ðŸ›ï¸ ${esc(i.name)} (Ã—${i.qty})</span><span>PKR ${(i.price*i.qty).toLocaleString()}</span></div>`).join('')}
     <div style="display:flex;justify-content:space-between;padding:10px 0"><span style="color:var(--muted)">Subtotal</span><span>PKR ${(o.subtotal||0).toLocaleString()}</span></div>
-    ${o.discount > 0 ? `<div style="display:flex;justify-content:space-between;padding:10px 0;color:var(--gold)"><span>Discount${o.coupon?.code ? ' — Coupon "' + esc(o.coupon.code) + '"' : ''}</span><span>− PKR ${o.discount.toLocaleString()}</span></div>` : ''}
+    ${o.discount > 0 ? `<div style="display:flex;justify-content:space-between;padding:10px 0;color:var(--gold)"><span>Discount${o.coupon?.code ? ' â€” Coupon "' + esc(o.coupon.code) + '"' : ''}</span><span>âˆ’ PKR ${o.discount.toLocaleString()}</span></div>` : ''}
     <div style="display:flex;justify-content:space-between;padding:10px 0;font-weight:600"><span>Delivery</span><span>PKR ${(o.deliveryFee||0).toLocaleString()}</span></div>
     <div style="display:flex;justify-content:space-between;padding:10px 0;font-weight:700;font-size:1.05rem"><span>Total</span><span style="color:var(--gold)">PKR ${(o.total||0).toLocaleString()}</span></div>
     ${(o.advanceAmount || 0) > 0 ? `<div style="display:flex;justify-content:space-between;padding:10px 0;border-top:1px dashed var(--border);margin-top:8px;padding-top:12px;"><span style="color:var(--muted)">Advance Paid</span><span style="color:var(--green)">- PKR ${Number(o.advanceAmount).toLocaleString()}</span></div><div style="display:flex;justify-content:space-between;padding:10px 0;font-weight:700;font-size:1.05rem"><span>Remaining Balance</span><span style="color:var(--orange)">PKR ${(Math.max(0, (o.total||0) - Number(o.advanceAmount))).toLocaleString()}</span></div>` : ''}
@@ -2779,7 +2772,7 @@ function viewSocialOrder(id) {
   openModal('social-detail-modal');
 }
 
-/* ── Add Social Order Modal ── */
+/* â”€â”€ Add Social Order Modal â”€â”€ */
 let _socItemCount = 0;
 let _editingSocialOrderId = null;
 let _convertingAbandonedId = null;
@@ -2859,10 +2852,10 @@ async function openSocialOrderModal(orderId = null, prefillAban = null) {
     _socAppliedCoupon = o.coupon;
     document.getElementById('soc-coupon-msg').style.display = 'block';
     document.getElementById('soc-coupon-msg').style.color = 'var(--green)';
-    document.getElementById('soc-coupon-msg').textContent = `✓ "${o.coupon.code}" applied.`;
+    document.getElementById('soc-coupon-msg').textContent = `âœ“ "${o.coupon.code}" applied.`;
   }
 
-  /* Make sure the product catalog is loaded — the Products tab may
+  /* Make sure the product catalog is loaded â€” the Products tab may
      never have been opened this session, so allProducts could be empty. */
   if (!allProducts.length) {
     try {
@@ -2886,9 +2879,9 @@ async function openSocialOrderModal(orderId = null, prefillAban = null) {
   openModal('social-order-modal');
 }
 
-/* ── Each item row holds a hidden productId + price + purchasePrice,
+/* â”€â”€ Each item row holds a hidden productId + price + purchasePrice,
    populated only once the admin picks a product from the search
-   dropdown. Qty is the only manually-typed number. ── */
+   dropdown. Qty is the only manually-typed number. â”€â”€ */
 function addSocialItem(prefill = null) {
   const idx = _socItemCount++;
   const row = document.createElement('div');
@@ -2910,7 +2903,7 @@ function addSocialItem(prefill = null) {
   row.innerHTML = `
     <div class="soc-product-search-wrap" style="flex: 2;">
       <input type="hidden" id="si-pid-${idx}" value="${pid}"/>
-      <input placeholder="Search product…" id="si-search-${idx}" value="${esc(name)}"
+      <input placeholder="Search productâ€¦" id="si-search-${idx}" value="${esc(name)}"
              oninput="handleSocItemSearch(${idx})"
              onfocus="handleSocItemSearch(${idx})"
              autocomplete="off"
@@ -2924,8 +2917,8 @@ function addSocialItem(prefill = null) {
     <input type="number" placeholder="Cost" id="si-cost-${idx}" value="${cost}" oninput="recalcSocialTotal()" title="Unit Purchase Price" ${isCustom ? '' : ''}/>
     <input type="number" placeholder="Sale" id="si-price-${idx}" value="${sale}" oninput="recalcSocialTotal()" title="Unit Sale Price"/>
     <div class="soc-price-display" id="si-row-total-${idx}">PKR ${total.toLocaleString()}</div>
-    <button class="soc-item-remove" onclick="toggleSocCustomItem(${idx})" title="Toggle custom item" id="si-custom-btn-${idx}" style="background:${isCustom ? 'rgba(184,136,58,0.2)' : 'rgba(100,100,120,0.12)'};border-color:${isCustom ? 'var(--gold)' : 'var(--border)'};color:${isCustom ? 'var(--gold)' : 'var(--muted)'};font-size:0.75rem;">✏️</button>
-    <button class="soc-item-remove" onclick="removeSocialItem(${idx})" title="Remove">✕</button>
+    <button class="soc-item-remove" onclick="toggleSocCustomItem(${idx})" title="Toggle custom item" id="si-custom-btn-${idx}" style="background:${isCustom ? 'rgba(184,136,58,0.2)' : 'rgba(100,100,120,0.12)'};border-color:${isCustom ? 'var(--gold)' : 'var(--border)'};color:${isCustom ? 'var(--gold)' : 'var(--muted)'};font-size:0.75rem;">âœï¸</button>
+    <button class="soc-item-remove" onclick="removeSocialItem(${idx})" title="Remove">âœ•</button>
   `;
   document.getElementById('soc-items-container').appendChild(row);
   if (isCustom) {
@@ -2941,7 +2934,7 @@ function toggleSocCustomItem(idx) {
   const btn          = document.getElementById(`si-custom-btn-${idx}`);
   if (!searchInput || !customInput) return;
 
-  const isNowCustom = searchInput.style.display === 'none'; /* currently custom → switch back */
+  const isNowCustom = searchInput.style.display === 'none'; /* currently custom â†’ switch back */
   if (isNowCustom) {
     /* Switch back to search mode */
     searchInput.style.display = 'block';
@@ -2967,7 +2960,7 @@ function toggleSocCustomItem(idx) {
   recalcSocialTotal();
 }
 
-/* ── Filter allProducts as the admin types and render a dropdown ── */
+/* â”€â”€ Filter allProducts as the admin types and render a dropdown â”€â”€ */
 let _socSearchMatches = {}; /* idx -> array of matched products, avoids inlining JSON with special chars into onclick */
 
 function handleSocItemSearch(idx) {
@@ -2998,7 +2991,7 @@ function handleSocItemSearch(idx) {
   } else {
     dropdown.innerHTML = matches.map((p, mIdx) => `
       <div class="soc-product-option" onclick="selectSocProduct(${idx}, ${mIdx})">
-        <span style="font-size:1.1rem">${p.emoji || '🛍️'}</span>
+        <span style="font-size:1.1rem">${p.emoji || 'ðŸ›ï¸'}</span>
         <span class="opt-name">${esc(p.name)}</span>
         ${!p.inStock ? '<span class="opt-stock-out">Out of stock</span>' : ''}
         <span class="opt-price">PKR ${(p.price || 0).toLocaleString()}</span>
@@ -3031,14 +3024,14 @@ function removeSocialItem(idx) {
   if (row) { row.remove(); delete _socSearchMatches[idx]; recalcSocialTotal(); }
 }
 
-/* ── Coupon state for the currently-open social order modal.
+/* â”€â”€ Coupon state for the currently-open social order modal.
    null = no coupon applied. Re-validated against the live subtotal
    every time recalcSocialTotal runs, so changing items/qty after
-   applying a coupon can't silently keep a stale discount. ── */
+   applying a coupon can't silently keep a stale discount. â”€â”€ */
 let _socAppliedCoupon = null; /* { code, type, value } once successfully applied */
 
 /* If the admin edits the code after a successful apply, the old
-   discount is no longer valid for whatever they're about to type next —
+   discount is no longer valid for whatever they're about to type next â€”
    clear it until they click Apply again. */
 function onSocCouponInputChanged() {
   if (_socAppliedCoupon) {
@@ -3057,7 +3050,7 @@ async function applySocCoupon() {
   const subtotal = _socCurrentSubtotal();
   const btn = document.getElementById('soc-coupon-apply-btn');
   const orig = btn.textContent;
-  btn.textContent = '…'; btn.disabled = true;
+  btn.textContent = 'â€¦'; btn.disabled = true;
 
   try {
     const res  = await apiFetch('/coupons/validate', {
@@ -3068,7 +3061,7 @@ async function applySocCoupon() {
     if (res.ok && data.valid) {
       _socAppliedCoupon = { code: data.code, type: data.type, value: data.value };
       msgEl.style.color = 'var(--green)';
-      msgEl.textContent = `✓ "${data.code}" applied — ${data.type === 'percent' ? data.value + '% off' : 'PKR ' + data.value.toLocaleString() + ' off'}`;
+      msgEl.textContent = `âœ“ "${data.code}" applied â€” ${data.type === 'percent' ? data.value + '% off' : 'PKR ' + data.value.toLocaleString() + ' off'}`;
       msgEl.style.display = 'block';
     } else {
       _socAppliedCoupon = null;
@@ -3079,7 +3072,7 @@ async function applySocCoupon() {
   } catch {
     _socAppliedCoupon = null;
     msgEl.style.color = 'var(--red)';
-    msgEl.textContent = 'Network error — could not validate coupon.';
+    msgEl.textContent = 'Network error â€” could not validate coupon.';
     msgEl.style.display = 'block';
   }
 
@@ -3148,7 +3141,7 @@ function recalcSocialTotal() {
   document.getElementById('soc-subtotal').textContent       = 'PKR ' + subtotal.toLocaleString();
   const discountRow = document.getElementById('soc-discount-row');
   if (discountRow) discountRow.style.display = discount > 0 ? 'flex' : 'none';
-  document.getElementById('soc-discount-display').textContent = '− PKR ' + discount.toLocaleString();
+  document.getElementById('soc-discount-display').textContent = 'âˆ’ PKR ' + discount.toLocaleString();
   document.getElementById('soc-delivery-display').textContent = 'PKR ' + delFee.toLocaleString();
   document.getElementById('soc-total-display').textContent  = 'PKR ' + total.toLocaleString();
 
@@ -3157,7 +3150,7 @@ function recalcSocialTotal() {
   const dueRow = document.getElementById('soc-due-row');
   if (dueRow) dueRow.style.display = advance > 0 ? 'flex' : 'none';
 
-  if (document.getElementById('soc-advance-display')) document.getElementById('soc-advance-display').textContent = '− PKR ' + advance.toLocaleString();
+  if (document.getElementById('soc-advance-display')) document.getElementById('soc-advance-display').textContent = 'âˆ’ PKR ' + advance.toLocaleString();
   if (document.getElementById('soc-due-display')) document.getElementById('soc-due-display').textContent = 'PKR ' + due.toLocaleString();
 
   const noteEl = document.getElementById('soc-delivery-note');
@@ -3230,7 +3223,7 @@ async function saveSocialOrder() {
     });
     const data = await res.json();
     if (res.ok) {
-      toast(isEdit ? `✓ Social order updated` : `✓ Social order created — ${data.orderRef || ''}`, 'success');
+      toast(isEdit ? `âœ“ Social order updated` : `âœ“ Social order created â€” ${data.orderRef || ''}`, 'success');
       
       if (!isEdit && _convertingAbandonedId) {
         try {
@@ -3252,7 +3245,7 @@ async function saveSocialOrder() {
   btn.innerHTML = orig; btn.disabled = false;
 }
 
-/* ═══════════════════ COUPONS (super_admin only) ═══════════════════ */
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• COUPONS (super_admin only) â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 async function loadCoupons() {
   const tbody = document.getElementById('coupons-body');
   tbody.innerHTML = `<tr><td colspan="7" style="text-align:center;padding:30px"><div class="spinner"></div></td></tr>`;
@@ -3267,7 +3260,7 @@ async function loadCoupons() {
 function renderCoupons(coupons) {
   const tbody = document.getElementById('coupons-body');
   if (!coupons.length) {
-    tbody.innerHTML = `<tr><td colspan="7"><div class="empty-state"><i class="fa-solid fa-tag"></i><p>No coupons yet — create one to get started.</p></div></td></tr>`;
+    tbody.innerHTML = `<tr><td colspan="7"><div class="empty-state"><i class="fa-solid fa-tag"></i><p>No coupons yet â€” create one to get started.</p></div></td></tr>`;
     return;
   }
   const now = new Date();
@@ -3282,7 +3275,7 @@ function renderCoupons(coupons) {
     <tr>
       <td><code style="color:var(--gold);font-weight:700">${esc(c.code)}</code></td>
       <td>${c.type === 'percent' ? c.value + '% off' : 'PKR ' + c.value.toLocaleString() + ' off'}</td>
-      <td>${c.minOrderAmount ? 'PKR ' + c.minOrderAmount.toLocaleString() : '—'}</td>
+      <td>${c.minOrderAmount ? 'PKR ' + c.minOrderAmount.toLocaleString() : 'â€”'}</td>
       <td>${c.usedCount || 0}${c.maxUses != null ? ' / ' + c.maxUses : ''}</td>
       <td>${c.expiresAt ? new Date(c.expiresAt).toLocaleDateString() : 'Never'}</td>
       <td>${statusBadge}</td>
@@ -3303,7 +3296,7 @@ function updateCouponValueHint() {
   else { label.textContent = 'Discount Value (PKR) *'; input.placeholder = '500'; input.removeAttribute('max'); }
 }
 
-/* Looks up a coupon from the already-loaded allCoupons list by id —
+/* Looks up a coupon from the already-loaded allCoupons list by id â€”
    avoids inlining a JSON.stringify'd object into an onclick attribute,
    which breaks if the code or any field contains a quote character. */
 function openCouponModalById(id) {
@@ -3382,7 +3375,7 @@ async function toggleCouponActive(id, makeActive) {
 }
 
 async function deleteCoupon(id, code) {
-  const ok = await bktConfirm({ title: 'Delete Coupon?', message: `"${code}" will be permanently removed. Customers can no longer use it. This cannot be undone.`, confirmText: 'Delete Coupon', icon: '🗑️' });
+  const ok = await bktConfirm({ title: 'Delete Coupon?', message: `"${code}" will be permanently removed. Customers can no longer use it. This cannot be undone.`, confirmText: 'Delete Coupon', icon: 'ðŸ—‘ï¸' });
   if (!ok) return;
   try {
     const res = await apiFetch(`/coupons/${id}`, { method: 'DELETE' });
@@ -3438,13 +3431,13 @@ async function updateOrderStatus(id, status) {
   try {
     const res = await apiFetch(`/orders/${id}/status`, { method: 'PATCH', body: JSON.stringify({ status }) });
     const d   = await res.json();
-    if (res.ok) { toast(`Order ${id} → ${status}`, 'success'); loadStats(); }
+    if (res.ok) { toast(`Order ${id} â†’ ${status}`, 'success'); loadStats(); }
     else toast(d.error || 'Update failed', 'error');
   } catch { toast('Update failed', 'error'); }
 }
 
 async function deleteOrder(id) {
-  const ok = await bktConfirm({ title: 'Delete Web Order?', message: `Order ${id} will be permanently deleted. This cannot be undone.`, confirmText: 'Delete', icon: '🗑️', danger: true });
+  const ok = await bktConfirm({ title: 'Delete Web Order?', message: `Order ${id} will be permanently deleted. This cannot be undone.`, confirmText: 'Delete', icon: 'ðŸ—‘ï¸', danger: true });
   if (!ok) return;
   try {
     const res = await apiFetch(`/orders/${id}`, { method: 'DELETE' });
@@ -3460,7 +3453,7 @@ async function deleteOrder(id) {
 function viewOrder(id) {
   const o = allOrders.find(o => o.id === id);
   if (!o) return;
-  document.getElementById('order-modal-title').textContent = `Order — ${o.id}`;
+  document.getElementById('order-modal-title').textContent = `Order â€” ${o.id}`;
   
   const isCod = o.paymentMethod === 'cod';
   const advanceSection = `
@@ -3485,15 +3478,15 @@ function viewOrder(id) {
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;">
       <div><small style="color:var(--muted)">Customer</small><p>${o.delivery?.fname} ${o.delivery?.lname}</p></div>
       <div><small style="color:var(--muted)">Email</small><p>${o.delivery?.email}</p></div>
-      <div><small style="color:var(--muted)">Phone</small><p>${o.delivery?.phone || '—'}</p></div>
-      <div><small style="color:var(--muted)">Address</small><p>${o.delivery?.address || '—'}, ${o.delivery?.city || '—'}</p></div>
+      <div><small style="color:var(--muted)">Phone</small><p>${o.delivery?.phone || 'â€”'}</p></div>
+      <div><small style="color:var(--muted)">Address</small><p>${o.delivery?.address || 'â€”'}, ${o.delivery?.city || 'â€”'}</p></div>
       <div><small style="color:var(--muted)">Payment</small><p>${(o.paymentMethod || '').toUpperCase()}</p></div>
       <div><small style="color:var(--muted)">Status</small><p><span class="badge badge-${o.status?.toLowerCase()}">${o.status}</span></p></div>
     </div>
     <h4 style="margin-bottom:10px;font-size:0.88rem;color:var(--muted)">Items</h4>
-    ${(o.items || []).map(i => `<div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--border);font-size:0.85rem"><span>${i.emoji||'🛍️'} ${i.name} (×${i.qty})</span><span>PKR ${(i.price * i.qty).toLocaleString()}</span></div>`).join('')}
+    ${(o.items || []).map(i => `<div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--border);font-size:0.85rem"><span>${i.emoji||'ðŸ›ï¸'} ${i.name} (Ã—${i.qty})</span><span>PKR ${(i.price * i.qty).toLocaleString()}</span></div>`).join('')}
     <div style="display:flex;justify-content:space-between;padding:10px 0"><span style="color:var(--muted)">Subtotal</span><span>PKR ${(o.subtotal||0).toLocaleString()}</span></div>
-    ${o.discount > 0 ? `<div style="display:flex;justify-content:space-between;padding:10px 0;color:var(--gold)"><span>Discount${o.coupon?.code ? ' — Coupon "' + esc(o.coupon.code) + '"' : ''}</span><span>− PKR ${o.discount.toLocaleString()}</span></div>` : ''}
+    ${o.discount > 0 ? `<div style="display:flex;justify-content:space-between;padding:10px 0;color:var(--gold)"><span>Discount${o.coupon?.code ? ' â€” Coupon "' + esc(o.coupon.code) + '"' : ''}</span><span>âˆ’ PKR ${o.discount.toLocaleString()}</span></div>` : ''}
     <div style="display:flex;justify-content:space-between;padding:10px 0;font-weight:600"><span>Delivery</span><span>PKR ${(o.deliveryFee||0).toLocaleString()}</span></div>
     <div style="display:flex;justify-content:space-between;padding:10px 0;font-weight:700;font-size:1.05rem"><span>Total</span><span style="color:var(--gold)">PKR ${(o.total||0).toLocaleString()}</span></div>
     ${isCod ? advanceSection : ''}
@@ -3600,7 +3593,7 @@ function viewInvoicesForOrder(orderId) {
 }
 
 
-/* ═══════════════════ PINNED COLLECTIONS ═══════════════════ */
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• PINNED COLLECTIONS â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 let adminPinnedCollections = [];
 
 async function openPinnedModal() {
@@ -3682,7 +3675,7 @@ async function savePinnedCollections() {
     });
     const data = await res.json();
     if (res.ok) {
-      toast('Pinned collections saved ✓', 'success');
+      toast('Pinned collections saved âœ“', 'success');
       closePinnedModal();
     } else {
       toast(data?.error || 'Failed to save', 'error');
@@ -3693,13 +3686,13 @@ async function savePinnedCollections() {
   btn.innerText = orig;
 }
 
-/* ═══════════════════ PRODUCTS ═══════════════════ */
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• PRODUCTS â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 
 function exportProductsExcel() {
   if (!allProducts.length) { toast('No products to export.', 'error'); return; }
   if (!window.XLSX) { toast('XLSX library not available', 'error'); return; }
 
-  /* ── Respect current filter & sort ── */
+  /* â”€â”€ Respect current filter & sort â”€â”€ */
   const q    = document.getElementById('product-search')?.value.toLowerCase() || '';
   const cat  = document.getElementById('product-category-filter')?.value || '';
   const sort = document.getElementById('product-sort-order')?.value || 'newest';
@@ -3717,9 +3710,9 @@ function exportProductsExcel() {
 
   const wb = XLSX.utils.book_new();
 
-  /* ────────────────────────────────────────────────
-     SHEET 1 — All Products (or filtered view)
-  ──────────────────────────────────────────────── */
+  /* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+     SHEET 1 â€” All Products (or filtered view)
+  â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
   const headers = ['#', 'Product Name', 'Category', 'Sub-Category', 'Cost Price (PKR)', 'Sale Price (PKR)', 'Profit (PKR)', 'Profit %', 'Stock Status', 'Date Added'];
   const dataRows = products.map((p, i) => {
     const cost   = p.purchasePrice != null ? Number(p.purchasePrice) : null;
@@ -3766,7 +3759,7 @@ function exportProductsExcel() {
   /* Freeze top row */
   ws1['!freeze'] = { xSplit: 0, ySplit: 1 };
 
-  /* Header styling — gold background, white bold text */
+  /* Header styling â€” gold background, white bold text */
   const headerStyle = {
     font:      { bold: true, color: { rgb: 'FFFFFF' }, sz: 11, name: 'Calibri' },
     fill:      { fgColor: { rgb: 'B8860B' } },
@@ -3836,9 +3829,9 @@ function exportProductsExcel() {
 
   XLSX.utils.book_append_sheet(wb, ws1, cat ? `${cat.charAt(0).toUpperCase()+cat.slice(1)}` : 'All Products');
 
-  /* ────────────────────────────────────────────────
-     SHEET 2 — One sheet per category
-  ──────────────────────────────────────────────── */
+  /* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+     SHEET 2 â€” One sheet per category
+  â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
   const categories = [
     { key: 'bracelets',   label: 'Bracelets',          color: '16A085' },
     { key: 'rings',       label: 'Rings',              color: 'C0392B' },
@@ -3922,7 +3915,7 @@ function exportProductsExcel() {
 
   const dateStr = new Date().toISOString().slice(0, 10);
   XLSX.writeFile(wb, `Tovessa_Products_${dateStr}.xlsx`);
-  toast('Beautiful Excel file downloaded! ✓', 'success');
+  toast('Beautiful Excel file downloaded! âœ“', 'success');
 }
 
 /*  STOCK LOGIC  */
@@ -4136,7 +4129,7 @@ function filterProductsTable() {
     return matchSearch && matchCat;
   });
 
-  /* Sort by createdAt timestamp — fall back to array index if missing */
+  /* Sort by createdAt timestamp â€” fall back to array index if missing */
   filtered = [...filtered].sort((a, b) => {
     const ta = a.createdAt?.seconds ?? a.createdAt?._seconds ?? (a.createdAt ? new Date(a.createdAt).getTime() / 1000 : 0);
     const tb = b.createdAt?.seconds ?? b.createdAt?._seconds ?? (b.createdAt ? new Date(b.createdAt).getTime() / 1000 : 0);
@@ -4160,17 +4153,17 @@ function renderProducts(products) {
       ? `<img src="${img}" alt="${p.name}" style="width:100%;height:100%;object-fit:cover;"/>`
       : p.video
         ? `<video src="${p.video}#t=0.1" muted preload="metadata" playsinline style="width:100%;height:100%;object-fit:cover;"></video>`
-        : `<div style="display:flex;align-items:center;justify-content:center;height:100%;font-size:2.2rem;">${p.emoji || '🛍️'}</div>`;
+        : `<div style="display:flex;align-items:center;justify-content:center;height:100%;font-size:2.2rem;">${p.emoji || 'ðŸ›ï¸'}</div>`;
     const stockBadge = p.inStock
       ? `<span class="badge badge-delivered">In Stock</span>`
       : `<span class="badge badge-cancelled">Out of Stock</span>`;
     return `
     <div class="pac">
       <div class="pac-img">${media}</div>
-      ${p.featured ? '<div class="pac-featured">⭐ Featured</div>' : ''}
+      ${p.featured ? '<div class="pac-featured">â­ Featured</div>' : ''}
       <div class="pac-body">
         <div class="pac-name">${p.name}${p.badge ? ` <span class="badge badge-new">${p.badge}</span>` : ''}${p.hidden ? ' <span class="badge" style="background:#555;color:#fff;font-size:0.6rem;padding:2px 6px;">Hidden</span>' : ''}</div>
-        <div class="pac-cat">${p.category}${p.subcategory ? ' › ' + p.subcategory : ''}</div>
+        <div class="pac-cat">${p.category}${p.subcategory ? ' â€º ' + p.subcategory : ''}</div>
         <div class="pac-price">PKR ${(p.price||0).toLocaleString()}${p.priceOld ? `<s>PKR ${p.priceOld.toLocaleString()}</s>` : ''}</div>
         <div class="pac-meta">
           ${stockBadge}
@@ -4186,7 +4179,7 @@ function renderProducts(products) {
   }).join('');
 }
 
-/* ── Gallery upload state (current product being added/edited) ── */
+/* â”€â”€ Gallery upload state (current product being added/edited) â”€â”€ */
 let productImages = [];   /* array of Cloudinary URLs */
 let productVideo   = null; /* single Cloudinary URL or null */
 
@@ -4196,7 +4189,7 @@ function renderImageGalleryPreview() {
     <div style="position:relative;width:80px;height:80px;">
       <img src="${url}" style="width:100%;height:100%;object-fit:cover;border-radius:6px;border:1px solid var(--border);${idx===0?'outline:2px solid var(--gold);':''}"/>
       ${idx===0 ? '<span style="position:absolute;bottom:2px;left:2px;background:var(--gold);color:#1a1a1a;font-size:0.55rem;padding:1px 5px;border-radius:3px;">MAIN</span>' : ''}
-      <button type="button" onclick="removeGalleryImage(${idx})" style="position:absolute;top:-6px;right:-6px;width:20px;height:20px;border-radius:50%;background:#c0392b;color:#fff;border:none;cursor:pointer;font-size:0.7rem;line-height:1;">✕</button>
+      <button type="button" onclick="removeGalleryImage(${idx})" style="position:absolute;top:-6px;right:-6px;width:20px;height:20px;border-radius:50%;background:#c0392b;color:#fff;border:none;cursor:pointer;font-size:0.7rem;line-height:1;">âœ•</button>
     </div>`).join('');
 }
 
@@ -4211,7 +4204,7 @@ function renderVideoPreview() {
   wrap.innerHTML = `
     <div style="position:relative;width:160px;">
       <video src="${productVideo}" controls style="width:100%;border-radius:6px;border:1px solid var(--border);"></video>
-      <button type="button" onclick="removeVideo()" style="position:absolute;top:-8px;right:-8px;width:22px;height:22px;border-radius:50%;background:#c0392b;color:#fff;border:none;cursor:pointer;font-size:0.7rem;">✕</button>
+      <button type="button" onclick="removeVideo()" style="position:absolute;top:-8px;right:-8px;width:22px;height:22px;border-radius:50%;background:#c0392b;color:#fff;border:none;cursor:pointer;font-size:0.7rem;">âœ•</button>
     </div>`;
 }
 
@@ -4220,13 +4213,13 @@ function removeVideo() {
   renderVideoPreview();
 }
 
-/* ── Upload a single file to /api/upload (admin-only, multipart) ── */
+/* â”€â”€ Upload a single file to /api/upload (admin-only, multipart) â”€â”€ */
 async function uploadFileToServer(file) {
   const formData = new FormData();
   formData.append('file', file);
   const res = await fetch(`${API}/upload`, {
     method: 'POST',
-    headers: { Authorization: `Bearer ${adminToken}` },  /* no Content-Type — browser sets multipart boundary */
+    headers: { Authorization: `Bearer ${adminToken}` },  /* no Content-Type â€” browser sets multipart boundary */
     body: formData,
   });
   const data = await res.json();
@@ -4240,7 +4233,7 @@ async function handleImageSelect(event) {
   const status = document.getElementById('image-upload-status');
 
   for (let i = 0; i < files.length; i++) {
-    status.textContent = `Uploading ${i + 1} of ${files.length}…`;
+    status.textContent = `Uploading ${i + 1} of ${files.length}â€¦`;
     try {
       const result = await uploadFileToServer(files[i]);
       productImages.push(result.url);
@@ -4257,7 +4250,7 @@ async function handleVideoSelect(event) {
   const file = event.target.files?.[0];
   if (!file) return;
   const status = document.getElementById('video-upload-status');
-  status.textContent = 'Uploading video…';
+  status.textContent = 'Uploading videoâ€¦';
   try {
     const result = await uploadFileToServer(file);
     productVideo = result.url;
@@ -4269,16 +4262,16 @@ async function handleVideoSelect(event) {
   event.target.value = '';
 }
 
-/* ── Emoji picker config ── */
+/* â”€â”€ Emoji picker config â”€â”€ */
 const CATEGORY_EMOJIS = {
-  women:     ['👗','👘','🥻','👙','👚','👜','👒','💃','🧥','👠'],
-  men:       ['👔','🧥','🥋','🧣','👟','👞','🕴️','🧤','🎩','👕'],
-  jewellery: ['💍','📿','💎','⌚','🪙','✨','💫','🔮','👑','🫧'],
-  watches:   ['⌚','🕐','🕰️','⏱️','⏰','🌟','💎','✨','🔱','💠'],
-  cosmetics: ['💄','💅','🪞','🧴','🌸','💋','🫧','✨','🧖','💆'],
-  accessories:['👜','🎒','🧢','🕶️','🧣','💼','🪮','👒','🌂','⌚'],
+  women:     ['ðŸ‘—','ðŸ‘˜','ðŸ¥»','ðŸ‘™','ðŸ‘š','ðŸ‘œ','ðŸ‘’','ðŸ’ƒ','ðŸ§¥','ðŸ‘ '],
+  men:       ['ðŸ‘”','ðŸ§¥','ðŸ¥‹','ðŸ§£','ðŸ‘Ÿ','ðŸ‘ž','ðŸ•´ï¸','ðŸ§¤','ðŸŽ©','ðŸ‘•'],
+  jewellery: ['ðŸ’','ðŸ“¿','ðŸ’Ž','âŒš','ðŸª™','âœ¨','ðŸ’«','ðŸ”®','ðŸ‘‘','ðŸ«§'],
+  watches:   ['âŒš','ðŸ•','ðŸ•°ï¸','â±ï¸','â°','ðŸŒŸ','ðŸ’Ž','âœ¨','ðŸ”±','ðŸ’ '],
+  cosmetics: ['ðŸ’„','ðŸ’…','ðŸªž','ðŸ§´','ðŸŒ¸','ðŸ’‹','ðŸ«§','âœ¨','ðŸ§–','ðŸ’†'],
+  accessories:['ðŸ‘œ','ðŸŽ’','ðŸ§¢','ðŸ•¶ï¸','ðŸ§£','ðŸ’¼','ðŸª®','ðŸ‘’','ðŸŒ‚','âŒš'],
 };
-const DEFAULT_EMOJIS = ['🛍️','✨','💎','🌟','👑','🎁','💫','🔮','🌸','💠'];
+const DEFAULT_EMOJIS = ['ðŸ›ï¸','âœ¨','ðŸ’Ž','ðŸŒŸ','ðŸ‘‘','ðŸŽ','ðŸ’«','ðŸ”®','ðŸŒ¸','ðŸ’ '];
 
 function renderEmojiPicker(category, selectedEmoji) {
   const picker = document.getElementById('emoji-picker');
@@ -4337,7 +4330,7 @@ function openProductModal(product = null) {
 }
 
 
-/* ── Sizes / Colors tag chip state ── */
+/* â”€â”€ Sizes / Colors tag chip state â”€â”€ */
 let productSizes = [];
 let productColors = [];
 
@@ -4345,7 +4338,7 @@ function renderTagChips(field) {
   const wrap = document.getElementById(`p-${field}-chips`);
   const arr  = field === 'sizes' ? productSizes : productColors;
   wrap.innerHTML = arr.map((val, i) => `
-    <span class="tag-chip">${val}<button type="button" onclick="removeTag('${field}',${i})">✕</button></span>
+    <span class="tag-chip">${val}<button type="button" onclick="removeTag('${field}',${i})">âœ•</button></span>
   `).join('');
 }
 
@@ -4405,9 +4398,9 @@ async function saveProduct() {
   const purchasePrice = document.getElementById('p-purchase-price').value;
 
   if (!name || !cat || !price) { toast('Name, category, and price are required.', 'error'); return; }
-  if (purchasePrice === '' || purchasePrice === null) { toast('Purchase price is required — what did this product cost you?', 'error'); return; }
+  if (purchasePrice === '' || purchasePrice === null) { toast('Purchase price is required â€” what did this product cost you?', 'error'); return; }
   if (Number(purchasePrice) >= Number(price)) {
-    const proceed = await bktConfirm({ title: 'No profit margin?', message: 'Purchase price is equal to or higher than the sale price, so this product won\'t earn any profit. Save anyway?', confirmText: 'Save Anyway', icon: '⚠️', danger: false });
+    const proceed = await bktConfirm({ title: 'No profit margin?', message: 'Purchase price is equal to or higher than the sale price, so this product won\'t earn any profit. Save anyway?', confirmText: 'Save Anyway', icon: 'âš ï¸', danger: false });
     if (!proceed) return;
   }
 
@@ -4422,7 +4415,7 @@ async function saveProduct() {
   const payload = {
     name, brand: document.getElementById('p-brand').value, category: cat,
     additionalCategories,
-    emoji:       document.getElementById('p-emoji').value || '🛍️',
+    emoji:       document.getElementById('p-emoji').value || 'ðŸ›ï¸',
     badge:       document.getElementById('p-badge').value || null,
     price:       Number(price),
     purchasePrice: Number(purchasePrice),
@@ -4457,7 +4450,7 @@ async function saveProduct() {
 }
 
 async function deleteProduct(id) {
-  const ok = await bktConfirm({ title: 'Delete Product?', message: 'This product will be permanently removed. This cannot be undone.', confirmText: 'Delete Product', icon: '🗑️' });
+  const ok = await bktConfirm({ title: 'Delete Product?', message: 'This product will be permanently removed. This cannot be undone.', confirmText: 'Delete Product', icon: 'ðŸ—‘ï¸' });
   if (!ok) return;
   try {
     const res = await apiFetch(`/products/${id}`, { method: 'DELETE' });
@@ -4466,7 +4459,7 @@ async function deleteProduct(id) {
   } catch { toast('Network error.', 'error'); }
 }
 
-/* ═══════════════════ MESSAGES ═══════════════════ */
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• MESSAGES â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 async function loadMessages() {
   const tbody = document.getElementById('messages-body');
   tbody.innerHTML = `<tr><td colspan="6" style="text-align:center;padding:30px"><div class="spinner"></div></td></tr>`;
@@ -4486,12 +4479,12 @@ function renderMessages(messages) {
     <tr style="${m.read ? '' : 'background:rgba(184,136,58,.04)'}">
       <td><strong>${m.name}</strong>${!m.read ? ' <span class="badge badge-new">NEW</span>' : ''}</td>
       <td><a href="mailto:${m.email}" style="color:var(--gold)">${m.email}</a></td>
-      <td>${m.subject || '—'}</td>
+      <td>${m.subject || 'â€”'}</td>
       <td style="max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:var(--muted)">${m.message}</td>
       <td>${fmtDate(m.createdAt)}</td>
       <td style="display:flex;gap:6px">
         <button class="btn btn-outline btn-sm" onclick="viewMessage('${m.id}')">View</button>
-        <button class="btn btn-success btn-sm" onclick="replyToMessage('${m.id}')">${m.replied ? '✓ Replied' : 'Reply'}</button>
+        <button class="btn btn-success btn-sm" onclick="replyToMessage('${m.id}')">${m.replied ? 'âœ“ Replied' : 'Reply'}</button>
         ${currentUser?.role !== 'supervisor' ? `<button class="btn btn-danger btn-sm" onclick="deleteMessage('${m.id}')">Delete</button>` : ''}
       </td>
     </tr>`).join('');
@@ -4505,17 +4498,17 @@ function viewMessage(id) {
       <div><small style="color:var(--muted)">Name</small><p><strong>${m.name}</strong></p></div>
       <div><small style="color:var(--muted)">Email</small><p><a href="mailto:${m.email}" style="color:var(--gold)">${m.email}</a></p></div>
       ${m.phone ? `<div><small style="color:var(--muted)">Phone</small><p>${m.phone}</p></div>` : ''}
-      <div><small style="color:var(--muted)">Subject</small><p>${m.subject || '—'}</p></div>
+      <div><small style="color:var(--muted)">Subject</small><p>${m.subject || 'â€”'}</p></div>
       <div><small style="color:var(--muted)">Date</small><p>${new Date(m.createdAt).toLocaleString()}</p></div>
     </div>
     <div style="background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:16px;font-size:0.9rem;line-height:1.7;white-space:pre-wrap">${m.message}</div>
     <div style="margin-top:16px;display:flex;gap:10px;align-items:flex-start;flex-direction:column;">
-      <textarea id="reply-text-${m.id}" rows="4" placeholder="Type your reply to ${m.name}…"
+      <textarea id="reply-text-${m.id}" rows="4" placeholder="Type your reply to ${m.name}â€¦"
         style="width:100%;background:var(--bg);border:1px solid var(--border);color:var(--text);padding:10px 14px;font-family:inherit;font-size:.85rem;border-radius:6px;outline:none;resize:vertical;box-sizing:border-box;"></textarea>
       <button class="btn btn-gold" onclick="sendReply('${m.id}')" style="background:var(--gold);color:#fff;">
         <i class="fa-solid fa-paper-plane"></i> Send Reply to ${m.email}
       </button>
-      ${m.replied ? `<p style="font-size:.75rem;color:var(--green);margin:0;">✓ Previously replied on ${fmtDate(m.repliedAt)}</p>` : ''}
+      ${m.replied ? `<p style="font-size:.75rem;color:var(--green);margin:0;">âœ“ Previously replied on ${fmtDate(m.repliedAt)}</p>` : ''}
     </div>
   `;
   openModal('message-modal');
@@ -4535,7 +4528,7 @@ async function sendReply(id) {
 
   const btn = textarea.nextElementSibling;
   const originalHTML = btn.innerHTML;
-  btn.disabled = true; btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending…';
+  btn.disabled = true; btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sendingâ€¦';
 
   try {
     const res = await apiFetch(`/contact/${id}/reply`, {
@@ -4544,7 +4537,7 @@ async function sendReply(id) {
     });
     const data = await res.json();
     if (res.ok) {
-      toast('Reply sent to customer ✓', 'success');
+      toast('Reply sent to customer âœ“', 'success');
       textarea.value = '';
       /* Update local data */
       const msg = allMessages.find(m => m.id === id);
@@ -4561,14 +4554,14 @@ async function sendReply(id) {
 }
 
 async function deleteMessage(id) {
-  const ok = await bktConfirm({ title: 'Delete Message?', message: 'This message will be permanently deleted.', confirmText: 'Delete Message', icon: '✉️' });
+  const ok = await bktConfirm({ title: 'Delete Message?', message: 'This message will be permanently deleted.', confirmText: 'Delete Message', icon: 'âœ‰ï¸' });
   if (!ok) return;
   const res = await apiFetch(`/contact/${id}`, { method: 'DELETE' });
   if (res.ok) { allMessages = allMessages.filter(m => m.id !== id); renderMessages(allMessages); toast('Message deleted.', 'success'); }
   else toast('Delete failed.', 'error');
 }
 
-/* ═══════════════════ SUBSCRIBERS ═══════════════════ */
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• SUBSCRIBERS â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 async function loadSubscribers() {
   const tbody = document.getElementById('subscribers-body');
   tbody.innerHTML = `<tr><td colspan="5" style="text-align:center;padding:30px"><div class="spinner"></div></td></tr>`;
@@ -4612,12 +4605,12 @@ async function sendPromoEmail() {
     title: `Send to ${activeCount} subscribers?`,
     message: `Subject: "${subject}"\n\nThis will send a promotion email to all ${activeCount} active subscribers. This cannot be undone.`,
     confirmText: 'Send Now',
-    icon: '📧'
+    icon: 'ðŸ“§'
   });
   if (!ok) return;
 
   const btn = document.getElementById('promo-send-btn');
-  btn.disabled = true; btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending…';
+  btn.disabled = true; btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sendingâ€¦';
 
   try {
     const res  = await apiFetch('/newsletter/send', {
@@ -4626,7 +4619,7 @@ async function sendPromoEmail() {
     });
     const data = await res.json();
     if (res.ok) {
-      toast(`✓ Sending to ${data.total} subscribers in the background!`, 'success');
+      toast(`âœ“ Sending to ${data.total} subscribers in the background!`, 'success');
       closePromoModal();
     } else {
       toast(data.error || 'Failed to send.', 'error');
@@ -4652,7 +4645,7 @@ function renderSubscribers(subs) {
 }
 
 async function removeSubscriber(id) {
-  const ok = await bktConfirm({ title: 'Remove Subscriber?', message: 'This subscriber will be removed from the newsletter list.', confirmText: 'Remove', icon: '📧' });
+  const ok = await bktConfirm({ title: 'Remove Subscriber?', message: 'This subscriber will be removed from the newsletter list.', confirmText: 'Remove', icon: 'ðŸ“§' });
   if (!ok) return;
   const res = await apiFetch(`/newsletter/${id}`, { method: 'DELETE' });
   if (res.ok) { allSubscribers = allSubscribers.filter(s => s.id !== id); renderSubscribers(allSubscribers); toast('Subscriber removed.', 'success'); }
@@ -4663,7 +4656,7 @@ function esc(s) {
   return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
 }
 
-/* ═══════════════════ USERS & ROLES ═══════════════════ */
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• USERS & ROLES â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 async function loadRoles() {
   if (!['ceo', 'super_admin'].includes(currentUser?.role)) {
     document.getElementById('roles-restricted').style.display = 'flex';
@@ -4766,14 +4759,14 @@ async function toggleUserStatus(id, active) {
 }
 
 async function deleteAdminUser(id) {
-  const ok = await bktConfirm({ title: 'Delete Admin User?', message: 'This user will lose access immediately. This cannot be undone.', confirmText: 'Delete User', icon: '👤' });
+  const ok = await bktConfirm({ title: 'Delete Admin User?', message: 'This user will lose access immediately. This cannot be undone.', confirmText: 'Delete User', icon: 'ðŸ‘¤' });
   if (!ok) return;
   const res = await apiFetch(`/auth/admin-users/${id}`, { method: 'DELETE' });
   if (res.ok) { toast('User deleted.', 'success'); loadRoles(); }
   else toast('Delete failed.', 'error');
 }
 
-/* ═══════════════════ STAFF ACTIVITY ═══════════════════ */
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• STAFF ACTIVITY â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 async function loadStaffActivity() {
   const wrap = document.getElementById('staff-activity-wrap');
   const tbody = document.getElementById('activity-body');
@@ -4795,7 +4788,7 @@ async function loadStaffActivity() {
           <td><span class="badge badge-role-${s.role}">${formatRole(s.role)}</span></td>
           <td style="text-align:center">${s.msgReplied}</td>
           <td style="text-align:center">${s.ordersUpdated}</td>
-          <td style="color:var(--muted)">${s.lastActive ? fmtDate(s.lastActive) : '—'}</td>
+          <td style="color:var(--muted)">${s.lastActive ? fmtDate(s.lastActive) : 'â€”'}</td>
           <td><span class="badge ${s.active ? 'badge-delivered' : 'badge-cancelled'}">${s.active ? 'Active' : 'Disabled'}</span></td>
         </tr>`).join('');
     } catch {
@@ -4807,7 +4800,7 @@ async function loadStaffActivity() {
   }
 }
 
-/* ═══════════════════ MESSAGE REPLY ═══════════════════ */
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• MESSAGE REPLY â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 function replyToMessage(id) {
   document.getElementById('reply-message-id').value = id;
   document.getElementById('reply-text').value = '';
@@ -4822,14 +4815,14 @@ async function submitReply() {
     const res  = await apiFetch(`/contact/${id}/reply`, { method: 'POST', body: JSON.stringify({ replyText }) });
     const data = await res.json();
     if (res.ok) {
-      toast('Reply recorded. ✓', 'success');
+      toast('Reply recorded. âœ“', 'success');
       closeModal('reply-modal');
       loadMessages();
     } else toast(data.error || 'Reply failed.', 'error');
   } catch { toast('Reply failed.', 'error'); }
 }
 
-/* ═══════════════════ SETTINGS / PROFILE ═══════════════════ */
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• SETTINGS / PROFILE â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 async function updateMyProfile() {
   const fname = document.getElementById('prof-fname').value;
   const lname = document.getElementById('prof-lname').value;
@@ -4871,7 +4864,7 @@ function showProfileMsg(text, type) {
   el.style.border = type === 'success' ? '1px solid rgba(34,197,94,.3)' : '1px solid rgba(239,68,68,.3)';
 }
 
-/* ═══════════════════ SPENDINGS ═══════════════════ */
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• SPENDINGS â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 async function loadSpendings() {
   const tbody = document.getElementById('spendings-body');
   try {
@@ -4941,7 +4934,7 @@ async function saveSpending() {
 
 async function deleteSpending(id) {
   const confirmed = await showConfirmModal({
-    icon: '🗑️',
+    icon: 'ðŸ—‘ï¸',
     title: 'Delete Spending',
     message: 'Are you sure you want to delete this spending record?',
     confirmText: 'Delete',
@@ -4963,14 +4956,14 @@ async function loadSystemInfo() {
     const data = await res.json();
     document.getElementById('sys-info').innerHTML = `
       Version: ${data.version} &nbsp;|&nbsp;
-      Firebase: ${data.firebase === 'connected' ? '<span style="color:var(--green)">Connected ✓</span>' : '<span style="color:var(--orange)">Demo Mode</span>'} &nbsp;|&nbsp;
+      Firebase: ${data.firebase === 'connected' ? '<span style="color:var(--green)">Connected âœ“</span>' : '<span style="color:var(--orange)">Demo Mode</span>'} &nbsp;|&nbsp;
       Server Time: ${new Date(data.timestamp).toLocaleString()}
     `;
   } catch {}
   if (['ceo', 'super_admin'].includes(currentUser?.role)) loadLaunchDate();
 }
 
-/* ═══════════════════ SITE LAUNCH DATE (super_admin only) ═══════════════════ */
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• SITE LAUNCH DATE (super_admin only) â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 async function loadLaunchDate() {
   try {
     const res  = await apiFetch('/admin/site-launch-date');
@@ -4985,14 +4978,14 @@ async function saveLaunchDate() {
   const ok = await bktConfirm({
     title: 'Update launch date?',
     message: 'All daily, monthly, and lifetime profit statements will recalculate starting from this date. Sales before it will no longer be counted.',
-    confirmText: 'Update', icon: '🚩', danger: false,
+    confirmText: 'Update', icon: 'ðŸš©', danger: false,
   });
   if (!ok) return;
   try {
     const res  = await apiFetch('/admin/site-launch-date', { method: 'PUT', body: JSON.stringify({ date }) });
     const data = await res.json();
     if (res.ok) {
-      showLaunchDateMsg('Launch date updated ✓ Statements will reflect this on next refresh.', 'success');
+      showLaunchDateMsg('Launch date updated âœ“ Statements will reflect this on next refresh.', 'success');
       toast('Site launch date updated.', 'success');
     } else showLaunchDateMsg(data.error || 'Failed to update.', 'error');
   } catch { showLaunchDateMsg('Network error.', 'error'); }
@@ -5007,7 +5000,7 @@ function showLaunchDateMsg(text, type) {
   el.style.border = type === 'success' ? '1px solid rgba(34,197,94,.3)' : '1px solid rgba(239,68,68,.3)';
 }
 
-/* ═══════════════════ EXCEL EXPORT ═══════════════════ */
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• EXCEL EXPORT â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 async function exportExcel(type) {
   try {
     let rows = [], filename = '', sheetName = '';
@@ -5033,7 +5026,7 @@ async function exportExcel(type) {
         Status:         o.status,
         'Order Date':   fmtDate(o.createdAt),
         'Updated':      fmtDate(o.updatedAt),
-        Items:          (o.items||[]).map(i => `${i.name}×${i.qty}`).join(', '),
+        Items:          (o.items||[]).map(i => `${i.name}Ã—${i.qty}`).join(', '),
       }));
     } else if (type === 'messages') {
       rows = allMessages.length ? allMessages : (await (await apiFetch('/contact')).json()).messages || [];
@@ -5060,14 +5053,14 @@ async function exportExcel(type) {
 
     XLSX.utils.book_append_sheet(wb, ws, sheetName);
     XLSX.writeFile(wb, filename);
-    toast(`${sheetName} exported as Excel ✓`, 'success');
+    toast(`${sheetName} exported as Excel âœ“`, 'success');
 
   } catch (err) {
     toast('Export failed: ' + err.message, 'error');
   }
 }
 
-/* ═══════════════════ MODAL HELPERS ═══════════════════ */
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• MODAL HELPERS â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 function openModal(id)  { document.getElementById(id).classList.add('open'); }
 function closeModal(id) { document.getElementById(id).classList.remove('open'); }
 
@@ -5078,7 +5071,7 @@ document.addEventListener('click', e => {
   }
 });
 
-/* ═══════════════════ TOAST ═══════════════════ */
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• TOAST â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 function toast(msg, type = 'success') {
   const container = document.getElementById('toast');
   const el = document.createElement('div');
@@ -5089,9 +5082,9 @@ function toast(msg, type = 'success') {
   setTimeout(() => { el.classList.remove('show'); setTimeout(() => el.remove(), 300); }, 3500);
 }
 
-/* ═══════════════════ UTILS ═══════════════════ */
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• UTILS â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 function fmtDate(iso) {
-  if (!iso) return '—';
+  if (!iso) return 'â€”';
   const d = new Date(iso);
   return d.toLocaleDateString('en-PK', { day:'2-digit', month:'short', year:'numeric' }) + ' ' + d.toLocaleTimeString('en-PK', { hour:'2-digit', minute:'2-digit' });
 }
@@ -5106,7 +5099,7 @@ function today() {
   return d.toISOString().split('T')[0];
 }
 
-/* ═══════════════════ ABANDONED ORDERS ═══════════════════ */
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• ABANDONED ORDERS â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 let allAbandoned = [];
 
 async function loadAbandoned() {
@@ -5146,26 +5139,26 @@ function renderAbandoned(list) {
   }
   tbody.innerHTML = list.map((a, i) => {
     const d    = a.delivery || {};
-    const name = `${d.fname || ''} ${d.lname || ''}`.trim() || '—';
-    const items = (a.items || []).map(it => `${it.name} ×${it.qty}`).join(', ') || '—';
+    const name = `${d.fname || ''} ${d.lname || ''}`.trim() || 'â€”';
+    const items = (a.items || []).map(it => `${it.name} Ã—${it.qty}`).join(', ') || 'â€”';
     const statusBadge = a.status === 'converted'
-      ? '<span style="background:rgba(34,197,94,0.15);color:#22c55e;padding:3px 10px;border-radius:20px;font-size:0.68rem;font-weight:600">✅ Resolved</span>'
-      : '<span style="background:rgba(249,115,22,0.15);color:#f97316;padding:3px 10px;border-radius:20px;font-size:0.68rem;font-weight:600">🛒 Abandoned</span>';
+      ? '<span style="background:rgba(34,197,94,0.15);color:#22c55e;padding:3px 10px;border-radius:20px;font-size:0.68rem;font-weight:600">âœ… Resolved</span>'
+      : '<span style="background:rgba(249,115,22,0.15);color:#f97316;padding:3px 10px;border-radius:20px;font-size:0.68rem;font-weight:600">ðŸ›’ Abandoned</span>';
     const waLink = d.phone
       ? `<a href="https://wa.me/${d.phone.replace(/\D/g,'')}?text=Hi+${encodeURIComponent(d.fname||'')}%2C+you+left+something+in+your+cart+at+Tovessa+Jewelry%21+Complete+your+order+here%3A+https%3A%2F%2Ftovessa.com%2Fcheckout.html" target="_blank" class="btn btn-outline" style="font-size:0.7rem;padding:5px 10px;color:#25d366;border-color:rgba(37,211,102,0.4)"><i class="fa-brands fa-whatsapp"></i> Recover</a>`
       : '';
     return `<tr>
       <td>${i + 1}</td>
       <td><strong>${name}</strong>${d.email ? `<br><small style="color:var(--muted)">${d.email}</small>` : ''}</td>
-      <td>${d.phone || '—'}</td>
-      <td>${d.city || '—'}</td>
+      <td>${d.phone || 'â€”'}</td>
+      <td>${d.city || 'â€”'}</td>
       <td style="max-width:180px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:0.78rem">${items}</td>
       <td style="color:var(--gold);font-weight:600">PKR ${(a.total||0).toLocaleString()}</td>
-      <td style="font-size:0.75rem">${a.createdAt ? new Date(a.createdAt).toLocaleDateString('en-PK',{day:'2-digit',month:'short',year:'numeric'}) : '—'}</td>
+      <td style="font-size:0.75rem">${a.createdAt ? new Date(a.createdAt).toLocaleDateString('en-PK',{day:'2-digit',month:'short',year:'numeric'}) : 'â€”'}</td>
       <td>${statusBadge}</td>
       <td style="display:flex;gap:6px;flex-wrap:wrap">
         ${waLink}
-        ${a.status !== 'converted' ? `<button onclick="convertAbandonedToOrder('${a.id}')" class="btn btn-outline" style="font-size:0.7rem;padding:5px 10px;color:var(--gold);border-color:rgba(201,168,76,0.5)" title="Manually resolved — move to Orders"><i class="fa-solid fa-check-double"></i> Resolved</button>` : ''}
+        ${a.status !== 'converted' ? `<button onclick="convertAbandonedToOrder('${a.id}')" class="btn btn-outline" style="font-size:0.7rem;padding:5px 10px;color:var(--gold);border-color:rgba(201,168,76,0.5)" title="Manually resolved â€” move to Orders"><i class="fa-solid fa-check-double"></i> Resolved</button>` : ''}
         <button onclick="deleteAbandoned('${a.id}')" class="btn btn-outline" style="font-size:0.7rem;padding:5px 10px;color:var(--danger)"><i class="fa-solid fa-trash"></i></button>
       </td>
     </tr>`;
@@ -5178,7 +5171,7 @@ async function deleteAbandoned(id) {
   loadAbandoned();
 }
 
-/* ── Convert abandoned checkout → real order (manually resolved) ── */
+/* â”€â”€ Convert abandoned checkout â†’ real order (manually resolved) â”€â”€ */
 async function convertAbandonedToOrder(id) {
   const rec = allAbandoned.find(a => a.id === id);
   if (!rec) { toast('Record not found in local list', 'error'); return; }
@@ -5187,7 +5180,7 @@ async function convertAbandonedToOrder(id) {
   showPage('social-orders');
 }
 
-/* ── Pretty confirm modal ── */
+/* â”€â”€ Pretty confirm modal â”€â”€ */
 function showConfirmModal({ icon, title, message, confirmText, cancelText, confirmColor }) {
   return new Promise(resolve => {
     /* Remove any existing */
@@ -5309,9 +5302,9 @@ function renderVisitors(visitors) {
 
   tbody.innerHTML = visitors.map((v, i) => {
     const pageName = v.page.replace(/\.html$/, '') || '/';
-    const freshness = v.secondsAgo < 5 ? '🟢 just now' :
-                      v.secondsAgo < 15 ? `🟢 ${v.secondsAgo}s ago` :
-                      `🟡 ${v.secondsAgo}s ago`;
+    const freshness = v.secondsAgo < 5 ? 'ðŸŸ¢ just now' :
+                      v.secondsAgo < 15 ? `ðŸŸ¢ ${v.secondsAgo}s ago` :
+                      `ðŸŸ¡ ${v.secondsAgo}s ago`;
     return `<tr>
       <td>${i + 1}</td>
       <td><code style="color:var(--gold);background:var(--bg-deep);padding:2px 8px;border-radius:3px;font-size:0.8rem">${pageName}</code></td>
@@ -5344,7 +5337,7 @@ function renderVisitors(visitors) {
 }
 </script>
 
-<!-- ── Custom Confirm Modal ── -->
+<!-- â”€â”€ Custom Confirm Modal â”€â”€ -->
 <div id="tovessa-confirm-overlay" style="
   position:fixed;inset:0;z-index:9999;
   background:rgba(0,0,0,0);
@@ -5371,7 +5364,7 @@ function renderVisitors(visitors) {
         background:rgba(217,106,106,0.12);
         border:1px solid rgba(217,106,106,0.25);
         display:flex;align-items:center;justify-content:center;
-        margin:0 auto 20px;font-size:1.6rem;">🗑️</div>
+        margin:0 auto 20px;font-size:1.6rem;">ðŸ—‘ï¸</div>
       <h3 id="tovessa-confirm-title" style="
         color:#fff;font-size:1.15rem;font-weight:700;
         margin:0 0 10px;letter-spacing:0.01em;"></h3>
@@ -5401,8 +5394,8 @@ function renderVisitors(visitors) {
 </div>
 
 <script>
-/* ── Custom Confirm Dialog ── */
-function bktConfirm({ title = 'Are you sure?', message = 'This action cannot be undone.', confirmText = 'Delete', icon = '🗑️', danger = true } = {}) {
+/* â”€â”€ Custom Confirm Dialog â”€â”€ */
+function bktConfirm({ title = 'Are you sure?', message = 'This action cannot be undone.', confirmText = 'Delete', icon = 'ðŸ—‘ï¸', danger = true } = {}) {
   return new Promise(resolve => {
     const overlay = document.getElementById('tovessa-confirm-overlay');
     const box     = document.getElementById('tovessa-confirm-box');
@@ -5462,11 +5455,11 @@ function bktConfirm({ title = 'Are you sure?', message = 'This action cannot be 
   });
 }
 
-/* ═══════════════════ REVIEWS ═══════════════════ */
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• REVIEWS â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 async function loadReviews() {
   const tbody = document.getElementById('reviews-body');
   if (!tbody) return;
-  tbody.innerHTML = '<tr><td colspan="7" style="text-align:center;padding:40px;color:var(--muted)">Loading…</td></tr>';
+  tbody.innerHTML = '<tr><td colspan="7" style="text-align:center;padding:40px;color:var(--muted)">Loadingâ€¦</td></tr>';
   try {
     const filter = document.getElementById('reviews-filter')?.value || 'all';
     const raw = await apiFetch('/reviews/all');
@@ -5498,10 +5491,10 @@ async function loadReviews() {
           <div style="font-size:.72rem;color:var(--muted)">${r.customerEmail || ''}</div>
           ${r.city ? `<div style="font-size:.72rem;color:var(--muted)">${r.city}</div>` : ''}
         </td>
-        <td style="font-size:.8rem;color:var(--gold)">${r.orderId || '—'}</td>
-        <td style="font-size:1rem;letter-spacing:1px;color:#b8883a">${'★'.repeat(r.rating||5)}${'☆'.repeat(5-(r.rating||5))}</td>
+        <td style="font-size:.8rem;color:var(--gold)">${r.orderId || 'â€”'}</td>
+        <td style="font-size:1rem;letter-spacing:1px;color:#b8883a">${'â˜…'.repeat(r.rating||5)}${'â˜†'.repeat(5-(r.rating||5))}</td>
         <td style="font-size:.82rem;max-width:260px;line-height:1.5">${r.text || ''}</td>
-        <td style="font-size:.75rem;color:var(--muted)">${r.createdAt ? new Date(r.createdAt).toLocaleDateString('en-PK',{dateStyle:'medium'}) : '—'}</td>
+        <td style="font-size:.75rem;color:var(--muted)">${r.createdAt ? new Date(r.createdAt).toLocaleDateString('en-PK',{dateStyle:'medium'}) : 'â€”'}</td>
         <td>
           <span class="badge" style="
             background:${r.approved ? 'rgba(34,197,94,.15)' : 'rgba(251,191,36,.15)'};
@@ -5530,7 +5523,7 @@ async function approveReview(id, approve) {
       headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${localStorage.getItem('tovessa_admin_token')}` },
       body: JSON.stringify({ approved: approve }),
     });
-    if (res.ok) { toast(approve ? 'Review approved — now visible on homepage ✓' : 'Review hidden.', 'success'); loadReviews(); }
+    if (res.ok) { toast(approve ? 'Review approved â€” now visible on homepage âœ“' : 'Review hidden.', 'success'); loadReviews(); }
     else toast('Failed to update review.', 'error');
   } catch { toast('Connection error.', 'error'); }
 }
@@ -5592,6 +5585,8 @@ async function saveCompanySettings() {
 
 </body>
 </html>
+
+
 
 
 
