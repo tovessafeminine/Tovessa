@@ -1,11 +1,11 @@
-/* ============================================================
-   Tovessa — Global Styles
+﻿/* ============================================================
+   Tovessa â€” Global Styles
    Theme: Botanical Luxury (Purple/White)
    ============================================================ */
 
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Lato:wght@300;400;700&display=swap');
 
-/* ── Variables ── */
+/* â”€â”€ Variables â”€â”€ */
 :root {
   --bg: #ffffff;           /* warm ivory */
   --bg-deep: #fdf8fb;      /* white */
@@ -31,7 +31,7 @@
   --shadow: transparent;
 }
 
-/* ── Reset ── */
+/* â”€â”€ Reset â”€â”€ */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; font-size: 16px; }
 body {
@@ -53,7 +53,7 @@ button { border: none; background: none; font-family: inherit; cursor: pointer; 
 ::-webkit-scrollbar-track { background: var(--bg-deep); }
 ::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 2px; }
 
-/* ── Navigation ── */
+/* â”€â”€ Navigation â”€â”€ */
 body > nav, header > nav, .site-nav {
   position: fixed; top: 0; left: 0; right: 0;
   height: var(--nav-h);
@@ -97,7 +97,7 @@ body.page-home nav:not(.scrolled) .nav-icons button,
 body.page-home nav:not(.scrolled) .nav-icons a {
   color: #fff !important;
 }
-/* Dropdown links must stay dark — white-on-white fix */
+/* Dropdown links must stay dark â€” white-on-white fix */
 body.page-home nav:not(.scrolled) .nav-dropdown .dropdown-menu a {
   color: var(--text-mid) !important;
 }
@@ -122,7 +122,7 @@ body.page-home nav:not(.scrolled) .nav-logo-link em { color: #fff !important; }
 .hamburger span { display: block; width: 28px; height: 1px; background: var(--text); transition: var(--transition); }
 body.page-home nav:not(.scrolled) .hamburger span { background: var(--text); }
 
-/* ── Mobile Nav ── */
+/* â”€â”€ Mobile Nav â”€â”€ */
 .nav-links.mobile-open {
   display: flex !important;
   flex-direction: column;
@@ -190,7 +190,7 @@ body.page-home nav:not(.scrolled) .hamburger span { background: var(--text); }
   }
 }
 
-/* ── Hero Section ── */
+/* â”€â”€ Hero Section â”€â”€ */
 #hero {
   position: relative;
   height: 100vh; min-height: 600px;
@@ -283,7 +283,7 @@ body.page-home nav:not(.scrolled) .hamburger span { background: var(--text); }
   transform: none;
 }
 
-/* ── Section Shared ── */
+/* â”€â”€ Section Shared â”€â”€ */
 section { padding: 100px 0; }
 .container { max-width: 1440px; margin: 0 auto; padding: 0 48px; }
 
@@ -309,7 +309,7 @@ section { padding: 100px 0; }
 .gold-rule { width: 40px; height: 1px; background: var(--text); margin: 32px auto; }
 .gold-text { color: var(--gold); }
 
-/* ── Categories ── */
+/* â”€â”€ Categories â”€â”€ */
 #categories { background: var(--bg); }
 .cat-grid {
   display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;
@@ -347,7 +347,7 @@ section { padding: 100px 0; }
 .premium-cat-card:hover img { transform: scale(1.05); }
 .premium-cat-card .cat-name { font-family: var(--font-display); font-size: 1.4rem; font-weight: 300; }
 
-/* ── Featured Products ── */
+/* â”€â”€ Featured Products â”€â”€ */
 #featured { background: #ffffff; }
 .products-grid {
   display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 64px 32px;
@@ -400,7 +400,7 @@ section { padding: 100px 0; }
 .product-actions button.wishlist-btn { flex: 0 0 54px; background: var(--bg); color: var(--text); }
 .product-actions button.wishlist-btn:hover { background: var(--gold); color: #fff; }
 
-/* ── Brand Story ── */
+/* â”€â”€ Brand Story â”€â”€ */
 #story { background: var(--bg); }
 .story-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
 .story-visual { aspect-ratio: 4/5; background: #ffffff; overflow: hidden; }
@@ -411,7 +411,7 @@ section { padding: 100px 0; }
 .stat-num { font-family: var(--font-display); font-size: 3rem; font-weight: 300; color: var(--text); line-height: 1; margin-bottom: 12px; }
 .stat-label { font-size: 0.7rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--muted); }
 
-/* ── Marquee ── */
+/* â”€â”€ Marquee â”€â”€ */
 .marquee-wrap {
   background: var(--text); padding: 20px 0; overflow: hidden; color: #fff;
 }
@@ -422,7 +422,7 @@ section { padding: 100px 0; }
 }
 .marquee-dot { width: 4px; height: 4px; background: #fff; border-radius: 50%; opacity: 0.5; }
 
-/* ── Testimonials ── */
+/* â”€â”€ Testimonials â”€â”€ */
 #testimonials { background: #ffffff; text-align: center; }
 .testimonial-slider { display: flex; gap: 40px; justify-content: center; flex-wrap: wrap; }
 .testimonial-card { max-width: 400px; padding: 48px; text-align: center; }
@@ -430,7 +430,7 @@ section { padding: 100px 0; }
 .t-text { font-family: var(--font-display); font-style: italic; font-size: 1.2rem; line-height: 1.8; color: var(--text); margin-bottom: 32px; }
 .t-author { font-size: 0.75rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--text); }
 
-/* ── Newsletter ── */
+/* â”€â”€ Newsletter â”€â”€ */
 #newsletter { background: var(--bg); padding: 120px 0; text-align: center; }
 .newsletter-inner { max-width: 600px; margin: 0 auto; }
 .newsletter-inner p { margin-bottom: 48px; font-size: 1rem; color: var(--text-mid); }
@@ -440,7 +440,7 @@ section { padding: 100px 0; }
 .newsletter-form .btn-primary { padding: 16px 24px; font-size: 0.7rem; letter-spacing: 0.25em; text-transform: uppercase; color: #ffffff; clip-path: none; background: var(--text); }
 .newsletter-form .btn-primary:hover { background: var(--gold); }
 
-/* ── Footer ── */
+/* â”€â”€ Footer â”€â”€ */
 footer { background: #ffffff; padding: 100px 0 40px; border-top: 1px solid var(--border); }
 .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 64px; margin-bottom: 80px; }
 .footer-brand .nav-logo { font-size: 1.5rem; margin-bottom: 24px; display: block; color: var(--text); }
@@ -460,7 +460,7 @@ footer { background: #ffffff; padding: 100px 0 40px; border-top: 1px solid var(-
 .footer-pay { display: flex; gap: 16px; align-items: center; }
 .pay-badge { font-size: 0.7rem; letter-spacing: 0.15em; color: var(--muted); text-transform: uppercase; }
 
-/* ── Cart Drawer ── */
+/* â”€â”€ Cart Drawer â”€â”€ */
 #cart-drawer {
   position: fixed; top: 0; right: 0; bottom: 0;
   width: 440px; background: #ffffff;
@@ -492,7 +492,7 @@ footer { background: #ffffff; padding: 100px 0 40px; border-top: 1px solid var(-
 .cart-checkout { width: 100%; padding: 20px; text-align: center; background: var(--text); color: #fff; font-size: 0.75rem; letter-spacing: 0.3em; text-transform: uppercase; }
 .cart-empty { text-align: center; padding: 80px 0; font-family: var(--font-display); font-size: 1.4rem; color: var(--muted); font-style: italic; }
 
-/* ── Toast & Overlay ── */
+/* â”€â”€ Toast & Overlay â”€â”€ */
 #overlay { position: fixed; inset: 0; background: rgba(255,255,255,0.8); backdrop-filter: blur(4px); z-index: 1800; opacity: 0; pointer-events: none; transition: opacity var(--transition); }
 #overlay.active { opacity: 1; pointer-events: all; }
 #toast { position: fixed; bottom: 40px; left: 50%; transform: translateX(-50%) translateY(20px); background: var(--text); color: #fff; padding: 16px 32px; font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; z-index: 3000; opacity: 0; transition: all 0.3s; pointer-events: none; }
@@ -503,7 +503,7 @@ footer { background: #ffffff; padding: 100px 0 40px; border-top: 1px solid var(-
 .reveal.visible { opacity: 1; transform: translateY(0); }
 @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
-/* ── Responsive ── */
+/* â”€â”€ Responsive â”€â”€ */
 @media (max-width: 1024px) {
   .hero-title { font-size: 4rem; }
   .footer-grid { grid-template-columns: 1fr 1fr; }
@@ -601,7 +601,7 @@ footer { background: #ffffff; padding: 100px 0 40px; border-top: 1px solid var(-
 
 
 
-/* Hero overrides removed — single source of truth at end of file */
+/* Hero overrides removed â€” single source of truth at end of file */
 .cat-img-info .cat-name {
   color: #fff !important;
   text-shadow: 0 2px 10px rgba(0,0,0,0.8);
@@ -621,7 +621,7 @@ footer { background: #ffffff; padding: 100px 0 40px; border-top: 1px solid var(-
   border-radius: 12px !important;
 }
 
-/* Hero height override removed — single source of truth at end of file */
+/* Hero height override removed â€” single source of truth at end of file */
 
 /* Elegant Buttons */
 .btn-primary, .btn-secondary {
@@ -654,7 +654,7 @@ footer { background: #ffffff; padding: 100px 0 40px; border-top: 1px solid var(-
   border-color: var(--gold) !important;
 }
 
-/* Hero CTA overrides removed — single source of truth at end of file */
+/* Hero CTA overrides removed â€” single source of truth at end of file */
 
 /* Category Circles Restore */
 .premium-cat-card .cat-img-wrap {
@@ -867,11 +867,11 @@ footer { background: #ffffff; padding: 100px 0 40px; border-top: 1px solid var(-
   box-shadow: 0 15px 35px rgba(0,0,0,0.05) !important;
 }
 
-/* ══════════════════════════════════════════════════
-   HERO SECTION — SINGLE SOURCE OF TRUTH
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   HERO SECTION â€” SINGLE SOURCE OF TRUTH
    All hero styles consolidated here. No other
    hero overrides exist in this file.
-   ══════════════════════════════════════════════════ */
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 #hero {
   height: 100vh !important;
   min-height: 600px !important;
@@ -932,16 +932,16 @@ footer { background: #ffffff; padding: 100px 0 40px; border-top: 1px solid var(-
   .hero-title-sub { font-size: 0.85rem !important; }
 }
 
-/* Two-category grid — centered circles */
+/* Two-category grid â€” centered circles */
 .premium-cat-grid--two {
   grid-template-columns: repeat(2, 1fr) !important;
   max-width: 700px !important;
   margin: 0 auto !important;
 }
 
-/* ═══════════════════════════════════════════
-   NAVBAR DROPDOWN — Beautiful redesign
-   ═══════════════════════════════════════════ */
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   NAVBAR DROPDOWN â€” Beautiful redesign
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 .nav-dropdown > .dropdown-menu {
   opacity: 0 !important;
   visibility: hidden !important;
@@ -1033,9 +1033,9 @@ body.page-home nav:not(.scrolled) .nav-dropdown .dropdown-menu a:hover {
   color: var(--gold) !important;
 }
 
-/* ═══════════════════════════════════════════
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    MOBILE RESPONSIVENESS FIXES
-   ═══════════════════════════════════════════ */
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 
 /* General mobile container padding */
 @media (max-width: 768px) {
@@ -1074,7 +1074,7 @@ body.page-home nav:not(.scrolled) .nav-dropdown .dropdown-menu a:hover {
     font-size: 0.8rem !important;
   }
   
-  /* Categories — stack on smallest screens */
+  /* Categories â€” stack on smallest screens */
   .premium-cat-grid,
   .premium-cat-grid--two {
     grid-template-columns: repeat(2, 1fr) !important;
@@ -1422,4 +1422,45 @@ footer {
 }
 footer h3, footer p, footer a, footer .footer-social-item {
   color: #ffffff !important;
+}
+
+
+/* FORCE OVERRIDE OLD NAV STYLES */
+body.page-home nav:not(.scrolled) .nav-links > li > a, 
+body.page-home nav:not(.scrolled) .nav-icons button, 
+body.page-home nav:not(.scrolled) .nav-icons a,
+body.page-home nav:not(.scrolled) .nav-icons i,
+nav .nav-links li a,
+nav .nav-icons button,
+nav .nav-icons a {
+  color: var(--gold) !important;
+}
+
+/* FORCE OVERRIDE FOOTER STYLES */
+footer, footer h1, footer h2, footer h3, footer h4, footer h5, footer h6, 
+footer p, footer a, footer li, footer span, footer i {
+  color: #ffffff !important;
+}
+
+/* BEAUTIFY CATEGORY HOVER */
+.editorial-card::after {
+  content: '';
+  position: absolute;
+  top:0; left:0; right:0; bottom:0;
+  background: linear-gradient(to top, rgba(96,36,66,0.6), transparent 50%);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+.editorial-card:hover::after {
+  opacity: 1;
+}
+.editorial-card .card-label {
+  z-index: 2;
+  transition: transform 0.5s ease, background 0.5s ease, color 0.5s ease;
+  background: rgba(255,255,255,0.9);
+}
+.editorial-card:hover .card-label {
+  transform: translate(-50%, -10px);
+  background: var(--gold);
+  color: #fff !important;
 }

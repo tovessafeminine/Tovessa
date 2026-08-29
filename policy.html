@@ -1,362 +1,364 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <!-- Primary Meta -->
-  <meta name="description" content="Learn about TOVESSA's shipping policy, returns & exchange process, and frequently asked questions. Free delivery on bank deposit. 7-day return policy." />
-  <link rel="canonical" href="https://tovessa.com/policy" />
-  <!-- Open Graph / Facebook / WhatsApp -->
-  <meta property="og:type"        content="website" />
-  <meta property="og:url"         content="https://tovessa.com/policy" />
-  <meta property="og:title"       content="Shipping, Returns & FAQs — TOVESSA Pakistan" />
-  <meta property="og:description" content="Learn about TOVESSA's shipping policy, returns & exchange process, and frequently asked questions. Free delivery on bank deposit. 7-day return policy." />
-  <meta property="og:image"       content="https://tovessa.com/images/categories/necklace.jpg" />
-  <meta property="og:site_name"   content="TOVESSA" />
-  <meta property="og:locale"      content="en_PK" />
-  <!-- Twitter Card -->
-  <meta name="twitter:card"        content="summary_large_image" />
-  <meta name="twitter:title"       content="Shipping, Returns & FAQs — TOVESSA Pakistan" />
-  <meta name="twitter:description" content="Learn about TOVESSA's shipping policy, returns & exchange process, and frequently asked questions. Free delivery on bank deposit. 7-day return policy." />
-  <meta name="twitter:image"       content="https://tovessa.com/images/categories/necklace.jpg" />
-  <title>Policies - Tovessa | Botanical Luxury for Elite Womens</title>
-  <link rel="icon" type="image/png" href="/images/logo.png?v=3" />
-  <link rel="stylesheet" href="css/style.css?v=3"/>
-  <link rel="stylesheet" href="css/pages.css?v=3"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-</head>
-<body>
-  <nav>
-    <ul class="nav-links">
-      <li><a href="/">Home</a></li>
-      <li class="nav-dropdown">
-        <a href="shop">Shop <i class="fa-solid fa-chevron-down" style="font-size:0.7em;margin-left:4px;"></i></a>
-        <ul class="dropdown-menu">
-          <li><a href="shop.html">All Collections</a></li>
-          <li><a href="jewelry.html">Jewelry</a></li>
-          <li><a href="cosmetics.html">Cosmetics</a></li>
-          <li><a href="shop.html?cat=deals">Deals</a></li>
-        </ul>
-      </li>
-      <li><a href="about">Our Story</a></li>
-    </ul>
-    
-    <a href="/" class="nav-logo" style="text-align:center;"><img src="images/logo.png" alt="TOVESSA" /></a>
-    
-    <div class="nav-icons">
-      <button id="search-toggle" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
-      <a href="account" aria-label="Account"><i class="fa-regular fa-user"></i></a>
-      <button data-open-cart aria-label="Bag">
-        <i class="fa-solid fa-bag-shopping"></i>
-        <span class="cart-count" style="display:none">0</span>
-      </button>
-      <button class="hamburger" aria-label="Menu">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </nav>
-  <main class="policy-main">
-    <div class="container">
-      <!-- Sidebar tabs -->
-      <div class="policy-layout">
-        <aside class="policy-sidebar">
-          <h3>Help &amp; Policies</h3>
-          <div class="policy-nav">
-            <a href="policy?page=shipping"  class="policy-link" data-page="shipping">&#128230; Shipping Info</a>
-            <a href="policy?page=returns"   class="policy-link" data-page="returns">&#8635; Returns Policy</a>
-            <a href="policy?page=faqs"      class="policy-link" data-page="faqs">&#10067; FAQs</a>
-            <a href="policy?page=track"     class="policy-link" data-page="track">&#128205; Track Order</a>
-            <a href="policy?page=terms"     class="policy-link" data-page="terms">&#128195; Terms &amp; Privacy</a>
-          </div>
-        </aside>
-        <div class="policy-content" id="policy-content">
-          <!-- Filled by JS -->
-        </div>
-      </div>
-    </div>
-  </main>
-  <div id="toast"></div>
-  <script src="js/whatsapp-config.js"></script>
-  <script src="js/main.js"></script>
-  <script>
-  const POLICIES = {
-    shipping: {
-      title: 'Shipping Information',
-      icon: '??',
-      html: `
-        <h2>Shipping <em>Information</em></h2>
-        <div class="gold-rule"></div>
-        <div class="policy-section">
-          <h3>Delivery Options</h3>
-          <table class="policy-table">
-            <thead><tr><th>Method</th><th>Timeframe</th><th>Cost</th></tr></thead>
-            <tbody>
-              <tr><td>Standard Delivery (Bank Deposit)</td><td>3–6 working days</td><td>FREE</td></tr>
-              <tr><td>Standard Delivery (Cash on Delivery)</td><td>3–6 working days</td><td>FREE on orders over PKR 5,000 · PKR 200 otherwise</td></tr>
-            </tbody>
-          </table>
-        </div>
-        <div class="policy-section">
-          <h3>Order Processing</h3>
-          <p>All orders are processed within 24 hours on business days (Monday–Saturday, 10am–7pm PKT). Orders placed after 5pm or on Sundays will be processed the next business day.</p>
-        </div>
-        <div class="policy-section">
-          <h3>Tracking Your Order</h3>
-          <p>Once your order has been dispatched, you will receive a confirmation SMS and email with your tracking number. You can use this to monitor your delivery status via the courier's website or our <a href="policy?page=track" style="color:var(--gold)">Track Order</a> page.</p>
-        </div>
-        <div class="policy-section">
-          <h3>Delivery Areas</h3>
-          <p>We deliver across all of Pakistan. Remote areas may require an additional 1–2 days. Cash on Delivery (COD) is available nationwide.</p>
-        </div>
-        <div class="policy-section">
-          <h3>Important Notes</h3>
-          <ul class="policy-list">
-            <li>Delivery times are estimates and may vary during sale periods or public holidays.</li>
-            <li>TOVESSA is not responsible for delays caused by the courier service.</li>
-            <li>Please ensure your delivery address and phone number are correct at checkout.</li>
-          </ul>
-        </div>`
-    },
-    returns: {
-      title: 'Returns Policy',
-      icon: '??',
-      html: `
-        <h2>Returns <em>Policy</em></h2>
-        <div class="gold-rule"></div>
-        <div class="policy-section">
-          <h3>7-Day Return Window</h3>
-          <p>We offer a <strong>7-day hassle-free return policy</strong> from the date of delivery. If you're not completely satisfied with your purchase, we'll make it right.</p>
-        </div>
-        <div class="policy-section">
-          <h3>Conditions for Return</h3>
-          <ul class="policy-list">
-            <li>Item must be unused, unworn, and unwashed</li>
-            <li>Original tags and packaging must be intact</li>
-            <li>Item must not be damaged, stained, or altered</li>
-            <li><strong>Damaged Items:</strong> To claim a damaged product, you must provide an uncut unboxing video of the parcel. Without this video proof, your return will not be processed.</li>
-            <li>Sale items and cosmetics are <strong>non-returnable</strong> for hygiene reasons</li>
-          </ul>
-        </div>
-        <div class="policy-section">
-          <h3>How to Return</h3>
-          <ol class="policy-list">
-            <li>Contact us via WhatsApp or email within 7 days of receiving your order</li>
-            <li>Share your order number and reason for return</li>
-            <li>We will arrange a pickup or provide a drop-off address</li>
-            <li>Once the item is received and inspected, your refund will be processed within 5–7 business days</li>
-          </ol>
-        </div>
-        <div class="policy-section">
-          <h3>Exchanges</h3>
-          <p>We happily exchange items for a different size or colour, subject to availability. Please mention your preferred exchange at the time of return request.</p>
-        </div>
-        <div class="policy-section">
-          <h3>Refund Methods</h3>
-          <p>Refunds are issued via bank transfer. COD orders are refunded to your provided bank account.</p>
-        </div>`
-    },
-    faqs: {
-      title: 'Frequently Asked Questions',
-      icon: '?',
-      html: `
-        <h2>Frequently Asked <em>Questions</em></h2>
-        <div class="gold-rule"></div>
-        <div class="faq-list">
-          ${[
-            ['How do I place an order?', 'Browse our shop, select your items, add them to your bag, and proceed to checkout. You can pay via Cash on Delivery or Bank Deposit.'],
-            ['How long does delivery take?', 'Delivery takes 3–6 working days across Pakistan.'],
-            ['Is Cash on Delivery available?', 'Yes! COD is available across all of Pakistan. Simply select Cash on Delivery at checkout.'],
-            ['Can I return a product?', 'Yes, we accept returns within 14 days of delivery. Items must be unused with original tags. Cosmetics and sale items are non-returnable.'],
-            ['How do I track my order?', 'Once dispatched, you\'ll receive an SMS and email with your tracking number. Visit our Track Order page for real-time updates.'],
-            ['Do you offer gift packaging?', 'Yes! All TOVESSA orders come in premium branded packaging. For gift orders, add a note at checkout.'],
-            ['Can I exchange for a different size?', 'Absolutely. Contact us within 14 days and we\'ll arrange an exchange subject to stock availability.'],
-            ['Is there a warranty on jewellery and watches?', 'All jewellery and watches come with a 6-month quality guarantee against manufacturing defects.'],
-            ['How do I subscribe to the newsletter?', 'Enter your email in the newsletter section on our homepage to get updates on new arrivals and collections.'],
-            ['What if my item arrives damaged?', 'We\'re so sorry to hear that. Contact us within 48 hours of delivery with photos, and we\'ll resolve it immediately.'],
-          ].map(([q,a]) => `
-            <div class="faq-item">
-              <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
-                ${q}<span class="faq-chevron">?</span>
-              </button>
-              <div class="faq-answer"><p>${a}</p></div>
-            </div>`).join('')}
-        </div>`
-    },
-    track: {
-      title: 'Track Your Order',
-      icon: '??',
-      html: `
-        <h2>Track Your <em>Order</em></h2>
-        <div class="gold-rule"></div>
-        <div class="policy-section">
-          <p>Enter your order reference number or the email address used at checkout to track your delivery status.</p>
-          <div class="track-form">
-            <div class="form-group">
-              <label>Order Reference Number</label>
-              <input type="text" id="track-ref" placeholder="e.g. ZH-12345678"/>
-            </div>
-            <div class="form-group">
-              <label>Email Address</label>
-              <input type="email" id="track-email" placeholder="you@email.com"/>
-            </div>
-            <button class="btn-primary" onclick="trackOrder()" style="margin-top:8px">Track Order</button>
-          </div>
-          <div id="track-result" style="display:none;margin-top:28px"></div>
-        </div>
-        <div class="policy-section">
-          <h3>Need Help?</h3>
-          <p>If you can't find your order, contact us directly:</p>
-          <ul class="policy-list">
-            <li>WhatsApp: <a href="#" id="wa-track-link" style="color:var(--gold)"><span data-tovessa="phone">+92 315 0727131</span></a></li>
-            <li>Email: <a href="#" style="color:var(--gold)" data-tovessa="email">hello@tovessa.com</a></li>
-          </ul>
-        </div>`
-    },
-    terms: {
-      title: 'Terms & Privacy Policy',
-      icon: '??',
-      html: `
-        <h2>Terms &amp; <em>Privacy Policy</em></h2>
-        <div class="gold-rule"></div>
-        <div class="policy-section">
-          <h3>Terms of Use</h3>
-          <p>By using the TOVESSA website and placing orders, you agree to the following terms. TOVESSA reserves the right to update these terms at any time.</p>
-          <ul class="policy-list">
-            <li>Products are subject to availability. We reserve the right to cancel orders if stock is unavailable.</li>
-            <li>Prices are listed in Pakistani Rupees (PKR) and are inclusive of all applicable taxes.</li>
-            <li>TOVESSA reserves the right to refuse service to any customer at our discretion.</li>
-            <li>Product images are for illustrative purposes; slight colour variations may occur.</li>
-          </ul>
-        </div>
-        <div class="policy-section">
-          <h3>Privacy Policy</h3>
-          <p>Your privacy is important to us. We collect only the information necessary to process your orders and improve your experience.</p>
-          <ul class="policy-list">
-            <li><strong>Data collected:</strong> Name, email, phone, delivery address, and order history.</li>
-            <li><strong>Usage:</strong> Your data is used solely for order processing, delivery, and customer support.</li>
-            <li><strong>Sharing:</strong> We never sell or share your personal data with third parties, except delivery couriers.</li>
-            <li><strong>Cookies:</strong> We use cookies to improve site performance. You may disable cookies in your browser settings.</li>
-          </ul>
-        </div>
-        <div class="policy-section">
-          <h3>Contact for Concerns</h3>
-          <p>For any privacy or terms concerns, email us at <a href="#" style="color:var(--gold)" data-tovessa="email">hello@tovessa.com</a>.</p>
-        </div>`
-    }
-  };
-  /* -- Load correct page from URL -- */
-  const params = new URLSearchParams(window.location.search);
-  const page   = params.get('page') || 'shipping';
-  function loadPolicy(key) {
-    const data    = POLICIES[key] || POLICIES['shipping'];
-    const content = document.getElementById('policy-content');
-    if (content) content.innerHTML = data.html;
-    if (content && window.applyTOVESSAContactInfo) window.applyTOVESSAContactInfo(content);
-    document.title = data.title + ' — TOVESSA';
-    /* Update sidebar heading to reflect active page */
-    const sidebarHeading = document.querySelector('.policy-sidebar h3');
-    if (sidebarHeading) sidebarHeading.textContent = 'Help & Policies';
-    /* Highlight active link */
-    document.querySelectorAll('.policy-link').forEach(l => {
-      l.classList.toggle('active', l.dataset.page === key);
-    });
-    /* Set WA link on track page */
-    const waLink = document.getElementById('wa-track-link');
-    if (waLink && window.GOLNISÀ_CONFIG) waLink.href = window.GOLNISÀ_CONFIG.social.whatsapp;
-  }
-  loadPolicy(page);
-  /* Policy sidebar navigation */
-  document.querySelectorAll('.policy-link').forEach(link => {
-    link.addEventListener('click', e => {
-      e.preventDefault();
-      const pg = link.dataset.page;
-      history.pushState({}, '', '?page=' + pg);
-      loadPolicy(pg);
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-  });
-  /* Track order — real backend */
-  window.trackOrder = async () => {
-    const ref    = document.getElementById('track-ref')?.value.trim();
-    const email  = document.getElementById('track-email')?.value.trim();
-    const result = document.getElementById('track-result');
-    const btn    = document.querySelector('[onclick="trackOrder()"]');
-    if (!ref && !email) { showToast('Please enter your order number or email'); return; }
-    if (!result) return;
-    if (btn) { btn.disabled = true; btn.textContent = 'Tracking…'; }
-    result.style.display = 'block';
-    result.innerHTML = `<div style="padding:24px;text-align:center;color:var(--muted);">Looking up your order…</div>`;
-    try {
-      let order = null;
-      if (ref) {
-        const res  = await fetch(`https://tovessa.com/api/orders/track/${encodeURIComponent(ref)}`);
-        const data = await res.json();
-        if (res.ok) order = data.order;
-      }
-      if (!order && email) {
-        const res  = await fetch(`https://tovessa.com/api/orders/user/${encodeURIComponent(email)}`);
-        const data = await res.json();
-        if (res.ok && data.orders?.length) order = data.orders[0];
-      }
-      if (!order) {
-        result.innerHTML = `<div class="track-status-card" style="border-left:3px solid #d96a6a;padding:20px;">
-          <div class="track-status-icon">?</div>
-          <div><strong>Order Not Found</strong>
-          <p style="color:var(--muted);font-size:.85rem;margin-top:6px;">No order found with that reference or email. Double-check and try again, or contact us on WhatsApp.</p>
-          <a href="${window.GOLNISÀ_CONFIG?.social?.whatsapp || '#'}" target="_blank" class="btn-primary" style="display:inline-block;margin-top:14px;padding:12px 28px;">Chat on WhatsApp ?</a></div></div>`;
-        return;
-      }
-      const statusColors = { Pending:'#c9a84c', Confirmed:'#8e44ad', Processing:'#5b9bd5', Shipped:'#7ec8a4', Delivered:'#5cb85c', Cancelled:'#d96a6a' };
-      const statusIcons  = { Pending:'?', Confirmed:'??', Processing:'??', Shipped:'??', Delivered:'?', Cancelled:'?' };
-      const steps = ['Pending','Confirmed','Processing','Shipped','Delivered'];
-      const stepIdx = steps.indexOf(order.status);
-      const stepsHTML = order.status === 'Cancelled' ? '' : `
-        <div style="display:flex;gap:0;margin:20px 0 8px;align-items:center;">
-          ${steps.map((s,i) => `
-            <div style="flex:1;text-align:center;">
-              <div style="width:32px;height:32px;border-radius:50%;background:${i<=stepIdx?'var(--gold)':'var(--card)'};border:2px solid ${i<=stepIdx?'var(--gold)':'var(--border)'};display:flex;align-items:center;justify-content:center;margin:0 auto;font-size:.9rem;">${i<=stepIdx?'?':i+1}</div>
-              <p style="font-size:.68rem;color:${i<=stepIdx?'var(--gold)':'var(--muted)'};margin-top:5px;">${s}</p>
-            </div>
-            ${i<steps.length-1?`<div style="flex:0.5;height:2px;background:${i<stepIdx?'var(--gold)':'var(--border)'};margin-bottom:22px;"></div>`:''}
-          `).join('')}
-        </div>`;
-      result.innerHTML = `
-        <div class="track-status-card" style="border:1px solid var(--border);border-left:4px solid ${statusColors[order.status]||'var(--gold)'};padding:24px;border-radius:8px;background:var(--card);">
-          <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:12px;">
-            <div>
-              <p style="color:var(--muted);font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;">Order Reference</p>
-              <strong style="font-size:1.1rem;">${order.id}</strong>
-            </div>
-            <div style="background:${statusColors[order.status]||'var(--gold)'}22;border:1px solid ${statusColors[order.status]||'var(--gold)'};padding:6px 16px;border-radius:20px;font-size:.82rem;font-weight:600;color:${statusColors[order.status]||'var(--gold)'};">
-              ${statusIcons[order.status]||'??'} ${order.status}
-            </div>
-          </div>
-          ${stepsHTML}
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px;font-size:.82rem;">
-            <div><span style="color:var(--muted);">Order Placed</span><br><strong>${new Date(order.createdAt).toLocaleDateString('en-PK',{day:'numeric',month:'short',year:'numeric'})}</strong></div>
-            <div><span style="color:var(--muted);">Last Updated</span><br><strong>${new Date(order.updatedAt||order.createdAt).toLocaleDateString('en-PK',{day:'numeric',month:'short',year:'numeric'})}</strong></div>
-            ${order.total ? `<div><span style="color:var(--muted);">Order Total</span><br><strong>PKR ${Number(order.total).toLocaleString()}</strong></div>`:''}
-            ${order.deliveryMethod ? `<div><span style="color:var(--muted);">Delivery</span><br><strong style="text-transform:capitalize;">${order.deliveryMethod}</strong></div>`:''}
-          </div>
-          ${order.items?.length ? `<div style="margin-top:16px;border-top:1px solid var(--border);padding-top:14px;">
-            <p style="color:var(--muted);font-size:.75rem;text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px;">Items</p>
-            ${order.items.map(i=>`<div style="display:flex;justify-content:space-between;font-size:.82rem;padding:4px 0;"><span>${i.emoji||'???'} ${i.name} ×${i.qty}</span><span>PKR ${(i.price*i.qty).toLocaleString()}</span></div>`).join('')}
-          </div>`:''}
-        </div>`;
-    } catch (err) {
-      result.innerHTML = `<div style="padding:20px;color:#d96a6a;">Could not reach the server. Please try again.</div>`;
-    } finally {
-      if (btn) { btn.disabled = false; btn.textContent = 'Track Order'; }
-    }
-  };
-  </script>
-</body>
-</html>
-
-
-
-
-
-
-
-
+ï»¿---<---!---D---O---C---T---Y---P---E--- ---h---t---m---l--->------
+---<---h---t---m---l--- ---l---a---n---g---=---"---e---n---"--->------
+---<---h---e---a---d--->------
+--- --- ---<---m---e---t---a--- ---c---h---a---r---s---e---t---=---"---U---T---F-------8---"---/--->------
+--- --- ---<---m---e---t---a--- ---n---a---m---e---=---"---v---i---e---w---p---o---r---t---"--- ---c---o---n---t---e---n---t---=---"---w---i---d---t---h---=---d---e---v---i---c---e-------w---i---d---t---h---,--- ---i---n---i---t---i---a---l-------s---c---a---l---e---=---1---.---0---"---/--->------
+--- --- ---<---!----------- ---P---r---i---m---a---r---y--- ---M---e---t---a--- ----------->------
+--- --- ---<---m---e---t---a--- ---n---a---m---e---=---"---d---e---s---c---r---i---p---t---i---o---n---"--- ---c---o---n---t---e---n---t---=---"---L---e---a---r---n--- ---a---b---o---u---t--- ---T---O---V---E---S---S---A---'---s--- ---s---h---i---p---p---i---n---g--- ---p---o---l---i---c---y---,--- ---r---e---t---u---r---n---s--- ---&--- ---e---x---c---h---a---n---g---e--- ---p---r---o---c---e---s---s---,--- ---a---n---d--- ---f---r---e---q---u---e---n---t---l---y--- ---a---s---k---e---d--- ---q---u---e---s---t---i---o---n---s---.--- ---F---r---e---e--- ---d---e---l---i---v---e---r---y--- ---o---n--- ---b---a---n---k--- ---d---e---p---o---s---i---t---.--- ---7-------d---a---y--- ---r---e---t---u---r---n--- ---p---o---l---i---c---y---.---"--- ---/--->------
+--- --- ---<---l---i---n---k--- ---r---e---l---=---"---c---a---n---o---n---i---c---a---l---"--- ---h---r---e---f---=---"---h---t---t---p---s---:---/---/---t---o---v---e---s---s---a---.---c---o---m---/---p---o---l---i---c---y---"--- ---/--->------
+--- --- ---<---!----------- ---O---p---e---n--- ---G---r---a---p---h--- ---/--- ---F---a---c---e---b---o---o---k--- ---/--- ---W---h---a---t---s---A---p---p--- ----------->------
+--- --- ---<---m---e---t---a--- ---p---r---o---p---e---r---t---y---=---"---o---g---:---t---y---p---e---"--- --- --- --- --- --- --- --- ---c---o---n---t---e---n---t---=---"---w---e---b---s---i---t---e---"--- ---/--->------
+--- --- ---<---m---e---t---a--- ---p---r---o---p---e---r---t---y---=---"---o---g---:---u---r---l---"--- --- --- --- --- --- --- --- --- ---c---o---n---t---e---n---t---=---"---h---t---t---p---s---:---/---/---t---o---v---e---s---s---a---.---c---o---m---/---p---o---l---i---c---y---"--- ---/--->------
+--- --- ---<---m---e---t---a--- ---p---r---o---p---e---r---t---y---=---"---o---g---:---t---i---t---l---e---"--- --- --- --- --- --- --- ---c---o---n---t---e---n---t---=---"---S---h---i---p---p---i---n---g---,--- ---R---e---t---u---r---n---s--- ---&--- ---F---A---Q---s--- ---â€”--- ---T---O---V---E---S---S---A--- ---P---a---k---i---s---t---a---n---"--- ---/--->------
+--- --- ---<---m---e---t---a--- ---p---r---o---p---e---r---t---y---=---"---o---g---:---d---e---s---c---r---i---p---t---i---o---n---"--- ---c---o---n---t---e---n---t---=---"---L---e---a---r---n--- ---a---b---o---u---t--- ---T---O---V---E---S---S---A---'---s--- ---s---h---i---p---p---i---n---g--- ---p---o---l---i---c---y---,--- ---r---e---t---u---r---n---s--- ---&--- ---e---x---c---h---a---n---g---e--- ---p---r---o---c---e---s---s---,--- ---a---n---d--- ---f---r---e---q---u---e---n---t---l---y--- ---a---s---k---e---d--- ---q---u---e---s---t---i---o---n---s---.--- ---F---r---e---e--- ---d---e---l---i---v---e---r---y--- ---o---n--- ---b---a---n---k--- ---d---e---p---o---s---i---t---.--- ---7-------d---a---y--- ---r---e---t---u---r---n--- ---p---o---l---i---c---y---.---"--- ---/--->------
+--- --- ---<---m---e---t---a--- ---p---r---o---p---e---r---t---y---=---"---o---g---:---i---m---a---g---e---"--- --- --- --- --- --- --- ---c---o---n---t---e---n---t---=---"---h---t---t---p---s---:---/---/---t---o---v---e---s---s---a---.---c---o---m---/---i---m---a---g---e---s---/---c---a---t---e---g---o---r---i---e---s---/---n---e---c---k---l---a---c---e---.---j---p---g---"--- ---/--->------
+--- --- ---<---m---e---t---a--- ---p---r---o---p---e---r---t---y---=---"---o---g---:---s---i---t---e---_---n---a---m---e---"--- --- --- ---c---o---n---t---e---n---t---=---"---T---O---V---E---S---S---A---"--- ---/--->------
+--- --- ---<---m---e---t---a--- ---p---r---o---p---e---r---t---y---=---"---o---g---:---l---o---c---a---l---e---"--- --- --- --- --- --- ---c---o---n---t---e---n---t---=---"---e---n---_---P---K---"--- ---/--->------
+--- --- ---<---!----------- ---T---w---i---t---t---e---r--- ---C---a---r---d--- ----------->------
+--- --- ---<---m---e---t---a--- ---n---a---m---e---=---"---t---w---i---t---t---e---r---:---c---a---r---d---"--- --- --- --- --- --- --- --- ---c---o---n---t---e---n---t---=---"---s---u---m---m---a---r---y---_---l---a---r---g---e---_---i---m---a---g---e---"--- ---/--->------
+--- --- ---<---m---e---t---a--- ---n---a---m---e---=---"---t---w---i---t---t---e---r---:---t---i---t---l---e---"--- --- --- --- --- --- --- ---c---o---n---t---e---n---t---=---"---S---h---i---p---p---i---n---g---,--- ---R---e---t---u---r---n---s--- ---&--- ---F---A---Q---s--- ---â€”--- ---T---O---V---E---S---S---A--- ---P---a---k---i---s---t---a---n---"--- ---/--->------
+--- --- ---<---m---e---t---a--- ---n---a---m---e---=---"---t---w---i---t---t---e---r---:---d---e---s---c---r---i---p---t---i---o---n---"--- ---c---o---n---t---e---n---t---=---"---L---e---a---r---n--- ---a---b---o---u---t--- ---T---O---V---E---S---S---A---'---s--- ---s---h---i---p---p---i---n---g--- ---p---o---l---i---c---y---,--- ---r---e---t---u---r---n---s--- ---&--- ---e---x---c---h---a---n---g---e--- ---p---r---o---c---e---s---s---,--- ---a---n---d--- ---f---r---e---q---u---e---n---t---l---y--- ---a---s---k---e---d--- ---q---u---e---s---t---i---o---n---s---.--- ---F---r---e---e--- ---d---e---l---i---v---e---r---y--- ---o---n--- ---b---a---n---k--- ---d---e---p---o---s---i---t---.--- ---7-------d---a---y--- ---r---e---t---u---r---n--- ---p---o---l---i---c---y---.---"--- ---/--->------
+--- --- ---<---m---e---t---a--- ---n---a---m---e---=---"---t---w---i---t---t---e---r---:---i---m---a---g---e---"--- --- --- --- --- --- --- ---c---o---n---t---e---n---t---=---"---h---t---t---p---s---:---/---/---t---o---v---e---s---s---a---.---c---o---m---/---i---m---a---g---e---s---/---c---a---t---e---g---o---r---i---e---s---/---n---e---c---k---l---a---c---e---.---j---p---g---"--- ---/--->------
+--- --- ---<---t---i---t---l---e--->---P---o---l---i---c---i---e---s--- ------- ---T---o---v---e---s---s---a--- ---|--- ---B---o---t---a---n---i---c---a---l--- ---L---u---x---u---r---y--- ---f---o---r--- ---E---l---i---t---e--- ---W---o---m---e---n---s---<---/---t---i---t---l---e--->------
+--- --- ---<---l---i---n---k--- ---r---e---l---=---"---i---c---o---n---"--- ---t---y---p---e---=---"---i---m---a---g---e---/---p---n---g---"--- ---h---r---e---f---=---"---/---i---m---a---g---e---s---/---l---o---g---o---.---p---n---g---?---v---=---3---"--- ---/--->------
+--- --- ---<---l---i---n---k--- ---r---e---l---=---"---s---t---y---l---e---s---h---e---e---t---"--- ---h---r---e---f---=---"---c---s---s---/---s---t---y---l---e---.---c---s---s---?---v---=---3---"---/--->------
+--- --- ---<---l---i---n---k--- ---r---e---l---=---"---s---t---y---l---e---s---h---e---e---t---"--- ---h---r---e---f---=---"---c---s---s---/---p---a---g---e---s---.---c---s---s---?---v---=---3---"---/--->------
+--- --- ---<---l---i---n---k--- ---r---e---l---=---"---s---t---y---l---e---s---h---e---e---t---"--- ---h---r---e---f---=---"---h---t---t---p---s---:---/---/---c---d---n---j---s---.---c---l---o---u---d---f---l---a---r---e---.---c---o---m---/---a---j---a---x---/---l---i---b---s---/---f---o---n---t-------a---w---e---s---o---m---e---/---6---.---5---.---0---/---c---s---s---/---a---l---l---.---m---i---n---.---c---s---s---"--- ---/--->------
+---<---/---h---e---a---d--->------
+---<---b---o---d---y--->------
+--- --- ---<---n---a---v--->---
+--- --- --- --- ---<---u---l--- ---c---l---a---s---s---=---"---n---a---v-------l---i---n---k---s---"--->---
+--- --- --- --- --- --- ---<---l---i--->---<---a--- ---h---r---e---f---=---"---/---"--->---H---o---m---e---<---/---a--->---<---/---l---i--->---
+--- --- --- --- --- --- ---<---l---i--- ---c---l---a---s---s---=---"---n---a---v-------d---r---o---p---d---o---w---n---"--->---
+--- --- --- --- --- --- --- --- ---<---a--- ---h---r---e---f---=---"---s---h---o---p---"--->---S---h---o---p--- ---<---i--- ---c---l---a---s---s---=---"---f---a-------s---o---l---i---d--- ---f---a-------c---h---e---v---r---o---n-------d---o---w---n---"--- ---s---t---y---l---e---=---"---f---o---n---t-------s---i---z---e---:---0---.---7---e---m---;---m---a---r---g---i---n-------l---e---f---t---:---4---p---x---;---"--->---<---/---i--->---<---/---a--->---
+--- --- --- --- --- --- --- --- ---<---u---l--- ---c---l---a---s---s---=---"---d---r---o---p---d---o---w---n-------m---e---n---u---"--->---
+--- --- --- --- --- --- --- --- --- --- ---<---l---i--->---<---a--- ---h---r---e---f---=---"---s---h---o---p---.---h---t---m---l---"--->---A---l---l--- ---C---o---l---l---e---c---t---i---o---n---s---<---/---a--->---<---/---l---i--->---
+--- --- --- --- --- --- --- --- --- --- ---<---l---i--->---<---a--- ---h---r---e---f---=---"---j---e---w---e---l---r---y---.---h---t---m---l---"--->---J---e---w---e---l---r---y---<---/---a--->---<---/---l---i--->---
+--- --- --- --- --- --- --- --- --- --- ---<---l---i--->---<---a--- ---h---r---e---f---=---"---c---o---s---m---e---t---i---c---s---.---h---t---m---l---"--->---C---o---s---m---e---t---i---c---s---<---/---a--->---<---/---l---i--->---
+--- --- --- --- --- --- --- --- --- --- ---<---l---i--->---<---a--- ---h---r---e---f---=---"---s---h---o---p---.---h---t---m---l---?---c---a---t---=---d---e---a---l---s---"--->---D---e---a---l---s---<---/---a--->---<---/---l---i--->---
+--- --- --- --- --- --- --- --- ---<---/---u---l--->---
+--- --- --- --- --- --- ---<---/---l---i--->---
+--- --- --- --- --- --- ---<---l---i--->---<---a--- ---h---r---e---f---=---"---a---b---o---u---t---"--->---O---u---r--- ---S---t---o---r---y---<---/---a--->---<---/---l---i--->---
+--- --- --- --- ---<---/---u---l--->---
+--- --- --- --- ---
+--- --- --- --- ---<---a--- ---h---r---e---f---=---"---/---"--- ---c---l---a---s---s---=---"---n---a---v-------l---o---g---o---"--- ---s---t---y---l---e---=---"---t---e---x---t-------a---l---i---g---n---:---c---e---n---t---e---r---;---"--->---<---i---m---g--- ---s---r---c---=---"---i---m---a---g---e---s---/---l---o---g---o---.---p---n---g---"--- ---a---l---t---=---"---T---O---V---E---S---S---A---"--- ---/--->---<---/---a--->---
+--- --- --- --- ---
+--- --- --- --- ---<---d---i---v--- ---c---l---a---s---s---=---"---n---a---v-------i---c---o---n---s---"--->---
+--- --- --- --- --- --- ---<---b---u---t---t---o---n--- ---i---d---=---"---s---e---a---r---c---h-------t---o---g---g---l---e---"--- ---a---r---i---a-------l---a---b---e---l---=---"---S---e---a---r---c---h---"--->---<---i--- ---c---l---a---s---s---=---"---f---a-------s---o---l---i---d--- ---f---a-------m---a---g---n---i---f---y---i---n---g-------g---l---a---s---s---"--->---<---/---i--->---<---/---b---u---t---t---o---n--->---
+--- --- --- --- --- --- ---<---a--- ---h---r---e---f---=---"---a---c---c---o---u---n---t---"--- ---a---r---i---a-------l---a---b---e---l---=---"---A---c---c---o---u---n---t---"--->---<---i--- ---c---l---a---s---s---=---"---f---a-------r---e---g---u---l---a---r--- ---f---a-------u---s---e---r---"--->---<---/---i--->---<---/---a--->---
+--- --- --- --- --- --- ---<---b---u---t---t---o---n--- ---d---a---t---a-------o---p---e---n-------c---a---r---t--- ---a---r---i---a-------l---a---b---e---l---=---"---B---a---g---"--->---
+--- --- --- --- --- --- --- --- ---<---i--- ---c---l---a---s---s---=---"---f---a-------s---o---l---i---d--- ---f---a-------b---a---g-------s---h---o---p---p---i---n---g---"--->---<---/---i--->---
+--- --- --- --- --- --- --- --- ---<---s---p---a---n--- ---c---l---a---s---s---=---"---c---a---r---t-------c---o---u---n---t---"--- ---s---t---y---l---e---=---"---d---i---s---p---l---a---y---:---n---o---n---e---"--->---0---<---/---s---p---a---n--->---
+--- --- --- --- --- --- ---<---/---b---u---t---t---o---n--->---
+--- --- --- --- --- --- ---<---b---u---t---t---o---n--- ---c---l---a---s---s---=---"---h---a---m---b---u---r---g---e---r---"--- ---a---r---i---a-------l---a---b---e---l---=---"---M---e---n---u---"--->---
+--- --- --- --- --- --- --- --- ---<---s---p---a---n--->---<---/---s---p---a---n--->---<---s---p---a---n--->---<---/---s---p---a---n--->---<---s---p---a---n--->---<---/---s---p---a---n--->---
+--- --- --- --- --- --- ---<---/---b---u---t---t---o---n--->---
+--- --- --- --- ---<---/---d---i---v--->---
+--- --- ---<---/---n---a---v--->------
+--- --- ---<---m---a---i---n--- ---c---l---a---s---s---=---"---p---o---l---i---c---y-------m---a---i---n---"--->------
+--- --- --- --- ---<---d---i---v--- ---c---l---a---s---s---=---"---c---o---n---t---a---i---n---e---r---"--->------
+--- --- --- --- --- --- ---<---!----------- ---S---i---d---e---b---a---r--- ---t---a---b---s--- ----------->------
+--- --- --- --- --- --- ---<---d---i---v--- ---c---l---a---s---s---=---"---p---o---l---i---c---y-------l---a---y---o---u---t---"--->------
+--- --- --- --- --- --- --- --- ---<---a---s---i---d---e--- ---c---l---a---s---s---=---"---p---o---l---i---c---y-------s---i---d---e---b---a---r---"--->------
+--- --- --- --- --- --- --- --- --- --- ---<---h---3--->---H---e---l---p--- ---&---a---m---p---;--- ---P---o---l---i---c---i---e---s---<---/---h---3--->------
+--- --- --- --- --- --- --- --- --- --- ---<---d---i---v--- ---c---l---a---s---s---=---"---p---o---l---i---c---y-------n---a---v---"--->------
+--- --- --- --- --- --- --- --- --- --- --- --- ---<---a--- ---h---r---e---f---=---"---p---o---l---i---c---y---?---p---a---g---e---=---s---h---i---p---p---i---n---g---"--- --- ---c---l---a---s---s---=---"---p---o---l---i---c---y-------l---i---n---k---"--- ---d---a---t---a-------p---a---g---e---=---"---s---h---i---p---p---i---n---g---"--->---&---#---1---2---8---2---3---0---;--- ---S---h---i---p---p---i---n---g--- ---I---n---f---o---<---/---a--->------
+--- --- --- --- --- --- --- --- --- --- --- --- ---<---a--- ---h---r---e---f---=---"---p---o---l---i---c---y---?---p---a---g---e---=---r---e---t---u---r---n---s---"--- --- --- ---c---l---a---s---s---=---"---p---o---l---i---c---y-------l---i---n---k---"--- ---d---a---t---a-------p---a---g---e---=---"---r---e---t---u---r---n---s---"--->---&---#---8---6---3---5---;--- ---R---e---t---u---r---n---s--- ---P---o---l---i---c---y---<---/---a--->------
+--- --- --- --- --- --- --- --- --- --- --- --- ---<---a--- ---h---r---e---f---=---"---p---o---l---i---c---y---?---p---a---g---e---=---f---a---q---s---"--- --- --- --- --- --- ---c---l---a---s---s---=---"---p---o---l---i---c---y-------l---i---n---k---"--- ---d---a---t---a-------p---a---g---e---=---"---f---a---q---s---"--->---&---#---1---0---0---6---7---;--- ---F---A---Q---s---<---/---a--->------
+--- --- --- --- --- --- --- --- --- --- --- --- ---<---a--- ---h---r---e---f---=---"---p---o---l---i---c---y---?---p---a---g---e---=---t---r---a---c---k---"--- --- --- --- --- ---c---l---a---s---s---=---"---p---o---l---i---c---y-------l---i---n---k---"--- ---d---a---t---a-------p---a---g---e---=---"---t---r---a---c---k---"--->---&---#---1---2---8---2---0---5---;--- ---T---r---a---c---k--- ---O---r---d---e---r---<---/---a--->------
+--- --- --- --- --- --- --- --- --- --- --- --- ---<---a--- ---h---r---e---f---=---"---p---o---l---i---c---y---?---p---a---g---e---=---t---e---r---m---s---"--- --- --- --- --- ---c---l---a---s---s---=---"---p---o---l---i---c---y-------l---i---n---k---"--- ---d---a---t---a-------p---a---g---e---=---"---t---e---r---m---s---"--->---&---#---1---2---8---1---9---5---;--- ---T---e---r---m---s--- ---&---a---m---p---;--- ---P---r---i---v---a---c---y---<---/---a--->------
+--- --- --- --- --- --- --- --- --- --- ---<---/---d---i---v--->------
+--- --- --- --- --- --- --- --- ---<---/---a---s---i---d---e--->------
+--- --- --- --- --- --- --- --- ---<---d---i---v--- ---c---l---a---s---s---=---"---p---o---l---i---c---y-------c---o---n---t---e---n---t---"--- ---i---d---=---"---p---o---l---i---c---y-------c---o---n---t---e---n---t---"--->------
+--- --- --- --- --- --- --- --- --- --- ---<---!----------- ---F---i---l---l---e---d--- ---b---y--- ---J---S--- ----------->------
+--- --- --- --- --- --- --- --- ---<---/---d---i---v--->------
+--- --- --- --- --- --- ---<---/---d---i---v--->------
+--- --- --- --- ---<---/---d---i---v--->------
+--- --- ---<---/---m---a---i---n--->------
+--- --- ---<---d---i---v--- ---i---d---=---"---t---o---a---s---t---"--->---<---/---d---i---v--->------
+--- --- ---<---s---c---r---i---p---t--- ---s---r---c---=---"---j---s---/---w---h---a---t---s---a---p---p-------c---o---n---f---i---g---.---j---s---"--->---<---/---s---c---r---i---p---t--->------
+--- --- ---<---s---c---r---i---p---t--- ---s---r---c---=---"---j---s---/---m---a---i---n---.---j---s---"--->---<---/---s---c---r---i---p---t--->------
+--- --- ---<---s---c---r---i---p---t--->------
+--- --- ---c---o---n---s---t--- ---P---O---L---I---C---I---E---S--- ---=--- ---{------
+--- --- --- --- ---s---h---i---p---p---i---n---g---:--- ---{------
+--- --- --- --- --- --- ---t---i---t---l---e---:--- ---'---S---h---i---p---p---i---n---g--- ---I---n---f---o---r---m---a---t---i---o---n---'---,------
+--- --- --- --- --- --- ---i---c---o---n---:--- ---'---?---?---'---,------
+--- --- --- --- --- --- ---h---t---m---l---:--- ---`------
+--- --- --- --- --- --- --- --- ---<---h---2--->---S---h---i---p---p---i---n---g--- ---<---e---m--->---I---n---f---o---r---m---a---t---i---o---n---<---/---e---m--->---<---/---h---2--->------
+--- --- --- --- --- --- --- --- ---<---d---i---v--- ---c---l---a---s---s---=---"---g---o---l---d-------r---u---l---e---"--->---<---/---d---i---v--->------
+--- --- --- --- --- --- --- --- ---<---d---i---v--- ---c---l---a---s---s---=---"---p---o---l---i---c---y-------s---e---c---t---i---o---n---"--->------
+--- --- --- --- --- --- --- --- --- --- ---<---h---3--->---D---e---l---i---v---e---r---y--- ---O---p---t---i---o---n---s---<---/---h---3--->------
+--- --- --- --- --- --- --- --- --- --- ---<---t---a---b---l---e--- ---c---l---a---s---s---=---"---p---o---l---i---c---y-------t---a---b---l---e---"--->------
+--- --- --- --- --- --- --- --- --- --- --- --- ---<---t---h---e---a---d--->---<---t---r--->---<---t---h--->---M---e---t---h---o---d---<---/---t---h--->---<---t---h--->---T---i---m---e---f---r---a---m---e---<---/---t---h--->---<---t---h--->---C---o---s---t---<---/---t---h--->---<---/---t---r--->---<---/---t---h---e---a---d--->------
+--- --- --- --- --- --- --- --- --- --- --- --- ---<---t---b---o---d---y--->------
+--- --- --- --- --- --- --- --- --- --- --- --- --- --- ---<---t---r--->---<---t---d--->---S---t---a---n---d---a---r---d--- ---D---e---l---i---v---e---r---y--- ---(---B---a---n---k--- ---D---e---p---o---s---i---t---)---<---/---t---d--->---<---t---d--->---3---â€“---6--- ---w---o---r---k---i---n---g--- ---d---a---y---s---<---/---t---d--->---<---t---d--->---F---R---E---E---<---/---t---d--->---<---/---t---r--->------
+--- --- --- --- --- --- --- --- --- --- --- --- --- --- ---<---t---r--->---<---t---d--->---S---t---a---n---d---a---r---d--- ---D---e---l---i---v---e---r---y--- ---(---C---a---s---h--- ---o---n--- ---D---e---l---i---v---e---r---y---)---<---/---t---d--->---<---t---d--->---3---â€“---6--- ---w---o---r---k---i---n---g--- ---d---a---y---s---<---/---t---d--->---<---t---d--->---F---R---E---E--- ---o---n--- ---o---r---d---e---r---s--- ---o---v---e---r--- ---P---K---R--- ---5---,---0---0---0--- ---Â·--- ---P---K---R--- ---2---0---0--- ---o---t---h---e---r---w---i---s---e---<---/---t---d--->---<---/---t---r--->------
+--- --- --- --- --- --- --- --- --- --- --- --- ---<---/---t---b---o---d---y--->------
+--- --- --- --- --- --- --- --- --- --- ---<---/---t---a---b---l---e--->------
+--- --- --- --- --- --- --- --- ---<---/---d---i---v--->------
+--- --- --- --- --- --- --- --- ---<---d---i---v--- ---c---l---a---s---s---=---"---p---o---l---i---c---y-------s---e---c---t---i---o---n---"--->------
+--- --- --- --- --- --- --- --- --- --- ---<---h---3--->---O---r---d---e---r--- ---P---r---o---c---e---s---s---i---n---g---<---/---h---3--->------
+--- --- --- --- --- --- --- --- --- --- ---<---p--->---A---l---l--- ---o---r---d---e---r---s--- ---a---r---e--- ---p---r---o---c---e---s---s---e---d--- ---w---i---t---h---i---n--- ---2---4--- ---h---o---u---r---s--- ---o---n--- ---b---u---s---i---n---e---s---s--- ---d---a---y---s--- ---(---M---o---n---d---a---y---â€“---S---a---t---u---r---d---a---y---,--- ---1---0---a---m---â€“---7---p---m--- ---P---K---T---)---.--- ---O---r---d---e---r---s--- ---p---l---a---c---e---d--- ---a---f---t---e---r--- ---5---p---m--- ---o---r--- ---o---n--- ---S---u---n---d---a---y---s--- ---w---i---l---l--- ---b---e--- ---p---r---o---c---e---s---s---e---d--- ---t---h---e--- ---n---e---x---t--- ---b---u---s---i---n---e---s---s--- ---d---a---y---.---<---/---p--->------
+--- --- --- --- --- --- --- --- ---<---/---d---i---v--->------
+--- --- --- --- --- --- --- --- ---<---d---i---v--- ---c---l---a---s---s---=---"---p---o---l---i---c---y-------s---e---c---t---i---o---n---"--->------
+--- --- --- --- --- --- --- --- --- --- ---<---h---3--->---T---r---a---c---k---i---n---g--- ---Y---o---u---r--- ---O---r---d---e---r---<---/---h---3--->------
+--- --- --- --- --- --- --- --- --- --- ---<---p--->---O---n---c---e--- ---y---o---u---r--- ---o---r---d---e---r--- ---h---a---s--- ---b---e---e---n--- ---d---i---s---p---a---t---c---h---e---d---,--- ---y---o---u--- ---w---i---l---l--- ---r---e---c---e---i---v---e--- ---a--- ---c---o---n---f---i---r---m---a---t---i---o---n--- ---S---M---S--- ---a---n---d--- ---e---m---a---i---l--- ---w---i---t---h--- ---y---o---u---r--- ---t---r---a---c---k---i---n---g--- ---n---u---m---b---e---r---.--- ---Y---o---u--- ---c---a---n--- ---u---s---e--- ---t---h---i---s--- ---t---o--- ---m---o---n---i---t---o---r--- ---y---o---u---r--- ---d---e---l---i---v---e---r---y--- ---s---t---a---t---u---s--- ---v---i---a--- ---t---h---e--- ---c---o---u---r---i---e---r---'---s--- ---w---e---b---s---i---t---e--- ---o---r--- ---o---u---r--- ---<---a--- ---h---r---e---f---=---"---p---o---l---i---c---y---?---p---a---g---e---=---t---r---a---c---k---"--- ---s---t---y---l---e---=---"---c---o---l---o---r---:---v---a---r---(-----------g---o---l---d---)---"--->---T---r---a---c---k--- ---O---r---d---e---r---<---/---a--->--- ---p---a---g---e---.---<---/---p--->------
+--- --- --- --- --- --- --- --- ---<---/---d---i---v--->------
+--- --- --- --- --- --- --- --- ---<---d---i---v--- ---c---l---a---s---s---=---"---p---o---l---i---c---y-------s---e---c---t---i---o---n---"--->------
+--- --- --- --- --- --- --- --- --- --- ---<---h---3--->---D---e---l---i---v---e---r---y--- ---A---r---e---a---s---<---/---h---3--->------
+--- --- --- --- --- --- --- --- --- --- ---<---p--->---W---e--- ---d---e---l---i---v---e---r--- ---a---c---r---o---s---s--- ---a---l---l--- ---o---f--- ---P---a---k---i---s---t---a---n---.--- ---R---e---m---o---t---e--- ---a---r---e---a---s--- ---m---a---y--- ---r---e---q---u---i---r---e--- ---a---n--- ---a---d---d---i---t---i---o---n---a---l--- ---1---â€“---2--- ---d---a---y---s---.--- ---C---a---s---h--- ---o---n--- ---D---e---l---i---v---e---r---y--- ---(---C---O---D---)--- ---i---s--- ---a---v---a---i---l---a---b---l---e--- ---n---a---t---i---o---n---w---i---d---e---.---<---/---p--->------
+--- --- --- --- --- --- --- --- ---<---/---d---i---v--->------
+--- --- --- --- --- --- --- --- ---<---d---i---v--- ---c---l---a---s---s---=---"---p---o---l---i---c---y-------s---e---c---t---i---o---n---"--->------
+--- --- --- --- --- --- --- --- --- --- ---<---h---3--->---I---m---p---o---r---t---a---n---t--- ---N---o---t---e---s---<---/---h---3--->------
+--- --- --- --- --- --- --- --- --- --- ---<---u---l--- ---c---l---a---s---s---=---"---p---o---l---i---c---y-------l---i---s---t---"--->------
+--- --- --- --- --- --- --- --- --- --- --- --- ---<---l---i--->---D---e---l---i---v---e---r---y--- ---t---i---m---e---s--- ---a---r---e--- ---e---s---t---i---m---a---t---e---s--- ---a---n---d--- ---m---a---y--- ---v---a---r---y--- ---d---u---r---i---n---g--- ---s---a---l---e--- ---p---e---r---i---o---d---s--- ---o---r--- ---p---u---b---l---i---c--- ---h---o---l---i---d---a---y---s---.---<---/---l---i--->------
+--- --- --- --- --- --- --- --- --- --- --- --- ---<---l---i--->---T---O---V---E---S---S---A--- ---i---s--- ---n---o---t--- ---r---e---s---p---o---n---s---i---b---l---e--- ---f---o---r--- ---d---e---l---a---y---s--- ---c---a---u---s---e---d--- ---b---y--- ---t---h---e--- ---c---o---u---r---i---e---r--- ---s---e---r---v---i---c---e---.---<---/---l---i--->------
+--- --- --- --- --- --- --- --- --- --- --- --- ---<---l---i--->---P---l---e---a---s---e--- ---e---n---s---u---r---e--- ---y---o---u---r--- ---d---e---l---i---v---e---r---y--- ---a---d---d---r---e---s---s--- ---a---n---d--- ---p---h---o---n---e--- ---n---u---m---b---e---r--- ---a---r---e--- ---c---o---r---r---e---c---t--- ---a---t--- ---c---h---e---c---k---o---u---t---.---<---/---l---i--->------
+--- --- --- --- --- --- --- --- --- --- ---<---/---u---l--->------
+--- --- --- --- --- --- --- --- ---<---/---d---i---v--->---`------
+--- --- --- --- ---}---,------
+--- --- --- --- ---r---e---t---u---r---n---s---:--- ---{------
+--- --- --- --- --- --- ---t---i---t---l---e---:--- ---'---R---e---t---u---r---n---s--- ---P---o---l---i---c---y---'---,------
+--- --- --- --- --- --- ---i---c---o---n---:--- ---'---?---?---'---,------
+--- --- --- --- --- --- ---h---t---m---l---:--- ---`------
+--- --- --- --- --- --- --- --- ---<---h---2--->---R---e---t---u---r---n---s--- ---<---e---m--->---P---o---l---i---c---y---<---/---e---m--->---<---/---h---2--->------
+--- --- --- --- --- --- --- --- ---<---d---i---v--- ---c---l---a---s---s---=---"---g---o---l---d-------r---u---l---e---"--->---<---/---d---i---v--->------
+--- --- --- --- --- --- --- --- ---<---d---i---v--- ---c---l---a---s---s---=---"---p---o---l---i---c---y-------s---e---c---t---i---o---n---"--->------
+--- --- --- --- --- --- --- --- --- --- ---<---h---3--->---7-------D---a---y--- ---R---e---t---u---r---n--- ---W---i---n---d---o---w---<---/---h---3--->------
+--- --- --- --- --- --- --- --- --- --- ---<---p--->---W---e--- ---o---f---f---e---r--- ---a--- ---<---s---t---r---o---n---g--->---7-------d---a---y--- ---h---a---s---s---l---e-------f---r---e---e--- ---r---e---t---u---r---n--- ---p---o---l---i---c---y---<---/---s---t---r---o---n---g--->--- ---f---r---o---m--- ---t---h---e--- ---d---a---t---e--- ---o---f--- ---d---e---l---i---v---e---r---y---.--- ---I---f--- ---y---o---u---'---r---e--- ---n---o---t--- ---c---o---m---p---l---e---t---e---l---y--- ---s---a---t---i---s---f---i---e---d--- ---w---i---t---h--- ---y---o---u---r--- ---p---u---r---c---h---a---s---e---,--- ---w---e---'---l---l--- ---m---a---k---e--- ---i---t--- ---r---i---g---h---t---.---<---/---p--->------
+--- --- --- --- --- --- --- --- ---<---/---d---i---v--->------
+--- --- --- --- --- --- --- --- ---<---d---i---v--- ---c---l---a---s---s---=---"---p---o---l---i---c---y-------s---e---c---t---i---o---n---"--->------
+--- --- --- --- --- --- --- --- --- --- ---<---h---3--->---C---o---n---d---i---t---i---o---n---s--- ---f---o---r--- ---R---e---t---u---r---n---<---/---h---3--->------
+--- --- --- --- --- --- --- --- --- --- ---<---u---l--- ---c---l---a---s---s---=---"---p---o---l---i---c---y-------l---i---s---t---"--->------
+--- --- --- --- --- --- --- --- --- --- --- --- ---<---l---i--->---I---t---e---m--- ---m---u---s---t--- ---b---e--- ---u---n---u---s---e---d---,--- ---u---n---w---o---r---n---,--- ---a---n---d--- ---u---n---w---a---s---h---e---d---<---/---l---i--->------
+--- --- --- --- --- --- --- --- --- --- --- --- ---<---l---i--->---O---r---i---g---i---n---a---l--- ---t---a---g---s--- ---a---n---d--- ---p---a---c---k---a---g---i---n---g--- ---m---u---s---t--- ---b---e--- ---i---n---t---a---c---t---<---/---l---i--->------
+--- --- --- --- --- --- --- --- --- --- --- --- ---<---l---i--->---I---t---e---m--- ---m---u---s---t--- ---n---o---t--- ---b---e--- ---d---a---m---a---g---e---d---,--- ---s---t---a---i---n---e---d---,--- ---o---r--- ---a---l---t---e---r---e---d---<---/---l---i--->------
+--- --- --- --- --- --- --- --- --- --- --- --- ---<---l---i--->---<---s---t---r---o---n---g--->---D---a---m---a---g---e---d--- ---I---t---e---m---s---:---<---/---s---t---r---o---n---g--->--- ---T---o--- ---c---l---a---i---m--- ---a--- ---d---a---m---a---g---e---d--- ---p---r---o---d---u---c---t---,--- ---y---o---u--- ---m---u---s---t--- ---p---r---o---v---i---d---e--- ---a---n--- ---u---n---c---u---t--- ---u---n---b---o---x---i---n---g--- ---v---i---d---e---o--- ---o---f--- ---t---h---e--- ---p---a---r---c---e---l---.--- ---W---i---t---h---o---u---t--- ---t---h---i---s--- ---v---i---d---e---o--- ---p---r---o---o---f---,--- ---y---o---u---r--- ---r---e---t---u---r---n--- ---w---i---l---l--- ---n---o---t--- ---b---e--- ---p---r---o---c---e---s---s---e---d---.---<---/---l---i--->------
+--- --- --- --- --- --- --- --- --- --- --- --- ---<---l---i--->---S---a---l---e--- ---i---t---e---m---s--- ---a---n---d--- ---c---o---s---m---e---t---i---c---s--- ---a---r---e--- ---<---s---t---r---o---n---g--->---n---o---n-------r---e---t---u---r---n---a---b---l---e---<---/---s---t---r---o---n---g--->--- ---f---o---r--- ---h---y---g---i---e---n---e--- ---r---e---a---s---o---n---s---<---/---l---i--->------
+--- --- --- --- --- --- --- --- --- --- ---<---/---u---l--->------
+--- --- --- --- --- --- --- --- ---<---/---d---i---v--->------
+--- --- --- --- --- --- --- --- ---<---d---i---v--- ---c---l---a---s---s---=---"---p---o---l---i---c---y-------s---e---c---t---i---o---n---"--->------
+--- --- --- --- --- --- --- --- --- --- ---<---h---3--->---H---o---w--- ---t---o--- ---R---e---t---u---r---n---<---/---h---3--->------
+--- --- --- --- --- --- --- --- --- --- ---<---o---l--- ---c---l---a---s---s---=---"---p---o---l---i---c---y-------l---i---s---t---"--->------
+--- --- --- --- --- --- --- --- --- --- --- --- ---<---l---i--->---C---o---n---t---a---c---t--- ---u---s--- ---v---i---a--- ---W---h---a---t---s---A---p---p--- ---o---r--- ---e---m---a---i---l--- ---w---i---t---h---i---n--- ---7--- ---d---a---y---s--- ---o---f--- ---r---e---c---e---i---v---i---n---g--- ---y---o---u---r--- ---o---r---d---e---r---<---/---l---i--->------
+--- --- --- --- --- --- --- --- --- --- --- --- ---<---l---i--->---S---h---a---r---e--- ---y---o---u---r--- ---o---r---d---e---r--- ---n---u---m---b---e---r--- ---a---n---d--- ---r---e---a---s---o---n--- ---f---o---r--- ---r---e---t---u---r---n---<---/---l---i--->------
+--- --- --- --- --- --- --- --- --- --- --- --- ---<---l---i--->---W---e--- ---w---i---l---l--- ---a---r---r---a---n---g---e--- ---a--- ---p---i---c---k---u---p--- ---o---r--- ---p---r---o---v---i---d---e--- ---a--- ---d---r---o---p-------o---f---f--- ---a---d---d---r---e---s---s---<---/---l---i--->------
+--- --- --- --- --- --- --- --- --- --- --- --- ---<---l---i--->---O---n---c---e--- ---t---h---e--- ---i---t---e---m--- ---i---s--- ---r---e---c---e---i---v---e---d--- ---a---n---d--- ---i---n---s---p---e---c---t---e---d---,--- ---y---o---u---r--- ---r---e---f---u---n---d--- ---w---i---l---l--- ---b---e--- ---p---r---o---c---e---s---s---e---d--- ---w---i---t---h---i---n--- ---5---â€“---7--- ---b---u---s---i---n---e---s---s--- ---d---a---y---s---<---/---l---i--->------
+--- --- --- --- --- --- --- --- --- --- ---<---/---o---l--->------
+--- --- --- --- --- --- --- --- ---<---/---d---i---v--->------
+--- --- --- --- --- --- --- --- ---<---d---i---v--- ---c---l---a---s---s---=---"---p---o---l---i---c---y-------s---e---c---t---i---o---n---"--->------
+--- --- --- --- --- --- --- --- --- --- ---<---h---3--->---E---x---c---h---a---n---g---e---s---<---/---h---3--->------
+--- --- --- --- --- --- --- --- --- --- ---<---p--->---W---e--- ---h---a---p---p---i---l---y--- ---e---x---c---h---a---n---g---e--- ---i---t---e---m---s--- ---f---o---r--- ---a--- ---d---i---f---f---e---r---e---n---t--- ---s---i---z---e--- ---o---r--- ---c---o---l---o---u---r---,--- ---s---u---b---j---e---c---t--- ---t---o--- ---a---v---a---i---l---a---b---i---l---i---t---y---.--- ---P---l---e---a---s---e--- ---m---e---n---t---i---o---n--- ---y---o---u---r--- ---p---r---e---f---e---r---r---e---d--- ---e---x---c---h---a---n---g---e--- ---a---t--- ---t---h---e--- ---t---i---m---e--- ---o---f--- ---r---e---t---u---r---n--- ---r---e---q---u---e---s---t---.---<---/---p--->------
+--- --- --- --- --- --- --- --- ---<---/---d---i---v--->------
+--- --- --- --- --- --- --- --- ---<---d---i---v--- ---c---l---a---s---s---=---"---p---o---l---i---c---y-------s---e---c---t---i---o---n---"--->------
+--- --- --- --- --- --- --- --- --- --- ---<---h---3--->---R---e---f---u---n---d--- ---M---e---t---h---o---d---s---<---/---h---3--->------
+--- --- --- --- --- --- --- --- --- --- ---<---p--->---R---e---f---u---n---d---s--- ---a---r---e--- ---i---s---s---u---e---d--- ---v---i---a--- ---b---a---n---k--- ---t---r---a---n---s---f---e---r---.--- ---C---O---D--- ---o---r---d---e---r---s--- ---a---r---e--- ---r---e---f---u---n---d---e---d--- ---t---o--- ---y---o---u---r--- ---p---r---o---v---i---d---e---d--- ---b---a---n---k--- ---a---c---c---o---u---n---t---.---<---/---p--->------
+--- --- --- --- --- --- --- --- ---<---/---d---i---v--->---`------
+--- --- --- --- ---}---,------
+--- --- --- --- ---f---a---q---s---:--- ---{------
+--- --- --- --- --- --- ---t---i---t---l---e---:--- ---'---F---r---e---q---u---e---n---t---l---y--- ---A---s---k---e---d--- ---Q---u---e---s---t---i---o---n---s---'---,------
+--- --- --- --- --- --- ---i---c---o---n---:--- ---'---?---'---,------
+--- --- --- --- --- --- ---h---t---m---l---:--- ---`------
+--- --- --- --- --- --- --- --- ---<---h---2--->---F---r---e---q---u---e---n---t---l---y--- ---A---s---k---e---d--- ---<---e---m--->---Q---u---e---s---t---i---o---n---s---<---/---e---m--->---<---/---h---2--->------
+--- --- --- --- --- --- --- --- ---<---d---i---v--- ---c---l---a---s---s---=---"---g---o---l---d-------r---u---l---e---"--->---<---/---d---i---v--->------
+--- --- --- --- --- --- --- --- ---<---d---i---v--- ---c---l---a---s---s---=---"---f---a---q-------l---i---s---t---"--->------
+--- --- --- --- --- --- --- --- --- --- ---$---{---[------
+--- --- --- --- --- --- --- --- --- --- --- --- ---[---'---H---o---w--- ---d---o--- ---I--- ---p---l---a---c---e--- ---a---n--- ---o---r---d---e---r---?---'---,--- ---'---B---r---o---w---s---e--- ---o---u---r--- ---s---h---o---p---,--- ---s---e---l---e---c---t--- ---y---o---u---r--- ---i---t---e---m---s---,--- ---a---d---d--- ---t---h---e---m--- ---t---o--- ---y---o---u---r--- ---b---a---g---,--- ---a---n---d--- ---p---r---o---c---e---e---d--- ---t---o--- ---c---h---e---c---k---o---u---t---.--- ---Y---o---u--- ---c---a---n--- ---p---a---y--- ---v---i---a--- ---C---a---s---h--- ---o---n--- ---D---e---l---i---v---e---r---y--- ---o---r--- ---B---a---n---k--- ---D---e---p---o---s---i---t---.---'---]---,------
+--- --- --- --- --- --- --- --- --- --- --- --- ---[---'---H---o---w--- ---l---o---n---g--- ---d---o---e---s--- ---d---e---l---i---v---e---r---y--- ---t---a---k---e---?---'---,--- ---'---D---e---l---i---v---e---r---y--- ---t---a---k---e---s--- ---3---â€“---6--- ---w---o---r---k---i---n---g--- ---d---a---y---s--- ---a---c---r---o---s---s--- ---P---a---k---i---s---t---a---n---.---'---]---,------
+--- --- --- --- --- --- --- --- --- --- --- --- ---[---'---I---s--- ---C---a---s---h--- ---o---n--- ---D---e---l---i---v---e---r---y--- ---a---v---a---i---l---a---b---l---e---?---'---,--- ---'---Y---e---s---!--- ---C---O---D--- ---i---s--- ---a---v---a---i---l---a---b---l---e--- ---a---c---r---o---s---s--- ---a---l---l--- ---o---f--- ---P---a---k---i---s---t---a---n---.--- ---S---i---m---p---l---y--- ---s---e---l---e---c---t--- ---C---a---s---h--- ---o---n--- ---D---e---l---i---v---e---r---y--- ---a---t--- ---c---h---e---c---k---o---u---t---.---'---]---,------
+--- --- --- --- --- --- --- --- --- --- --- --- ---[---'---C---a---n--- ---I--- ---r---e---t---u---r---n--- ---a--- ---p---r---o---d---u---c---t---?---'---,--- ---'---Y---e---s---,--- ---w---e--- ---a---c---c---e---p---t--- ---r---e---t---u---r---n---s--- ---w---i---t---h---i---n--- ---1---4--- ---d---a---y---s--- ---o---f--- ---d---e---l---i---v---e---r---y---.--- ---I---t---e---m---s--- ---m---u---s---t--- ---b---e--- ---u---n---u---s---e---d--- ---w---i---t---h--- ---o---r---i---g---i---n---a---l--- ---t---a---g---s---.--- ---C---o---s---m---e---t---i---c---s--- ---a---n---d--- ---s---a---l---e--- ---i---t---e---m---s--- ---a---r---e--- ---n---o---n-------r---e---t---u---r---n---a---b---l---e---.---'---]---,------
+--- --- --- --- --- --- --- --- --- --- --- --- ---[---'---H---o---w--- ---d---o--- ---I--- ---t---r---a---c---k--- ---m---y--- ---o---r---d---e---r---?---'---,--- ---'---O---n---c---e--- ---d---i---s---p---a---t---c---h---e---d---,--- ---y---o---u---\---'---l---l--- ---r---e---c---e---i---v---e--- ---a---n--- ---S---M---S--- ---a---n---d--- ---e---m---a---i---l--- ---w---i---t---h--- ---y---o---u---r--- ---t---r---a---c---k---i---n---g--- ---n---u---m---b---e---r---.--- ---V---i---s---i---t--- ---o---u---r--- ---T---r---a---c---k--- ---O---r---d---e---r--- ---p---a---g---e--- ---f---o---r--- ---r---e---a---l-------t---i---m---e--- ---u---p---d---a---t---e---s---.---'---]---,------
+--- --- --- --- --- --- --- --- --- --- --- --- ---[---'---D---o--- ---y---o---u--- ---o---f---f---e---r--- ---g---i---f---t--- ---p---a---c---k---a---g---i---n---g---?---'---,--- ---'---Y---e---s---!--- ---A---l---l--- ---T---O---V---E---S---S---A--- ---o---r---d---e---r---s--- ---c---o---m---e--- ---i---n--- ---p---r---e---m---i---u---m--- ---b---r---a---n---d---e---d--- ---p---a---c---k---a---g---i---n---g---.--- ---F---o---r--- ---g---i---f---t--- ---o---r---d---e---r---s---,--- ---a---d---d--- ---a--- ---n---o---t---e--- ---a---t--- ---c---h---e---c---k---o---u---t---.---'---]---,------
+--- --- --- --- --- --- --- --- --- --- --- --- ---[---'---C---a---n--- ---I--- ---e---x---c---h---a---n---g---e--- ---f---o---r--- ---a--- ---d---i---f---f---e---r---e---n---t--- ---s---i---z---e---?---'---,--- ---'---A---b---s---o---l---u---t---e---l---y---.--- ---C---o---n---t---a---c---t--- ---u---s--- ---w---i---t---h---i---n--- ---1---4--- ---d---a---y---s--- ---a---n---d--- ---w---e---\---'---l---l--- ---a---r---r---a---n---g---e--- ---a---n--- ---e---x---c---h---a---n---g---e--- ---s---u---b---j---e---c---t--- ---t---o--- ---s---t---o---c---k--- ---a---v---a---i---l---a---b---i---l---i---t---y---.---'---]---,------
+--- --- --- --- --- --- --- --- --- --- --- --- ---[---'---I---s--- ---t---h---e---r---e--- ---a--- ---w---a---r---r---a---n---t---y--- ---o---n--- ---j---e---w---e---l---l---e---r---y--- ---a---n---d--- ---w---a---t---c---h---e---s---?---'---,--- ---'---A---l---l--- ---j---e---w---e---l---l---e---r---y--- ---a---n---d--- ---w---a---t---c---h---e---s--- ---c---o---m---e--- ---w---i---t---h--- ---a--- ---6-------m---o---n---t---h--- ---q---u---a---l---i---t---y--- ---g---u---a---r---a---n---t---e---e--- ---a---g---a---i---n---s---t--- ---m---a---n---u---f---a---c---t---u---r---i---n---g--- ---d---e---f---e---c---t---s---.---'---]---,------
+--- --- --- --- --- --- --- --- --- --- --- --- ---[---'---H---o---w--- ---d---o--- ---I--- ---s---u---b---s---c---r---i---b---e--- ---t---o--- ---t---h---e--- ---n---e---w---s---l---e---t---t---e---r---?---'---,--- ---'---E---n---t---e---r--- ---y---o---u---r--- ---e---m---a---i---l--- ---i---n--- ---t---h---e--- ---n---e---w---s---l---e---t---t---e---r--- ---s---e---c---t---i---o---n--- ---o---n--- ---o---u---r--- ---h---o---m---e---p---a---g---e--- ---t---o--- ---g---e---t--- ---u---p---d---a---t---e---s--- ---o---n--- ---n---e---w--- ---a---r---r---i---v---a---l---s--- ---a---n---d--- ---c---o---l---l---e---c---t---i---o---n---s---.---'---]---,------
+--- --- --- --- --- --- --- --- --- --- --- --- ---[---'---W---h---a---t--- ---i---f--- ---m---y--- ---i---t---e---m--- ---a---r---r---i---v---e---s--- ---d---a---m---a---g---e---d---?---'---,--- ---'---W---e---\---'---r---e--- ---s---o--- ---s---o---r---r---y--- ---t---o--- ---h---e---a---r--- ---t---h---a---t---.--- ---C---o---n---t---a---c---t--- ---u---s--- ---w---i---t---h---i---n--- ---4---8--- ---h---o---u---r---s--- ---o---f--- ---d---e---l---i---v---e---r---y--- ---w---i---t---h--- ---p---h---o---t---o---s---,--- ---a---n---d--- ---w---e---\---'---l---l--- ---r---e---s---o---l---v---e--- ---i---t--- ---i---m---m---e---d---i---a---t---e---l---y---.---'---]---,------
+--- --- --- --- --- --- --- --- --- --- ---]---.---m---a---p---(---(---[---q---,---a---]---)--- ---=--->--- ---`------
+--- --- --- --- --- --- --- --- --- --- --- --- ---<---d---i---v--- ---c---l---a---s---s---=---"---f---a---q-------i---t---e---m---"--->------
+--- --- --- --- --- --- --- --- --- --- --- --- --- --- ---<---b---u---t---t---o---n--- ---c---l---a---s---s---=---"---f---a---q-------q---u---e---s---t---i---o---n---"--- ---o---n---c---l---i---c---k---=---"---t---h---i---s---.---p---a---r---e---n---t---E---l---e---m---e---n---t---.---c---l---a---s---s---L---i---s---t---.---t---o---g---g---l---e---(---'---o---p---e---n---'---)---"--->------
+--- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---$---{---q---}---<---s---p---a---n--- ---c---l---a---s---s---=---"---f---a---q-------c---h---e---v---r---o---n---"--->---?---<---/---s---p---a---n--->------
+--- --- --- --- --- --- --- --- --- --- --- --- --- --- ---<---/---b---u---t---t---o---n--->------
+--- --- --- --- --- --- --- --- --- --- --- --- --- --- ---<---d---i---v--- ---c---l---a---s---s---=---"---f---a---q-------a---n---s---w---e---r---"--->---<---p--->---$---{---a---}---<---/---p--->---<---/---d---i---v--->------
+--- --- --- --- --- --- --- --- --- --- --- --- ---<---/---d---i---v--->---`---)---.---j---o---i---n---(---'---'---)---}------
+--- --- --- --- --- --- --- --- ---<---/---d---i---v--->---`------
+--- --- --- --- ---}---,------
+--- --- --- --- ---t---r---a---c---k---:--- ---{------
+--- --- --- --- --- --- ---t---i---t---l---e---:--- ---'---T---r---a---c---k--- ---Y---o---u---r--- ---O---r---d---e---r---'---,------
+--- --- --- --- --- --- ---i---c---o---n---:--- ---'---?---?---'---,------
+--- --- --- --- --- --- ---h---t---m---l---:--- ---`------
+--- --- --- --- --- --- --- --- ---<---h---2--->---T---r---a---c---k--- ---Y---o---u---r--- ---<---e---m--->---O---r---d---e---r---<---/---e---m--->---<---/---h---2--->------
+--- --- --- --- --- --- --- --- ---<---d---i---v--- ---c---l---a---s---s---=---"---g---o---l---d-------r---u---l---e---"--->---<---/---d---i---v--->------
+--- --- --- --- --- --- --- --- ---<---d---i---v--- ---c---l---a---s---s---=---"---p---o---l---i---c---y-------s---e---c---t---i---o---n---"--->------
+--- --- --- --- --- --- --- --- --- --- ---<---p--->---E---n---t---e---r--- ---y---o---u---r--- ---o---r---d---e---r--- ---r---e---f---e---r---e---n---c---e--- ---n---u---m---b---e---r--- ---o---r--- ---t---h---e--- ---e---m---a---i---l--- ---a---d---d---r---e---s---s--- ---u---s---e---d--- ---a---t--- ---c---h---e---c---k---o---u---t--- ---t---o--- ---t---r---a---c---k--- ---y---o---u---r--- ---d---e---l---i---v---e---r---y--- ---s---t---a---t---u---s---.---<---/---p--->------
+--- --- --- --- --- --- --- --- --- --- ---<---d---i---v--- ---c---l---a---s---s---=---"---t---r---a---c---k-------f---o---r---m---"--->------
+--- --- --- --- --- --- --- --- --- --- --- --- ---<---d---i---v--- ---c---l---a---s---s---=---"---f---o---r---m-------g---r---o---u---p---"--->------
+--- --- --- --- --- --- --- --- --- --- --- --- --- --- ---<---l---a---b---e---l--->---O---r---d---e---r--- ---R---e---f---e---r---e---n---c---e--- ---N---u---m---b---e---r---<---/---l---a---b---e---l--->------
+--- --- --- --- --- --- --- --- --- --- --- --- --- --- ---<---i---n---p---u---t--- ---t---y---p---e---=---"---t---e---x---t---"--- ---i---d---=---"---t---r---a---c---k-------r---e---f---"--- ---p---l---a---c---e---h---o---l---d---e---r---=---"---e---.---g---.--- ---Z---H-------1---2---3---4---5---6---7---8---"---/--->------
+--- --- --- --- --- --- --- --- --- --- --- --- ---<---/---d---i---v--->------
+--- --- --- --- --- --- --- --- --- --- --- --- ---<---d---i---v--- ---c---l---a---s---s---=---"---f---o---r---m-------g---r---o---u---p---"--->------
+--- --- --- --- --- --- --- --- --- --- --- --- --- --- ---<---l---a---b---e---l--->---E---m---a---i---l--- ---A---d---d---r---e---s---s---<---/---l---a---b---e---l--->------
+--- --- --- --- --- --- --- --- --- --- --- --- --- --- ---<---i---n---p---u---t--- ---t---y---p---e---=---"---e---m---a---i---l---"--- ---i---d---=---"---t---r---a---c---k-------e---m---a---i---l---"--- ---p---l---a---c---e---h---o---l---d---e---r---=---"---y---o---u---@---e---m---a---i---l---.---c---o---m---"---/--->------
+--- --- --- --- --- --- --- --- --- --- --- --- ---<---/---d---i---v--->------
+--- --- --- --- --- --- --- --- --- --- --- --- ---<---b---u---t---t---o---n--- ---c---l---a---s---s---=---"---b---t---n-------p---r---i---m---a---r---y---"--- ---o---n---c---l---i---c---k---=---"---t---r---a---c---k---O---r---d---e---r---(---)---"--- ---s---t---y---l---e---=---"---m---a---r---g---i---n-------t---o---p---:---8---p---x---"--->---T---r---a---c---k--- ---O---r---d---e---r---<---/---b---u---t---t---o---n--->------
+--- --- --- --- --- --- --- --- --- --- ---<---/---d---i---v--->------
+--- --- --- --- --- --- --- --- --- --- ---<---d---i---v--- ---i---d---=---"---t---r---a---c---k-------r---e---s---u---l---t---"--- ---s---t---y---l---e---=---"---d---i---s---p---l---a---y---:---n---o---n---e---;---m---a---r---g---i---n-------t---o---p---:---2---8---p---x---"--->---<---/---d---i---v--->------
+--- --- --- --- --- --- --- --- ---<---/---d---i---v--->------
+--- --- --- --- --- --- --- --- ---<---d---i---v--- ---c---l---a---s---s---=---"---p---o---l---i---c---y-------s---e---c---t---i---o---n---"--->------
+--- --- --- --- --- --- --- --- --- --- ---<---h---3--->---N---e---e---d--- ---H---e---l---p---?---<---/---h---3--->------
+--- --- --- --- --- --- --- --- --- --- ---<---p--->---I---f--- ---y---o---u--- ---c---a---n---'---t--- ---f---i---n---d--- ---y---o---u---r--- ---o---r---d---e---r---,--- ---c---o---n---t---a---c---t--- ---u---s--- ---d---i---r---e---c---t---l---y---:---<---/---p--->------
+--- --- --- --- --- --- --- --- --- --- ---<---u---l--- ---c---l---a---s---s---=---"---p---o---l---i---c---y-------l---i---s---t---"--->------
+--- --- --- --- --- --- --- --- --- --- --- --- ---<---l---i--->---W---h---a---t---s---A---p---p---:--- ---<---a--- ---h---r---e---f---=---"---#---"--- ---i---d---=---"---w---a-------t---r---a---c---k-------l---i---n---k---"--- ---s---t---y---l---e---=---"---c---o---l---o---r---:---v---a---r---(-----------g---o---l---d---)---"--->---<---s---p---a---n--- ---d---a---t---a-------t---o---v---e---s---s---a---=---"---p---h---o---n---e---"--->---+---9---2--- ---3---1---5--- ---0---7---2---7---1---3---1---<---/---s---p---a---n--->---<---/---a--->---<---/---l---i--->------
+--- --- --- --- --- --- --- --- --- --- --- --- ---<---l---i--->---E---m---a---i---l---:--- ---<---a--- ---h---r---e---f---=---"---#---"--- ---s---t---y---l---e---=---"---c---o---l---o---r---:---v---a---r---(-----------g---o---l---d---)---"--- ---d---a---t---a-------t---o---v---e---s---s---a---=---"---e---m---a---i---l---"--->---h---e---l---l---o---@---t---o---v---e---s---s---a---.---c---o---m---<---/---a--->---<---/---l---i--->------
+--- --- --- --- --- --- --- --- --- --- ---<---/---u---l--->------
+--- --- --- --- --- --- --- --- ---<---/---d---i---v--->---`------
+--- --- --- --- ---}---,------
+--- --- --- --- ---t---e---r---m---s---:--- ---{------
+--- --- --- --- --- --- ---t---i---t---l---e---:--- ---'---T---e---r---m---s--- ---&--- ---P---r---i---v---a---c---y--- ---P---o---l---i---c---y---'---,------
+--- --- --- --- --- --- ---i---c---o---n---:--- ---'---?---?---'---,------
+--- --- --- --- --- --- ---h---t---m---l---:--- ---`------
+--- --- --- --- --- --- --- --- ---<---h---2--->---T---e---r---m---s--- ---&---a---m---p---;--- ---<---e---m--->---P---r---i---v---a---c---y--- ---P---o---l---i---c---y---<---/---e---m--->---<---/---h---2--->------
+--- --- --- --- --- --- --- --- ---<---d---i---v--- ---c---l---a---s---s---=---"---g---o---l---d-------r---u---l---e---"--->---<---/---d---i---v--->------
+--- --- --- --- --- --- --- --- ---<---d---i---v--- ---c---l---a---s---s---=---"---p---o---l---i---c---y-------s---e---c---t---i---o---n---"--->------
+--- --- --- --- --- --- --- --- --- --- ---<---h---3--->---T---e---r---m---s--- ---o---f--- ---U---s---e---<---/---h---3--->------
+--- --- --- --- --- --- --- --- --- --- ---<---p--->---B---y--- ---u---s---i---n---g--- ---t---h---e--- ---T---O---V---E---S---S---A--- ---w---e---b---s---i---t---e--- ---a---n---d--- ---p---l---a---c---i---n---g--- ---o---r---d---e---r---s---,--- ---y---o---u--- ---a---g---r---e---e--- ---t---o--- ---t---h---e--- ---f---o---l---l---o---w---i---n---g--- ---t---e---r---m---s---.--- ---T---O---V---E---S---S---A--- ---r---e---s---e---r---v---e---s--- ---t---h---e--- ---r---i---g---h---t--- ---t---o--- ---u---p---d---a---t---e--- ---t---h---e---s---e--- ---t---e---r---m---s--- ---a---t--- ---a---n---y--- ---t---i---m---e---.---<---/---p--->------
+--- --- --- --- --- --- --- --- --- --- ---<---u---l--- ---c---l---a---s---s---=---"---p---o---l---i---c---y-------l---i---s---t---"--->------
+--- --- --- --- --- --- --- --- --- --- --- --- ---<---l---i--->---P---r---o---d---u---c---t---s--- ---a---r---e--- ---s---u---b---j---e---c---t--- ---t---o--- ---a---v---a---i---l---a---b---i---l---i---t---y---.--- ---W---e--- ---r---e---s---e---r---v---e--- ---t---h---e--- ---r---i---g---h---t--- ---t---o--- ---c---a---n---c---e---l--- ---o---r---d---e---r---s--- ---i---f--- ---s---t---o---c---k--- ---i---s--- ---u---n---a---v---a---i---l---a---b---l---e---.---<---/---l---i--->------
+--- --- --- --- --- --- --- --- --- --- --- --- ---<---l---i--->---P---r---i---c---e---s--- ---a---r---e--- ---l---i---s---t---e---d--- ---i---n--- ---P---a---k---i---s---t---a---n---i--- ---R---u---p---e---e---s--- ---(---P---K---R---)--- ---a---n---d--- ---a---r---e--- ---i---n---c---l---u---s---i---v---e--- ---o---f--- ---a---l---l--- ---a---p---p---l---i---c---a---b---l---e--- ---t---a---x---e---s---.---<---/---l---i--->------
+--- --- --- --- --- --- --- --- --- --- --- --- ---<---l---i--->---T---O---V---E---S---S---A--- ---r---e---s---e---r---v---e---s--- ---t---h---e--- ---r---i---g---h---t--- ---t---o--- ---r---e---f---u---s---e--- ---s---e---r---v---i---c---e--- ---t---o--- ---a---n---y--- ---c---u---s---t---o---m---e---r--- ---a---t--- ---o---u---r--- ---d---i---s---c---r---e---t---i---o---n---.---<---/---l---i--->------
+--- --- --- --- --- --- --- --- --- --- --- --- ---<---l---i--->---P---r---o---d---u---c---t--- ---i---m---a---g---e---s--- ---a---r---e--- ---f---o---r--- ---i---l---l---u---s---t---r---a---t---i---v---e--- ---p---u---r---p---o---s---e---s---;--- ---s---l---i---g---h---t--- ---c---o---l---o---u---r--- ---v---a---r---i---a---t---i---o---n---s--- ---m---a---y--- ---o---c---c---u---r---.---<---/---l---i--->------
+--- --- --- --- --- --- --- --- --- --- ---<---/---u---l--->------
+--- --- --- --- --- --- --- --- ---<---/---d---i---v--->------
+--- --- --- --- --- --- --- --- ---<---d---i---v--- ---c---l---a---s---s---=---"---p---o---l---i---c---y-------s---e---c---t---i---o---n---"--->------
+--- --- --- --- --- --- --- --- --- --- ---<---h---3--->---P---r---i---v---a---c---y--- ---P---o---l---i---c---y---<---/---h---3--->------
+--- --- --- --- --- --- --- --- --- --- ---<---p--->---Y---o---u---r--- ---p---r---i---v---a---c---y--- ---i---s--- ---i---m---p---o---r---t---a---n---t--- ---t---o--- ---u---s---.--- ---W---e--- ---c---o---l---l---e---c---t--- ---o---n---l---y--- ---t---h---e--- ---i---n---f---o---r---m---a---t---i---o---n--- ---n---e---c---e---s---s---a---r---y--- ---t---o--- ---p---r---o---c---e---s---s--- ---y---o---u---r--- ---o---r---d---e---r---s--- ---a---n---d--- ---i---m---p---r---o---v---e--- ---y---o---u---r--- ---e---x---p---e---r---i---e---n---c---e---.---<---/---p--->------
+--- --- --- --- --- --- --- --- --- --- ---<---u---l--- ---c---l---a---s---s---=---"---p---o---l---i---c---y-------l---i---s---t---"--->------
+--- --- --- --- --- --- --- --- --- --- --- --- ---<---l---i--->---<---s---t---r---o---n---g--->---D---a---t---a--- ---c---o---l---l---e---c---t---e---d---:---<---/---s---t---r---o---n---g--->--- ---N---a---m---e---,--- ---e---m---a---i---l---,--- ---p---h---o---n---e---,--- ---d---e---l---i---v---e---r---y--- ---a---d---d---r---e---s---s---,--- ---a---n---d--- ---o---r---d---e---r--- ---h---i---s---t---o---r---y---.---<---/---l---i--->------
+--- --- --- --- --- --- --- --- --- --- --- --- ---<---l---i--->---<---s---t---r---o---n---g--->---U---s---a---g---e---:---<---/---s---t---r---o---n---g--->--- ---Y---o---u---r--- ---d---a---t---a--- ---i---s--- ---u---s---e---d--- ---s---o---l---e---l---y--- ---f---o---r--- ---o---r---d---e---r--- ---p---r---o---c---e---s---s---i---n---g---,--- ---d---e---l---i---v---e---r---y---,--- ---a---n---d--- ---c---u---s---t---o---m---e---r--- ---s---u---p---p---o---r---t---.---<---/---l---i--->------
+--- --- --- --- --- --- --- --- --- --- --- --- ---<---l---i--->---<---s---t---r---o---n---g--->---S---h---a---r---i---n---g---:---<---/---s---t---r---o---n---g--->--- ---W---e--- ---n---e---v---e---r--- ---s---e---l---l--- ---o---r--- ---s---h---a---r---e--- ---y---o---u---r--- ---p---e---r---s---o---n---a---l--- ---d---a---t---a--- ---w---i---t---h--- ---t---h---i---r---d--- ---p---a---r---t---i---e---s---,--- ---e---x---c---e---p---t--- ---d---e---l---i---v---e---r---y--- ---c---o---u---r---i---e---r---s---.---<---/---l---i--->------
+--- --- --- --- --- --- --- --- --- --- --- --- ---<---l---i--->---<---s---t---r---o---n---g--->---C---o---o---k---i---e---s---:---<---/---s---t---r---o---n---g--->--- ---W---e--- ---u---s---e--- ---c---o---o---k---i---e---s--- ---t---o--- ---i---m---p---r---o---v---e--- ---s---i---t---e--- ---p---e---r---f---o---r---m---a---n---c---e---.--- ---Y---o---u--- ---m---a---y--- ---d---i---s---a---b---l---e--- ---c---o---o---k---i---e---s--- ---i---n--- ---y---o---u---r--- ---b---r---o---w---s---e---r--- ---s---e---t---t---i---n---g---s---.---<---/---l---i--->------
+--- --- --- --- --- --- --- --- --- --- ---<---/---u---l--->------
+--- --- --- --- --- --- --- --- ---<---/---d---i---v--->------
+--- --- --- --- --- --- --- --- ---<---d---i---v--- ---c---l---a---s---s---=---"---p---o---l---i---c---y-------s---e---c---t---i---o---n---"--->------
+--- --- --- --- --- --- --- --- --- --- ---<---h---3--->---C---o---n---t---a---c---t--- ---f---o---r--- ---C---o---n---c---e---r---n---s---<---/---h---3--->------
+--- --- --- --- --- --- --- --- --- --- ---<---p--->---F---o---r--- ---a---n---y--- ---p---r---i---v---a---c---y--- ---o---r--- ---t---e---r---m---s--- ---c---o---n---c---e---r---n---s---,--- ---e---m---a---i---l--- ---u---s--- ---a---t--- ---<---a--- ---h---r---e---f---=---"---#---"--- ---s---t---y---l---e---=---"---c---o---l---o---r---:---v---a---r---(-----------g---o---l---d---)---"--- ---d---a---t---a-------t---o---v---e---s---s---a---=---"---e---m---a---i---l---"--->---h---e---l---l---o---@---t---o---v---e---s---s---a---.---c---o---m---<---/---a--->---.---<---/---p--->------
+--- --- --- --- --- --- --- --- ---<---/---d---i---v--->---`------
+--- --- --- --- ---}------
+--- --- ---}---;------
+--- --- ---/---*--- ----------- ---L---o---a---d--- ---c---o---r---r---e---c---t--- ---p---a---g---e--- ---f---r---o---m--- ---U---R---L--- ----------- ---*---/------
+--- --- ---c---o---n---s---t--- ---p---a---r---a---m---s--- ---=--- ---n---e---w--- ---U---R---L---S---e---a---r---c---h---P---a---r---a---m---s---(---w---i---n---d---o---w---.---l---o---c---a---t---i---o---n---.---s---e---a---r---c---h---)---;------
+--- --- ---c---o---n---s---t--- ---p---a---g---e--- --- --- ---=--- ---p---a---r---a---m---s---.---g---e---t---(---'---p---a---g---e---'---)--- ---|---|--- ---'---s---h---i---p---p---i---n---g---'---;------
+--- --- ---f---u---n---c---t---i---o---n--- ---l---o---a---d---P---o---l---i---c---y---(---k---e---y---)--- ---{------
+--- --- --- --- ---c---o---n---s---t--- ---d---a---t---a--- --- --- --- ---=--- ---P---O---L---I---C---I---E---S---[---k---e---y---]--- ---|---|--- ---P---O---L---I---C---I---E---S---[---'---s---h---i---p---p---i---n---g---'---]---;------
+--- --- --- --- ---c---o---n---s---t--- ---c---o---n---t---e---n---t--- ---=--- ---d---o---c---u---m---e---n---t---.---g---e---t---E---l---e---m---e---n---t---B---y---I---d---(---'---p---o---l---i---c---y-------c---o---n---t---e---n---t---'---)---;------
+--- --- --- --- ---i---f--- ---(---c---o---n---t---e---n---t---)--- ---c---o---n---t---e---n---t---.---i---n---n---e---r---H---T---M---L--- ---=--- ---d---a---t---a---.---h---t---m---l---;------
+--- --- --- --- ---i---f--- ---(---c---o---n---t---e---n---t--- ---&---&--- ---w---i---n---d---o---w---.---a---p---p---l---y---T---O---V---E---S---S---A---C---o---n---t---a---c---t---I---n---f---o---)--- ---w---i---n---d---o---w---.---a---p---p---l---y---T---O---V---E---S---S---A---C---o---n---t---a---c---t---I---n---f---o---(---c---o---n---t---e---n---t---)---;------
+--- --- --- --- ---d---o---c---u---m---e---n---t---.---t---i---t---l---e--- ---=--- ---d---a---t---a---.---t---i---t---l---e--- ---+--- ---'--- ---â€”--- ---T---O---V---E---S---S---A---'---;------
+--- --- --- --- ---/---*--- ---U---p---d---a---t---e--- ---s---i---d---e---b---a---r--- ---h---e---a---d---i---n---g--- ---t---o--- ---r---e---f---l---e---c---t--- ---a---c---t---i---v---e--- ---p---a---g---e--- ---*---/------
+--- --- --- --- ---c---o---n---s---t--- ---s---i---d---e---b---a---r---H---e---a---d---i---n---g--- ---=--- ---d---o---c---u---m---e---n---t---.---q---u---e---r---y---S---e---l---e---c---t---o---r---(---'---.---p---o---l---i---c---y-------s---i---d---e---b---a---r--- ---h---3---'---)---;------
+--- --- --- --- ---i---f--- ---(---s---i---d---e---b---a---r---H---e---a---d---i---n---g---)--- ---s---i---d---e---b---a---r---H---e---a---d---i---n---g---.---t---e---x---t---C---o---n---t---e---n---t--- ---=--- ---'---H---e---l---p--- ---&--- ---P---o---l---i---c---i---e---s---'---;------
+--- --- --- --- ---/---*--- ---H---i---g---h---l---i---g---h---t--- ---a---c---t---i---v---e--- ---l---i---n---k--- ---*---/------
+--- --- --- --- ---d---o---c---u---m---e---n---t---.---q---u---e---r---y---S---e---l---e---c---t---o---r---A---l---l---(---'---.---p---o---l---i---c---y-------l---i---n---k---'---)---.---f---o---r---E---a---c---h---(---l--- ---=--->--- ---{------
+--- --- --- --- --- --- ---l---.---c---l---a---s---s---L---i---s---t---.---t---o---g---g---l---e---(---'---a---c---t---i---v---e---'---,--- ---l---.---d---a---t---a---s---e---t---.---p---a---g---e--- ---=---=---=--- ---k---e---y---)---;------
+--- --- --- --- ---}---)---;------
+--- --- --- --- ---/---*--- ---S---e---t--- ---W---A--- ---l---i---n---k--- ---o---n--- ---t---r---a---c---k--- ---p---a---g---e--- ---*---/------
+--- --- --- --- ---c---o---n---s---t--- ---w---a---L---i---n---k--- ---=--- ---d---o---c---u---m---e---n---t---.---g---e---t---E---l---e---m---e---n---t---B---y---I---d---(---'---w---a-------t---r---a---c---k-------l---i---n---k---'---)---;------
+--- --- --- --- ---i---f--- ---(---w---a---L---i---n---k--- ---&---&--- ---w---i---n---d---o---w---.---G---O---L---N---I---S---Ã€---_---C---O---N---F---I---G---)--- ---w---a---L---i---n---k---.---h---r---e---f--- ---=--- ---w---i---n---d---o---w---.---G---O---L---N---I---S---Ã€---_---C---O---N---F---I---G---.---s---o---c---i---a---l---.---w---h---a---t---s---a---p---p---;------
+--- --- ---}------
+--- --- ---l---o---a---d---P---o---l---i---c---y---(---p---a---g---e---)---;------
+--- --- ---/---*--- ---P---o---l---i---c---y--- ---s---i---d---e---b---a---r--- ---n---a---v---i---g---a---t---i---o---n--- ---*---/------
+--- --- ---d---o---c---u---m---e---n---t---.---q---u---e---r---y---S---e---l---e---c---t---o---r---A---l---l---(---'---.---p---o---l---i---c---y-------l---i---n---k---'---)---.---f---o---r---E---a---c---h---(---l---i---n---k--- ---=--->--- ---{------
+--- --- --- --- ---l---i---n---k---.---a---d---d---E---v---e---n---t---L---i---s---t---e---n---e---r---(---'---c---l---i---c---k---'---,--- ---e--- ---=--->--- ---{------
+--- --- --- --- --- --- ---e---.---p---r---e---v---e---n---t---D---e---f---a---u---l---t---(---)---;------
+--- --- --- --- --- --- ---c---o---n---s---t--- ---p---g--- ---=--- ---l---i---n---k---.---d---a---t---a---s---e---t---.---p---a---g---e---;------
+--- --- --- --- --- --- ---h---i---s---t---o---r---y---.---p---u---s---h---S---t---a---t---e---(---{---}---,--- ---'---'---,--- ---'---?---p---a---g---e---=---'--- ---+--- ---p---g---)---;------
+--- --- --- --- --- --- ---l---o---a---d---P---o---l---i---c---y---(---p---g---)---;------
+--- --- --- --- --- --- ---w---i---n---d---o---w---.---s---c---r---o---l---l---T---o---(---{--- ---t---o---p---:--- ---0---,--- ---b---e---h---a---v---i---o---r---:--- ---'---s---m---o---o---t---h---'--- ---}---)---;------
+--- --- --- --- ---}---)---;------
+--- --- ---}---)---;------
+--- --- ---/---*--- ---T---r---a---c---k--- ---o---r---d---e---r--- ---â€”--- ---r---e---a---l--- ---b---a---c---k---e---n---d--- ---*---/------
+--- --- ---w---i---n---d---o---w---.---t---r---a---c---k---O---r---d---e---r--- ---=--- ---a---s---y---n---c--- ---(---)--- ---=--->--- ---{------
+--- --- --- --- ---c---o---n---s---t--- ---r---e---f--- --- --- --- ---=--- ---d---o---c---u---m---e---n---t---.---g---e---t---E---l---e---m---e---n---t---B---y---I---d---(---'---t---r---a---c---k-------r---e---f---'---)---?---.---v---a---l---u---e---.---t---r---i---m---(---)---;------
+--- --- --- --- ---c---o---n---s---t--- ---e---m---a---i---l--- --- ---=--- ---d---o---c---u---m---e---n---t---.---g---e---t---E---l---e---m---e---n---t---B---y---I---d---(---'---t---r---a---c---k-------e---m---a---i---l---'---)---?---.---v---a---l---u---e---.---t---r---i---m---(---)---;------
+--- --- --- --- ---c---o---n---s---t--- ---r---e---s---u---l---t--- ---=--- ---d---o---c---u---m---e---n---t---.---g---e---t---E---l---e---m---e---n---t---B---y---I---d---(---'---t---r---a---c---k-------r---e---s---u---l---t---'---)---;------
+--- --- --- --- ---c---o---n---s---t--- ---b---t---n--- --- --- --- ---=--- ---d---o---c---u---m---e---n---t---.---q---u---e---r---y---S---e---l---e---c---t---o---r---(---'---[---o---n---c---l---i---c---k---=---"---t---r---a---c---k---O---r---d---e---r---(---)---"---]---'---)---;------
+--- --- --- --- ---i---f--- ---(---!---r---e---f--- ---&---&--- ---!---e---m---a---i---l---)--- ---{--- ---s---h---o---w---T---o---a---s---t---(---'---P---l---e---a---s---e--- ---e---n---t---e---r--- ---y---o---u---r--- ---o---r---d---e---r--- ---n---u---m---b---e---r--- ---o---r--- ---e---m---a---i---l---'---)---;--- ---r---e---t---u---r---n---;--- ---}------
+--- --- --- --- ---i---f--- ---(---!---r---e---s---u---l---t---)--- ---r---e---t---u---r---n---;------
+--- --- --- --- ---i---f--- ---(---b---t---n---)--- ---{--- ---b---t---n---.---d---i---s---a---b---l---e---d--- ---=--- ---t---r---u---e---;--- ---b---t---n---.---t---e---x---t---C---o---n---t---e---n---t--- ---=--- ---'---T---r---a---c---k---i---n---g---â€¦---'---;--- ---}------
+--- --- --- --- ---r---e---s---u---l---t---.---s---t---y---l---e---.---d---i---s---p---l---a---y--- ---=--- ---'---b---l---o---c---k---'---;------
+--- --- --- --- ---r---e---s---u---l---t---.---i---n---n---e---r---H---T---M---L--- ---=--- ---`---<---d---i---v--- ---s---t---y---l---e---=---"---p---a---d---d---i---n---g---:---2---4---p---x---;---t---e---x---t-------a---l---i---g---n---:---c---e---n---t---e---r---;---c---o---l---o---r---:---v---a---r---(-----------m---u---t---e---d---)---;---"--->---L---o---o---k---i---n---g--- ---u---p--- ---y---o---u---r--- ---o---r---d---e---r---â€¦---<---/---d---i---v--->---`---;------
+--- --- --- --- ---t---r---y--- ---{------
+--- --- --- --- --- --- ---l---e---t--- ---o---r---d---e---r--- ---=--- ---n---u---l---l---;------
+--- --- --- --- --- --- ---i---f--- ---(---r---e---f---)--- ---{------
+--- --- --- --- --- --- --- --- ---c---o---n---s---t--- ---r---e---s--- --- ---=--- ---a---w---a---i---t--- ---f---e---t---c---h---(---`---h---t---t---p---s---:---/---/---t---o---v---e---s---s---a---.---c---o---m---/---a---p---i---/---o---r---d---e---r---s---/---t---r---a---c---k---/---$---{---e---n---c---o---d---e---U---R---I---C---o---m---p---o---n---e---n---t---(---r---e---f---)---}---`---)---;------
+--- --- --- --- --- --- --- --- ---c---o---n---s---t--- ---d---a---t---a--- ---=--- ---a---w---a---i---t--- ---r---e---s---.---j---s---o---n---(---)---;------
+--- --- --- --- --- --- --- --- ---i---f--- ---(---r---e---s---.---o---k---)--- ---o---r---d---e---r--- ---=--- ---d---a---t---a---.---o---r---d---e---r---;------
+--- --- --- --- --- --- ---}------
+--- --- --- --- --- --- ---i---f--- ---(---!---o---r---d---e---r--- ---&---&--- ---e---m---a---i---l---)--- ---{------
+--- --- --- --- --- --- --- --- ---c---o---n---s---t--- ---r---e---s--- --- ---=--- ---a---w---a---i---t--- ---f---e---t---c---h---(---`---h---t---t---p---s---:---/---/---t---o---v---e---s---s---a---.---c---o---m---/---a---p---i---/---o---r---d---e---r---s---/---u---s---e---r---/---$---{---e---n---c---o---d---e---U---R---I---C---o---m---p---o---n---e---n---t---(---e---m---a---i---l---)---}---`---)---;------
+--- --- --- --- --- --- --- --- ---c---o---n---s---t--- ---d---a---t---a--- ---=--- ---a---w---a---i---t--- ---r---e---s---.---j---s---o---n---(---)---;------
+--- --- --- --- --- --- --- --- ---i---f--- ---(---r---e---s---.---o---k--- ---&---&--- ---d---a---t---a---.---o---r---d---e---r---s---?---.---l---e---n---g---t---h---)--- ---o---r---d---e---r--- ---=--- ---d---a---t---a---.---o---r---d---e---r---s---[---0---]---;------
+--- --- --- --- --- --- ---}------
+--- --- --- --- --- --- ---i---f--- ---(---!---o---r---d---e---r---)--- ---{------
+--- --- --- --- --- --- --- --- ---r---e---s---u---l---t---.---i---n---n---e---r---H---T---M---L--- ---=--- ---`---<---d---i---v--- ---c---l---a---s---s---=---"---t---r---a---c---k-------s---t---a---t---u---s-------c---a---r---d---"--- ---s---t---y---l---e---=---"---b---o---r---d---e---r-------l---e---f---t---:---3---p---x--- ---s---o---l---i---d--- ---#---d---9---6---a---6---a---;---p---a---d---d---i---n---g---:---2---0---p---x---;---"--->------
+--- --- --- --- --- --- --- --- --- --- ---<---d---i---v--- ---c---l---a---s---s---=---"---t---r---a---c---k-------s---t---a---t---u---s-------i---c---o---n---"--->---?---<---/---d---i---v--->------
+--- --- --- --- --- --- --- --- --- --- ---<---d---i---v--->---<---s---t---r---o---n---g--->---O---r---d---e---r--- ---N---o---t--- ---F---o---u---n---d---<---/---s---t---r---o---n---g--->------
+--- --- --- --- --- --- --- --- --- --- ---<---p--- ---s---t---y---l---e---=---"---c---o---l---o---r---:---v---a---r---(-----------m---u---t---e---d---)---;---f---o---n---t-------s---i---z---e---:---.---8---5---r---e---m---;---m---a---r---g---i---n-------t---o---p---:---6---p---x---;---"--->---N---o--- ---o---r---d---e---r--- ---f---o---u---n---d--- ---w---i---t---h--- ---t---h---a---t--- ---r---e---f---e---r---e---n---c---e--- ---o---r--- ---e---m---a---i---l---.--- ---D---o---u---b---l---e-------c---h---e---c---k--- ---a---n---d--- ---t---r---y--- ---a---g---a---i---n---,--- ---o---r--- ---c---o---n---t---a---c---t--- ---u---s--- ---o---n--- ---W---h---a---t---s---A---p---p---.---<---/---p--->------
+--- --- --- --- --- --- --- --- --- --- ---<---a--- ---h---r---e---f---=---"---$---{---w---i---n---d---o---w---.---G---O---L---N---I---S---Ã€---_---C---O---N---F---I---G---?---.---s---o---c---i---a---l---?---.---w---h---a---t---s---a---p---p--- ---|---|--- ---'---#---'---}---"--- ---t---a---r---g---e---t---=---"---_---b---l---a---n---k---"--- ---c---l---a---s---s---=---"---b---t---n-------p---r---i---m---a---r---y---"--- ---s---t---y---l---e---=---"---d---i---s---p---l---a---y---:---i---n---l---i---n---e-------b---l---o---c---k---;---m---a---r---g---i---n-------t---o---p---:---1---4---p---x---;---p---a---d---d---i---n---g---:---1---2---p---x--- ---2---8---p---x---;---"--->---C---h---a---t--- ---o---n--- ---W---h---a---t---s---A---p---p--- ---?---<---/---a--->---<---/---d---i---v--->---<---/---d---i---v--->---`---;------
+--- --- --- --- --- --- --- --- ---r---e---t---u---r---n---;------
+--- --- --- --- --- --- ---}------
+--- --- --- --- --- --- ---c---o---n---s---t--- ---s---t---a---t---u---s---C---o---l---o---r---s--- ---=--- ---{--- ---P---e---n---d---i---n---g---:---'---#---c---9---a---8---4---c---'---,--- ---C---o---n---f---i---r---m---e---d---:---'---#---8---e---4---4---a---d---'---,--- ---P---r---o---c---e---s---s---i---n---g---:---'---#---5---b---9---b---d---5---'---,--- ---S---h---i---p---p---e---d---:---'---#---7---e---c---8---a---4---'---,--- ---D---e---l---i---v---e---r---e---d---:---'---#---5---c---b---8---5---c---'---,--- ---C---a---n---c---e---l---l---e---d---:---'---#---d---9---6---a---6---a---'--- ---}---;------
+--- --- --- --- --- --- ---c---o---n---s---t--- ---s---t---a---t---u---s---I---c---o---n---s--- --- ---=--- ---{--- ---P---e---n---d---i---n---g---:---'---?---'---,--- ---C---o---n---f---i---r---m---e---d---:---'---?---?---'---,--- ---P---r---o---c---e---s---s---i---n---g---:---'---?---?---'---,--- ---S---h---i---p---p---e---d---:---'---?---?---'---,--- ---D---e---l---i---v---e---r---e---d---:---'---?---'---,--- ---C---a---n---c---e---l---l---e---d---:---'---?---'--- ---}---;------
+--- --- --- --- --- --- ---c---o---n---s---t--- ---s---t---e---p---s--- ---=--- ---[---'---P---e---n---d---i---n---g---'---,---'---C---o---n---f---i---r---m---e---d---'---,---'---P---r---o---c---e---s---s---i---n---g---'---,---'---S---h---i---p---p---e---d---'---,---'---D---e---l---i---v---e---r---e---d---'---]---;------
+--- --- --- --- --- --- ---c---o---n---s---t--- ---s---t---e---p---I---d---x--- ---=--- ---s---t---e---p---s---.---i---n---d---e---x---O---f---(---o---r---d---e---r---.---s---t---a---t---u---s---)---;------
+--- --- --- --- --- --- ---c---o---n---s---t--- ---s---t---e---p---s---H---T---M---L--- ---=--- ---o---r---d---e---r---.---s---t---a---t---u---s--- ---=---=---=--- ---'---C---a---n---c---e---l---l---e---d---'--- ---?--- ---'---'--- ---:--- ---`------
+--- --- --- --- --- --- --- --- ---<---d---i---v--- ---s---t---y---l---e---=---"---d---i---s---p---l---a---y---:---f---l---e---x---;---g---a---p---:---0---;---m---a---r---g---i---n---:---2---0---p---x--- ---0--- ---8---p---x---;---a---l---i---g---n-------i---t---e---m---s---:---c---e---n---t---e---r---;---"--->------
+--- --- --- --- --- --- --- --- --- --- ---$---{---s---t---e---p---s---.---m---a---p---(---(---s---,---i---)--- ---=--->--- ---`------
+--- --- --- --- --- --- --- --- --- --- --- --- ---<---d---i---v--- ---s---t---y---l---e---=---"---f---l---e---x---:---1---;---t---e---x---t-------a---l---i---g---n---:---c---e---n---t---e---r---;---"--->------
+--- --- --- --- --- --- --- --- --- --- --- --- --- --- ---<---d---i---v--- ---s---t---y---l---e---=---"---w---i---d---t---h---:---3---2---p---x---;---h---e---i---g---h---t---:---3---2---p---x---;---b---o---r---d---e---r-------r---a---d---i---u---s---:---5---0---%---;---b---a---c---k---g---r---o---u---n---d---:---$---{---i---<---=---s---t---e---p---I---d---x---?---'---v---a---r---(-----------g---o---l---d---)---'---:---'---v---a---r---(-----------c---a---r---d---)---'---}---;---b---o---r---d---e---r---:---2---p---x--- ---s---o---l---i---d--- ---$---{---i---<---=---s---t---e---p---I---d---x---?---'---v---a---r---(-----------g---o---l---d---)---'---:---'---v---a---r---(-----------b---o---r---d---e---r---)---'---}---;---d---i---s---p---l---a---y---:---f---l---e---x---;---a---l---i---g---n-------i---t---e---m---s---:---c---e---n---t---e---r---;---j---u---s---t---i---f---y-------c---o---n---t---e---n---t---:---c---e---n---t---e---r---;---m---a---r---g---i---n---:---0--- ---a---u---t---o---;---f---o---n---t-------s---i---z---e---:---.---9---r---e---m---;---"--->---$---{---i---<---=---s---t---e---p---I---d---x---?---'---?---'---:---i---+---1---}---<---/---d---i---v--->------
+--- --- --- --- --- --- --- --- --- --- --- --- --- --- ---<---p--- ---s---t---y---l---e---=---"---f---o---n---t-------s---i---z---e---:---.---6---8---r---e---m---;---c---o---l---o---r---:---$---{---i---<---=---s---t---e---p---I---d---x---?---'---v---a---r---(-----------g---o---l---d---)---'---:---'---v---a---r---(-----------m---u---t---e---d---)---'---}---;---m---a---r---g---i---n-------t---o---p---:---5---p---x---;---"--->---$---{---s---}---<---/---p--->------
+--- --- --- --- --- --- --- --- --- --- --- --- ---<---/---d---i---v--->------
+--- --- --- --- --- --- --- --- --- --- --- --- ---$---{---i---<---s---t---e---p---s---.---l---e---n---g---t---h-------1---?---`---<---d---i---v--- ---s---t---y---l---e---=---"---f---l---e---x---:---0---.---5---;---h---e---i---g---h---t---:---2---p---x---;---b---a---c---k---g---r---o---u---n---d---:---$---{---i---<---s---t---e---p---I---d---x---?---'---v---a---r---(-----------g---o---l---d---)---'---:---'---v---a---r---(-----------b---o---r---d---e---r---)---'---}---;---m---a---r---g---i---n-------b---o---t---t---o---m---:---2---2---p---x---;---"--->---<---/---d---i---v--->---`---:---'---'---}------
+--- --- --- --- --- --- --- --- --- --- ---`---)---.---j---o---i---n---(---'---'---)---}------
+--- --- --- --- --- --- --- --- ---<---/---d---i---v--->---`---;------
+--- --- --- --- --- --- ---r---e---s---u---l---t---.---i---n---n---e---r---H---T---M---L--- ---=--- ---`------
+--- --- --- --- --- --- --- --- ---<---d---i---v--- ---c---l---a---s---s---=---"---t---r---a---c---k-------s---t---a---t---u---s-------c---a---r---d---"--- ---s---t---y---l---e---=---"---b---o---r---d---e---r---:---1---p---x--- ---s---o---l---i---d--- ---v---a---r---(-----------b---o---r---d---e---r---)---;---b---o---r---d---e---r-------l---e---f---t---:---4---p---x--- ---s---o---l---i---d--- ---$---{---s---t---a---t---u---s---C---o---l---o---r---s---[---o---r---d---e---r---.---s---t---a---t---u---s---]---|---|---'---v---a---r---(-----------g---o---l---d---)---'---}---;---p---a---d---d---i---n---g---:---2---4---p---x---;---b---o---r---d---e---r-------r---a---d---i---u---s---:---8---p---x---;---b---a---c---k---g---r---o---u---n---d---:---v---a---r---(-----------c---a---r---d---)---;---"--->------
+--- --- --- --- --- --- --- --- --- --- ---<---d---i---v--- ---s---t---y---l---e---=---"---d---i---s---p---l---a---y---:---f---l---e---x---;---j---u---s---t---i---f---y-------c---o---n---t---e---n---t---:---s---p---a---c---e-------b---e---t---w---e---e---n---;---a---l---i---g---n-------i---t---e---m---s---:---f---l---e---x-------s---t---a---r---t---;---f---l---e---x-------w---r---a---p---:---w---r---a---p---;---g---a---p---:---1---2---p---x---;---"--->------
+--- --- --- --- --- --- --- --- --- --- --- --- ---<---d---i---v--->------
+--- --- --- --- --- --- --- --- --- --- --- --- --- --- ---<---p--- ---s---t---y---l---e---=---"---c---o---l---o---r---:---v---a---r---(-----------m---u---t---e---d---)---;---f---o---n---t-------s---i---z---e---:---.---7---8---r---e---m---;---l---e---t---t---e---r-------s---p---a---c---i---n---g---:---.---0---8---e---m---;---t---e---x---t-------t---r---a---n---s---f---o---r---m---:---u---p---p---e---r---c---a---s---e---;---"--->---O---r---d---e---r--- ---R---e---f---e---r---e---n---c---e---<---/---p--->------
+--- --- --- --- --- --- --- --- --- --- --- --- --- --- ---<---s---t---r---o---n---g--- ---s---t---y---l---e---=---"---f---o---n---t-------s---i---z---e---:---1---.---1---r---e---m---;---"--->---$---{---o---r---d---e---r---.---i---d---}---<---/---s---t---r---o---n---g--->------
+--- --- --- --- --- --- --- --- --- --- --- --- ---<---/---d---i---v--->------
+--- --- --- --- --- --- --- --- --- --- --- --- ---<---d---i---v--- ---s---t---y---l---e---=---"---b---a---c---k---g---r---o---u---n---d---:---$---{---s---t---a---t---u---s---C---o---l---o---r---s---[---o---r---d---e---r---.---s---t---a---t---u---s---]---|---|---'---v---a---r---(-----------g---o---l---d---)---'---}---2---2---;---b---o---r---d---e---r---:---1---p---x--- ---s---o---l---i---d--- ---$---{---s---t---a---t---u---s---C---o---l---o---r---s---[---o---r---d---e---r---.---s---t---a---t---u---s---]---|---|---'---v---a---r---(-----------g---o---l---d---)---'---}---;---p---a---d---d---i---n---g---:---6---p---x--- ---1---6---p---x---;---b---o---r---d---e---r-------r---a---d---i---u---s---:---2---0---p---x---;---f---o---n---t-------s---i---z---e---:---.---8---2---r---e---m---;---f---o---n---t-------w---e---i---g---h---t---:---6---0---0---;---c---o---l---o---r---:---$---{---s---t---a---t---u---s---C---o---l---o---r---s---[---o---r---d---e---r---.---s---t---a---t---u---s---]---|---|---'---v---a---r---(-----------g---o---l---d---)---'---}---;---"--->------
+--- --- --- --- --- --- --- --- --- --- --- --- --- --- ---$---{---s---t---a---t---u---s---I---c---o---n---s---[---o---r---d---e---r---.---s---t---a---t---u---s---]---|---|---'---?---?---'---}--- ---$---{---o---r---d---e---r---.---s---t---a---t---u---s---}------
+--- --- --- --- --- --- --- --- --- --- --- --- ---<---/---d---i---v--->------
+--- --- --- --- --- --- --- --- --- --- ---<---/---d---i---v--->------
+--- --- --- --- --- --- --- --- --- --- ---$---{---s---t---e---p---s---H---T---M---L---}------
+--- --- --- --- --- --- --- --- --- --- ---<---d---i---v--- ---s---t---y---l---e---=---"---d---i---s---p---l---a---y---:---g---r---i---d---;---g---r---i---d-------t---e---m---p---l---a---t---e-------c---o---l---u---m---n---s---:---1---f---r--- ---1---f---r---;---g---a---p---:---1---2---p---x---;---m---a---r---g---i---n-------t---o---p---:---1---6---p---x---;---f---o---n---t-------s---i---z---e---:---.---8---2---r---e---m---;---"--->------
+--- --- --- --- --- --- --- --- --- --- --- --- ---<---d---i---v--->---<---s---p---a---n--- ---s---t---y---l---e---=---"---c---o---l---o---r---:---v---a---r---(-----------m---u---t---e---d---)---;---"--->---O---r---d---e---r--- ---P---l---a---c---e---d---<---/---s---p---a---n--->---<---b---r--->---<---s---t---r---o---n---g--->---$---{---n---e---w--- ---D---a---t---e---(---o---r---d---e---r---.---c---r---e---a---t---e---d---A---t---)---.---t---o---L---o---c---a---l---e---D---a---t---e---S---t---r---i---n---g---(---'---e---n-------P---K---'---,---{---d---a---y---:---'---n---u---m---e---r---i---c---'---,---m---o---n---t---h---:---'---s---h---o---r---t---'---,---y---e---a---r---:---'---n---u---m---e---r---i---c---'---}---)---}---<---/---s---t---r---o---n---g--->---<---/---d---i---v--->------
+--- --- --- --- --- --- --- --- --- --- --- --- ---<---d---i---v--->---<---s---p---a---n--- ---s---t---y---l---e---=---"---c---o---l---o---r---:---v---a---r---(-----------m---u---t---e---d---)---;---"--->---L---a---s---t--- ---U---p---d---a---t---e---d---<---/---s---p---a---n--->---<---b---r--->---<---s---t---r---o---n---g--->---$---{---n---e---w--- ---D---a---t---e---(---o---r---d---e---r---.---u---p---d---a---t---e---d---A---t---|---|---o---r---d---e---r---.---c---r---e---a---t---e---d---A---t---)---.---t---o---L---o---c---a---l---e---D---a---t---e---S---t---r---i---n---g---(---'---e---n-------P---K---'---,---{---d---a---y---:---'---n---u---m---e---r---i---c---'---,---m---o---n---t---h---:---'---s---h---o---r---t---'---,---y---e---a---r---:---'---n---u---m---e---r---i---c---'---}---)---}---<---/---s---t---r---o---n---g--->---<---/---d---i---v--->------
+--- --- --- --- --- --- --- --- --- --- --- --- ---$---{---o---r---d---e---r---.---t---o---t---a---l--- ---?--- ---`---<---d---i---v--->---<---s---p---a---n--- ---s---t---y---l---e---=---"---c---o---l---o---r---:---v---a---r---(-----------m---u---t---e---d---)---;---"--->---O---r---d---e---r--- ---T---o---t---a---l---<---/---s---p---a---n--->---<---b---r--->---<---s---t---r---o---n---g--->---P---K---R--- ---$---{---N---u---m---b---e---r---(---o---r---d---e---r---.---t---o---t---a---l---)---.---t---o---L---o---c---a---l---e---S---t---r---i---n---g---(---)---}---<---/---s---t---r---o---n---g--->---<---/---d---i---v--->---`---:---'---'---}------
+--- --- --- --- --- --- --- --- --- --- --- --- ---$---{---o---r---d---e---r---.---d---e---l---i---v---e---r---y---M---e---t---h---o---d--- ---?--- ---`---<---d---i---v--->---<---s---p---a---n--- ---s---t---y---l---e---=---"---c---o---l---o---r---:---v---a---r---(-----------m---u---t---e---d---)---;---"--->---D---e---l---i---v---e---r---y---<---/---s---p---a---n--->---<---b---r--->---<---s---t---r---o---n---g--- ---s---t---y---l---e---=---"---t---e---x---t-------t---r---a---n---s---f---o---r---m---:---c---a---p---i---t---a---l---i---z---e---;---"--->---$---{---o---r---d---e---r---.---d---e---l---i---v---e---r---y---M---e---t---h---o---d---}---<---/---s---t---r---o---n---g--->---<---/---d---i---v--->---`---:---'---'---}------
+--- --- --- --- --- --- --- --- --- --- ---<---/---d---i---v--->------
+--- --- --- --- --- --- --- --- --- --- ---$---{---o---r---d---e---r---.---i---t---e---m---s---?---.---l---e---n---g---t---h--- ---?--- ---`---<---d---i---v--- ---s---t---y---l---e---=---"---m---a---r---g---i---n-------t---o---p---:---1---6---p---x---;---b---o---r---d---e---r-------t---o---p---:---1---p---x--- ---s---o---l---i---d--- ---v---a---r---(-----------b---o---r---d---e---r---)---;---p---a---d---d---i---n---g-------t---o---p---:---1---4---p---x---;---"--->------
+--- --- --- --- --- --- --- --- --- --- --- --- ---<---p--- ---s---t---y---l---e---=---"---c---o---l---o---r---:---v---a---r---(-----------m---u---t---e---d---)---;---f---o---n---t-------s---i---z---e---:---.---7---5---r---e---m---;---t---e---x---t-------t---r---a---n---s---f---o---r---m---:---u---p---p---e---r---c---a---s---e---;---l---e---t---t---e---r-------s---p---a---c---i---n---g---:---.---0---8---e---m---;---m---a---r---g---i---n-------b---o---t---t---o---m---:---1---0---p---x---;---"--->---I---t---e---m---s---<---/---p--->------
+--- --- --- --- --- --- --- --- --- --- --- --- ---$---{---o---r---d---e---r---.---i---t---e---m---s---.---m---a---p---(---i---=--->---`---<---d---i---v--- ---s---t---y---l---e---=---"---d---i---s---p---l---a---y---:---f---l---e---x---;---j---u---s---t---i---f---y-------c---o---n---t---e---n---t---:---s---p---a---c---e-------b---e---t---w---e---e---n---;---f---o---n---t-------s---i---z---e---:---.---8---2---r---e---m---;---p---a---d---d---i---n---g---:---4---p---x--- ---0---;---"--->---<---s---p---a---n--->---$---{---i---.---e---m---o---j---i---|---|---'---?---?---?---'---}--- ---$---{---i---.---n---a---m---e---}--- ---Ã—---$---{---i---.---q---t---y---}---<---/---s---p---a---n--->---<---s---p---a---n--->---P---K---R--- ---$---{---(---i---.---p---r---i---c---e---*---i---.---q---t---y---)---.---t---o---L---o---c---a---l---e---S---t---r---i---n---g---(---)---}---<---/---s---p---a---n--->---<---/---d---i---v--->---`---)---.---j---o---i---n---(---'---'---)---}------
+--- --- --- --- --- --- --- --- --- --- ---<---/---d---i---v--->---`---:---'---'---}------
+--- --- --- --- --- --- --- --- ---<---/---d---i---v--->---`---;------
+--- --- --- --- ---}--- ---c---a---t---c---h--- ---(---e---r---r---)--- ---{------
+--- --- --- --- --- --- ---r---e---s---u---l---t---.---i---n---n---e---r---H---T---M---L--- ---=--- ---`---<---d---i---v--- ---s---t---y---l---e---=---"---p---a---d---d---i---n---g---:---2---0---p---x---;---c---o---l---o---r---:---#---d---9---6---a---6---a---;---"--->---C---o---u---l---d--- ---n---o---t--- ---r---e---a---c---h--- ---t---h---e--- ---s---e---r---v---e---r---.--- ---P---l---e---a---s---e--- ---t---r---y--- ---a---g---a---i---n---.---<---/---d---i---v--->---`---;------
+--- --- --- --- ---}--- ---f---i---n---a---l---l---y--- ---{------
+--- --- --- --- --- --- ---i---f--- ---(---b---t---n---)--- ---{--- ---b---t---n---.---d---i---s---a---b---l---e---d--- ---=--- ---f---a---l---s---e---;--- ---b---t---n---.---t---e---x---t---C---o---n---t---e---n---t--- ---=--- ---'---T---r---a---c---k--- ---O---r---d---e---r---'---;--- ---}------
+--- --- --- --- ---}------
+--- --- ---}---;------
+--- --- ---<---/---s---c---r---i---p---t--->------
+---<---/---b---o---d---y--->------
+---<---/---h---t---m---l--->------
+------
+------
+------
+------
+------
+------
+------
+------
+----
+-

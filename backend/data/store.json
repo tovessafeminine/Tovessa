@@ -1,39 +1,63 @@
 {
-  "adminUsers": [
-    {
-      "id": "super-admin-1",
-      "username": "admin",
-      "email": "admin",
-      "passwordHash": "$2a$10$pO8kC4cZ7AkxKy0Zn7.X1uT76ZekI1y8QGUf1.SYbrFAjH/QTbPW2",
-      "role": "ceo",
-      "fname": "Super",
-      "lname": "Admin",
-      "active": true,
-      "createdAt": "2026-07-16T21:42:22.857Z",
-      "lastLogin": null
-    }
-  ],
-  "users": [],
-  "orders": [],
-  "products": [],
-  "messages": [],
-  "subscribers": [],
-  "settings": {
-    "company": {
-      "name": "Tovessa",
-      "address": "",
-      "phone": "+92 331 4978295",
-      "email": "",
-      "website": "",
-      "socials": ""
-    },
-    "invoiceTrigger": "manual"
-  },
-  "spendings": [],
-  "invoices": [],
-  "coupons": [],
-  "socialOrders": [],
-  "resellers": [],
-  "activityLogs": [],
-  "abandoned": []
+    "adminUsers":  [
+                       {
+                           "id":  "super-admin-1",
+                           "username":  "admin",
+                           "email":  "admin",
+                           "passwordHash":  null,
+                           "role":  "ceo",
+                           "fname":  "Super",
+                           "lname":  "Admin",
+                           "active":  true,
+                           "createdAt":  "2026-07-16T21:42:22.857Z",
+                           "lastLogin":  null
+                       }
+                   ],
+    "users":  [
+
+              ],
+    "orders":  [
+
+               ],
+    "products":  [
+
+                 ],
+    "messages":  [
+
+                 ],
+    "subscribers":  [
+
+                    ],
+    "settings":  {
+                     "company":  {
+                                     "name":  "Tovessa",
+                                     "address":  "",
+                                     "phone":  "+92 331 4978295",
+                                     "email":  "",
+                                     "website":  "",
+                                     "socials":  ""
+                                 },
+                     "invoiceTrigger":  "manual"
+                 },
+    "spendings":  [
+
+                  ],
+    "invoices":  [
+
+                 ],
+    "coupons":  [
+
+                ],
+    "socialOrders":  [
+
+                     ],
+    "resellers":  [
+
+                  ],
+    "activityLogs":  [
+
+                     ],
+    "abandoned":  [
+
+                  ]
 }

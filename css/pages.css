@@ -352,3 +352,58 @@
   }
 }
 
+
+/* NEW SHOP PAGE LAYOUT */
+.shop-layout {
+  display: flex;
+  flex-direction: row-reverse; /* Put sidebar on the right */
+  gap: 40px;
+}
+.shop-header {
+  background: var(--bg);
+  padding: 80px 40px;
+  text-align: center;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 40px;
+}
+.shop-header h1 {
+  font-size: 3rem;
+  color: var(--gold);
+  letter-spacing: 2px;
+}
+.shop-header p {
+  color: var(--muted);
+  font-family: var(--font-body);
+  max-width: 600px;
+  margin: 15px auto 0;
+}
+
+/* NEW SHOP PAGE LAYOUT OVERRIDES */
+.shop-container {
+  display: flex !important;
+  flex-direction: row-reverse !important;
+  gap: 50px !important;
+  max-width: 1400px;
+  margin: 60px auto !important;
+}
+.page-hero {
+  background: var(--bg) !important;
+  padding: 80px 40px !important;
+  text-align: center !important;
+  border-bottom: 1px solid var(--border);
+  min-height: auto !important;
+}
+.page-hero .section-label {
+  color: var(--muted) !important;
+  font-family: var(--font-body);
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  margin-bottom: 15px;
+}
+.page-hero h1 {
+  font-family: var(--font-display);
+  font-size: 3.5rem !important;
+  color: var(--gold) !important;
+  margin-bottom: 20px;
+}
