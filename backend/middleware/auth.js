@@ -1,5 +1,5 @@
 /* ============================================================
-   VELORRA — JWT Authentication Middleware
+   TOVESSA — JWT Authentication Middleware
    ============================================================ */
 const jwt = require('jsonwebtoken');
 const store = require('../utils/store');

@@ -1,19 +1,19 @@
 /* ============================================================
-   ZARINEHUSN — Shared API Helper
+   TOVESSA — Shared API Helper
    Used by all frontend pages to talk to the backend.
    ============================================================ */
 
-const ZARINEHUSN_API = (function() {
+const TOVESSA_API = (function() {
   const origin = window.location.origin || '';
   if (origin.includes('localhost') || origin.includes('127.0.0.1') || origin === 'null' || origin.startsWith('file')) {
-    return 'http://localhost:3001/api';
+    return 'http://localhost:3002/api';
   }
   return origin + '/api';
 })();
 
 /* ── Get stored JWT token ── */
 function getToken() {
-  return localStorage.getItem('zarinehusn_token');
+  return localStorage.getItem('tovessa_token');
 }
 
 /* ── Auth headers ── */
@@ -26,7 +26,7 @@ function apiHeaders(includeAuth = true) {
 
 /* ── Generic GET ── */
 async function apiGet(endpoint) {
-  const res = await fetch(`${ZARINEHUSN_API}${endpoint}`, {
+  const res = await fetch(`${TOVESSA_API}${endpoint}`, {
     headers: apiHeaders(),
   });
   return res.json();
@@ -39,7 +39,7 @@ async function apiGet(endpoint) {
 async function apiPost(endpoint, data, requireAuth = false) {
   let res;
   try {
-    res = await fetch(`${ZARINEHUSN_API}${endpoint}`, {
+    res = await fetch(`${TOVESSA_API}${endpoint}`, {
       method: 'POST',
       headers: apiHeaders(requireAuth),
       body: JSON.stringify(data),
@@ -62,7 +62,7 @@ async function apiPost(endpoint, data, requireAuth = false) {
 
 /* ── Generic PATCH ── */
 async function apiPatch(endpoint, data) {
-  const res = await fetch(`${ZARINEHUSN_API}${endpoint}`, {
+  const res = await fetch(`${TOVESSA_API}${endpoint}`, {
     method: 'PATCH',
     headers: apiHeaders(),
     body: JSON.stringify(data),
@@ -82,20 +82,20 @@ async function apiLogin({ email, password }) {
 
 /* ── Save auth session ── */
 function saveSession(token, user) {
-  localStorage.setItem('zarinehusn_token', token);
-  localStorage.setItem('zarinehusn_user', JSON.stringify(user));
+  localStorage.setItem('tovessa_token', token);
+  localStorage.setItem('tovessa_user', JSON.stringify(user));
 }
 
 /* ── Clear auth session ── */
 function clearSession() {
-  localStorage.removeItem('zarinehusn_token');
-  localStorage.removeItem('zarinehusn_user');
+  localStorage.removeItem('tovessa_token');
+  localStorage.removeItem('tovessa_user');
 }
 
 /* ── Get current user from localStorage ── */
 function getCurrentUser() {
   try {
-    return JSON.parse(localStorage.getItem('zarinehusn_user') || 'null');
+    return JSON.parse(localStorage.getItem('tovessa_user') || 'null');
   } catch { return null; }
 }
 
@@ -127,7 +127,7 @@ async function apiSendContact({ name, email, phone, subject, message }) {
 /* ── Check if backend is reachable ── */
 async function checkBackend() {
   try {
-    const res = await fetch(`${ZARINEHUSN_API}/health`, { signal: AbortSignal.timeout(3000) });
+    const res = await fetch(`${TOVESSA_API}/health`, { signal: AbortSignal.timeout(3000) });
     return res.ok;
   } catch {
     return false;
@@ -150,16 +150,16 @@ async function apiGetReviews() {
    ══════════════════════════════════════════════ */
 (function initVisitorTracking() {
   /* Generate a unique session ID for this browser tab */
-  let sessionId = sessionStorage.getItem('zarinehusn_sid');
+  let sessionId = sessionStorage.getItem('tovessa_sid');
   if (!sessionId) {
     sessionId = 'v-' + Date.now() + '-' + Math.random().toString(36).slice(2, 9);
-    sessionStorage.setItem('zarinehusn_sid', sessionId);
+    sessionStorage.setItem('tovessa_sid', sessionId);
   }
 
   const page = window.location.pathname.replace(/.*\//, '/') || '/';
 
   function ping() {
-    fetch(`${ZARINEHUSN_API}/visitors/ping`, {
+    fetch(`${TOVESSA_API}/visitors/ping`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ sessionId, page }),
@@ -176,7 +176,7 @@ async function apiGetReviews() {
   window.addEventListener('beforeunload', () => {
     clearInterval(interval);
     navigator.sendBeacon(
-      `${ZARINEHUSN_API}/visitors/leave`,
+      `${TOVESSA_API}/visitors/leave`,
       JSON.stringify({ sessionId })
     );
   });

@@ -1,5 +1,5 @@
 /* ============================================================
-   VELORRA — Diagnostic script
+   TOVESSA — Diagnostic script
    Lists every product's id, name, category, and subcategory
    currently stored in Firestore, plus a summary of all distinct
    category values found. Use this to find out the EXACT string

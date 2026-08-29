@@ -1,5 +1,5 @@
 /* ============================================================
-   ZARIN-E-HUSN — Express Backend Server v2
+   TOVESSA — Express Backend Server v2
    ============================================================ */
 require('dotenv').config();
 
@@ -28,17 +28,17 @@ const invoiceRoutes      = require('./routes/invoices');
 const spendingsRoutes    = require('./routes/spendings');
 
 const app  = express();
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3002;
 
 /* ── CORS ── */
 app.use(cors({
   origin: [
-    process.env.FRONTEND_URL || 'http://localhost:3001',
-    'http://127.0.0.1:3001',
+    process.env.FRONTEND_URL || 'http://localhost:3002',
+    'http://127.0.0.1:3002',
     'http://localhost:5500',
     'http://127.0.0.1:5500',
-    'https://zarinehusn.com',
-    'https://www.zarinehusn.com',
+    'https://tovessa.com',
+    'https://www.tovessa.com',
     'null',   /* file:// protocol */
   ],
   credentials: true,
@@ -97,7 +97,7 @@ Disallow: /backend/
 Disallow: /checkout
 Disallow: /account
 
-Sitemap: https://zarinehusn.com/sitemap.xml`);
+Sitemap: https://tovessa.com/sitemap.xml`);
 });
 
 /* ── GET /sitemap.xml — Dynamic sitemap including all live products ── */
@@ -105,7 +105,7 @@ app.get('/sitemap.xml', async (req, res) => {
   const { getDB } = require('./utils/firebase');
   const today = new Date().toISOString().slice(0, 10);
 
-  const DOMAIN = 'https://zarinehusn.com';
+  const DOMAIN = 'https://tovessa.com';
   const staticUrls = [
     { loc: `${DOMAIN}/`,                  priority: '1.0', changefreq: 'weekly'  },
     { loc: `${DOMAIN}/shop`,              priority: '0.9', changefreq: 'daily'   },
@@ -477,7 +477,7 @@ app.get('/api/health', (req, res) => {
   try { firebaseStatus = getDB() ? 'connected' : 'demo'; } catch { firebaseStatus = 'demo'; }
   res.json({
     status:    'ok',
-    service:   'Zarin-e-Husn Backend',
+    service:   'Tovessa Backend',
     version:   '2.0.0',
     firebase:  firebaseStatus,
     demoMode:  firebaseStatus === 'demo',
@@ -570,7 +570,7 @@ app.use((err, req, res, next) => {
 
   app.listen(PORT, () => {
     console.log('\n╔════════════════════════════════════════════════╗');
-    console.log('║       ZARIN-E-HUSN BACKEND v2.0                ║');
+    console.log('║       TOVESSA BACKEND v2.0                     ║');
     console.log('╠════════════════════════════════════════════════╣');
     console.log(`║  Website:  http://localhost:${PORT}               ║`);
     console.log(`║  Admin:    http://localhost:${PORT}/admin          ║`);

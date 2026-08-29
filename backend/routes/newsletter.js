@@ -1,5 +1,5 @@
 /* ============================================================
-   ZARIN-E-HUSN — Newsletter Routes (uses shared store)
+   TOVESSA — Newsletter Routes (uses shared store)
    ============================================================ */
 const express = require('express');
 const { getDB }        = require('../utils/firebase');
@@ -25,21 +25,21 @@ router.post('/', async (req, res) => {
     if (isFirebaseAvailable()) {
       const db = getDB();
       const existing = await db.collection('subscribers').where('email', '==', normalEmail).limit(1).get();
-      if (!existing.empty) return res.json({ message: "You're already part of the Zarin-e-Husn Circle! 💛", alreadySubscribed: true });
+      if (!existing.empty) return res.json({ message: "You're already part of the Tovessa Circle! 💛", alreadySubscribed: true });
       const ref = await db.collection('subscribers').add({ email: normalEmail, subscribedAt: new Date().toISOString(), active: true });
       sendNewsletterWelcome(normalEmail).catch(e => console.error('Welcome email failed:', e.message));
-      return res.status(201).json({ message: "Welcome to Zarin-e-Husn! 💛 You'll be the first to hear about new arrivals and offers.", id: ref.id });
+      return res.status(201).json({ message: "Welcome to Tovessa! 💛 You'll be the first to hear about new arrivals and offers.", id: ref.id });
     }
 
     /* In-memory via shared store */
     if (store.subscribers.find(s => s.email === normalEmail)) {
-      return res.json({ message: "You're already part of the Zarin-e-Husn Circle! 💛", alreadySubscribed: true });
+      return res.json({ message: "You're already part of the Tovessa Circle! 💛", alreadySubscribed: true });
     }
     const sub = { id: 'sub-' + Date.now(), email: normalEmail, subscribedAt: new Date().toISOString(), active: true };
     store.subscribers.unshift(sub);
     store.emit('new_subscriber', { email: normalEmail });
     sendNewsletterWelcome(normalEmail).catch(e => console.error('Welcome email failed:', e.message));
-    return res.status(201).json({ message: "Welcome to Zarin-e-Husn! 💛 You'll be the first to hear about new arrivals and offers.", id: sub.id });
+    return res.status(201).json({ message: "Welcome to Tovessa! 💛 You'll be the first to hear about new arrivals and offers.", id: sub.id });
 
   } catch (err) {
     console.error('Newsletter error:', err);
@@ -127,10 +127,10 @@ router.get('/unsubscribe', async (req, res) => {
     }
 
     return res.send(`<!DOCTYPE html><html><body style="font-family:Georgia,serif;text-align:center;padding:80px 24px;background:#faf7f2;color:#2c1f14;">
-      <h2 style="color:#b8883a;">Zarin-e-Husn</h2>
+      <h2 style="color:#b8883a;">Tovessa</h2>
       <p style="margin-top:24px;">You have been successfully unsubscribed.</p>
       <p style="color:#9a8070;font-size:.85rem;">You will no longer receive promotional emails from us.</p>
-      <a href="https://zarinehusn.com" style="display:inline-block;margin-top:32px;padding:12px 32px;background:#b8883a;color:#fff;text-decoration:none;font-size:.8rem;letter-spacing:.15em;">VISIT STORE</a>
+      <a href="https://tovessa.com" style="display:inline-block;margin-top:32px;padding:12px 32px;background:#b8883a;color:#fff;text-decoration:none;font-size:.8rem;letter-spacing:.15em;">VISIT STORE</a>
     </body></html>`);
   } catch (err) {
     return res.status(500).send('Error processing unsubscribe. Please contact us directly.');

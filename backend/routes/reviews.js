@@ -1,5 +1,5 @@
 /* ============================================================
-   VELORRA — Reviews Routes
+   TOVESSA — Reviews Routes
    POST /api/reviews       — Submit a review (any user with a delivered order)
    GET  /api/reviews       — Get all approved reviews (public, shown on homepage)
    GET  /api/reviews/all   — Get all reviews including pending (admin)

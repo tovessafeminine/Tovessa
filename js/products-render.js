@@ -1,8 +1,8 @@
 /* ============================================================
-   ZARINEHUSN — Dynamic Product Rendering
+   tovessa — Dynamic Product Rendering
    ============================================================ */
 
-const ZARINEHUSN_CAT_LABELS = {
+const tovessa_CAT_LABELS = {
   // Cosmetics
   'face-cosmetics': 'Face Cosmetics',
   'eye-makeup': 'Eye Makeup',
@@ -33,10 +33,10 @@ const CATEGORY_HIERARCHY = {
 
 function velorCatLabel(cat) {
   if (!cat) return '';
-  return ZARINEHUSN_CAT_LABELS[cat.toLowerCase()] || cat;
+  return tovessa_CAT_LABELS[cat.toLowerCase()] || cat;
 }
 
-function zarinehusnProductCardHTML(p) {
+function tovessaProductCardHTML(p) {
   const badge = p.badge ? `<span class="product-badge${p.badge === 'New' ? ' new' : ''}">${p.badge}</span>` : '';
   const oldPrice = p.priceOld
     ? `<span class="product-price-old">PKR ${Number(p.priceOld).toLocaleString()}</span>`
@@ -93,11 +93,11 @@ function zarinehusnProductCardHTML(p) {
   `;
 }
 
-function zarinehusnEmptyState(msg) {
+function tovessaEmptyState(msg) {
   return `<div style="grid-column:1/-1;text-align:center;padding:60px 20px;background:#fcfbf9;border-radius:12px;border:1px dashed #e5d5c5;color:var(--muted);"><i class="fa-solid fa-box-open" style="font-size:2rem;color:var(--gold);margin-bottom:16px;"></i><p>${msg}</p></div>`;
 }
 
-function zarinehusnReInitCards(container) {
+function tovessaReInitCards(container) {
   // Video hover
   container.querySelectorAll('.product-img-wrap').forEach(wrap => {
     const vid = wrap.querySelector('video');
@@ -136,7 +136,7 @@ function zarinehusnReInitCards(container) {
   });
 }
 
-function zarinehusnSetupShopFilters(products, grid, mainCat) {
+function tovessaSetupShopFilters(products, grid, mainCat) {
   const urlParams = new URLSearchParams(window.location.search);
   let activeMain = mainCat || 'all';
   let activeSub = urlParams.get('cat');
@@ -200,7 +200,7 @@ function zarinehusnSetupShopFilters(products, grid, mainCat) {
       subList.innerHTML = `<li><button class="sidebar-link ${!activeSub ? 'active' : ''}" data-sub-filter="all-${mc}">All ${mc.charAt(0).toUpperCase() + mc.slice(1)}</button></li>` + 
       subs.map(s => {
         const isActive = activeSub === s ? 'active' : '';
-        return `<li><button class="sidebar-link ${isActive}" data-sub-filter="${s}">${ZARINEHUSN_CAT_LABELS[s.toLowerCase()] || s}</button></li>`;
+        return `<li><button class="sidebar-link ${isActive}" data-sub-filter="${s}">${tovessa_CAT_LABELS[s.toLowerCase()] || s}</button></li>`;
       }).join('');
       
       subContainer.style.display = 'block';
@@ -252,10 +252,10 @@ function zarinehusnSetupShopFilters(products, grid, mainCat) {
     }
 
     if (filtered.length === 0) {
-      grid.innerHTML = zarinehusnEmptyState('No products found in this category.');
+      grid.innerHTML = tovessaEmptyState('No products found in this category.');
     } else {
-      grid.innerHTML = filtered.map(zarinehusnProductCardHTML).join('');
-      zarinehusnReInitCards(grid);
+      grid.innerHTML = filtered.map(tovessaProductCardHTML).join('');
+      tovessaReInitCards(grid);
     }
 
     // Update Hero Text if function exists
@@ -328,7 +328,7 @@ function zarinehusnSetupShopFilters(products, grid, mainCat) {
   }
 }
 
-async function zarinehusnRenderShopGrid() {
+async function tovessaRenderShopGrid() {
   const grid = document.querySelector('#shop-products-grid, .products-grid');
   if (!grid) return;
 
@@ -347,22 +347,22 @@ async function zarinehusnRenderShopGrid() {
     });
 
     // We do NOT pre-filter products here anymore, so that the sidebar "All Collections" works correctly on any page!
-    // The sorting/filtering logic inside zarinehusnSetupShopFilters will handle all filtering!
+    // The sorting/filtering logic inside tovessaSetupShopFilters will handle all filtering!
 
     if (!products.length) {
-      grid.innerHTML = zarinehusnEmptyState('No products available right now. Please check back soon.');
+      grid.innerHTML = tovessaEmptyState('No products available right now. Please check back soon.');
       return;
     }
 
-    zarinehusnSetupShopFilters(products, grid, mainCat);
+    tovessaSetupShopFilters(products, grid, mainCat);
   } catch (err) {
     console.error('Failed to load products:', err);
-    grid.innerHTML = zarinehusnEmptyState('No products available');
+    grid.innerHTML = tovessaEmptyState('No products available');
   }
 }
 
 /* ── Load & render featured and pinned grids (index.html homepage) ── */
-async function zarinehusnRenderHomepageGrids() {
+async function tovessaRenderHomepageGrids() {
   const isHome = document.getElementById('featured-jewelry');
   if (!isHome) return;
 
@@ -413,14 +413,14 @@ async function zarinehusnRenderHomepageGrids() {
               </div>
               <div class="pinned-scroll-track" id="${rowId}" style="display:flex;overflow-x:auto;gap:12px;padding-bottom:20px;scroll-snap-type:x mandatory;cursor:grab;-webkit-overflow-scrolling:touch;scrollbar-width:none;-ms-overflow-style:none;">
                 ${pinProducts.map(p => {
-                  let html = zarinehusnProductCardHTML(p);
+                  let html = tovessaProductCardHTML(p);
                   return html.replace('class="product-card"', 'class="product-card pin-card" style="flex:0 0 220px;min-width:220px;scroll-snap-align:start;"');
                 }).join('')}
               </div>
             </div>
           `;
           pinnedContainer.appendChild(section);
-          zarinehusnReInitCards(section);
+          tovessaReInitCards(section);
 
           /* ── Mouse drag-to-scroll ── */
           const track = section.querySelector(`#${rowId}`);
@@ -453,12 +453,12 @@ async function zarinehusnRenderHomepageGrids() {
       const jProds = featuredProducts.filter(p => CATEGORY_HIERARCHY['jewelry'].includes(p.subcategory || p.category));
       
       if (jProds.length) {
-        jewGrid.innerHTML = jProds.map(p => zarinehusnProductCardHTML(p).replace('class="product-card"', 'class="product-card" style="flex: 0 0 280px; scroll-snap-align: start;"')).join('');
+        jewGrid.innerHTML = jProds.map(p => tovessaProductCardHTML(p).replace('class="product-card"', 'class="product-card" style="flex: 0 0 280px; scroll-snap-align: start;"')).join('');
         document.getElementById('featured-jewelry').style.display = 'block';
       } else {
         document.getElementById('featured-jewelry').style.display = 'none';
       }
-      zarinehusnReInitCards(jewGrid);
+      tovessaReInitCards(jewGrid);
     }
 
     // Cosmetics
@@ -470,12 +470,12 @@ async function zarinehusnRenderHomepageGrids() {
       });
       
       if (cProds.length) {
-        cosGrid.innerHTML = cProds.map(p => zarinehusnProductCardHTML(p).replace('class="product-card"', 'class="product-card" style="flex: 0 0 280px; scroll-snap-align: start;"')).join('');
+        cosGrid.innerHTML = cProds.map(p => tovessaProductCardHTML(p).replace('class="product-card"', 'class="product-card" style="flex: 0 0 280px; scroll-snap-align: start;"')).join('');
         document.getElementById('featured-cosmetics').style.display = 'block';
       } else {
         document.getElementById('featured-cosmetics').style.display = 'none';
       }
-      zarinehusnReInitCards(cosGrid);
+      tovessaReInitCards(cosGrid);
     }
 
   } catch (err) {
@@ -485,9 +485,9 @@ async function zarinehusnRenderHomepageGrids() {
 
 document.addEventListener('DOMContentLoaded', () => {
   if (document.getElementById('shop-products-grid') || document.querySelector('.shop-layout')) {
-    zarinehusnRenderShopGrid();
+    tovessaRenderShopGrid();
   }
   if (document.getElementById('featured-jewelry')) {
-    zarinehusnRenderHomepageGrids();
+    tovessaRenderHomepageGrids();
   }
 });

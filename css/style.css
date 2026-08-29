@@ -1,32 +1,32 @@
 /* ============================================================
-   Zarin-e-Husn — Global Styles
-   Theme: High-End Luxury (Dior/Chanel inspired)
+   Tovessa — Global Styles
+   Theme: Botanical Luxury (Purple/White)
    ============================================================ */
 
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Lato:wght@300;400;700&display=swap');
 
 /* ── Variables ── */
 :root {
-  --bg: #faf8f5;           /* warm ivory */
-  --bg-deep: #ffffff;      /* white */
+  --bg: #ffffff;           /* warm ivory */
+  --bg-deep: #fdf8fb;      /* white */
   --card: #ffffff;
-  --gold: #c9a84c;
-  --text: #2c2824;         /* dark charcoal */
-  --text-mid: #5a534a;
-  --muted: #9a928a;
-  --border: rgba(44, 40, 36, 0.1);
-  --border-soft: rgba(44, 40, 36, 0.05);
+  --gold: #602442;
+  --text: #3B1629;         /* dark charcoal */
+  --text-mid: #5a3d4e;
+  --muted: #9a7d8c;
+  --border: rgba(59, 22, 41, 0.1);
+  --border-soft: rgba(59, 22, 41, 0.05);
   --font-display: 'Playfair Display', serif;
   --font-body: 'Lato', sans-serif;
   --nav-h: 80px;
   --transition: 0.5s cubic-bezier(0.25, 1, 0.25, 1);
   
-  --black: #2c2824;
+  --black: #3B1629;
   --white: #ffffff;
-  --champagne: #faf8f5;
-  --gold-light: #e8d48b;
-  --gold-dim: #a68623;
-  --rose: #d4a0a0;
+  --champagne: #ffffff;
+  --gold-light: #9B4D73;
+  --gold-dim: #4a1a35;
+  --rose: #85325C;
   --font-ui: 'Lato', sans-serif;
   --shadow: transparent;
 }
@@ -172,7 +172,7 @@ body.page-home nav:not(.scrolled) .hamburger span { background: var(--text); }
   overflow: hidden;
 }
 .nav-dropdown .dropdown-menu a:hover {
-  background: rgba(212,175,55,0.05);
+  background: rgba(96, 36, 66,0.05);
   color: var(--gold) !important;
   padding-left: 32px;
 }
@@ -324,7 +324,7 @@ section { padding: 100px 0; }
 .cat-img-card:hover .cat-img-wrap img { transform: scale(1.05); }
 .cat-img-overlay {
   position: absolute; inset: 0;
-  background: linear-gradient(to top, rgba(44, 40, 36, 0.4), transparent 50%);
+  background: linear-gradient(to top, rgba(59, 22, 41, 0.4), transparent 50%);
   transition: opacity var(--transition); opacity: 0;
 }
 .cat-img-card:hover .cat-img-overlay { opacity: 1; }
@@ -609,7 +609,7 @@ footer { background: #ffffff; padding: 100px 0 40px; border-top: 1px solid var(-
 
 /* Final UI Fixes */
 .cat-img-info {
-  background: rgba(44, 40, 36, 0.4);
+  background: rgba(59, 22, 41, 0.4);
   padding: 10px;
   backdrop-filter: blur(5px);
   border-radius: 4px;
@@ -752,7 +752,7 @@ footer { background: #ffffff; padding: 100px 0 40px; border-top: 1px solid var(-
   outline: none !important;
   border-color: var(--gold) !important;
   background: var(--card) !important;
-  box-shadow: 0 0 0 3px rgba(201, 168, 76, 0.1) !important;
+  box-shadow: 0 0 0 3px rgba(96, 36, 66, 0.1) !important;
 }
 .contact-form .btn-primary {
   width: 100% !important;
@@ -822,7 +822,7 @@ footer { background: #ffffff; padding: 100px 0 40px; border-top: 1px solid var(-
   background: var(--gold) !important;
   color: #fff !important;
   border-color: var(--gold) !important;
-  box-shadow: 0 5px 15px rgba(201, 168, 76, 0.3) !important;
+  box-shadow: 0 5px 15px rgba(96, 36, 66, 0.3) !important;
 }
 
 /* Enforce perfectly circular categories on homepage */
@@ -949,7 +949,7 @@ footer { background: #ffffff; padding: 100px 0 40px; border-top: 1px solid var(-
   background: #fff !important;
   border: none !important;
   border-radius: 14px !important;
-  box-shadow: 0 20px 60px rgba(44,40,36,0.12), 0 4px 16px rgba(44,40,36,0.06) !important;
+  box-shadow: 0 20px 60px rgba(59, 22, 41,0.12), 0 4px 16px rgba(59, 22, 41,0.06) !important;
   padding: 8px !important;
   min-width: 200px !important;
   margin-top: 12px !important;
@@ -989,7 +989,7 @@ footer { background: #ffffff; padding: 100px 0 40px; border-top: 1px solid var(-
   content: none !important;
 }
 .nav-dropdown .dropdown-menu a:hover {
-  background: rgba(212,175,55,0.08) !important;
+  background: rgba(96, 36, 66,0.08) !important;
   color: var(--gold) !important;
   padding-left: 20px !important;
 }
@@ -1013,7 +1013,7 @@ footer { background: #ffffff; padding: 100px 0 40px; border-top: 1px solid var(-
 
 /* Divider between "All Collections" and the category links */
 .nav-dropdown .dropdown-menu li:first-child a {
-  border-bottom: 1px solid rgba(44,40,36,0.06) !important;
+  border-bottom: 1px solid rgba(59, 22, 41,0.06) !important;
   border-radius: 8px 8px 0 0 !important;
   margin-bottom: 4px !important;
   padding-bottom: 14px !important;

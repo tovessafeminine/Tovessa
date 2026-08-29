@@ -1,5 +1,5 @@
 /* ============================================================
-   VELORRA — Discount Coupons Routes
+   TOVESSA — Discount Coupons Routes
    Coupons are created and managed exclusively by super_admin.
    Validation (checking if a code works) is public so customers
    can apply a coupon at checkout without being logged in.

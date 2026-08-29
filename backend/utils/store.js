@@ -1,5 +1,5 @@
 /* ============================================================
-   ZARIN-E-HUSN — Shared Singleton Data Store
+   TOVESSA — Shared Singleton Data Store
    THE single source of truth for all in-memory data.
    All routes import this module — they all share the SAME arrays.
    ============================================================ */
@@ -24,10 +24,10 @@ const store = {
   spendings:    [],   /* tracked expenses/investments */
   settings: {
     company: {
-      name: 'Zarin-e-Husn',
+      name: 'Tovessa',
       address: '',
       phone: '+92 315 0727131',
-      email: 'zarinehusn@gmail.com',
+      email: 'tovessa@gmail.com',
       website: '',
       socials: ''
     },

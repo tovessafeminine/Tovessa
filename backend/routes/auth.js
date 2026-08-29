@@ -1,5 +1,5 @@
 /* ============================================================
-   ZARIN-E-HUSN — Auth Routes (uses shared store + Firebase)
+   TOVESSA — Auth Routes (uses shared store + Firebase)
    Roles: super_admin, admin, supervisor
    ============================================================ */
 const express  = require('express');
@@ -15,7 +15,7 @@ function isFirebaseAvailable() {
   try { return !!getDB(); } catch { return false; }
 }
 
-const JWT_SECRET = process.env.JWT_SECRET || 'zarinehusn_secret_jwt_key_2024_fallback';
+const JWT_SECRET = process.env.JWT_SECRET || 'tovessa_secret_jwt_key_2024_fallback';
 
 function signToken(payload, expiresIn = '30d') {
   const secret = process.env.JWT_SECRET || JWT_SECRET;
@@ -159,7 +159,7 @@ router.post('/register', async (req, res) => {
       await ref.set(userData);
       store.users.push(userData);
       const token = signToken({ uid: ref.id, email: normalEmail, isAdmin: false });
-      return res.status(201).json({ message: 'Account created! Welcome to Zarin-e-Husn 💧', token, user: { id: ref.id, fname: userData.fname, lname: userData.lname, email: normalEmail, phone: userData.phone } });
+      return res.status(201).json({ message: 'Account created! Welcome to Tovessa 💧', token, user: { id: ref.id, fname: userData.fname, lname: userData.lname, email: normalEmail, phone: userData.phone } });
     }
 
     /* In-memory */
@@ -168,7 +168,7 @@ router.post('/register', async (req, res) => {
     const userData = { id: uid, fname: fname.trim(), lname: lname.trim(), email: normalEmail, phone: (phone || '').trim(), passwordHash, isAdmin: false, createdAt: new Date().toISOString() };
     store.users.push(userData);
     const token = signToken({ uid, email: normalEmail, isAdmin: false });
-    return res.status(201).json({ message: 'Account created! Welcome to Zarin-e-Husn 💧', token, user: { id: uid, fname: userData.fname, lname: userData.lname, email: normalEmail, phone: userData.phone } });
+    return res.status(201).json({ message: 'Account created! Welcome to Tovessa 💧', token, user: { id: uid, fname: userData.fname, lname: userData.lname, email: normalEmail, phone: userData.phone } });
 
   } catch (err) {
     console.error('Register error:', err);

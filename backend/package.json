@@ -1,7 +1,7 @@
 {
-  "name": "zarinehusn-backend",
+  "name": "tovessa-backend",
   "version": "1.0.0",
-  "description": "Zarin-e-Husn e-commerce backend — Node.js + Express + Firebase",
+  "description": "Tovessa e-commerce backend — Node.js + Express + Firebase",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",

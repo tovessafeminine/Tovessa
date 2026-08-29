@@ -1,6 +1,6 @@
 /* ============================================================
-   Zarin-e-Husn — Extended Page Styles
-   Theme: High-End Luxury
+   Tovessa — Extended Page Styles
+   Theme: Botanical Luxury
    ============================================================ */
 
 /* ── Search Overlay ── */
@@ -103,7 +103,7 @@
   transition: all 0.3s;
 }
 .ck-form textarea { resize: vertical; min-height: 100px; }
-.ck-form input:focus, .ck-form select:focus, .ck-form textarea:focus { border-color: var(--gold); background: var(--white); outline: none; box-shadow: 0 0 0 4px rgba(201,168,76,0.1); }
+.ck-form input:focus, .ck-form select:focus, .ck-form textarea:focus { border-color: var(--gold); background: var(--white); outline: none; box-shadow: 0 0 0 4px rgba(96, 36, 66,0.1); }
 .ck-form label { font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-mid); display: block; margin-bottom: 8px; font-weight: 600; }
 
 .ck-next-btn { margin-top: 24px; padding: 20px; text-align: center; width: 100%; font-size: 1rem; border-radius: 8px; }
@@ -311,7 +311,7 @@
 }
 .sidebar-link:hover, .sidebar-link.active {
   color: var(--gold);
-  background: rgba(212,175,55,0.06);
+  background: rgba(96, 36, 66,0.06);
   padding-left: 18px;
 }
 .sidebar-link:hover::before, .sidebar-link.active::before {

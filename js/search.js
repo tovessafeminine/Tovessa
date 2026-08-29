@@ -1,15 +1,15 @@
 /* ============================================================
-   ZARIN-E-HUSN — Search System
+   Tovessa — Search System
    Searches all products, pages, categories, keywords
    ============================================================ */
-const VELORRA_SEARCH_INDEX = [
+const TOVESSA_SEARCH_INDEX = [
   /* Categories */
   { type: 'category', title: 'All Collections',   keywords: 'all shop products catalog browse', url: 'shop',     badge: 'Category' },
   { type: 'category', title: 'Jewelry',            keywords: 'jewelry rings bracelets necklaces earrings bangles sets gold silver', url: 'jewelry', badge: 'Category' },
   { type: 'category', title: 'Cosmetics',          keywords: 'cosmetics beauty makeup lipstick blush foundation skincare', url: 'cosmetics', badge: 'Category' },
   { type: 'category', title: 'Sale Items',         keywords: 'sale discount offer reduced price deal', url: 'shop?cat=sale', badge: 'Sale' },
   /* Pages */
-  { type: 'page', title: 'Our Story',        keywords: 'about zarin e husn story brand lahore founded history',   url: 'about',                  badge: 'Page' },
+  { type: 'page', title: 'Our Story',        keywords: 'about tovessa story brand lahore founded history',   url: 'about',                  badge: 'Page' },
   { type: 'page', title: 'Contact Us',       keywords: 'contact email phone whatsapp address location',           url: 'contact',                badge: 'Page' },
   { type: 'page', title: 'Shipping Info',    keywords: 'shipping delivery days free standard',                    url: 'policy?page=shipping',   badge: 'Policy' },
   { type: 'page', title: 'Returns Policy',   keywords: 'returns refund exchange 14 day policy',                   url: 'policy?page=returns',    badge: 'Policy' },
@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
   input?.addEventListener('input', () => {
     const q = input.value.trim().toLowerCase();
     if (!q || q.length < 2) { results.innerHTML = ''; return; }
-    const matches = VELORRA_SEARCH_INDEX.filter(item =>
+    const matches = TOVESSA_SEARCH_INDEX.filter(item =>
       item.title.toLowerCase().includes(q) ||
       item.keywords.toLowerCase().includes(q)
     );

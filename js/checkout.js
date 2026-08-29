@@ -1,5 +1,5 @@
 /* ============================================================
-   ZARINEHUSN — Checkout Logic
+   tovessa — Checkout Logic
    ============================================================ */
 /* main.js defines window.showToast, but this file calls toast(...)
    in several places — alias it here so those calls actually work. */
@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* ── Populate summary sidebar ── */
   const renderSummary = () => {
-    const cart = JSON.parse(localStorage.getItem('zarinehusn_cart') || '[]');
+    const cart = JSON.parse(localStorage.getItem('tovessa_cart') || '[]');
     const itemsEl = document.getElementById('ck-summary-items');
     const subtotalEl = document.getElementById('ck-subtotal');
     const totalEl    = document.getElementById('ck-total');
@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
   couponApplyBtn?.addEventListener('click', async () => {
     const code = couponInput?.value.trim();
     if (!code) return;
-    const cart = JSON.parse(localStorage.getItem('zarinehusn_cart') || '[]');
+    const cart = JSON.parse(localStorage.getItem('tovessa_cart') || '[]');
     const subtotal = cart.reduce((s, i) => s + i.price * i.qty, 0);
 
     const origLabel = couponApplyBtn.textContent;
@@ -158,14 +158,14 @@ document.addEventListener('DOMContentLoaded', () => {
        (user goes back, closes tab, stays on Step 3 forever, etc.).
        If the order is placed successfully, the record is marked "converted".
     */
-    const cart = JSON.parse(localStorage.getItem('zarinehusn_cart') || '[]');
+    const cart = JSON.parse(localStorage.getItem('tovessa_cart') || '[]');
     const subtotal = cart.reduce((s, i) => s + i.price * i.qty, 0);
 
     /* Save to backend immediately — fire and forget, non-blocking */
     (async () => {
       try {
-        const existingId = sessionStorage.getItem('zarinehusn_abandoned_id');
-        const res = await fetch(`${ZARINEHUSN_API}/abandoned`, {
+        const existingId = sessionStorage.getItem('tovessa_abandoned_id');
+        const res = await fetch(`${tovessa_API}/abandoned`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
@@ -178,7 +178,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
         if (res.ok) {
           const data = await res.json();
-          if (data.id) sessionStorage.setItem('zarinehusn_abandoned_id', data.id);
+          if (data.id) sessionStorage.setItem('tovessa_abandoned_id', data.id);
         }
       } catch (e) {
         /* Non-critical — don't block checkout */
@@ -194,7 +194,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const method = document.querySelector('input[name="payment"]:checked')?.value;
     orderData.payment = method;
     /* build confirm summary */
-    const cart = JSON.parse(localStorage.getItem('zarinehusn_cart') || '[]');
+    const cart = JSON.parse(localStorage.getItem('tovessa_cart') || '[]');
     const subtotal = cart.reduce((s, i) => s + i.price * i.qty, 0);
     const fee      = getDeliveryFee(subtotal, method);
     const discount = computeDiscount(subtotal);
@@ -232,7 +232,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const note = document.getElementById('order-success-bank-note');
     if (!note) return;
     if (payMethod !== 'bank_deposit') { note.style.display = 'none'; return; }
-    const num = window.ZARINEHUSN_CONFIG?.whatsapp?.number;
+    const num = window.tovessa_CONFIG?.whatsapp?.number;
     const msg = encodeURIComponent(`Hi! I just placed order ${orderRef} on Golnisà and paid via Bank Deposit. Here is my payment screenshot:`);
     note.innerHTML = `
       <p style="font-size:.85rem;color:var(--muted);margin-bottom:12px">
@@ -248,7 +248,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const btn = document.querySelector('[onclick="placeOrder()"]');
     if (btn) { btn.disabled = true; btn.textContent = 'Placing Order…'; }
 
-    const cart = JSON.parse(localStorage.getItem('zarinehusn_cart') || '[]');
+    const cart = JSON.parse(localStorage.getItem('tovessa_cart') || '[]');
     if (!cart.length) {
       toast('Your cart is empty. Please add items before checking out.', 'error');
       if (btn) { btn.disabled = false; btn.textContent = 'Place Order ✓'; }
@@ -273,20 +273,20 @@ document.addEventListener('DOMContentLoaded', () => {
         /* Cancel pending abandoned timer — order was placed successfully */
         if (window._abandonedTimer) { clearTimeout(window._abandonedTimer); window._abandonedTimer = null; }
         window._abandonedSnapshot = null; /* prevent page-leave listener from re-firing */
-        sessionStorage.setItem('zarinehusn_order_placed', '1');
+        sessionStorage.setItem('tovessa_order_placed', '1');
 
         /* Order placed — mark abandoned record as converted (no auth needed) */
-        const abId = sessionStorage.getItem('zarinehusn_abandoned_id');
+        const abId = sessionStorage.getItem('tovessa_abandoned_id');
         if (abId) {
-          fetch(`${ZARINEHUSN_API}/abandoned/${abId}/converted`, { method: 'PATCH' }).catch(() => {});
-          sessionStorage.removeItem('zarinehusn_abandoned_id');
+          fetch(`${tovessa_API}/abandoned/${abId}/converted`, { method: 'PATCH' }).catch(() => {});
+          sessionStorage.removeItem('tovessa_abandoned_id');
         }
         /* Success */
         const ref = result.data.orderRef;
         document.getElementById('order-ref-num').textContent = 'Order Reference: ' + ref;
         showBankDepositSuccessNote(payMethod, ref);
-        localStorage.removeItem('zarinehusn_cart');
-        localStorage.removeItem('zarinehusn_cart_stashed');
+        localStorage.removeItem('tovessa_cart');
+        localStorage.removeItem('tovessa_cart_stashed');
         document.querySelectorAll('.ck-panel').forEach(p => p.classList.add('hidden'));
         document.getElementById('ck-panel-success')?.classList.remove('hidden');
         document.querySelectorAll('.ck-step').forEach(el => el.classList.add('complete'));
@@ -300,15 +300,15 @@ document.addEventListener('DOMContentLoaded', () => {
       /* Backend not available — graceful fallback */
       console.warn('Backend unavailable, using offline fallback:', err);
       if (window._abandonedTimer) { clearTimeout(window._abandonedTimer); window._abandonedTimer = null; }
-      sessionStorage.setItem('zarinehusn_order_placed', '1');
-      const abId = sessionStorage.getItem('zarinehusn_abandoned_id');
-      if (abId) { fetch(`${ZARINEHUSN_API}/abandoned/${abId}/converted`, { method: 'PATCH' }).catch(() => {}); sessionStorage.removeItem('zarinehusn_abandoned_id'); }
+      sessionStorage.setItem('tovessa_order_placed', '1');
+      const abId = sessionStorage.getItem('tovessa_abandoned_id');
+      if (abId) { fetch(`${tovessa_API}/abandoned/${abId}/converted`, { method: 'PATCH' }).catch(() => {}); sessionStorage.removeItem('tovessa_abandoned_id'); }
       // Local Fallback (Should rarely happen)
       const ref = 'ZH-' + Date.now().toString().slice(-8);
       document.getElementById('order-ref-num').textContent = 'Order Reference: ' + ref;
       showBankDepositSuccessNote(payMethod, ref);
-      localStorage.removeItem('zarinehusn_cart');
-      localStorage.removeItem('zarinehusn_cart_stashed');
+      localStorage.removeItem('tovessa_cart');
+      localStorage.removeItem('tovessa_cart_stashed');
       document.querySelectorAll('.ck-panel').forEach(p => p.classList.add('hidden'));
       document.getElementById('ck-panel-success')?.classList.remove('hidden');
       document.querySelectorAll('.ck-step').forEach(el => el.classList.add('complete'));
@@ -337,8 +337,8 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   /* ── Bank Deposit: WhatsApp "send screenshot" link ── */
   const waBtn = document.getElementById('bank-whatsapp-btn');
-  if (waBtn && window.ZARINEHUSN_CONFIG) {
-    const num = window.ZARINEHUSN_CONFIG.whatsapp.number;
+  if (waBtn && window.tovessa_CONFIG) {
+    const num = window.tovessa_CONFIG.whatsapp.number;
     const msg = encodeURIComponent('Hi! I just placed an order on Golnisà and paid via Bank Deposit. Here is my payment screenshot:');
     waBtn.href = `https://wa.me/${num}?text=${msg}`;
   }

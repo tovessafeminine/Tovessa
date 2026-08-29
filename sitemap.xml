@@ -5,37 +5,37 @@
         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
   <url>
-    <loc>https://zarinehusn.com/</loc>
+    <loc>https://tovessa.com/</loc>
     <lastmod>2026-08-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://zarinehusn.com/jewelry.html</loc>
+    <loc>https://tovessa.com/jewelry.html</loc>
     <lastmod>2026-08-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://zarinehusn.com/cosmetics.html</loc>
+    <loc>https://tovessa.com/cosmetics.html</loc>
     <lastmod>2026-08-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://zarinehusn.com/about.html</loc>
+    <loc>https://tovessa.com/about.html</loc>
     <lastmod>2026-08-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://zarinehusn.com/contact.html</loc>
+    <loc>https://tovessa.com/contact.html</loc>
     <lastmod>2026-08-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://zarinehusn.com/policy.html</loc>
+    <loc>https://tovessa.com/policy.html</loc>
     <lastmod>2026-08-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>

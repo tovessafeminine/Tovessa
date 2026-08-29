@@ -1,5 +1,5 @@
 /* ============================================================
-   VELORRA — Three.js 3D Hero Animation
+   TOVESSA — Three.js 3D Hero Animation
    Floating luxury particles + rotating ring
    ============================================================ */
 

@@ -1,5 +1,5 @@
 /* ============================================================
-   ZARIN-E-HUSN — Upload Routes
+   TOVESSA — Upload Routes
    Uploads to Cloudinary (persistent) → Firebase Storage → Local disk
    ============================================================ */
 const express = require('express');
@@ -50,7 +50,7 @@ router.post('/', requireRole('super_admin', 'admin'), (req, res) => {
 
         const result = await new Promise((resolve, reject) => {
           const stream = cloudinary.uploader.upload_stream(
-            { public_id: uniqueName, resource_type: resourceType, folder: 'zarin-e-husn/products' },
+            { public_id: uniqueName, resource_type: resourceType, folder: 'tovessa/products' },
             (error, result) => error ? reject(error) : resolve(result)
           );
           stream.end(req.file.buffer);

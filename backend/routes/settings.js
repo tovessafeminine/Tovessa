@@ -1,5 +1,5 @@
 /* ============================================================
-   VELORRA — Settings Routes (Company & Invoice Config)
+   TOVESSA — Settings Routes (Company & Invoice Config)
    ============================================================ */
 const express = require('express');
 const { getDB } = require('../utils/firebase');
