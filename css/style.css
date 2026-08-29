@@ -1280,3 +1280,63 @@ body > nav {
   .bento-3 { grid-column: 1; grid-row: 3; }
   .bento-4 { grid-column: 1; grid-row: 4; }
 }
+
+/* ==========================================================
+   TOVESSA - PURPLE & WHITE THEME OVERRIDES
+   ========================================================== */
+
+/* Navbar - Deep Purple */
+body > nav {
+  background-color: var(--gold) !important;
+  border-bottom: none !important;
+  box-shadow: 0 4px 20px rgba(96, 36, 66, 0.2);
+  padding: 10px 40px;
+}
+.nav-links li a {
+  color: #ffffff !important;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+.nav-icons button, .nav-icons a {
+  color: #ffffff !important;
+}
+
+/* Fix Logo Size & Blend into Purple */
+.nav-logo img {
+  height: 70px !important;
+  width: auto !important;
+  mix-blend-mode: multiply !important;
+  filter: contrast(1.2);
+}
+
+/* Page Background */
+body {
+  background-color: #ffffff !important;
+}
+
+/* Footer - Deep Purple */
+footer {
+  background-color: var(--gold) !important;
+  color: #ffffff !important;
+}
+footer h3, footer p, footer a, footer .footer-social-item {
+  color: #ffffff !important;
+}
+footer .footer-social-item:hover {
+  color: var(--rose) !important;
+}
+footer .footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.1) !important;
+}
+
+/* Buttons - Purple */
+.btn-primary, .btn, button[type="submit"] {
+  background-color: var(--gold) !important;
+  color: #ffffff !important;
+  border-radius: 4px !important;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.btn-primary:hover, .btn:hover {
+  background-color: var(--text) !important;
+}
