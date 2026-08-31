@@ -1482,3 +1482,27 @@ footer p, footer a, footer li, footer span, footer i {
   background: #fff !important;
   color: var(--gold) !important;
 }
+
+/* FINAL FOOTER TEXT FIX */
+.footer-col h4, 
+.footer-col ul li a, 
+.footer-brand p, 
+.get-in-touch-list li, 
+.get-in-touch-list li span, 
+.footer-bottom,
+.footer-pay .pay-badge,
+.footer-social-item,
+footer .nav-logo {
+  color: #ffffff !important;
+  opacity: 1 !important;
+}
+.footer-brand img {
+  mix-blend-mode: normal !important;
+  filter: brightness(0) invert(1) !important;
+}
+
+/* LOGO FIX */
+.nav-logo img {
+  mix-blend-mode: multiply !important;
+  background: transparent !important;
+}

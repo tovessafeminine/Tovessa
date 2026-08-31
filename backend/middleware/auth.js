@@ -1,5 +1,5 @@
-/* ============================================================
-   TOVESSA — JWT Authentication Middleware
+﻿/* ============================================================
+   TOVESSA â€” JWT Authentication Middleware
    ============================================================ */
 const jwt = require('jsonwebtoken');
 const store = require('../utils/store');
@@ -9,7 +9,7 @@ function isFirebaseAvailable() {
   try { return !!getDB(); } catch { return false; }
 }
 
-/* ── Verify user JWT token ── */
+/* â”€â”€ Verify user JWT token â”€â”€ */
 function requireAuth(req, res, next) {
   const authHeader = req.headers.authorization;
   const token = authHeader?.startsWith('Bearer ') ? authHeader.slice(7) : null;
@@ -19,7 +19,7 @@ function requireAuth(req, res, next) {
   }
 
   try {
-    const decoded = jwt.verify(token, process.env.JWT_SECRET);
+    const decoded = jwt.verify(token, process.env.JWT_SECRET || "tovessa_secret_jwt_key_2024_fallback");
     req.user = decoded;
     next();
   } catch (err) {
@@ -30,13 +30,13 @@ function requireAuth(req, res, next) {
   }
 }
 
-/* ── Verify admin JWT token (has isAdmin: true claim) ──
-   IMPORTANT: a valid JWT signature alone is NOT enough — the token stays
+/* â”€â”€ Verify admin JWT token (has isAdmin: true claim) â”€â”€
+   IMPORTANT: a valid JWT signature alone is NOT enough â€” the token stays
    cryptographically valid for its full 30-day life even after the admin
    account behind it is deleted or deactivated. So on every admin-gated
    request we re-check the LIVE record: if the account no longer exists,
    or has been switched off, the session is killed immediately instead of
-   silently working until the token expires. ── */
+   silently working until the token expires. â”€â”€ */
 async function requireAdmin(req, res, next) {
   requireAuth(req, res, async () => {
     if (!req.user?.isAdmin) {
@@ -78,7 +78,7 @@ async function requireAdmin(req, res, next) {
         }
       }
 
-      /* Token version check for staff accounts too — invalidates sessions
+      /* Token version check for staff accounts too â€” invalidates sessions
          after a supervisor/admin's password is reset. */
       const tokenVersion = req.user.tokenVersion || 0;
       const liveVersion  = liveUser.tokenVersion || 0;
@@ -93,7 +93,7 @@ async function requireAdmin(req, res, next) {
   });
 }
 
-/* ── Require specific role(s) ── */
+/* â”€â”€ Require specific role(s) â”€â”€ */
 function requireRole(...roles) {
   return (req, res, next) => {
     requireAdmin(req, res, () => {
@@ -112,3 +112,4 @@ function requireRole(...roles) {
 }
 
 module.exports = { requireAuth, requireAdmin, requireRole };
+

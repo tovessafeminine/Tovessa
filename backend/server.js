@@ -1,5 +1,5 @@
-/* ============================================================
-   TOVESSA — Express Backend Server v2
+﻿/* ============================================================
+   TOVESSA â€” Express Backend Server v2
    ============================================================ */
 require('dotenv').config();
 
@@ -11,7 +11,7 @@ const { initFirebase, getDB } = require('./utils/firebase');
 
 const store            = require('./utils/store');
 
-/* ── Route modules ── */
+/* â”€â”€ Route modules â”€â”€ */
 const authRoutes         = require('./routes/auth');
 const productRoutes      = require('./routes/products');
 const orderRoutes        = require('./routes/orders');
@@ -30,7 +30,7 @@ const spendingsRoutes    = require('./routes/spendings');
 const app  = express();
 const PORT = process.env.PORT || 3002;
 
-/* ── CORS ── */
+/* â”€â”€ CORS â”€â”€ */
 app.use(cors({
   origin: [
     process.env.FRONTEND_URL || 'http://localhost:3002',
@@ -44,12 +44,12 @@ app.use(cors({
   credentials: true,
 }));
 
-/* ── Body parsers (exclude Stripe webhook which needs raw body) ── */
+/* â”€â”€ Body parsers (exclude Stripe webhook which needs raw body) â”€â”€ */
 app.use('/api/payments/stripe-webhook', express.raw({ type: 'application/json' }));
 app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true }));
 
-/* ── Security headers ── */
+/* â”€â”€ Security headers â”€â”€ */
 app.use((req, res, next) => {
   res.setHeader('X-Content-Type-Options', 'nosniff');
   res.setHeader('X-Frame-Options', 'SAMEORIGIN');
@@ -57,7 +57,7 @@ app.use((req, res, next) => {
   next();
 });
 
-/* ── Simple API rate limiter (no extra package needed) ── */
+/* â”€â”€ Simple API rate limiter (no extra package needed) â”€â”€ */
 app.set('trust proxy', 1);
 const rateLimitStore = new Map();
 app.use('/api/', (req, res, next) => {
@@ -73,18 +73,18 @@ app.use('/api/', (req, res, next) => {
   next();
 });
 
-/* ── Firebase init ── */
+/* â”€â”€ Firebase init â”€â”€ */
 initFirebase();
 
 
 
-/* ── Serve static frontend (clean URLs — .html extension hidden) ──
+/* â”€â”€ Serve static frontend (clean URLs â€” .html extension hidden) â”€â”€
    extensions: ['html'] lets express.static resolve /shop -> shop.html
    on the server side, but the file is still also reachable as /shop.html
    directly. To make the BROWSER bar show /shop (not /shop.html), the
    internal <a href> links in the HTML files must point to the extension-
-   less path too — see the .html link rewrite below. ── */
-/* ── GET /robots.txt — Serve with no-cache headers ── */
+   less path too â€” see the .html link rewrite below. â”€â”€ */
+/* â”€â”€ GET /robots.txt â€” Serve with no-cache headers â”€â”€ */
 app.get('/robots.txt', (req, res) => {
   res.setHeader('Content-Type', 'text/plain');
   res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
@@ -100,7 +100,7 @@ Disallow: /account
 Sitemap: https://tovessa.com/sitemap.xml`);
 });
 
-/* ── GET /sitemap.xml — Dynamic sitemap including all live products ── */
+/* â”€â”€ GET /sitemap.xml â€” Dynamic sitemap including all live products â”€â”€ */
 app.get('/sitemap.xml', async (req, res) => {
   const { getDB } = require('./utils/firebase');
   const today = new Date().toISOString().slice(0, 10);
@@ -186,7 +186,7 @@ app.use(express.static(path.join(__dirname, '..'), {
   }
 }));
 
-/* ── SSE Notifications endpoint (/api/notifications/stream) ── */
+/* â”€â”€ SSE Notifications endpoint (/api/notifications/stream) â”€â”€ */
 app.get('/api/notifications/stream', (req, res) => {
   /* Verify admin token from query param (SSE doesn't support custom headers) */
   const token = req.query.token;
@@ -194,7 +194,7 @@ app.get('/api/notifications/stream', (req, res) => {
 
   try {
     const jwt     = require('jsonwebtoken');
-    const decoded = jwt.verify(token, process.env.JWT_SECRET);
+    const decoded = jwt.verify(token, process.env.JWT_SECRET || "tovessa_secret_jwt_key_2024_fallback");
     if (!decoded.isAdmin) return res.status(403).end();
   } catch {
     return res.status(401).end();
@@ -227,7 +227,7 @@ app.get('/api/notifications/stream', (req, res) => {
   });
 });
 
-/* ── API Routes ── */
+/* â”€â”€ API Routes â”€â”€ */
 app.use('/api/auth',          authRoutes);
 app.use('/api/products',      productRoutes);
 app.use('/api/orders',        orderRoutes);
@@ -242,16 +242,16 @@ app.use('/api/settings',      settingsRoutes);
 app.use('/api/invoices',      invoiceRoutes);
 app.use('/api/spendings',     spendingsRoutes);
 
-/* ── Abandoned Checkout Tracking ──
+/* â”€â”€ Abandoned Checkout Tracking â”€â”€
    Persisted to Firestore (collection: "abandoned") when Firebase is
    configured, so records survive server restarts/cold-starts (Render
    free tier resets in-memory data). Falls back to the in-memory store
-   only in demo mode (no Firebase credentials configured). ── */
+   only in demo mode (no Firebase credentials configured). â”€â”€ */
 function isAbandonedFirebaseAvailable() {
   try { return !!getDB(); } catch { return false; }
 }
 
-/* POST /api/abandoned — save/update abandoned checkout (public, called from checkout.js) */
+/* POST /api/abandoned â€” save/update abandoned checkout (public, called from checkout.js) */
 app.post('/api/abandoned', async (req, res) => {
   try {
     const { id, delivery, items, total } = req.body || {};
@@ -288,11 +288,11 @@ app.post('/api/abandoned', async (req, res) => {
       /* Also keep in memory for this session */
       store.abandoned.unshift(record);
       try { store.emit('new_abandoned', record); } catch {}
-      console.log('✅ Abandoned saved to Firebase:', newId);
+      console.log('âœ… Abandoned saved to Firebase:', newId);
       return res.status(201).json({ id: newId });
     }
 
-    /* ── No Firebase — persist to JSON file so restarts don't wipe data ── */
+    /* â”€â”€ No Firebase â€” persist to JSON file so restarts don't wipe data â”€â”€ */
     const fs   = require('fs');
     const path = require('path');
     const AB_FILE = path.join(__dirname, 'data', 'abandoned.json');
@@ -333,7 +333,7 @@ app.post('/api/abandoned', async (req, res) => {
     if (fileData.length > 500) fileData = fileData.slice(0, 500);
     try { fs.mkdirSync(path.dirname(AB_FILE), { recursive: true }); fs.writeFileSync(AB_FILE, JSON.stringify(fileData)); } catch {}
     try { store.emit('new_abandoned', record); } catch {}
-    console.log('✅ Abandoned saved to file (demo mode):', record.id);
+    console.log('âœ… Abandoned saved to file (demo mode):', record.id);
     return res.status(201).json({ id: record.id });
 
   } catch (err) {
@@ -342,7 +342,7 @@ app.post('/api/abandoned', async (req, res) => {
   }
 });
 
-/* PATCH /api/abandoned/:id/converted — mark as converted when order placed */
+/* PATCH /api/abandoned/:id/converted â€” mark as converted when order placed */
 app.patch('/api/abandoned/:id/converted', async (req, res) => {
   try {
     if (isAbandonedFirebaseAvailable()) {
@@ -369,13 +369,13 @@ app.patch('/api/abandoned/:id/converted', async (req, res) => {
   }
 });
 
-/* GET /api/abandoned — admin only */
+/* GET /api/abandoned â€” admin only */
 app.get('/api/abandoned', async (req, res) => {
   const token = req.headers.authorization?.replace('Bearer ', '');
   if (!token) return res.status(401).json({ error: 'Unauthorized' });
   try {
     const jwt = require('jsonwebtoken');
-    const decoded = jwt.verify(token, process.env.JWT_SECRET);
+    const decoded = jwt.verify(token, process.env.JWT_SECRET || "tovessa_secret_jwt_key_2024_fallback");
     if (!decoded.isAdmin) return res.status(403).json({ error: 'Forbidden' });
   } catch { return res.status(401).json({ error: 'Invalid token' }); }
 
@@ -386,7 +386,7 @@ app.get('/api/abandoned', async (req, res) => {
       abandoned.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
       return res.json({ abandoned, total: abandoned.length });
     }
-    /* No Firebase — load from file + memory merged */
+    /* No Firebase â€” load from file + memory merged */
     const fs   = require('fs');
     const path = require('path');
     const AB_FILE = path.join(__dirname, 'data', 'abandoned.json');
@@ -403,13 +403,13 @@ app.get('/api/abandoned', async (req, res) => {
   }
 });
 
-/* DELETE /api/abandoned/:id — admin only */
+/* DELETE /api/abandoned/:id â€” admin only */
 app.delete('/api/abandoned/:id', async (req, res) => {
   const token = req.headers.authorization?.replace('Bearer ', '');
   if (!token) return res.status(401).json({ error: 'Unauthorized' });
   try {
     const jwt = require('jsonwebtoken');
-    const decoded = jwt.verify(token, process.env.JWT_SECRET);
+    const decoded = jwt.verify(token, process.env.JWT_SECRET || "tovessa_secret_jwt_key_2024_fallback");
     if (!decoded.isAdmin) return res.status(403).json({ error: 'Forbidden' });
   } catch { return res.status(401).json({ error: 'Invalid token' }); }
 
@@ -435,7 +435,7 @@ app.delete('/api/abandoned/:id', async (req, res) => {
     res.status(500).json({ error: 'Failed to delete.' });
   }
 });
-/* POST /api/visitors/ping  — frontend calls every 25s */
+/* POST /api/visitors/ping  â€” frontend calls every 25s */
 app.post('/api/visitors/ping', (req, res) => {
   const { sessionId, page } = req.body || {};
   if (!sessionId) return res.status(400).json({ error: 'sessionId required' });
@@ -443,35 +443,35 @@ app.post('/api/visitors/ping', (req, res) => {
   res.json({ count });
 });
 
-/* POST /api/visitors/leave  — frontend calls on beforeunload */
+/* POST /api/visitors/leave  â€” frontend calls on beforeunload */
 app.post('/api/visitors/leave', (req, res) => {
   const { sessionId } = req.body || {};
   if (sessionId) store.visitorLeave(sessionId);
   res.json({ ok: true });
 });
 
-/* GET /api/visitors  — admin: get current count + list */
+/* GET /api/visitors  â€” admin: get current count + list */
 app.get('/api/visitors', (req, res) => {
   const token = req.headers.authorization?.replace('Bearer ', '');
   if (!token) return res.status(401).json({ error: 'Unauthorized' });
   try {
     const jwt = require('jsonwebtoken');
-    const decoded = jwt.verify(token, process.env.JWT_SECRET);
+    const decoded = jwt.verify(token, process.env.JWT_SECRET || "tovessa_secret_jwt_key_2024_fallback");
     if (!decoded.isAdmin) return res.status(403).json({ error: 'Forbidden' });
   } catch { return res.status(401).json({ error: 'Invalid token' }); }
   res.json({ count: store.visitorCount(), visitors: store.visitorList() });
 });
 
-/* ── Admin dashboard HTML ── serve the file directly to avoid router path issues */
+/* â”€â”€ Admin dashboard HTML â”€â”€ serve the file directly to avoid router path issues */
 app.get(['/admin', '/admin/'], (req, res) => {
   res.sendFile(path.join(__dirname, 'admin', 'index.html'));
 });
 
-/* ── Admin API endpoints ── */
+/* â”€â”€ Admin API endpoints â”€â”€ */
 app.use('/api/admin', adminRoutes);
 app.use('/admin',     adminRoutes);  /* also serve sub-routes like /admin/stats (not used but safe) */
 
-/* ── Health check ── */
+/* â”€â”€ Health check â”€â”€ */
 app.get('/api/health', (req, res) => {
   let firebaseStatus = 'demo';
   try { firebaseStatus = getDB() ? 'connected' : 'demo'; } catch { firebaseStatus = 'demo'; }
@@ -498,7 +498,7 @@ app.get('/api/health', (req, res) => {
 });
 
 
-/* ── Catch-all ── */
+/* â”€â”€ Catch-all â”€â”€ */
 app.get('*', (req, res) => {
   if (req.path.startsWith('/api/')) return res.status(404).json({ error: 'API endpoint not found.' });
   res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate');
@@ -507,15 +507,15 @@ app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, '..', 'index.html'));
 });
 
-/* ── Global error handler ── */
+/* â”€â”€ Global error handler â”€â”€ */
 app.use((err, req, res, next) => {
   console.error('Unhandled error:', err);
   res.status(500).json({ error: 'Internal server error.' });
 });
 
-/* ── Start ── */
+/* â”€â”€ Start â”€â”€ */
 (async () => {
-  /* ── On startup: load persisted abandoned records from file into memory ── */
+  /* â”€â”€ On startup: load persisted abandoned records from file into memory â”€â”€ */
   try {
     const fs   = require('fs');
     const path = require('path');
@@ -523,11 +523,11 @@ app.use((err, req, res, next) => {
     if (fs.existsSync(AB_FILE)) {
       const saved = JSON.parse(fs.readFileSync(AB_FILE, 'utf8'));
       store.abandoned = saved;
-      console.log(`✅ Loaded ${saved.length} abandoned records from file.`);
+      console.log(`âœ… Loaded ${saved.length} abandoned records from file.`);
     }
   } catch (e) { console.warn('Could not load abandoned.json:', e.message); }
 
-  /* ── Load Global Settings (like Site Launch Date) from Firebase ── */
+  /* â”€â”€ Load Global Settings (like Site Launch Date) from Firebase â”€â”€ */
   try {
     const db = getDB();
     if (db) {
@@ -536,7 +536,7 @@ app.use((err, req, res, next) => {
         const data = doc.data();
         if (data.siteLaunchDate) store.setSiteLaunchDate(data.siteLaunchDate);
         if (data.company) store.settings = { ...store.settings, company: data.company };
-        console.log(`✅ Loaded global settings from Firestore.`);
+        console.log(`âœ… Loaded global settings from Firestore.`);
       }
 
       /* Load all orders into memory for store.js statement calculations */
@@ -562,21 +562,22 @@ app.use((err, req, res, next) => {
         if (productsSnap.docs.length > 0) {
           store.products = productsSnap.docs.map(d => ({ id: d.id, ...d.data() }));
         }
-      console.log(`✅ Loaded ${store.orders.length} orders, ${store.socialOrders.length} social orders, ${store.spendings.length} spendings, ${store.invoices.length} invoices from Firestore.`);
+      console.log(`âœ… Loaded ${store.orders.length} orders, ${store.socialOrders.length} social orders, ${store.spendings.length} spendings, ${store.invoices.length} invoices from Firestore.`);
 
-      /* Migration already completed — block removed to prevent accidental user deletion on restart */
+      /* Migration already completed â€” block removed to prevent accidental user deletion on restart */
     }
   } catch (e) { console.warn('Could not load data from Firestore:', e.message); }
 
   app.listen(PORT, () => {
-    console.log('\n╔════════════════════════════════════════════════╗');
-    console.log('║       TOVESSA BACKEND v2.0                     ║');
-    console.log('╠════════════════════════════════════════════════╣');
-    console.log(`║  Website:  http://localhost:${PORT}               ║`);
-    console.log(`║  Admin:    http://localhost:${PORT}/admin          ║`);
-    console.log(`║  API:      http://localhost:${PORT}/api/health     ║`);
-    console.log('╚════════════════════════════════════════════════╝\n');
+    console.log('\nâ•”â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•—');
+    console.log('â•‘       TOVESSA BACKEND v2.0                     â•‘');
+    console.log('â• â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•£');
+    console.log(`â•‘  Website:  http://localhost:${PORT}               â•‘`);
+    console.log(`â•‘  Admin:    http://localhost:${PORT}/admin          â•‘`);
+    console.log(`â•‘  API:      http://localhost:${PORT}/api/health     â•‘`);
+    console.log('â•šâ•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•\n');
   });
 })();
 
 module.exports = app;
+
