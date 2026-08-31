@@ -1506,3 +1506,55 @@ footer .nav-logo {
   mix-blend-mode: multiply !important;
   background: transparent !important;
 }
+
+/* PURE CSS LOGO */
+.css-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none !important;
+}
+.css-logo-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.css-logo-main {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  letter-spacing: 3px;
+  line-height: 1;
+  color: var(--gold) !important;
+}
+.css-logo-sub {
+  font-family: var(--font-body);
+  font-size: 0.5rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--muted) !important;
+  margin-top: 4px;
+}
+/* Footer override */
+footer .css-logo-main, footer .css-logo-sub, footer .css-logo i {
+  color: #fff !important;
+}
+
+/* GLOBAL BUTTON HOVER OVERRIDE */
+.btn-primary, .btn-secondary, .btn-outline, .hero-glass-box .btn-primary {
+  transition: all 0.3s ease !important;
+}
+.btn-primary:hover, .btn-secondary:hover, .btn-outline:hover, .hero-glass-box .btn-primary:hover,
+#hero .btn-primary:hover, .newsletter-form .btn-primary:hover {
+  background-color: var(--gold) !important;
+  color: #ffffff !important;
+  border-color: var(--gold) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 5px 15px rgba(96,36,66,0.3) !important;
+}
+.hero-glass-box .btn-primary {
+  background-color: #ffffff !important;
+  color: var(--text) !important;
+}
+
+.footer-brand .css-logo { margin-bottom: 24px; }
+

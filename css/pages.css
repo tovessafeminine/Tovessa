@@ -458,3 +458,7 @@
 .shop-main {
   width: 100% !important;
 }
+
+/* FIX SIDEBAR ORDER */
+.shop-sidebar { order: 1 !important; }
+.shop-main { order: 2 !important; }
