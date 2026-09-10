@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8"/>
@@ -210,7 +210,7 @@ select.filter-sel{background:var(--bg);border:1px solid var(--border);border-rad
 .pac-actions{display:flex;gap:8px;margin-top:4px;}
 .pac-actions .btn{flex:1;font-size:0.75rem;padding:6px 8px;display:flex;align-items:center;justify-content:center;gap:5px;}
 
-/* â”€â”€ Responsive â€” Tablet (<=900px) â”€â”€ */
+/* â”€â”€ Responsive — Tablet (<=900px) â”€â”€ */
 @media(max-width:900px){
   :root{--sidebar:72px;}
   #sidebar{width:72px;}
@@ -227,7 +227,7 @@ select.filter-sel{background:var(--bg);border:1px solid var(--border);border-rad
   .mobile-logout{display:flex !important;}
 }
 
-/* â”€â”€ Responsive â€” Mobile (<=640px) â”€â”€ */
+/* â”€â”€ Responsive — Mobile (<=640px) â”€â”€ */
 @media(max-width:640px){
   #sidebar{
     position:fixed;left:0;right:0;bottom:0;top:auto;
@@ -390,7 +390,7 @@ select.filter-sel{background:var(--bg);border:1px solid var(--border);border-rad
   </div>
   <div id="demo-banner" class="demo-banner" style="display:none">
     <i class="fa-solid fa-circle-info"></i>
-    <span>Demo Mode â€” data stored in server memory. Add Firebase credentials to .env for permanent storage.</span>
+    <span>Demo Mode — data stored in server memory. Add Firebase credentials to .env for permanent storage.</span>
   </div>
   <!-- â”€â”€ Dashboard Source Filter â”€â”€ -->
   <div class="dash-filter-bar" id="dash-filter-bar">
@@ -402,30 +402,30 @@ select.filter-sel{background:var(--bg);border:1px solid var(--border);border-rad
   <div class="stats-grid" id="stats-grid">
     <div class="stat-card" style="cursor:pointer" onclick="showPage('visitors')">
       <div class="stat-icon" style="position:relative">
-        ðŸŸ¢
+        <i class="fa-solid fa-circle" style="color:#22c55e"></i>
         <span id="visitor-pulse" style="position:absolute;top:-2px;right:-2px;width:10px;height:10px;background:#22c55e;border-radius:50%;animation:pulse-dot 1.5s infinite"></span>
       </div>
       <div class="stat-val" id="s-visitors" style="color:#22c55e">0</div>
       <div class="stat-label">Live Visitors</div>
       <div class="stat-sub" id="s-visitors-sub" style="color:#22c55e;font-size:0.65rem">on site right now</div>
     </div>
-    <div class="stat-card"><div class="stat-icon">ðŸ“¦</div><div class="stat-val" id="s-orders">â€”</div><div class="stat-label">Total Orders</div><div class="stat-sub" id="s-pending-text"></div></div>
-    <div class="stat-card"><div class="stat-icon">ðŸ’°</div><div class="stat-val" id="s-revenue">â€”</div><div class="stat-label">Total Revenue</div></div>
+    <div class="stat-card"><div class="stat-icon"><i class="fa-solid fa-box"></i></div><div class="stat-val" id="s-orders">—</div><div class="stat-label">Total Orders</div><div class="stat-sub" id="s-pending-text"></div></div>
+    <div class="stat-card"><div class="stat-icon"><i class="fa-solid fa-coins"></i></div><div class="stat-val" id="s-revenue">—</div><div class="stat-label">Total Revenue</div></div>
     
-    <div class="stat-card"><div class="stat-icon">ðŸ§¾</div><div class="stat-val" id="s-invoices">â€”</div><div class="stat-label">Total Invoices</div></div>
-    <div class="stat-card"><div class="stat-icon">ðŸ’µ</div><div class="stat-val" id="s-cod-orders">â€”</div><div class="stat-label">COD Orders</div></div>
+    <div class="stat-card"><div class="stat-icon"><i class="fa-solid fa-file-invoice"></i></div><div class="stat-val" id="s-invoices">—</div><div class="stat-label">Total Invoices</div></div>
+    <div class="stat-card"><div class="stat-icon"><i class="fa-solid fa-money-bill"></i></div><div class="stat-val" id="s-cod-orders">—</div><div class="stat-label">COD Orders</div></div>
 
 
-    <div class="stat-card"><div class="stat-icon">ðŸ“ˆ</div><div class="stat-val" id="s-profit">â€”</div><div class="stat-label">Today's Profit</div><div class="stat-sub" id="s-profit-sub"></div></div>
-    <div class="stat-card"><div class="stat-icon">ðŸ’¹</div><div class="stat-val" id="s-total-profit">â€”</div><div class="stat-label">Total Profit</div><div class="stat-sub" style="color:var(--muted);font-size:0.65rem">all time</div></div>
-    <div class="stat-card" id="card-spendings" style="display:none"><div class="stat-icon">ðŸ’¸</div><div class="stat-val" id="s-spendings" style="color:#ef4444">â€”</div><div class="stat-label">Total Spendings</div></div>
-    <div class="stat-card"><div class="stat-icon">ðŸ›ï¸</div><div class="stat-val" id="s-products">â€”</div><div class="stat-label">Products</div></div>
-    <div class="stat-card"><div class="stat-icon">ðŸ“§</div><div class="stat-val" id="s-subscribers">â€”</div><div class="stat-label">Subscribers</div></div>
-    <div class="stat-card"><div class="stat-icon">âœ‰ï¸</div><div class="stat-val" id="s-msgs">â€”</div><div class="stat-label">Unread Messages</div></div>
-    <div class="stat-card"><div class="stat-icon">ðŸ‘¤</div><div class="stat-val" id="s-users">â€”</div><div class="stat-label">Customers</div></div>
+    <div class="stat-card"><div class="stat-icon"><i class="fa-solid fa-chart-line"></i></div><div class="stat-val" id="s-profit">—</div><div class="stat-label">Today's Profit</div><div class="stat-sub" id="s-profit-sub"></div></div>
+    <div class="stat-card"><div class="stat-icon"><i class="fa-solid fa-chart-pie"></i></div><div class="stat-val" id="s-total-profit">—</div><div class="stat-label">Total Profit</div><div class="stat-sub" style="color:var(--muted);font-size:0.65rem">all time</div></div>
+    <div class="stat-card" id="card-spendings" style="display:none"><div class="stat-icon"><i class="fa-solid fa-money-bill-transfer" style="color:#ef4444"></i></div><div class="stat-val" id="s-spendings" style="color:#ef4444">—</div><div class="stat-label">Total Spendings</div></div>
+    <div class="stat-card"><div class="stat-icon"><i class="fa-solid fa-tags"></i></div><div class="stat-val" id="s-products">—</div><div class="stat-label">Products</div></div>
+    <div class="stat-card"><div class="stat-icon"><i class="fa-solid fa-envelope"></i></div><div class="stat-val" id="s-subscribers">—</div><div class="stat-label">Subscribers</div></div>
+    <div class="stat-card"><div class="stat-icon"><i class="fa-solid fa-envelope-open-text"></i></div><div class="stat-val" id="s-msgs">—</div><div class="stat-label">Unread Messages</div></div>
+    <div class="stat-card"><div class="stat-icon"><i class="fa-solid fa-user"></i></div><div class="stat-val" id="s-users">—</div><div class="stat-label">Customers</div></div>
     <div class="stat-card" style="cursor:pointer" onclick="showPage('abandoned')">
-      <div class="stat-icon">ðŸ›’</div>
-      <div class="stat-val" id="s-abandoned" style="color:#f97316">â€”</div>
+      <div class="stat-icon"><i class="fa-solid fa-cart-arrow-down"></i></div>
+      <div class="stat-val" id="s-abandoned" style="color:#f97316">—</div>
       <div class="stat-label">Abandoned Orders</div>
       <div class="stat-sub" id="s-abandoned-sub" style="color:#f97316;font-size:0.65rem">incomplete checkouts</div>
     </div>
@@ -440,17 +440,17 @@ select.filter-sel{background:var(--bg);border:1px solid var(--border);border-rad
   <div class="table-wrap" id="lifetime-earnings-wrap" style="margin-top:24px;">
     <div class="table-header"><h3>Lifetime Earnings</h3><span style="color:var(--muted);font-size:0.78rem;margin-left:auto" id="lifetime-since"></span></div>
     <div class="stats-grid" style="padding:20px;margin-bottom:0;">
-      <div class="stat-card"><div class="stat-icon">ðŸ’µ</div><div class="stat-val" id="lt-revenue">â€”</div><div class="stat-label">Lifetime Revenue</div></div>
-      <div class="stat-card"><div class="stat-icon">ðŸ“¦</div><div class="stat-val" id="lt-cost">â€”</div><div class="stat-label">Lifetime Cost</div></div>
-      <div class="stat-card"><div class="stat-icon">ðŸ“ˆ</div><div class="stat-val" id="lt-profit">â€”</div><div class="stat-label">Lifetime Net Profit</div></div>
-      <div class="stat-card"><div class="stat-icon">ðŸ§¾</div><div class="stat-val" id="lt-orders">â€”</div><div class="stat-label">Lifetime Orders Sold</div></div>
+      <div class="stat-card"><div class="stat-icon"><i class="fa-solid fa-money-bill"></i></div><div class="stat-val" id="lt-revenue">—</div><div class="stat-label">Lifetime Revenue</div></div>
+      <div class="stat-card"><div class="stat-icon"><i class="fa-solid fa-box"></i></div><div class="stat-val" id="lt-cost">—</div><div class="stat-label">Lifetime Cost</div></div>
+      <div class="stat-card"><div class="stat-icon"><i class="fa-solid fa-chart-line"></i></div><div class="stat-val" id="lt-profit">—</div><div class="stat-label">Lifetime Net Profit</div></div>
+      <div class="stat-card"><div class="stat-icon"><i class="fa-solid fa-file-invoice"></i></div><div class="stat-val" id="lt-orders">—</div><div class="stat-label">Lifetime Orders Sold</div></div>
     </div>
   </div>
 
-  <!-- â”€â”€ Daily Statements â€” last 30 days (super_admin only) â”€â”€ -->
+  <!-- â”€â”€ Daily Statements — last 30 days (super_admin only) â”€â”€ -->
   <div class="table-wrap" id="daily-statements-wrap" style="margin-top:24px;">
     <div class="table-header">
-      <h3>Daily Statements <span style="color:var(--muted);font-weight:400;font-size:0.78rem;">â€” last 30 days</span></h3>
+      <h3>Daily Statements <span style="color:var(--muted);font-weight:400;font-size:0.78rem;">— last 30 days</span></h3>
       <button class="btn btn-outline" onclick="loadDailyStatements()" style="margin-left:auto"><i class="fa-solid fa-rotate"></i> Refresh</button>
       <button class="btn btn-gold" onclick="exportDailyStatementsExcel()"><i class="fa-solid fa-file-excel"></i> Export 30-Day Statement</button>
     </div>
@@ -458,10 +458,10 @@ select.filter-sel{background:var(--bg);border:1px solid var(--border);border-rad
     <tbody id="daily-statements-body"><tr><td colspan="7" class="empty-state"><div class="spinner"></div></td></tr></tbody></table>
   </div>
 
-  <!-- â”€â”€ Monthly Statements â€” since site launch date (super_admin only) â”€â”€ -->
+  <!-- â”€â”€ Monthly Statements — since site launch date (super_admin only) â”€â”€ -->
   <div class="table-wrap" id="monthly-statements-wrap" style="margin-top:24px;">
     <div class="table-header">
-      <h3>Monthly Statements <span style="color:var(--muted);font-weight:400;font-size:0.78rem;" id="monthly-since-label">â€” since launch</span></h3>
+      <h3>Monthly Statements <span style="color:var(--muted);font-weight:400;font-size:0.78rem;" id="monthly-since-label">— since launch</span></h3>
       <button class="btn btn-outline" onclick="loadMonthlyStatements()" style="margin-left:auto"><i class="fa-solid fa-rotate"></i> Refresh</button>
       <button class="btn btn-gold" onclick="exportMonthlyStatementsExcel()"><i class="fa-solid fa-file-excel"></i> Export All Months</button>
     </div>
@@ -479,7 +479,7 @@ select.filter-sel{background:var(--bg);border:1px solid var(--border);border-rad
         <option value="">All Statuses</option>
         <option>Pending</option><option>Processing</option><option>Shipped</option><option>Delivered</option><option>Cancelled</option>
       </select>
-      <input class="search-input" id="order-search" placeholder="Search order refâ€¦" oninput="filterOrdersTable()"/>
+      <input class="search-input" id="order-search" placeholder="Search order ref…" oninput="filterOrdersTable()"/>
     </div>
   </div>
   <div class="table-wrap">
@@ -497,7 +497,7 @@ select.filter-sel{background:var(--bg);border:1px solid var(--border);border-rad
         <option value="">All Sources</option>
         <option value="facebook">ðŸ”µ Facebook</option>
         <option value="instagram">ðŸ©· Instagram</option>
-        <option value="whatsapp">ðŸŸ¢ WhatsApp</option>
+        <option value="whatsapp"><i class="fa-solid fa-circle" style="color:#22c55e"></i> WhatsApp</option>
         <option value="tiktok">âš« TikTok</option>
         <option value="other">âšª Other</option>
       </select>
@@ -505,7 +505,7 @@ select.filter-sel{background:var(--bg);border:1px solid var(--border);border-rad
         <option value="">All Statuses</option>
         <option>Pending</option><option>Processing</option><option>Shipped</option><option>Delivered</option><option>Cancelled</option>
       </select>
-      <input class="search-input" id="soc-search" placeholder="Search name / refâ€¦" oninput="filterSocialOrdersTable()"/>
+      <input class="search-input" id="soc-search" placeholder="Search name / ref…" oninput="filterSocialOrdersTable()"/>
       <button class="btn btn-gold" id="add-social-order-btn" onclick="openSocialOrderModal()"><i class="fa-solid fa-plus"></i> Add Order</button>
     </div>
   </div>
@@ -513,23 +513,23 @@ select.filter-sel{background:var(--bg);border:1px solid var(--border);border-rad
   <!-- Stats -->
   <div class="stats-grid" style="margin-bottom:24px" id="social-stats-grid">
     <div class="stat-card">
-      <div class="stat-icon">ðŸ“±</div>
-      <div class="stat-val" id="soc-total" style="color:#e1306c">â€”</div>
+      <div class="stat-icon"><i class="fa-solid fa-mobile-screen"></i></div>
+      <div class="stat-val" id="soc-total" style="color:#e1306c">—</div>
       <div class="stat-label">Total Social Orders</div>
     </div>
     <div class="stat-card">
-      <div class="stat-icon">â³</div>
-      <div class="stat-val" id="soc-pending" style="color:var(--orange)">â€”</div>
+      <div class="stat-icon"><i class="fa-solid fa-hourglass-half"></i></div>
+      <div class="stat-val" id="soc-pending" style="color:var(--orange)">—</div>
       <div class="stat-label">Pending</div>
     </div>
     <div class="stat-card">
-      <div class="stat-icon">âœ…</div>
-      <div class="stat-val" id="soc-delivered" style="color:var(--green)">â€”</div>
+      <div class="stat-icon"><i class="fa-solid fa-circle-check" style="color:#22c55e"></i></div>
+      <div class="stat-val" id="soc-delivered" style="color:var(--green)">—</div>
       <div class="stat-label">Delivered</div>
     </div>
     <div class="stat-card">
-      <div class="stat-icon">ðŸ’°</div>
-      <div class="stat-val" id="soc-revenue">â€”</div>
+      <div class="stat-icon"><i class="fa-solid fa-coins"></i></div>
+      <div class="stat-val" id="soc-revenue">—</div>
       <div class="stat-label">Total Revenue</div>
       <div class="stat-sub" style="color:var(--muted);font-size:0.65rem">social orders</div>
     </div>
@@ -539,27 +539,27 @@ select.filter-sel{background:var(--bg);border:1px solid var(--border);border-rad
   <div class="stats-grid" style="margin-bottom:24px;grid-template-columns:repeat(5,1fr)" id="social-platform-grid">
     <div class="stat-card" style="text-align:center">
       <div style="font-size:1.3rem">ðŸ”µ</div>
-      <div class="stat-val" id="soc-fb" style="font-size:1.3rem">â€”</div>
+      <div class="stat-val" id="soc-fb" style="font-size:1.3rem">—</div>
       <div class="stat-label" style="font-size:0.68rem">Facebook</div>
     </div>
     <div class="stat-card" style="text-align:center">
       <div style="font-size:1.3rem">ðŸ©·</div>
-      <div class="stat-val" id="soc-ig" style="font-size:1.3rem">â€”</div>
+      <div class="stat-val" id="soc-ig" style="font-size:1.3rem">—</div>
       <div class="stat-label" style="font-size:0.68rem">Instagram</div>
     </div>
     <div class="stat-card" style="text-align:center">
-      <div style="font-size:1.3rem">ðŸŸ¢</div>
-      <div class="stat-val" id="soc-wa" style="font-size:1.3rem">â€”</div>
+      <div style="font-size:1.3rem"><i class="fa-solid fa-circle" style="color:#22c55e"></i></div>
+      <div class="stat-val" id="soc-wa" style="font-size:1.3rem">—</div>
       <div class="stat-label" style="font-size:0.68rem">WhatsApp</div>
     </div>
     <div class="stat-card" style="text-align:center">
       <div style="font-size:1.3rem">âš«</div>
-      <div class="stat-val" id="soc-tt" style="font-size:1.3rem">â€”</div>
+      <div class="stat-val" id="soc-tt" style="font-size:1.3rem">—</div>
       <div class="stat-label" style="font-size:0.68rem">TikTok</div>
     </div>
     <div class="stat-card" style="text-align:center">
       <div style="font-size:1.3rem">âšª</div>
-      <div class="stat-val" id="soc-ot" style="font-size:1.3rem">â€”</div>
+      <div class="stat-val" id="soc-ot" style="font-size:1.3rem">—</div>
       <div class="stat-label" style="font-size:0.68rem">Other</div>
     </div>
   </div>
@@ -655,7 +655,7 @@ select.filter-sel{background:var(--bg);border:1px solid var(--border);border-rad
       </div>
 
       <div class="form-group">
-        <label>Expiry Date <span style="color:var(--muted)">(optional â€” leave blank for no expiry)</span></label>
+        <label>Expiry Date <span style="color:var(--muted)">(optional — leave blank for no expiry)</span></label>
         <input type="date" id="cpn-expires"/>
       </div>
 
@@ -702,7 +702,7 @@ select.filter-sel{background:var(--bg);border:1px solid var(--border);border-rad
           <select id="soc-source">
             <option value="facebook">ðŸ”µ Facebook</option>
             <option value="instagram">ðŸ©· Instagram</option>
-            <option value="whatsapp">ðŸŸ¢ WhatsApp</option>
+            <option value="whatsapp"><i class="fa-solid fa-circle" style="color:#22c55e"></i> WhatsApp</option>
             <option value="tiktok">âš« TikTok</option>
             <option value="other">âšª Other</option>
           </select>
@@ -733,7 +733,7 @@ select.filter-sel{background:var(--bg);border:1px solid var(--border);border-rad
       </div>
 
       <!-- Notes -->
-      <div class="form-group"><label>Notes / Remarks <span style="color:var(--muted)">(optional)</span></label><textarea id="soc-notes" rows="2" placeholder="e.g. Customer wants blue color, urgent deliveryâ€¦"></textarea></div>
+      <div class="form-group"><label>Notes / Remarks <span style="color:var(--muted)">(optional)</span></label><textarea id="soc-notes" rows="2" placeholder="e.g. Customer wants blue color, urgent delivery…"></textarea></div>
 
       <!-- Items Section -->
       <div class="form-group">
@@ -747,7 +747,7 @@ select.filter-sel{background:var(--bg);border:1px solid var(--border);border-rad
           <span style="font-size:0.68rem;color:var(--muted);text-transform:uppercase">Cost</span>
           <span style="font-size:0.68rem;color:var(--muted);text-transform:uppercase">Sale</span>
           <span style="font-size:0.68rem;color:var(--muted);text-transform:uppercase">Total</span>
-          <span style="font-size:0.68rem;color:var(--muted);text-transform:uppercase" title="Toggle custom item">âœï¸</span>
+          <span style="font-size:0.68rem;color:var(--muted);text-transform:uppercase" title="Toggle custom item">âœ</span>
           <span></span>
         </div>
         <div id="soc-items-container"></div>
@@ -908,7 +908,7 @@ select.filter-sel{background:var(--bg);border:1px solid var(--border);border-rad
       <p id="product-count-label" style="color:var(--muted);font-size:0.8rem;margin-top:2px;"></p>
     </div>
     <div class="ml-auto" style="display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
-      <input class="search-input" id="product-search" placeholder="Searchâ€¦" oninput="filterProductsTable()"/>
+      <input class="search-input" id="product-search" placeholder="Search…" oninput="filterProductsTable()"/>
       <select class="filter-sel" id="product-category-filter" onchange="filterProductsTable()" title="Filter by category">
 
         <option value="">All Categories</option>
@@ -996,7 +996,7 @@ select.filter-sel{background:var(--bg);border:1px solid var(--border);border-rad
     </div>
     <table>
       <thead><tr><th>Customer</th><th>Order</th><th>Rating</th><th>Review</th><th>Date</th><th>Status</th><th>Action</th></tr></thead>
-      <tbody id="reviews-body"><tr><td colspan="7" style="text-align:center;padding:40px;color:var(--muted)">Loadingâ€¦</td></tr></tbody>
+      <tbody id="reviews-body"><tr><td colspan="7" style="text-align:center;padding:40px;color:var(--muted)">Loading…</td></tr></tbody>
     </table>
   </div>
 </div>
@@ -1033,7 +1033,7 @@ select.filter-sel{background:var(--bg);border:1px solid var(--border);border-rad
       </div>
       <div>
         <label style="font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:6px;">Message Body *</label>
-        <textarea id="promo-body" rows="6" placeholder="Write your promotional message hereâ€¦"
+        <textarea id="promo-body" rows="6" placeholder="Write your promotional message here…"
           style="width:100%;background:var(--bg);border:1px solid var(--border);color:var(--text);padding:11px 14px;font-family:inherit;font-size:.85rem;border-radius:6px;outline:none;resize:vertical;box-sizing:border-box;"></textarea>
       </div>
       <div>
@@ -1067,19 +1067,19 @@ select.filter-sel{background:var(--bg);border:1px solid var(--border);border-rad
   <!-- Summary cards -->
   <div class="stats-grid" style="margin-bottom:24px">
     <div class="stat-card">
-      <div class="stat-icon">ðŸŸ¢</div>
+      <div class="stat-icon"><i class="fa-solid fa-circle" style="color:#22c55e"></i></div>
       <div class="stat-val" id="v-count" style="color:#22c55e;font-size:2.4rem">0</div>
       <div class="stat-label">Active Right Now</div>
       <div class="stat-sub" style="color:var(--muted)">last 35 seconds</div>
     </div>
     <div class="stat-card">
-      <div class="stat-icon">ðŸ“„</div>
-      <div class="stat-val" id="v-pages-count" style="font-size:2rem">â€”</div>
+      <div class="stat-icon"><i class="fa-solid fa-rotate"></i></div>
+      <div class="stat-val" id="v-pages-count" style="font-size:2rem">—</div>
       <div class="stat-label">Pages Being Viewed</div>
     </div>
     <div class="stat-card">
-      <div class="stat-icon">ðŸ•</div>
-      <div class="stat-val" id="v-last-update" style="font-size:1rem;color:var(--muted)">â€”</div>
+      <div class="stat-icon"><i class="fa-solid fa-clock"></i></div>
+      <div class="stat-val" id="v-last-update" style="font-size:1rem;color:var(--muted)">—</div>
       <div class="stat-label">Last Updated</div>
     </div>
   </div>
@@ -1125,17 +1125,17 @@ select.filter-sel{background:var(--bg);border:1px solid var(--border);border-rad
   <!-- Summary cards -->
   <div class="stats-grid" style="margin-bottom:24px" id="abandoned-stats-grid">
     <div class="stat-card">
-      <div class="stat-icon">ðŸ›’</div>
+      <div class="stat-icon"><i class="fa-solid fa-cart-arrow-down"></i></div>
       <div class="stat-val" id="ab-total" style="color:#f97316">0</div>
       <div class="stat-label">Total Abandoned</div>
     </div>
     <div class="stat-card">
-      <div class="stat-icon">âœ…</div>
+      <div class="stat-icon"><i class="fa-solid fa-circle-check" style="color:#22c55e"></i></div>
       <div class="stat-val" id="ab-converted" style="color:#22c55e">0</div>
       <div class="stat-label">Recovered</div>
     </div>
     <div class="stat-card">
-      <div class="stat-icon">ðŸ’°</div>
+      <div class="stat-icon"><i class="fa-solid fa-coins"></i></div>
       <div class="stat-val" id="ab-lost-value">PKR 0</div>
       <div class="stat-label">Lost Revenue</div>
       <div class="stat-sub" style="color:var(--muted);font-size:0.65rem">abandoned only</div>
@@ -1535,7 +1535,7 @@ select.filter-sel{background:var(--bg);border:1px solid var(--border);border-rad
         </div>
       </div>
       <div class="form-row">
-        <div class="form-group"><label>Purchase Price (PKR) * <span style="color:var(--muted);font-weight:400;">â€” cost you paid</span></label><input id="p-purchase-price" type="number" placeholder="6000"/></div>
+        <div class="form-group"><label>Purchase Price (PKR) * <span style="color:var(--muted);font-weight:400;">— cost you paid</span></label><input id="p-purchase-price" type="number" placeholder="6000"/></div>
         <div class="form-group"><label>Sale Price (PKR) *</label><input id="p-price" type="number" placeholder="12500"/></div>
       </div>
       <div class="form-row">
@@ -1550,7 +1550,7 @@ select.filter-sel{background:var(--bg);border:1px solid var(--border);border-rad
           <select id="p-instock"><option value="true">Yes</option><option value="false">No</option></select>
         </div>
       </div>
-      <div class="form-group"><label>Description</label><textarea id="p-desc" rows="3" placeholder="Product descriptionâ€¦"></textarea></div>
+      <div class="form-group"><label>Description</label><textarea id="p-desc" rows="3" placeholder="Product description…"></textarea></div>
       <div class="form-row">
         <div class="form-group">
           <label>Sizes <span style="color:var(--muted);font-weight:400">(type a size, press Enter to add)</span></label>
@@ -1570,7 +1570,7 @@ select.filter-sel{background:var(--bg);border:1px solid var(--border);border-rad
 
       <!-- â”€â”€ Gallery: Images â”€â”€ -->
       <div class="form-group">
-        <label>Product Images (gallery â€” first image is the main photo)</label>
+        <label>Product Images (gallery — first image is the main photo)</label>
         <input type="file" id="p-image-input" accept="image/*" multiple style="display:none" onchange="handleImageSelect(event)"/>
         <button type="button" class="btn btn-outline" onclick="document.getElementById('p-image-input').click()">
           <i class="fa-solid fa-images"></i> Browse Images
@@ -1682,10 +1682,10 @@ select.filter-sel{background:var(--bg);border:1px solid var(--border);border-rad
       <div class="form-group"><label>Password *</label><input type="password" id="r-password" placeholder="Min 8 characters"/></div>
       <div class="form-group"><label>Role *</label>
         <select id="r-role">
-          <option value="super_admin">Super Admin â€” Full access to everything, including finance and deleting other roles</option>
-          <option value="admin">Admin â€” Sees all data &amp; can modify, except earnings &amp; Excel exports</option>
-          <option value="supervisor">Support Staff â€” Messages, orders (view + status + reply), and review approvals only</option>
-          <option value="investor">Investor â€” 100% Read-only access. Can view everything but cannot change anything.</option>
+          <option value="super_admin">Super Admin — Full access to everything, including finance and deleting other roles</option>
+          <option value="admin">Admin — Sees all data &amp; can modify, except earnings &amp; Excel exports</option>
+          <option value="supervisor">Support Staff — Messages, orders (view + status + reply), and review approvals only</option>
+          <option value="investor">Investor — 100% Read-only access. Can view everything but cannot change anything.</option>
         </select>
       </div>
     </div>
@@ -1707,7 +1707,7 @@ select.filter-sel{background:var(--bg);border:1px solid var(--border);border-rad
       <input type="hidden" id="reply-message-id"/>
       <div class="form-group">
         <label>Your Reply</label>
-        <textarea id="reply-text" rows="5" placeholder="Type your reply to this messageâ€¦"></textarea>
+        <textarea id="reply-text" rows="5" placeholder="Type your reply to this message…"></textarea>
       </div>
     </div>
     <div class="modal-footer">
@@ -1757,12 +1757,12 @@ window.addEventListener('DOMContentLoaded', () => {
 
 /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• AUTH â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 function showLogin() {
-  /* FIX: use style.display directly â€” NOT classList, which gets overridden by inline styles */
+  /* FIX: use style.display directly — NOT classList, which gets overridden by inline styles */
   document.getElementById('login-screen').style.display = 'flex';
 }
 
 function hideLogin() {
-  /* FIX: directly set display:none â€” this overrides any CSS class */
+  /* FIX: directly set display:none — this overrides any CSS class */
   document.getElementById('login-screen').style.display = 'none';
 }
 
@@ -1787,7 +1787,7 @@ async function doLogin() {
   errEl.style.display = 'none';
   if (!username || !password) { errEl.textContent = 'Enter username and password.'; errEl.style.display = 'block'; return; }
 
-  btn.innerHTML = '<span class="spinner"></span> Signing inâ€¦';
+  btn.innerHTML = '<span class="spinner"></span> Signing in…';
   btn.disabled  = true;
 
   try {
@@ -1830,7 +1830,7 @@ function onLoginSuccess() {
   applyRolePermissions(currentUser.role);
 
   /* Supervisors don't have dashboard access (server blocks /admin/stats for
-     them) â€” they're redirected to the Orders page by applyRolePermissions,
+     them) — they're redirected to the Orders page by applyRolePermissions,
      so skip the dashboard fetch entirely for them. */
   if (currentUser.role !== 'supervisor') loadDashboard();
 
@@ -1840,14 +1840,14 @@ function onLoginSuccess() {
 function applyRolePermissions(role) {
   const existingStyle = document.getElementById('investor-styles');
   if (existingStyle) existingStyle.remove();
-  /* Super Admin & CEO â€” sees everything */
+  /* Super Admin & CEO — sees everything */
   if (['ceo', 'super_admin'].includes(role)) {
     document.getElementById('activity-btn').style.display = 'inline-flex';
     document.getElementById('nav-spendings').style.display = 'flex';
     document.getElementById('card-spendings').style.display = 'flex';
     return;
   }
-  /* Investor â€” sees everything (read-only), including spendings */
+  /* Investor — sees everything (read-only), including spendings */
   if (role === 'investor') {
     document.getElementById('nav-spendings').style.display = 'flex';
     document.getElementById('card-spendings').style.display = 'flex';
@@ -1855,11 +1855,11 @@ function applyRolePermissions(role) {
   /* Hide Add User button for non-super admins */
   document.getElementById('add-user-btn').style.display = 'none';
 
-  /* Admin â€” hide earnings stats + Excel export buttons */
+  /* Admin — hide earnings stats + Excel export buttons */
   if (role === 'admin') {
-    /* Hide Settings nav entirely â€” Change Password access is super_admin only now */
+    /* Hide Settings nav entirely — Change Password access is super_admin only now */
     document.getElementById('nav-settings')?.style.setProperty('display', 'none');
-    /* Coupons are super_admin-only â€” discount decisions stay with the owner */
+    /* Coupons are super_admin-only — discount decisions stay with the owner */
     document.getElementById('nav-coupons')?.style.setProperty('display', 'none');
     document.getElementById('launch-date-section')?.style.setProperty('display', 'none');
     /* Hide revenue stat card */
@@ -1872,15 +1872,15 @@ function applyRolePermissions(role) {
     if (totalProfitCard) totalProfitCard.style.display = 'none';
     /* Hide Excel export buttons */
     document.querySelectorAll('[onclick*="exportExcel"]').forEach(btn => btn.style.display = 'none');
-    /* Hide cost/purchase-price column in products table â€” only super admin sees margins */
+    /* Hide cost/purchase-price column in products table — only super admin sees margins */
     document.querySelectorAll('.cost-cell').forEach(el => el.style.display = 'none');
-    /* Hide lifetime earnings + daily statements sections â€” super admin only */
+    /* Hide lifetime earnings + daily statements sections — super admin only */
     document.getElementById('lifetime-earnings-wrap')?.style.setProperty('display', 'none');
     document.getElementById('daily-statements-wrap')?.style.setProperty('display', 'none');
     document.getElementById('monthly-statements-wrap')?.style.setProperty('display', 'none');
   }
 
-  /* Supervisor â€” restrict to only Orders + Messages in sidebar */
+  /* Supervisor — restrict to only Orders + Messages in sidebar */
   if (role === 'supervisor') {
     /* Hide sidebar items not allowed */
     ['nav-dashboard','nav-products','nav-subscribers','nav-roles','nav-settings','nav-coupons'].forEach(id => {
@@ -1905,7 +1905,7 @@ function applyRolePermissions(role) {
     showPage('orders');
   }
 
-  /* Investor â€” 100% read-only. Hide all action buttons using a global style injection */
+  /* Investor — 100% read-only. Hide all action buttons using a global style injection */
   if (role === 'investor') {
     const style = document.createElement('style');
     style.id = 'investor-styles';
@@ -1966,7 +1966,7 @@ function apiFetch(path, options = {}) {
     ...options,
     headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${adminToken}`, ...(options.headers || {}) },
   }).then(res => {
-    /* Global session-kill handler â€” if the server says this token is no
+    /* Global session-kill handler — if the server says this token is no
        longer valid (password changed elsewhere, account deactivated,
        deleted, etc.) force the user back to the login screen right away
        instead of leaving them on a broken page. Skip this for the
@@ -1975,7 +1975,7 @@ function apiFetch(path, options = {}) {
     if (res.status === 401 && !path.includes('/auth/change-password') && !path.includes('/auth/login')) {
       res.clone().json().then(data => {
         /* Only force-logout + show error if there is an active session.
-           If currentUser is already null the user logged out intentionally â€” don't show anything. */
+           If currentUser is already null the user logged out intentionally — don't show anything. */
         if (!currentUser) return;
         clearSession();
         showLogin();
@@ -2014,19 +2014,19 @@ function connectSSE() {
       if (payload.event === 'new_social_order') {
         const d = payload.data;
         const srcLabel = {facebook:'Facebook',instagram:'Instagram',whatsapp:'WhatsApp',tiktok:'TikTok',other:'Other'}[d?.source] || d?.source || 'Social';
-        toast(`ðŸ“± New ${srcLabel} order from ${d?.customer} â€” PKR ${(d?.total||0).toLocaleString()}`, 'success');
+        toast(`<i class="fa-solid fa-mobile-screen"></i> New ${srcLabel} order from ${d?.customer} — PKR ${(d?.total||0).toLocaleString()}`, 'success');
         loadStats();
         const badge = document.getElementById('social-badge');
         if (badge) { badge.style.display = 'flex'; badge.textContent = parseInt(badge.textContent || '0') + 1; }
         if (document.getElementById('page-social-orders').style.display !== 'none') loadSocialOrders();
       }
       if (payload.event === 'new_order') {
-        toast(`ðŸ›ï¸ New order: ${payload.data?.id} from ${payload.data?.customer}`, 'success');
+        toast(`<i class="fa-solid fa-tags"></i> New order: ${payload.data?.id} from ${payload.data?.customer}`, 'success');
         loadStats();
         if (document.getElementById('page-orders').style.display !== 'none') loadOrders();
       }
       if (payload.event === 'new_message') {
-        toast(`âœ‰ï¸ New message from ${payload.data?.from}`, 'success');
+        toast(`<i class="fa-solid fa-envelope-open-text"></i> New message from ${payload.data?.from}`, 'success');
         loadStats();
         if (document.getElementById('page-messages').style.display !== 'none') loadMessages();
       }
@@ -2036,7 +2036,7 @@ function connectSSE() {
 
       if (payload.event === 'new_abandoned') {
         const d = payload.data;
-        toast(`ðŸ›’ Abandoned checkout â€” ${d?.delivery?.fname || 'Someone'} left without ordering`, 'warning');
+        toast(`<i class="fa-solid fa-cart-arrow-down"></i> Abandoned checkout — ${d?.delivery?.fname || 'Someone'} left without ordering`, 'warning');
         /* Update badge */
         const badge = document.getElementById('abandoned-badge');
         if (badge) { badge.style.display = 'flex'; badge.textContent = parseInt(badge.textContent || '0') + 1; }
@@ -2079,13 +2079,13 @@ function renderNotifPanel() {
 }
 
 function eventLabel(e) {
-  return { new_order:'New Order ðŸ“¦', new_message:'New Message âœ‰ï¸', new_subscriber:'New Subscriber ðŸ“§', order_status_changed:'Order Updated ðŸ”„', product_added:'Product Added ðŸ›ï¸', new_social_order:'Social Order ðŸ“±' }[e] || e;
+  return { new_order:'New Order <i class="fa-solid fa-box"></i>', new_message:'New Message <i class="fa-solid fa-envelope-open-text"></i>', new_subscriber:'New Subscriber <i class="fa-solid fa-envelope"></i>', order_status_changed:'Order Updated <i class="fa-solid fa-rotate"></i>', product_added:'Product Added <i class="fa-solid fa-tags"></i>', new_social_order:'Social Order <i class="fa-solid fa-mobile-screen"></i>' }[e] || e;
 }
 
 function notifDesc(n) {
-  if (n.event === 'new_order') return `${n.data?.id} â€” ${n.data?.customer} â€” PKR ${(n.data?.total || 0).toLocaleString()}`;
-  if (n.event === 'new_social_order') return `${n.data?.customer} â€” PKR ${(n.data?.total || 0).toLocaleString()} via ${n.data?.source}`;
-  if (n.event === 'new_message') return `From ${n.data?.from} (${n.data?.email}) â€” ${n.data?.subject}`;
+  if (n.event === 'new_order') return `${n.data?.id} — ${n.data?.customer} — PKR ${(n.data?.total || 0).toLocaleString()}`;
+  if (n.event === 'new_social_order') return `${n.data?.customer} — PKR ${(n.data?.total || 0).toLocaleString()} via ${n.data?.source}`;
+  if (n.event === 'new_message') return `From ${n.data?.from} (${n.data?.email}) — ${n.data?.subject}`;
   if (n.event === 'new_subscriber') return `${n.data?.email} subscribed`;
   if (n.event === 'order_status_changed') return `${n.data?.id} â†’ ${n.data?.status}`;
   return '';
@@ -2259,7 +2259,7 @@ function renderDashStats(data) {
     document.getElementById('s-outstanding-cod').textContent = 'PKR ' + out.toLocaleString();
   }
 
-  /* Pending badge â€” always from website orders */
+  /* Pending badge — always from website orders */
   const pending = data.orders?.statuses?.Pending || 0;
   document.getElementById('s-pending-text').textContent = pending ? `${pending} pending` : '';
   const badge = document.getElementById('pending-badge');
@@ -2318,7 +2318,7 @@ async function loadRecentOrders() {
       return `
       <tr style="cursor:pointer" onclick="${clickFn}">
         <td><code style="color:var(--gold)">${o.id}</code>${badge}</td>
-        <td>${o.delivery?.fname || o.customerName || 'â€”'} ${o.delivery?.lname || ''}</td>
+        <td>${o.delivery?.fname || o.customerName || '—'} ${o.delivery?.lname || ''}</td>
         <td>PKR ${(o.total || 0).toLocaleString()}</td>
         <td>${(o.paymentMethod || 'cod').toUpperCase()}</td>
         <td><span class="badge badge-${o.status?.toLowerCase()}">${o.status}</span></td>
@@ -2328,7 +2328,7 @@ async function loadRecentOrders() {
   } catch {}
 }
 
-/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• PROFIT â€” LIFETIME EARNINGS (super_admin only) â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• PROFIT — LIFETIME EARNINGS (super_admin only) â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 let lifetimeEarningsData = null;
 
 async function loadLifetimeEarnings() {
@@ -2345,7 +2345,7 @@ async function loadLifetimeEarnings() {
   } catch {}
 }
 
-/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• PROFIT â€” DAILY STATEMENTS (super_admin only) â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• PROFIT — DAILY STATEMENTS (super_admin only) â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 let dailyStatementsData = [];
 
 async function loadDailyStatements() {
@@ -2381,7 +2381,7 @@ function renderDailyStatements(statements) {
 function viewDayStatement(dateStr) {
   const s = dailyStatementsData.find(x => x.date === dateStr);
   if (!s) return;
-  document.getElementById('day-statement-title').textContent = `Statement â€” ${new Date(dateStr).toLocaleDateString('en-PK', { day:'2-digit', month:'long', year:'numeric' })}`;
+  document.getElementById('day-statement-title').textContent = `Statement — ${new Date(dateStr).toLocaleDateString('en-PK', { day:'2-digit', month:'long', year:'numeric' })}`;
   if (!s.lines.length) {
     document.getElementById('day-statement-body').innerHTML = `<div class="empty-state"><i class="fa-solid fa-receipt"></i><p>No sales recorded on this day.</p></div>`;
   } else {
@@ -2461,7 +2461,7 @@ function exportDailyStatementsExcel() {
     /* â”€â”€ Sheet 3: Lifetime totals snapshot (for context, not just the 30-day window) â”€â”€ */
     if (lifetimeEarningsData) {
       const wsLifetime = XLSX.utils.json_to_sheet([{
-        'Tracking Since':        lifetimeEarningsData.since || 'â€”',
+        'Tracking Since':        lifetimeEarningsData.since || '—',
         'Lifetime Revenue (PKR)': lifetimeEarningsData.totals?.revenue || 0,
         'Lifetime Cost (PKR)':    lifetimeEarningsData.totals?.cost || 0,
         'Lifetime Net Profit (PKR)': lifetimeEarningsData.totals?.profit || 0,
@@ -2472,13 +2472,13 @@ function exportDailyStatementsExcel() {
     }
 
     XLSX.writeFile(wb, `Tovessa - Daily Statement - ${today()}.xlsx`);
-    toast('30-day statement exported âœ“', 'success');
+    toast('30-day statement exported <i class="fa-solid fa-check" style="color:#22c55e"></i>', 'success');
   } catch (err) {
     toast('Export failed: ' + err.message, 'error');
   }
 }
 
-/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• PROFIT â€” MONTHLY STATEMENTS (super_admin only) â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• PROFIT — MONTHLY STATEMENTS (super_admin only) â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 let monthlyStatementsData = [];
 
 async function loadMonthlyStatements() {
@@ -2489,7 +2489,7 @@ async function loadMonthlyStatements() {
     const data = await res.json();
     if (!res.ok) { tbody.innerHTML = `<tr><td colspan="7"><div class="empty-state"><p>${data.error || 'Failed to load statements.'}</p></div></td></tr>`; return; }
     monthlyStatementsData = data.statements || [];
-    document.getElementById('monthly-since-label').textContent = data.since ? `â€” since ${new Date(data.since).toLocaleDateString('en-PK', { day:'2-digit', month:'short', year:'numeric' })}` : 'â€” since launch';
+    document.getElementById('monthly-since-label').textContent = data.since ? `— since ${new Date(data.since).toLocaleDateString('en-PK', { day:'2-digit', month:'short', year:'numeric' })}` : '— since launch';
     renderMonthlyStatements(monthlyStatementsData);
   } catch { tbody.innerHTML = `<tr><td colspan="7"><div class="empty-state"><p>Failed to load statements.</p></div></td></tr>`; }
 }
@@ -2565,16 +2565,16 @@ function exportMonthlyStatementsExcel() {
     XLSX.utils.book_append_sheet(wb, wsLines, 'Itemised Sales');
 
     XLSX.writeFile(wb, `Tovessa - Monthly Statement - ${today()}.xlsx`);
-    toast('Monthly statement exported âœ“', 'success');
+    toast('Monthly statement exported <i class="fa-solid fa-check" style="color:#22c55e"></i>', 'success');
   } catch (err) {
     toast('Export failed: ' + err.message, 'error');
   }
 }
 
-/* Export a single month's full statement â€” summary + all days + itemised sales */
+/* Export a single month's full statement — summary + all days + itemised sales */
 async function exportSingleMonthExcel(monthStr, monthLabel) {
   try {
-    toast('Preparing statementâ€¦', 'info');
+    toast('Preparing statement…', 'info');
     const res  = await apiFetch(`/admin/monthly-statements?month=${monthStr}`);
     const data = await res.json();
     const stmt = (data.statements || [])[0];
@@ -2617,7 +2617,7 @@ async function exportSingleMonthExcel(monthStr, monthLabel) {
       });
     }
     dayRows.push({
-      'Date':             `TOTAL â€” ${monthLabel}`,
+      'Date':             `TOTAL — ${monthLabel}`,
       'Items Sold':       totItems,
       'Orders':           totOrders,
       'Revenue (PKR)':    totRev,
@@ -2658,7 +2658,7 @@ async function exportSingleMonthExcel(monthStr, monthLabel) {
     XLSX.utils.book_append_sheet(wb, wsSummary, 'Month Summary');
 
     XLSX.writeFile(wb, `Tovessa - ${monthLabel} Statement.xlsx`);
-    toast(`${monthLabel} statement exported âœ“`, 'success');
+    toast(`${monthLabel} statement exported <i class="fa-solid fa-check" style="color:#22c55e"></i>`, 'success');
   } catch (err) {
     toast('Export failed: ' + err.message, 'error');
   }
@@ -2762,7 +2762,7 @@ function renderSocialOrders(orders) {
     <tr>
       <td><code style="color:#e1306c;cursor:pointer" onclick="viewSocialOrder('${o.id}')">${o.id}</code></td>
       <td>${socSourceBadge(o.source)}</td>
-      <td><strong>${esc(o.customerName || 'â€”')}</strong><br><small style="color:var(--muted)">${esc(o.phone || '')}</small></td>
+      <td><strong>${esc(o.customerName || '—')}</strong><br><small style="color:var(--muted)">${esc(o.phone || '')}</small></td>
       <td style="color:var(--muted)">${(o.items || []).length} item(s)</td>
       <td style="color:var(--gold);font-weight:600">PKR ${(o.total || 0).toLocaleString()}</td>
       <td style="color:${profitColor};font-weight:600">${profitLabel}</td>
@@ -2792,7 +2792,7 @@ async function updateSocialOrderStatus(id, status) {
 }
 
 async function deleteSocialOrder(id) {
-  const ok = await bktConfirm({ title: 'Delete Social Order?', message: 'This social media order will be permanently deleted.', confirmText: 'Delete Order', icon: 'ðŸ—‘ï¸' });
+  const ok = await bktConfirm({ title: 'Delete Social Order?', message: 'This social media order will be permanently deleted.', confirmText: 'Delete Order', icon: 'ðŸ—‘' });
   if (!ok) return;
   try {
     const res = await apiFetch(`/social-orders/${id}`, { method: 'DELETE' });
@@ -2809,23 +2809,23 @@ async function deleteSocialOrder(id) {
 function viewSocialOrder(id) {
   const o = allSocialOrders.find(x => x.id === id);
   if (!o) return;
-  document.getElementById('social-detail-title').textContent = `Social Order â€” ${o.id}`;
+  document.getElementById('social-detail-title').textContent = `Social Order — ${o.id}`;
   document.getElementById('social-detail-body').innerHTML = `
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;">
-      <div><small style="color:var(--muted)">Customer</small><p><strong>${esc(o.customerName||'â€”')}</strong></p></div>
-      <div><small style="color:var(--muted)">Email</small><p>${esc(o.customerEmail||'â€”')}</p></div>
-      <div><small style="color:var(--muted)">Phone</small><p>${esc(o.phone||'â€”')}</p></div>
-      <div><small style="color:var(--muted)">City</small><p>${esc(o.city||'â€”')}</p></div>
-      <div><small style="color:var(--muted)">Address</small><p>${esc(o.address||'â€”')}</p></div>
+      <div><small style="color:var(--muted)">Customer</small><p><strong>${esc(o.customerName||'—')}</strong></p></div>
+      <div><small style="color:var(--muted)">Email</small><p>${esc(o.customerEmail||'—')}</p></div>
+      <div><small style="color:var(--muted)">Phone</small><p>${esc(o.phone||'—')}</p></div>
+      <div><small style="color:var(--muted)">City</small><p>${esc(o.city||'—')}</p></div>
+      <div><small style="color:var(--muted)">Address</small><p>${esc(o.address||'—')}</p></div>
       <div><small style="color:var(--muted)">Source</small><p>${socSourceBadge(o.source)}</p></div>
       <div><small style="color:var(--muted)">Payment</small><p>${(o.paymentMethod||'').toUpperCase()}</p></div>
       <div><small style="color:var(--muted)">Status</small><p><span class="badge badge-${o.status?.toLowerCase()}">${o.status}</span></p></div>
       ${o.notes ? `<div style="grid-column:1/-1"><small style="color:var(--muted)">Notes</small><p style="font-size:0.85rem;color:var(--muted)">${esc(o.notes)}</p></div>` : ''}
     </div>
     <h4 style="margin-bottom:10px;font-size:0.88rem;color:var(--muted)">Items</h4>
-    ${(o.items||[]).map(i => `<div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--border);font-size:0.85rem"><span>ðŸ›ï¸ ${esc(i.name)} (Ã—${i.qty})</span><span>PKR ${(i.price*i.qty).toLocaleString()}</span></div>`).join('')}
+    ${(o.items||[]).map(i => `<div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--border);font-size:0.85rem"><span><i class="fa-solid fa-tags"></i> ${esc(i.name)} (Ã—${i.qty})</span><span>PKR ${(i.price*i.qty).toLocaleString()}</span></div>`).join('')}
     <div style="display:flex;justify-content:space-between;padding:10px 0"><span style="color:var(--muted)">Subtotal</span><span>PKR ${(o.subtotal||0).toLocaleString()}</span></div>
-    ${o.discount > 0 ? `<div style="display:flex;justify-content:space-between;padding:10px 0;color:var(--gold)"><span>Discount${o.coupon?.code ? ' â€” Coupon "' + esc(o.coupon.code) + '"' : ''}</span><span>âˆ’ PKR ${o.discount.toLocaleString()}</span></div>` : ''}
+    ${o.discount > 0 ? `<div style="display:flex;justify-content:space-between;padding:10px 0;color:var(--gold)"><span>Discount${o.coupon?.code ? ' — Coupon "' + esc(o.coupon.code) + '"' : ''}</span><span>âˆ’ PKR ${o.discount.toLocaleString()}</span></div>` : ''}
     <div style="display:flex;justify-content:space-between;padding:10px 0;font-weight:600"><span>Delivery</span><span>PKR ${(o.deliveryFee||0).toLocaleString()}</span></div>
     <div style="display:flex;justify-content:space-between;padding:10px 0;font-weight:700;font-size:1.05rem"><span>Total</span><span style="color:var(--gold)">PKR ${(o.total||0).toLocaleString()}</span></div>
     ${(o.advanceAmount || 0) > 0 ? `<div style="display:flex;justify-content:space-between;padding:10px 0;border-top:1px dashed var(--border);margin-top:8px;padding-top:12px;"><span style="color:var(--muted)">Advance Paid</span><span style="color:var(--green)">- PKR ${Number(o.advanceAmount).toLocaleString()}</span></div><div style="display:flex;justify-content:space-between;padding:10px 0;font-weight:700;font-size:1.05rem"><span>Remaining Balance</span><span style="color:var(--orange)">PKR ${(Math.max(0, (o.total||0) - Number(o.advanceAmount))).toLocaleString()}</span></div>` : ''}
@@ -2918,10 +2918,10 @@ async function openSocialOrderModal(orderId = null, prefillAban = null) {
     _socAppliedCoupon = o.coupon;
     document.getElementById('soc-coupon-msg').style.display = 'block';
     document.getElementById('soc-coupon-msg').style.color = 'var(--green)';
-    document.getElementById('soc-coupon-msg').textContent = `âœ“ "${o.coupon.code}" applied.`;
+    document.getElementById('soc-coupon-msg').textContent = `<i class="fa-solid fa-check" style="color:#22c55e"></i> "${o.coupon.code}" applied.`;
   }
 
-  /* Make sure the product catalog is loaded â€” the Products tab may
+  /* Make sure the product catalog is loaded — the Products tab may
      never have been opened this session, so allProducts could be empty. */
   if (!allProducts.length) {
     try {
@@ -2969,7 +2969,7 @@ function addSocialItem(prefill = null) {
   row.innerHTML = `
     <div class="soc-product-search-wrap" style="flex: 2;">
       <input type="hidden" id="si-pid-${idx}" value="${pid}"/>
-      <input placeholder="Search productâ€¦" id="si-search-${idx}" value="${esc(name)}"
+      <input placeholder="Search product…" id="si-search-${idx}" value="${esc(name)}"
              oninput="handleSocItemSearch(${idx})"
              onfocus="handleSocItemSearch(${idx})"
              autocomplete="off"
@@ -2983,7 +2983,7 @@ function addSocialItem(prefill = null) {
     <input type="number" placeholder="Cost" id="si-cost-${idx}" value="${cost}" oninput="recalcSocialTotal()" title="Unit Purchase Price" ${isCustom ? '' : ''}/>
     <input type="number" placeholder="Sale" id="si-price-${idx}" value="${sale}" oninput="recalcSocialTotal()" title="Unit Sale Price"/>
     <div class="soc-price-display" id="si-row-total-${idx}">PKR ${total.toLocaleString()}</div>
-    <button class="soc-item-remove" onclick="toggleSocCustomItem(${idx})" title="Toggle custom item" id="si-custom-btn-${idx}" style="background:${isCustom ? 'rgba(184,136,58,0.2)' : 'rgba(100,100,120,0.12)'};border-color:${isCustom ? 'var(--gold)' : 'var(--border)'};color:${isCustom ? 'var(--gold)' : 'var(--muted)'};font-size:0.75rem;">âœï¸</button>
+    <button class="soc-item-remove" onclick="toggleSocCustomItem(${idx})" title="Toggle custom item" id="si-custom-btn-${idx}" style="background:${isCustom ? 'rgba(184,136,58,0.2)' : 'rgba(100,100,120,0.12)'};border-color:${isCustom ? 'var(--gold)' : 'var(--border)'};color:${isCustom ? 'var(--gold)' : 'var(--muted)'};font-size:0.75rem;">âœ</button>
     <button class="soc-item-remove" onclick="removeSocialItem(${idx})" title="Remove">âœ•</button>
   `;
   document.getElementById('soc-items-container').appendChild(row);
@@ -3057,7 +3057,7 @@ function handleSocItemSearch(idx) {
   } else {
     dropdown.innerHTML = matches.map((p, mIdx) => `
       <div class="soc-product-option" onclick="selectSocProduct(${idx}, ${mIdx})">
-        <span style="font-size:1.1rem">${p.emoji || 'ðŸ›ï¸'}</span>
+        <span style="font-size:1.1rem">${p.emoji || '<i class="fa-solid fa-tags"></i>'}</span>
         <span class="opt-name">${esc(p.name)}</span>
         ${!p.inStock ? '<span class="opt-stock-out">Out of stock</span>' : ''}
         <span class="opt-price">PKR ${(p.price || 0).toLocaleString()}</span>
@@ -3097,7 +3097,7 @@ function removeSocialItem(idx) {
 let _socAppliedCoupon = null; /* { code, type, value } once successfully applied */
 
 /* If the admin edits the code after a successful apply, the old
-   discount is no longer valid for whatever they're about to type next â€”
+   discount is no longer valid for whatever they're about to type next —
    clear it until they click Apply again. */
 function onSocCouponInputChanged() {
   if (_socAppliedCoupon) {
@@ -3116,7 +3116,7 @@ async function applySocCoupon() {
   const subtotal = _socCurrentSubtotal();
   const btn = document.getElementById('soc-coupon-apply-btn');
   const orig = btn.textContent;
-  btn.textContent = 'â€¦'; btn.disabled = true;
+  btn.textContent = '…'; btn.disabled = true;
 
   try {
     const res  = await apiFetch('/coupons/validate', {
@@ -3127,7 +3127,7 @@ async function applySocCoupon() {
     if (res.ok && data.valid) {
       _socAppliedCoupon = { code: data.code, type: data.type, value: data.value };
       msgEl.style.color = 'var(--green)';
-      msgEl.textContent = `âœ“ "${data.code}" applied â€” ${data.type === 'percent' ? data.value + '% off' : 'PKR ' + data.value.toLocaleString() + ' off'}`;
+      msgEl.textContent = `<i class="fa-solid fa-check" style="color:#22c55e"></i> "${data.code}" applied — ${data.type === 'percent' ? data.value + '% off' : 'PKR ' + data.value.toLocaleString() + ' off'}`;
       msgEl.style.display = 'block';
     } else {
       _socAppliedCoupon = null;
@@ -3138,7 +3138,7 @@ async function applySocCoupon() {
   } catch {
     _socAppliedCoupon = null;
     msgEl.style.color = 'var(--red)';
-    msgEl.textContent = 'Network error â€” could not validate coupon.';
+    msgEl.textContent = 'Network error — could not validate coupon.';
     msgEl.style.display = 'block';
   }
 
@@ -3289,7 +3289,7 @@ async function saveSocialOrder() {
     });
     const data = await res.json();
     if (res.ok) {
-      toast(isEdit ? `âœ“ Social order updated` : `âœ“ Social order created â€” ${data.orderRef || ''}`, 'success');
+      toast(isEdit ? `<i class="fa-solid fa-check" style="color:#22c55e"></i> Social order updated` : `<i class="fa-solid fa-check" style="color:#22c55e"></i> Social order created — ${data.orderRef || ''}`, 'success');
       
       if (!isEdit && _convertingAbandonedId) {
         try {
@@ -3326,7 +3326,7 @@ async function loadCoupons() {
 function renderCoupons(coupons) {
   const tbody = document.getElementById('coupons-body');
   if (!coupons.length) {
-    tbody.innerHTML = `<tr><td colspan="7"><div class="empty-state"><i class="fa-solid fa-tag"></i><p>No coupons yet â€” create one to get started.</p></div></td></tr>`;
+    tbody.innerHTML = `<tr><td colspan="7"><div class="empty-state"><i class="fa-solid fa-tag"></i><p>No coupons yet — create one to get started.</p></div></td></tr>`;
     return;
   }
   const now = new Date();
@@ -3341,7 +3341,7 @@ function renderCoupons(coupons) {
     <tr>
       <td><code style="color:var(--gold);font-weight:700">${esc(c.code)}</code></td>
       <td>${c.type === 'percent' ? c.value + '% off' : 'PKR ' + c.value.toLocaleString() + ' off'}</td>
-      <td>${c.minOrderAmount ? 'PKR ' + c.minOrderAmount.toLocaleString() : 'â€”'}</td>
+      <td>${c.minOrderAmount ? 'PKR ' + c.minOrderAmount.toLocaleString() : '—'}</td>
       <td>${c.usedCount || 0}${c.maxUses != null ? ' / ' + c.maxUses : ''}</td>
       <td>${c.expiresAt ? new Date(c.expiresAt).toLocaleDateString() : 'Never'}</td>
       <td>${statusBadge}</td>
@@ -3362,7 +3362,7 @@ function updateCouponValueHint() {
   else { label.textContent = 'Discount Value (PKR) *'; input.placeholder = '500'; input.removeAttribute('max'); }
 }
 
-/* Looks up a coupon from the already-loaded allCoupons list by id â€”
+/* Looks up a coupon from the already-loaded allCoupons list by id —
    avoids inlining a JSON.stringify'd object into an onclick attribute,
    which breaks if the code or any field contains a quote character. */
 function openCouponModalById(id) {
@@ -3441,7 +3441,7 @@ async function toggleCouponActive(id, makeActive) {
 }
 
 async function deleteCoupon(id, code) {
-  const ok = await bktConfirm({ title: 'Delete Coupon?', message: `"${code}" will be permanently removed. Customers can no longer use it. This cannot be undone.`, confirmText: 'Delete Coupon', icon: 'ðŸ—‘ï¸' });
+  const ok = await bktConfirm({ title: 'Delete Coupon?', message: `"${code}" will be permanently removed. Customers can no longer use it. This cannot be undone.`, confirmText: 'Delete Coupon', icon: 'ðŸ—‘' });
   if (!ok) return;
   try {
     const res = await apiFetch(`/coupons/${id}`, { method: 'DELETE' });
@@ -3503,7 +3503,7 @@ async function updateOrderStatus(id, status) {
 }
 
 async function deleteOrder(id) {
-  const ok = await bktConfirm({ title: 'Delete Web Order?', message: `Order ${id} will be permanently deleted. This cannot be undone.`, confirmText: 'Delete', icon: 'ðŸ—‘ï¸', danger: true });
+  const ok = await bktConfirm({ title: 'Delete Web Order?', message: `Order ${id} will be permanently deleted. This cannot be undone.`, confirmText: 'Delete', icon: 'ðŸ—‘', danger: true });
   if (!ok) return;
   try {
     const res = await apiFetch(`/orders/${id}`, { method: 'DELETE' });
@@ -3519,7 +3519,7 @@ async function deleteOrder(id) {
 function viewOrder(id) {
   const o = allOrders.find(o => o.id === id);
   if (!o) return;
-  document.getElementById('order-modal-title').textContent = `Order â€” ${o.id}`;
+  document.getElementById('order-modal-title').textContent = `Order — ${o.id}`;
   
   const isCod = o.paymentMethod === 'cod';
   const advanceSection = `
@@ -3544,15 +3544,15 @@ function viewOrder(id) {
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;">
       <div><small style="color:var(--muted)">Customer</small><p>${o.delivery?.fname} ${o.delivery?.lname}</p></div>
       <div><small style="color:var(--muted)">Email</small><p>${o.delivery?.email}</p></div>
-      <div><small style="color:var(--muted)">Phone</small><p>${o.delivery?.phone || 'â€”'}</p></div>
-      <div><small style="color:var(--muted)">Address</small><p>${o.delivery?.address || 'â€”'}, ${o.delivery?.city || 'â€”'}</p></div>
+      <div><small style="color:var(--muted)">Phone</small><p>${o.delivery?.phone || '—'}</p></div>
+      <div><small style="color:var(--muted)">Address</small><p>${o.delivery?.address || '—'}, ${o.delivery?.city || '—'}</p></div>
       <div><small style="color:var(--muted)">Payment</small><p>${(o.paymentMethod || '').toUpperCase()}</p></div>
       <div><small style="color:var(--muted)">Status</small><p><span class="badge badge-${o.status?.toLowerCase()}">${o.status}</span></p></div>
     </div>
     <h4 style="margin-bottom:10px;font-size:0.88rem;color:var(--muted)">Items</h4>
-    ${(o.items || []).map(i => `<div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--border);font-size:0.85rem"><span>${i.emoji||'ðŸ›ï¸'} ${i.name} (Ã—${i.qty})</span><span>PKR ${(i.price * i.qty).toLocaleString()}</span></div>`).join('')}
+    ${(o.items || []).map(i => `<div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--border);font-size:0.85rem"><span>${i.emoji||'<i class="fa-solid fa-tags"></i>'} ${i.name} (Ã—${i.qty})</span><span>PKR ${(i.price * i.qty).toLocaleString()}</span></div>`).join('')}
     <div style="display:flex;justify-content:space-between;padding:10px 0"><span style="color:var(--muted)">Subtotal</span><span>PKR ${(o.subtotal||0).toLocaleString()}</span></div>
-    ${o.discount > 0 ? `<div style="display:flex;justify-content:space-between;padding:10px 0;color:var(--gold)"><span>Discount${o.coupon?.code ? ' â€” Coupon "' + esc(o.coupon.code) + '"' : ''}</span><span>âˆ’ PKR ${o.discount.toLocaleString()}</span></div>` : ''}
+    ${o.discount > 0 ? `<div style="display:flex;justify-content:space-between;padding:10px 0;color:var(--gold)"><span>Discount${o.coupon?.code ? ' — Coupon "' + esc(o.coupon.code) + '"' : ''}</span><span>âˆ’ PKR ${o.discount.toLocaleString()}</span></div>` : ''}
     <div style="display:flex;justify-content:space-between;padding:10px 0;font-weight:600"><span>Delivery</span><span>PKR ${(o.deliveryFee||0).toLocaleString()}</span></div>
     <div style="display:flex;justify-content:space-between;padding:10px 0;font-weight:700;font-size:1.05rem"><span>Total</span><span style="color:var(--gold)">PKR ${(o.total||0).toLocaleString()}</span></div>
     ${isCod ? advanceSection : ''}
@@ -3741,7 +3741,7 @@ async function savePinnedCollections() {
     });
     const data = await res.json();
     if (res.ok) {
-      toast('Pinned collections saved âœ“', 'success');
+      toast('Pinned collections saved <i class="fa-solid fa-check" style="color:#22c55e"></i>', 'success');
       closePinnedModal();
     } else {
       toast(data?.error || 'Failed to save', 'error');
@@ -3777,7 +3777,7 @@ function exportProductsExcel() {
   const wb = XLSX.utils.book_new();
 
   /* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-     SHEET 1 â€” All Products (or filtered view)
+     SHEET 1 — All Products (or filtered view)
   â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
   const headers = ['#', 'Product Name', 'Category', 'Sub-Category', 'Cost Price (PKR)', 'Sale Price (PKR)', 'Profit (PKR)', 'Profit %', 'Stock Status', 'Date Added'];
   const dataRows = products.map((p, i) => {
@@ -3825,7 +3825,7 @@ function exportProductsExcel() {
   /* Freeze top row */
   ws1['!freeze'] = { xSplit: 0, ySplit: 1 };
 
-  /* Header styling â€” gold background, white bold text */
+  /* Header styling — gold background, white bold text */
   const headerStyle = {
     font:      { bold: true, color: { rgb: 'FFFFFF' }, sz: 11, name: 'Calibri' },
     fill:      { fgColor: { rgb: 'B8860B' } },
@@ -3896,7 +3896,7 @@ function exportProductsExcel() {
   XLSX.utils.book_append_sheet(wb, ws1, cat ? `${cat.charAt(0).toUpperCase()+cat.slice(1)}` : 'All Products');
 
   /* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-     SHEET 2 â€” One sheet per category
+     SHEET 2 — One sheet per category
   â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
   const categories = [
         { key: 'hair-oil',          label: 'Hair Oil',           color: 'F39C12' },
@@ -3988,7 +3988,7 @@ function exportProductsExcel() {
 
   const dateStr = new Date().toISOString().slice(0, 10);
   XLSX.writeFile(wb, `Tovessa_Products_${dateStr}.xlsx`);
-  toast('Beautiful Excel file downloaded! âœ“', 'success');
+  toast('Beautiful Excel file downloaded! <i class="fa-solid fa-check" style="color:#22c55e"></i>', 'success');
 }
 
 /*  STOCK LOGIC  */
@@ -4202,7 +4202,7 @@ function filterProductsTable() {
     return matchSearch && matchCat;
   });
 
-  /* Sort by createdAt timestamp â€” fall back to array index if missing */
+  /* Sort by createdAt timestamp — fall back to array index if missing */
   filtered = [...filtered].sort((a, b) => {
     const ta = a.createdAt?.seconds ?? a.createdAt?._seconds ?? (a.createdAt ? new Date(a.createdAt).getTime() / 1000 : 0);
     const tb = b.createdAt?.seconds ?? b.createdAt?._seconds ?? (b.createdAt ? new Date(b.createdAt).getTime() / 1000 : 0);
@@ -4226,14 +4226,14 @@ function renderProducts(products) {
       ? `<img src="${img}" alt="${p.name}" style="width:100%;height:100%;object-fit:cover;"/>`
       : p.video
         ? `<video src="${p.video}#t=0.1" muted preload="metadata" playsinline style="width:100%;height:100%;object-fit:cover;"></video>`
-        : `<div style="display:flex;align-items:center;justify-content:center;height:100%;font-size:2.2rem;">${p.emoji || 'ðŸ›ï¸'}</div>`;
+        : `<div style="display:flex;align-items:center;justify-content:center;height:100%;font-size:2.2rem;">${p.emoji || '<i class="fa-solid fa-tags"></i>'}</div>`;
     const stockBadge = p.inStock
       ? `<span class="badge badge-delivered">In Stock</span>`
       : `<span class="badge badge-cancelled">Out of Stock</span>`;
     return `
     <div class="pac">
       <div class="pac-img">${media}</div>
-      ${p.featured ? '<div class="pac-featured">â­ Featured</div>' : ''}
+      ${p.featured ? '<div class="pac-featured"><i class="fa-solid fa-star" style="color:#f59e0b"></i> Featured</div>' : ''}
       <div class="pac-body">
         <div class="pac-name">${p.name}${p.badge ? ` <span class="badge badge-new">${p.badge}</span>` : ''}${p.hidden ? ' <span class="badge" style="background:#555;color:#fff;font-size:0.6rem;padding:2px 6px;">Hidden</span>' : ''}</div>
         <div class="pac-cat">${p.category}${p.subcategory ? ' â€º ' + p.subcategory : ''}</div>
@@ -4292,7 +4292,7 @@ async function uploadFileToServer(file) {
   formData.append('file', file);
   const res = await fetch(`${API}/upload`, {
     method: 'POST',
-    headers: { Authorization: `Bearer ${adminToken}` },  /* no Content-Type â€” browser sets multipart boundary */
+    headers: { Authorization: `Bearer ${adminToken}` },  /* no Content-Type — browser sets multipart boundary */
     body: formData,
   });
   const data = await res.json();
@@ -4306,7 +4306,7 @@ async function handleImageSelect(event) {
   const status = document.getElementById('image-upload-status');
 
   for (let i = 0; i < files.length; i++) {
-    status.textContent = `Uploading ${i + 1} of ${files.length}â€¦`;
+    status.textContent = `Uploading ${i + 1} of ${files.length}…`;
     try {
       const result = await uploadFileToServer(files[i]);
       productImages.push(result.url);
@@ -4323,7 +4323,7 @@ async function handleVideoSelect(event) {
   const file = event.target.files?.[0];
   if (!file) return;
   const status = document.getElementById('video-upload-status');
-  status.textContent = 'Uploading videoâ€¦';
+  status.textContent = 'Uploading video…';
   try {
     const result = await uploadFileToServer(file);
     productVideo = result.url;
@@ -4338,13 +4338,13 @@ async function handleVideoSelect(event) {
 /* â”€â”€ Emoji picker config â”€â”€ */
 const CATEGORY_EMOJIS = {
   women:     ['ðŸ‘—','ðŸ‘˜','ðŸ¥»','ðŸ‘™','ðŸ‘š','ðŸ‘œ','ðŸ‘’','ðŸ’ƒ','ðŸ§¥','ðŸ‘ '],
-  men:       ['ðŸ‘”','ðŸ§¥','ðŸ¥‹','ðŸ§£','ðŸ‘Ÿ','ðŸ‘ž','ðŸ•´ï¸','ðŸ§¤','ðŸŽ©','ðŸ‘•'],
-  jewellery: ['ðŸ’','ðŸ“¿','ðŸ’Ž','âŒš','ðŸª™','âœ¨','ðŸ’«','ðŸ”®','ðŸ‘‘','ðŸ«§'],
-  watches:   ['âŒš','ðŸ•','ðŸ•°ï¸','â±ï¸','â°','ðŸŒŸ','ðŸ’Ž','âœ¨','ðŸ”±','ðŸ’ '],
-  cosmetics: ['ðŸ’„','ðŸ’…','ðŸªž','ðŸ§´','ðŸŒ¸','ðŸ’‹','ðŸ«§','âœ¨','ðŸ§–','ðŸ’†'],
-  accessories:['ðŸ‘œ','ðŸŽ’','ðŸ§¢','ðŸ•¶ï¸','ðŸ§£','ðŸ’¼','ðŸª®','ðŸ‘’','ðŸŒ‚','âŒš'],
+  men:       ['ðŸ‘”','ðŸ§¥','ðŸ¥‹','ðŸ§£','ðŸ‘Ÿ','ðŸ‘ž','<i class="fa-solid fa-clock"></i>´','ðŸ§¤','ðŸŽ©','ðŸ‘•'],
+  jewellery: ['ðŸ’','ðŸ“¿','ðŸ’Ž','âŒš','ðŸª™','<i class="fa-solid fa-sparkles" style="color:var(--gold)"></i>','ðŸ’«','ðŸ”®','ðŸ‘‘','ðŸ«§'],
+  watches:   ['âŒš','<i class="fa-solid fa-clock"></i>','<i class="fa-solid fa-clock"></i>°','⏱','<i class="fa-solid fa-clock"></i>','<i class="fa-solid fa-globe"></i>Ÿ','ðŸ’Ž','<i class="fa-solid fa-sparkles" style="color:var(--gold)"></i>','ðŸ”±','ðŸ’ '],
+  cosmetics: ['ðŸ’„','ðŸ’…','ðŸªž','ðŸ§´','<i class="fa-solid fa-globe"></i>¸','ðŸ’‹','ðŸ«§','<i class="fa-solid fa-sparkles" style="color:var(--gold)"></i>','ðŸ§–','ðŸ’†'],
+  accessories:['ðŸ‘œ','ðŸŽ’','ðŸ§¢','<i class="fa-solid fa-clock"></i>¶','ðŸ§£','ðŸ’¼','ðŸª®','ðŸ‘’','<i class="fa-solid fa-globe"></i>‚','âŒš'],
 };
-const DEFAULT_EMOJIS = ['ðŸ›ï¸','âœ¨','ðŸ’Ž','ðŸŒŸ','ðŸ‘‘','ðŸŽ','ðŸ’«','ðŸ”®','ðŸŒ¸','ðŸ’ '];
+const DEFAULT_EMOJIS = ['<i class="fa-solid fa-tags"></i>','<i class="fa-solid fa-sparkles" style="color:var(--gold)"></i>','ðŸ’Ž','<i class="fa-solid fa-globe"></i>Ÿ','ðŸ‘‘','ðŸŽ','ðŸ’«','ðŸ”®','<i class="fa-solid fa-globe"></i>¸','ðŸ’ '];
 
 function renderEmojiPicker(category, selectedEmoji) {
   const picker = document.getElementById('emoji-picker');
@@ -4471,9 +4471,9 @@ async function saveProduct() {
   const purchasePrice = document.getElementById('p-purchase-price').value;
 
   if (!name || !cat || !price) { toast('Name, category, and price are required.', 'error'); return; }
-  if (purchasePrice === '' || purchasePrice === null) { toast('Purchase price is required â€” what did this product cost you?', 'error'); return; }
+  if (purchasePrice === '' || purchasePrice === null) { toast('Purchase price is required — what did this product cost you?', 'error'); return; }
   if (Number(purchasePrice) >= Number(price)) {
-    const proceed = await bktConfirm({ title: 'No profit margin?', message: 'Purchase price is equal to or higher than the sale price, so this product won\'t earn any profit. Save anyway?', confirmText: 'Save Anyway', icon: 'âš ï¸', danger: false });
+    const proceed = await bktConfirm({ title: 'No profit margin?', message: 'Purchase price is equal to or higher than the sale price, so this product won\'t earn any profit. Save anyway?', confirmText: 'Save Anyway', icon: '<i class="fa-solid fa-triangle-exclamation" style="color:#f59e0b"></i>', danger: false });
     if (!proceed) return;
   }
 
@@ -4488,7 +4488,7 @@ async function saveProduct() {
   const payload = {
     name, brand: document.getElementById('p-brand').value, category: cat,
     additionalCategories,
-    emoji:       document.getElementById('p-emoji').value || 'ðŸ›ï¸',
+    emoji:       document.getElementById('p-emoji').value || '<i class="fa-solid fa-tags"></i>',
     badge:       document.getElementById('p-badge').value || null,
     price:       Number(price),
     purchasePrice: Number(purchasePrice),
@@ -4523,7 +4523,7 @@ async function saveProduct() {
 }
 
 async function deleteProduct(id) {
-  const ok = await bktConfirm({ title: 'Delete Product?', message: 'This product will be permanently removed. This cannot be undone.', confirmText: 'Delete Product', icon: 'ðŸ—‘ï¸' });
+  const ok = await bktConfirm({ title: 'Delete Product?', message: 'This product will be permanently removed. This cannot be undone.', confirmText: 'Delete Product', icon: 'ðŸ—‘' });
   if (!ok) return;
   try {
     const res = await apiFetch(`/products/${id}`, { method: 'DELETE' });
@@ -4552,12 +4552,12 @@ function renderMessages(messages) {
     <tr style="${m.read ? '' : 'background:rgba(184,136,58,.04)'}">
       <td><strong>${m.name}</strong>${!m.read ? ' <span class="badge badge-new">NEW</span>' : ''}</td>
       <td><a href="mailto:${m.email}" style="color:var(--gold)">${m.email}</a></td>
-      <td>${m.subject || 'â€”'}</td>
+      <td>${m.subject || '—'}</td>
       <td style="max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:var(--muted)">${m.message}</td>
       <td>${fmtDate(m.createdAt)}</td>
       <td style="display:flex;gap:6px">
         <button class="btn btn-outline btn-sm" onclick="viewMessage('${m.id}')">View</button>
-        <button class="btn btn-success btn-sm" onclick="replyToMessage('${m.id}')">${m.replied ? 'âœ“ Replied' : 'Reply'}</button>
+        <button class="btn btn-success btn-sm" onclick="replyToMessage('${m.id}')">${m.replied ? '<i class="fa-solid fa-check" style="color:#22c55e"></i> Replied' : 'Reply'}</button>
         ${currentUser?.role !== 'supervisor' ? `<button class="btn btn-danger btn-sm" onclick="deleteMessage('${m.id}')">Delete</button>` : ''}
       </td>
     </tr>`).join('');
@@ -4571,17 +4571,17 @@ function viewMessage(id) {
       <div><small style="color:var(--muted)">Name</small><p><strong>${m.name}</strong></p></div>
       <div><small style="color:var(--muted)">Email</small><p><a href="mailto:${m.email}" style="color:var(--gold)">${m.email}</a></p></div>
       ${m.phone ? `<div><small style="color:var(--muted)">Phone</small><p>${m.phone}</p></div>` : ''}
-      <div><small style="color:var(--muted)">Subject</small><p>${m.subject || 'â€”'}</p></div>
+      <div><small style="color:var(--muted)">Subject</small><p>${m.subject || '—'}</p></div>
       <div><small style="color:var(--muted)">Date</small><p>${new Date(m.createdAt).toLocaleString()}</p></div>
     </div>
     <div style="background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:16px;font-size:0.9rem;line-height:1.7;white-space:pre-wrap">${m.message}</div>
     <div style="margin-top:16px;display:flex;gap:10px;align-items:flex-start;flex-direction:column;">
-      <textarea id="reply-text-${m.id}" rows="4" placeholder="Type your reply to ${m.name}â€¦"
+      <textarea id="reply-text-${m.id}" rows="4" placeholder="Type your reply to ${m.name}…"
         style="width:100%;background:var(--bg);border:1px solid var(--border);color:var(--text);padding:10px 14px;font-family:inherit;font-size:.85rem;border-radius:6px;outline:none;resize:vertical;box-sizing:border-box;"></textarea>
       <button class="btn btn-gold" onclick="sendReply('${m.id}')" style="background:var(--gold);color:#fff;">
         <i class="fa-solid fa-paper-plane"></i> Send Reply to ${m.email}
       </button>
-      ${m.replied ? `<p style="font-size:.75rem;color:var(--green);margin:0;">âœ“ Previously replied on ${fmtDate(m.repliedAt)}</p>` : ''}
+      ${m.replied ? `<p style="font-size:.75rem;color:var(--green);margin:0;"><i class="fa-solid fa-check" style="color:#22c55e"></i> Previously replied on ${fmtDate(m.repliedAt)}</p>` : ''}
     </div>
   `;
   openModal('message-modal');
@@ -4601,7 +4601,7 @@ async function sendReply(id) {
 
   const btn = textarea.nextElementSibling;
   const originalHTML = btn.innerHTML;
-  btn.disabled = true; btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sendingâ€¦';
+  btn.disabled = true; btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending…';
 
   try {
     const res = await apiFetch(`/contact/${id}/reply`, {
@@ -4610,7 +4610,7 @@ async function sendReply(id) {
     });
     const data = await res.json();
     if (res.ok) {
-      toast('Reply sent to customer âœ“', 'success');
+      toast('Reply sent to customer <i class="fa-solid fa-check" style="color:#22c55e"></i>', 'success');
       textarea.value = '';
       /* Update local data */
       const msg = allMessages.find(m => m.id === id);
@@ -4627,7 +4627,7 @@ async function sendReply(id) {
 }
 
 async function deleteMessage(id) {
-  const ok = await bktConfirm({ title: 'Delete Message?', message: 'This message will be permanently deleted.', confirmText: 'Delete Message', icon: 'âœ‰ï¸' });
+  const ok = await bktConfirm({ title: 'Delete Message?', message: 'This message will be permanently deleted.', confirmText: 'Delete Message', icon: '<i class="fa-solid fa-envelope-open-text"></i>' });
   if (!ok) return;
   const res = await apiFetch(`/contact/${id}`, { method: 'DELETE' });
   if (res.ok) { allMessages = allMessages.filter(m => m.id !== id); renderMessages(allMessages); toast('Message deleted.', 'success'); }
@@ -4678,12 +4678,12 @@ async function sendPromoEmail() {
     title: `Send to ${activeCount} subscribers?`,
     message: `Subject: "${subject}"\n\nThis will send a promotion email to all ${activeCount} active subscribers. This cannot be undone.`,
     confirmText: 'Send Now',
-    icon: 'ðŸ“§'
+    icon: '<i class="fa-solid fa-envelope"></i>'
   });
   if (!ok) return;
 
   const btn = document.getElementById('promo-send-btn');
-  btn.disabled = true; btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sendingâ€¦';
+  btn.disabled = true; btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending…';
 
   try {
     const res  = await apiFetch('/newsletter/send', {
@@ -4692,7 +4692,7 @@ async function sendPromoEmail() {
     });
     const data = await res.json();
     if (res.ok) {
-      toast(`âœ“ Sending to ${data.total} subscribers in the background!`, 'success');
+      toast(`<i class="fa-solid fa-check" style="color:#22c55e"></i> Sending to ${data.total} subscribers in the background!`, 'success');
       closePromoModal();
     } else {
       toast(data.error || 'Failed to send.', 'error');
@@ -4718,7 +4718,7 @@ function renderSubscribers(subs) {
 }
 
 async function removeSubscriber(id) {
-  const ok = await bktConfirm({ title: 'Remove Subscriber?', message: 'This subscriber will be removed from the newsletter list.', confirmText: 'Remove', icon: 'ðŸ“§' });
+  const ok = await bktConfirm({ title: 'Remove Subscriber?', message: 'This subscriber will be removed from the newsletter list.', confirmText: 'Remove', icon: '<i class="fa-solid fa-envelope"></i>' });
   if (!ok) return;
   const res = await apiFetch(`/newsletter/${id}`, { method: 'DELETE' });
   if (res.ok) { allSubscribers = allSubscribers.filter(s => s.id !== id); renderSubscribers(allSubscribers); toast('Subscriber removed.', 'success'); }
@@ -4832,7 +4832,7 @@ async function toggleUserStatus(id, active) {
 }
 
 async function deleteAdminUser(id) {
-  const ok = await bktConfirm({ title: 'Delete Admin User?', message: 'This user will lose access immediately. This cannot be undone.', confirmText: 'Delete User', icon: 'ðŸ‘¤' });
+  const ok = await bktConfirm({ title: 'Delete Admin User?', message: 'This user will lose access immediately. This cannot be undone.', confirmText: 'Delete User', icon: '<i class="fa-solid fa-user"></i>' });
   if (!ok) return;
   const res = await apiFetch(`/auth/admin-users/${id}`, { method: 'DELETE' });
   if (res.ok) { toast('User deleted.', 'success'); loadRoles(); }
@@ -4861,7 +4861,7 @@ async function loadStaffActivity() {
           <td><span class="badge badge-role-${s.role}">${formatRole(s.role)}</span></td>
           <td style="text-align:center">${s.msgReplied}</td>
           <td style="text-align:center">${s.ordersUpdated}</td>
-          <td style="color:var(--muted)">${s.lastActive ? fmtDate(s.lastActive) : 'â€”'}</td>
+          <td style="color:var(--muted)">${s.lastActive ? fmtDate(s.lastActive) : '—'}</td>
           <td><span class="badge ${s.active ? 'badge-delivered' : 'badge-cancelled'}">${s.active ? 'Active' : 'Disabled'}</span></td>
         </tr>`).join('');
     } catch {
@@ -4888,7 +4888,7 @@ async function submitReply() {
     const res  = await apiFetch(`/contact/${id}/reply`, { method: 'POST', body: JSON.stringify({ replyText }) });
     const data = await res.json();
     if (res.ok) {
-      toast('Reply recorded. âœ“', 'success');
+      toast('Reply recorded. <i class="fa-solid fa-check" style="color:#22c55e"></i>', 'success');
       closeModal('reply-modal');
       loadMessages();
     } else toast(data.error || 'Reply failed.', 'error');
@@ -5007,7 +5007,7 @@ async function saveSpending() {
 
 async function deleteSpending(id) {
   const confirmed = await showConfirmModal({
-    icon: 'ðŸ—‘ï¸',
+    icon: 'ðŸ—‘',
     title: 'Delete Spending',
     message: 'Are you sure you want to delete this spending record?',
     confirmText: 'Delete',
@@ -5029,7 +5029,7 @@ async function loadSystemInfo() {
     const data = await res.json();
     document.getElementById('sys-info').innerHTML = `
       Version: ${data.version} &nbsp;|&nbsp;
-      Firebase: ${data.firebase === 'connected' ? '<span style="color:var(--green)">Connected âœ“</span>' : '<span style="color:var(--orange)">Demo Mode</span>'} &nbsp;|&nbsp;
+      Firebase: ${data.firebase === 'connected' ? '<span style="color:var(--green)">Connected <i class="fa-solid fa-check" style="color:#22c55e"></i></span>' : '<span style="color:var(--orange)">Demo Mode</span>'} &nbsp;|&nbsp;
       Server Time: ${new Date(data.timestamp).toLocaleString()}
     `;
   } catch {}
@@ -5058,7 +5058,7 @@ async function saveLaunchDate() {
     const res  = await apiFetch('/admin/site-launch-date', { method: 'PUT', body: JSON.stringify({ date }) });
     const data = await res.json();
     if (res.ok) {
-      showLaunchDateMsg('Launch date updated âœ“ Statements will reflect this on next refresh.', 'success');
+      showLaunchDateMsg('Launch date updated <i class="fa-solid fa-check" style="color:#22c55e"></i> Statements will reflect this on next refresh.', 'success');
       toast('Site launch date updated.', 'success');
     } else showLaunchDateMsg(data.error || 'Failed to update.', 'error');
   } catch { showLaunchDateMsg('Network error.', 'error'); }
@@ -5126,7 +5126,7 @@ async function exportExcel(type) {
 
     XLSX.utils.book_append_sheet(wb, ws, sheetName);
     XLSX.writeFile(wb, filename);
-    toast(`${sheetName} exported as Excel âœ“`, 'success');
+    toast(`${sheetName} exported as Excel <i class="fa-solid fa-check" style="color:#22c55e"></i>`, 'success');
 
   } catch (err) {
     toast('Export failed: ' + err.message, 'error');
@@ -5157,7 +5157,7 @@ function toast(msg, type = 'success') {
 
 /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• UTILS â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 function fmtDate(iso) {
-  if (!iso) return 'â€”';
+  if (!iso) return '—';
   const d = new Date(iso);
   return d.toLocaleDateString('en-PK', { day:'2-digit', month:'short', year:'numeric' }) + ' ' + d.toLocaleTimeString('en-PK', { hour:'2-digit', minute:'2-digit' });
 }
@@ -5212,26 +5212,26 @@ function renderAbandoned(list) {
   }
   tbody.innerHTML = list.map((a, i) => {
     const d    = a.delivery || {};
-    const name = `${d.fname || ''} ${d.lname || ''}`.trim() || 'â€”';
-    const items = (a.items || []).map(it => `${it.name} Ã—${it.qty}`).join(', ') || 'â€”';
+    const name = `${d.fname || ''} ${d.lname || ''}`.trim() || '—';
+    const items = (a.items || []).map(it => `${it.name} Ã—${it.qty}`).join(', ') || '—';
     const statusBadge = a.status === 'converted'
-      ? '<span style="background:rgba(34,197,94,0.15);color:#22c55e;padding:3px 10px;border-radius:20px;font-size:0.68rem;font-weight:600">âœ… Resolved</span>'
-      : '<span style="background:rgba(249,115,22,0.15);color:#f97316;padding:3px 10px;border-radius:20px;font-size:0.68rem;font-weight:600">ðŸ›’ Abandoned</span>';
+      ? '<span style="background:rgba(34,197,94,0.15);color:#22c55e;padding:3px 10px;border-radius:20px;font-size:0.68rem;font-weight:600"><i class="fa-solid fa-circle-check" style="color:#22c55e"></i> Resolved</span>'
+      : '<span style="background:rgba(249,115,22,0.15);color:#f97316;padding:3px 10px;border-radius:20px;font-size:0.68rem;font-weight:600"><i class="fa-solid fa-cart-arrow-down"></i> Abandoned</span>';
     const waLink = d.phone
       ? `<a href="https://wa.me/${d.phone.replace(/\D/g,'')}?text=Hi+${encodeURIComponent(d.fname||'')}%2C+you+left+something+in+your+cart+at+Tovessa+Jewelry%21+Complete+your+order+here%3A+https%3A%2F%2Ftovessa.com%2Fcheckout.html" target="_blank" class="btn btn-outline" style="font-size:0.7rem;padding:5px 10px;color:#25d366;border-color:rgba(37,211,102,0.4)"><i class="fa-brands fa-whatsapp"></i> Recover</a>`
       : '';
     return `<tr>
       <td>${i + 1}</td>
       <td><strong>${name}</strong>${d.email ? `<br><small style="color:var(--muted)">${d.email}</small>` : ''}</td>
-      <td>${d.phone || 'â€”'}</td>
-      <td>${d.city || 'â€”'}</td>
+      <td>${d.phone || '—'}</td>
+      <td>${d.city || '—'}</td>
       <td style="max-width:180px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:0.78rem">${items}</td>
       <td style="color:var(--gold);font-weight:600">PKR ${(a.total||0).toLocaleString()}</td>
-      <td style="font-size:0.75rem">${a.createdAt ? new Date(a.createdAt).toLocaleDateString('en-PK',{day:'2-digit',month:'short',year:'numeric'}) : 'â€”'}</td>
+      <td style="font-size:0.75rem">${a.createdAt ? new Date(a.createdAt).toLocaleDateString('en-PK',{day:'2-digit',month:'short',year:'numeric'}) : '—'}</td>
       <td>${statusBadge}</td>
       <td style="display:flex;gap:6px;flex-wrap:wrap">
         ${waLink}
-        ${a.status !== 'converted' ? `<button onclick="convertAbandonedToOrder('${a.id}')" class="btn btn-outline" style="font-size:0.7rem;padding:5px 10px;color:var(--gold);border-color:rgba(201,168,76,0.5)" title="Manually resolved â€” move to Orders"><i class="fa-solid fa-check-double"></i> Resolved</button>` : ''}
+        ${a.status !== 'converted' ? `<button onclick="convertAbandonedToOrder('${a.id}')" class="btn btn-outline" style="font-size:0.7rem;padding:5px 10px;color:var(--gold);border-color:rgba(201,168,76,0.5)" title="Manually resolved — move to Orders"><i class="fa-solid fa-check-double"></i> Resolved</button>` : ''}
         <button onclick="deleteAbandoned('${a.id}')" class="btn btn-outline" style="font-size:0.7rem;padding:5px 10px;color:var(--danger)"><i class="fa-solid fa-trash"></i></button>
       </td>
     </tr>`;
@@ -5375,8 +5375,8 @@ function renderVisitors(visitors) {
 
   tbody.innerHTML = visitors.map((v, i) => {
     const pageName = v.page.replace(/\.html$/, '') || '/';
-    const freshness = v.secondsAgo < 5 ? 'ðŸŸ¢ just now' :
-                      v.secondsAgo < 15 ? `ðŸŸ¢ ${v.secondsAgo}s ago` :
+    const freshness = v.secondsAgo < 5 ? '<i class="fa-solid fa-circle" style="color:#22c55e"></i> just now' :
+                      v.secondsAgo < 15 ? `<i class="fa-solid fa-circle" style="color:#22c55e"></i> ${v.secondsAgo}s ago` :
                       `ðŸŸ¡ ${v.secondsAgo}s ago`;
     return `<tr>
       <td>${i + 1}</td>
@@ -5437,7 +5437,7 @@ function renderVisitors(visitors) {
         background:rgba(217,106,106,0.12);
         border:1px solid rgba(217,106,106,0.25);
         display:flex;align-items:center;justify-content:center;
-        margin:0 auto 20px;font-size:1.6rem;">ðŸ—‘ï¸</div>
+        margin:0 auto 20px;font-size:1.6rem;">ðŸ—‘</div>
       <h3 id="tovessa-confirm-title" style="
         color:#fff;font-size:1.15rem;font-weight:700;
         margin:0 0 10px;letter-spacing:0.01em;"></h3>
@@ -5468,7 +5468,7 @@ function renderVisitors(visitors) {
 
 <script>
 /* â”€â”€ Custom Confirm Dialog â”€â”€ */
-function bktConfirm({ title = 'Are you sure?', message = 'This action cannot be undone.', confirmText = 'Delete', icon = 'ðŸ—‘ï¸', danger = true } = {}) {
+function bktConfirm({ title = 'Are you sure?', message = 'This action cannot be undone.', confirmText = 'Delete', icon = 'ðŸ—‘', danger = true } = {}) {
   return new Promise(resolve => {
     const overlay = document.getElementById('tovessa-confirm-overlay');
     const box     = document.getElementById('tovessa-confirm-box');
@@ -5532,7 +5532,7 @@ function bktConfirm({ title = 'Are you sure?', message = 'This action cannot be 
 async function loadReviews() {
   const tbody = document.getElementById('reviews-body');
   if (!tbody) return;
-  tbody.innerHTML = '<tr><td colspan="7" style="text-align:center;padding:40px;color:var(--muted)">Loadingâ€¦</td></tr>';
+  tbody.innerHTML = '<tr><td colspan="7" style="text-align:center;padding:40px;color:var(--muted)">Loading…</td></tr>';
   try {
     const filter = document.getElementById('reviews-filter')?.value || 'all';
     const raw = await apiFetch('/reviews/all');
@@ -5564,10 +5564,10 @@ async function loadReviews() {
           <div style="font-size:.72rem;color:var(--muted)">${r.customerEmail || ''}</div>
           ${r.city ? `<div style="font-size:.72rem;color:var(--muted)">${r.city}</div>` : ''}
         </td>
-        <td style="font-size:.8rem;color:var(--gold)">${r.orderId || 'â€”'}</td>
+        <td style="font-size:.8rem;color:var(--gold)">${r.orderId || '—'}</td>
         <td style="font-size:1rem;letter-spacing:1px;color:#b8883a">${'â˜…'.repeat(r.rating||5)}${'â˜†'.repeat(5-(r.rating||5))}</td>
         <td style="font-size:.82rem;max-width:260px;line-height:1.5">${r.text || ''}</td>
-        <td style="font-size:.75rem;color:var(--muted)">${r.createdAt ? new Date(r.createdAt).toLocaleDateString('en-PK',{dateStyle:'medium'}) : 'â€”'}</td>
+        <td style="font-size:.75rem;color:var(--muted)">${r.createdAt ? new Date(r.createdAt).toLocaleDateString('en-PK',{dateStyle:'medium'}) : '—'}</td>
         <td>
           <span class="badge" style="
             background:${r.approved ? 'rgba(34,197,94,.15)' : 'rgba(251,191,36,.15)'};
@@ -5596,7 +5596,7 @@ async function approveReview(id, approve) {
       headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${localStorage.getItem('tovessa_admin_token')}` },
       body: JSON.stringify({ approved: approve }),
     });
-    if (res.ok) { toast(approve ? 'Review approved â€” now visible on homepage âœ“' : 'Review hidden.', 'success'); loadReviews(); }
+    if (res.ok) { toast(approve ? 'Review approved — now visible on homepage <i class="fa-solid fa-check" style="color:#22c55e"></i>' : 'Review hidden.', 'success'); loadReviews(); }
     else toast('Failed to update review.', 'error');
   } catch { toast('Connection error.', 'error'); }
 }

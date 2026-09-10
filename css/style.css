@@ -1558,3 +1558,53 @@ footer .css-logo-main, footer .css-logo-sub, footer .css-logo i {
 
 .footer-brand .css-logo { margin-bottom: 24px; }
 
+
+/* FINAL FIX FOR FOOTER HOVERS */
+.footer-col ul li a {
+  transition: all 0.3s ease !important;
+  display: inline-block;
+}
+.footer-col ul li a:hover {
+  color: #ffffff !important;
+  opacity: 0.7 !important;
+  transform: translateX(5px) !important;
+}
+
+/* FINAL MOBILE RESPONSIVE FIXES */
+@media (max-width: 768px) {
+  html, body {
+    overflow-x: hidden;
+    width: 100%;
+  }
+  .container {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+    max-width: 100% !important;
+  }
+  .products-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 15px !important;
+  }
+  .about-hero {
+    padding: 100px 15px !important;
+  }
+  .about-hero h1 {
+    font-size: 2.5rem !important;
+  }
+  .footer-grid {
+    grid-template-columns: 1fr !important;
+    gap: 30px !important;
+  }
+  .cat-grid, .cat-grid-5, .premium-cat-grid, .premium-cat-grid--two {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 10px !important;
+  }
+}
+@media (max-width: 480px) {
+  .products-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .cat-grid, .cat-grid-5 {
+    grid-template-columns: 1fr !important;
+  }
+}

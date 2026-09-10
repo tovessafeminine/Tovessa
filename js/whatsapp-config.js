@@ -14,7 +14,6 @@ const TOVESSA_CONFIG = {
      Replace these URLs with your actual profile links         */
   social: {
     instagram: 'https://www.instagram.com/tovessa/',
-    facebook:  'https://www.facebook.com/tovessa',
     whatsapp:  '',                                    // auto-built from number above
     tiktok:    '',                                    // optional — leave blank to hide
   },

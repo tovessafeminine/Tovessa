@@ -253,7 +253,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const cfg = window.tovessa_CONFIG.social;
     const links = [
       { url: cfg.instagram, icon: '<i class="fa-brands fa-instagram"></i>', label: 'Instagram' },
-      { url: cfg.facebook,  icon: '<i class="fa-brands fa-facebook-f"></i>', label: 'Facebook' },
       { url: cfg.whatsapp,  icon: '<i class="fa-brands fa-whatsapp"></i>',   label: 'WhatsApp' },
       { url: cfg.tiktok,    icon: '<i class="fa-brands fa-tiktok"></i>',     label: 'TikTok' },
     ].filter(l => l.url);
