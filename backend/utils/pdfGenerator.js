@@ -1,4 +1,4 @@
-const fs = require('fs');
+﻿const fs = require('fs');
 const path = require('path');
 const PDFDocument = require('pdfkit');
 const SVGtoPDF = require('svg-to-pdfkit');
@@ -69,9 +69,9 @@ async function buildPdf(pdfPath, invId, snapshot, liveOrder, company) {
     // Company Details (under logo)
     doc.fontSize(8).fillColor(C_MUTED).font('Helvetica');
     const fWeb = company.website || 'tovessa.com';
-    const fEmail = company.email || 'tovessa@gmail.com';
-    const fPhone = company.phone || '+92 301 4617844';
-    const fInsta = company.instagram || 'tovessa';
+    const fEmail = company.email || 'tovessafeminine@gmail.com';
+    const fPhone = company.phone || '+92 336 4213502';
+    const fInsta = company.instagram || '@tovessa_';
     const fAddr = company.address || 'Lahore, Punjab, Pakistan';
 
     const logoYOffset = startY + 60; // Shift down to make room for logo
@@ -193,12 +193,12 @@ async function buildPdf(pdfPath, invId, snapshot, liveOrder, company) {
     doc.text(`PKR ${advancePaid.toLocaleString()}`, 200, y + 15, { width: 110, align: 'left' });
     doc.font('Helvetica').fillColor(C_MUTED);
     doc.text('Advance Method', 65, y + 30);
-    doc.text(statusOrder.advanceMethod || order.advanceMethod || '—', 200, y + 30, { width: 110, align: 'left' });
+    doc.text(statusOrder.advanceMethod || order.advanceMethod || 'â€”', 200, y + 30, { width: 110, align: 'left' });
     doc.text('Reference No', 65, y + 45);
-    doc.text(statusOrder.advanceRef || order.advanceRef || '—', 200, y + 45, { width: 110, align: 'left' });
+    doc.text(statusOrder.advanceRef || order.advanceRef || 'â€”', 200, y + 45, { width: 110, align: 'left' });
     doc.text('Advance Date', 65, y + 60);
     const advDate = statusOrder.advanceDate || order.advanceDate;
-    doc.text(advDate ? new Date(advDate).toLocaleDateString() : '—', 200, y + 60, { width: 110, align: 'left' });
+    doc.text(advDate ? new Date(advDate).toLocaleDateString() : 'â€”', 200, y + 60, { width: 110, align: 'left' });
 
     // Highlight Box (Rounded)
     doc.roundedRect(340, y, 205, 85, 4).fillAndStroke(C_BLACK, C_GOLD);
@@ -233,7 +233,7 @@ async function buildPdf(pdfPath, invId, snapshot, liveOrder, company) {
     doc.font('Helvetica').text(pStatus, 200, y + 24);
     
     doc.font('Helvetica-Bold').text('Advance Status', 320, y + 12);
-    doc.font('Helvetica').text(statusOrder.advanceStatus || '—', 320, y + 24);
+    doc.font('Helvetica').text(statusOrder.advanceStatus || 'â€”', 320, y + 24);
 
     doc.font('Helvetica-Bold').text('Delivery Status', 430, y + 12);
     doc.font('Helvetica').text(deliveryStatus, 430, y + 24);
@@ -257,3 +257,4 @@ async function buildPdf(pdfPath, invId, snapshot, liveOrder, company) {
 }
 
 module.exports = { buildPdf };
+

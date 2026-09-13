@@ -1,15 +1,15 @@
-/* ============================================================
-   TOVESSA — Shared Singleton Data Store
+﻿/* ============================================================
+   TOVESSA â€” Shared Singleton Data Store
    THE single source of truth for all in-memory data.
-   All routes import this module — they all share the SAME arrays.
+   All routes import this module â€” they all share the SAME arrays.
    ============================================================ */
 
-/* ── Default product catalogue — empty (products are managed via Firebase/admin panel) ── */
+/* â”€â”€ Default product catalogue â€” empty (products are managed via Firebase/admin panel) â”€â”€ */
 const DEFAULT_PRODUCTS = [];
 
-/* ── The singleton store ── */
+/* â”€â”€ The singleton store â”€â”€ */
 const store = {
-  /* Data arrays — shared across ALL routes */
+  /* Data arrays â€” shared across ALL routes */
   products:     JSON.parse(JSON.stringify(DEFAULT_PRODUCTS)),
   orders:       [],
   socialOrders: [],   /* manually created social media orders */
@@ -19,15 +19,15 @@ const store = {
   users:        [],
   activityLogs: [],
   abandoned:    [],
-  coupons:      [],   /* discount coupons — super_admin managed */
+  coupons:      [],   /* discount coupons â€” super_admin managed */
   invoices:     [],   /* generated invoices */
   spendings:    [],   /* tracked expenses/investments */
   settings: {
     company: {
       name: 'Tovessa',
       address: '',
-      phone: '+92 315 0727131',
-      email: 'tovessa@gmail.com',
+      phone: '+92 336 4213502',
+      email: 'tovessafeminine@gmail.com',
       website: '',
       socials: ''
     },
@@ -50,12 +50,12 @@ const store = {
     },
   ],
 
-  /* ── Site launch date ──
+  /* â”€â”€ Site launch date â”€â”€
      Monthly/lifetime statements should only ever count from the day the
-     store actually went live — not from whatever the server happened to
+     store actually went live â€” not from whatever the server happened to
      boot on. Defaults to process.env.SITE_LAUNCH_DATE if set, otherwise
      falls back to "today" the first time the server starts (super_admin
-     can correct this once from Settings → it's stored here so it persists
+     can correct this once from Settings â†’ it's stored here so it persists
      for the life of the server process). */
   siteLaunchDate: (process.env.SITE_LAUNCH_DATE && !isNaN(new Date(process.env.SITE_LAUNCH_DATE)))
     ? new Date(process.env.SITE_LAUNCH_DATE).toISOString().slice(0, 10)
@@ -67,9 +67,9 @@ const store = {
     return this.siteLaunchDate;
   },
 
-  /* ── Live Visitor Tracking ── */
-  _visitors: new Map(), /* sessionId → { page, lastSeen } */
-  VISITOR_TIMEOUT_MS: 35000, /* 35s — frontend pings every 25s */
+  /* â”€â”€ Live Visitor Tracking â”€â”€ */
+  _visitors: new Map(), /* sessionId â†’ { page, lastSeen } */
+  VISITOR_TIMEOUT_MS: 35000, /* 35s â€” frontend pings every 25s */
 
   visitorPing(sessionId, page) {
     this._visitors.set(sessionId, { page: page || '/', lastSeen: Date.now() });
@@ -103,7 +103,7 @@ const store = {
     }));
   },
 
-  /* ── SSE notification listeners ── */
+  /* â”€â”€ SSE notification listeners â”€â”€ */
   _notifListeners: new Set(),
 
   /* Push an event to all connected admin SSE clients */
@@ -114,13 +114,13 @@ const store = {
     });
   },
 
-  /* Register an SSE listener — returns an unsubscribe function */
+  /* Register an SSE listener â€” returns an unsubscribe function */
   subscribe(fn) {
     this._notifListeners.add(fn);
     return () => this._notifListeners.delete(fn);
   },
 
-  /* ── Activity Logging ── */
+  /* â”€â”€ Activity Logging â”€â”€ */
   logActivity({ staffId, staffName, staffRole, action, details = {} }) {
     this.activityLogs.unshift({
       id:        'log-' + Date.now() + '-' + Math.random().toString(36).slice(2, 6),
@@ -135,10 +135,10 @@ const store = {
     if (this.activityLogs.length > 1000) this.activityLogs = this.activityLogs.slice(0, 1000);
   },
 
-  /* ── Profit helpers (super_admin only — used by /admin/profit endpoints) ──
+  /* â”€â”€ Profit helpers (super_admin only â€” used by /admin/profit endpoints) â”€â”€
      Profit per sold item = (sale price the customer paid - purchasePrice that
      was snapshotted onto the order item at checkout time). Cancelled orders
-     are excluded since nothing was actually sold. ── */
+     are excluded since nothing was actually sold. â”€â”€ */
   _itemProfit(item) {
     /* purchasePrice is snapshotted onto the order item when the order is
        placed (see orders.js). Falls back to looking up the live product
@@ -227,7 +227,7 @@ const store = {
       d.setTime(d.getTime() + (5 * 60 * 60 * 1000));
       d.setUTCDate(d.getUTCDate() - i);
       const dateStr = d.toISOString().slice(0, 10);
-      /* Skip days before launch — but do NOT break, keep going for full 30-day range */
+      /* Skip days before launch â€” but do NOT break, keep going for full 30-day range */
       if (dateStr < launch) continue;
       out.push(this.dailyStatement(dateStr));
     }
@@ -248,7 +248,7 @@ const store = {
 
   /* History of monthly statements, starting from the site's launch month up
      to the current month (newest first). This is the "monthly statement"
-     view — unlike daily history it is NOT capped at 30 days; it always
+     view â€” unlike daily history it is NOT capped at 30 days; it always
      starts the count from siteLaunchDate, however long ago that was. */
   monthlyStatementHistory() {
     const launch = new Date(this.siteLaunchDate + 'T00:00:00');
@@ -265,7 +265,7 @@ const store = {
     return out;
   },
 
-  /* Lifetime earnings — every sale ever recorded since launch, no other date filter */
+  /* Lifetime earnings â€” every sale ever recorded since launch, no other date filter */
   lifetimeEarnings() {
     const launch = this.siteLaunchDate;
     const stmt = this._buildStatement(o => {
@@ -300,7 +300,7 @@ const store = {
     return { ...stmt, byDay: days, since: launch };
   },
 
-  /* ── Helpers ── */
+  /* â”€â”€ Helpers â”€â”€ */
   findProduct(id)     { return this.products.find(p => p.id === id); },
   findOrder(id)       { return this.orders.find(o => o.id === id); },
   findUser(email)     { return this.users.find(u => u.email === email?.toLowerCase()); },
@@ -312,13 +312,13 @@ const store = {
     return this.adminUsers.find(u => u.id === id);
   },
 
-  /* ── Coupons ── */
+  /* â”€â”€ Coupons â”€â”€ */
   findCoupon(code) {
     const v = (code || '').trim().toUpperCase();
     return this.coupons.find(c => c.code === v);
   },
 
-  /* Pure validation — takes an already-fetched coupon object (or null/undefined
+  /* Pure validation â€” takes an already-fetched coupon object (or null/undefined
      if not found) plus the order subtotal, and returns either
      { ok:false, error } or { ok:true, coupon, discount, total }.
      Kept separate from lookup so callers can fetch the coupon fresh from
@@ -374,7 +374,7 @@ const store = {
     if (coupon) coupon.usedCount = (coupon.usedCount || 0) + 1;
   },
 
-  /* ── Staff summary (per-staff activity counts) ── */
+  /* â”€â”€ Staff summary (per-staff activity counts) â”€â”€ */
   staffSummary() {
     const summary = {};
     this.adminUsers.forEach(u => {
@@ -425,7 +425,7 @@ const store = {
     return Object.values(inventory);
   },
 
-  /* Stats snapshot — used by /admin/stats */
+  /* Stats snapshot â€” used by /admin/stats */
   stats() {
     const orders  = this.orders;
     const sOrders = this.socialOrders;
@@ -532,4 +532,5 @@ setInterval(() => {
 }, 30000); // Auto-save every 30 seconds
 
 module.exports = store;
+
 
