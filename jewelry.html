@@ -34,7 +34,7 @@
         <a href="shop">Shop <i class="fa-solid fa-chevron-down" style="font-size:0.7em;margin-left:4px;"></i></a>
         <ul class="dropdown-menu">
             <li><a href="shop.html">All Collections</a></li>
-            <li><a href="shop.html?cat=hair-oil">Hair Oil</a></li>
+            <li><a href="shop.html?cat=false-nails">False Nails</a></li>
             <li><a href="shop.html?cat=hand-crafted-bags">Hand Crafted bags</a></li>
             <li><a href="jewelry.html">Jewellery</a></li>
             <li><a href="shop.html?cat=perfumes">Perfumes</a></li>
@@ -180,12 +180,12 @@
     <span class="css-logo-sub">BOTANICAL LUXURY</span>
   </div>
 </div>
-          <p style="line-height:1.6;">Pakistan's premier destination for premium hair oil, hand-crafted bags, fine jewellery, perfumes, luxury clothing, and couple items.</p>
+          <p style="line-height:1.6;">Pakistan's premier destination for false nails, hand-crafted bags, fine jewellery, perfumes, luxury clothing, and couple items.</p>
         </div>
         <div class="footer-col">
           <h4>Shop</h4>
             <ul style="list-style:none; padding:0; line-height:2;">
-              <li><a href="shop.html?cat=hair-oil">Hair Oil</a></li>
+              <li><a href="shop.html?cat=false-nails">False Nails</a></li>
               <li><a href="shop.html?cat=hand-crafted-bags">Hand Crafted bags</a></li>
               <li><a href="jewelry.html">Jewellery</a></li>
               <li><a href="shop.html?cat=perfumes">Perfumes</a></li>
@@ -257,10 +257,16 @@ window.updateShopHero = function(cat, brand) {
 
   const data = {
     'all': { title: 'Premium <em style="color: var(--gold);">Jewelry</em>', desc: "Discover Pakistan's finest online selection of beautifully crafted jewelry pieces for every occasion." },
-    'bracelets': { title: 'Beautiful Bracelets <em style="color: var(--gold);">Collection</em>', desc: 'Adorn your wrists with beautifully crafted bracelets and bangles. Premium jewelry delivered to your doorstep in Pakistan.' },
-    'rings': { title: 'Fashion Rings <em style="color: var(--gold);">Collection</em>', desc: 'Discover trendy and classic fashion rings for women. The perfect accessory to complete your look.' },
-    'earrings': { title: 'Statement Earrings <em style="color: var(--gold);">Collection</em>', desc: 'Elevate your style with our collection of statement earrings, studs, and hoops for every occasion.' },
-    'necklace': { title: 'Elegant Necklaces <em style="color: var(--gold);">Collection</em>', desc: 'Shop gorgeous necklaces, chains, and pendants. Layer them up or wear them solo for a chic look.' },
+    'all-jewelry': { title: 'All <em style="color: var(--gold);">Jewelry</em>', desc: 'Browse our complete collection of premium jewelry pieces.' },
+      'ring': { title: 'Fashion <em style="color: var(--gold);">Rings</em>', desc: 'Discover trendy and classic fashion rings for women. The perfect accessory to complete your look.' },
+      'bracelet': { title: 'Beautiful <em style="color: var(--gold);">Bracelets</em>', desc: 'Adorn your wrists with beautifully crafted bracelets and bangles.' },
+      'necklace': { title: 'Elegant <em style="color: var(--gold);">Necklaces</em>', desc: 'Shop gorgeous necklaces, chains, and pendants for a chic look.' },
+      'bangles': { title: 'Premium <em style="color: var(--gold);">Bangles</em>', desc: 'Traditional and modern bangles crafted with precision for every occasion.' },
+      'earrings': { title: 'Statement <em style="color: var(--gold);">Earrings</em>', desc: 'Elevate your style with our collection of statement earrings, studs, and hoops.' },
+      'payal': { title: 'Elegant <em style="color: var(--gold);">Payal</em>', desc: 'Beautiful ankle bracelets and payals to complete your traditional look.' },
+      'nose-pins': { title: 'Dainty <em style="color: var(--gold);">Nose Pins</em>', desc: 'Delicate nose pins and nose rings in stunning designs.' },
+      'belly-chain': { title: 'Gorgeous <em style="color: var(--gold);">Belly Chains</em>', desc: 'Trendy belly chains and kamar bands for a glamorous look.' },
+      'jewelry-sets': { title: 'Jewelry <em style="color: var(--gold);">Sets</em>', desc: 'Complete jewelry sets including necklace, earrings, and more.' },,
     'sale': { title: 'Sale <em style="color: var(--gold);">Collection</em>', desc: 'Shop our discounted jewelry. Limited time offers on premium items!' },
     'deals': { title: 'Exclusive <em style="color: var(--gold);">Deals</em>', desc: 'Grab the best deals on jewelry and cosmetics. Limited time offers you don\'t want to miss!' }
   };

@@ -3,6 +3,18 @@
    ============================================================ */
 
 const tovessa_CAT_LABELS = {
+  'false-nails': 'False Nails',
+
+  // Clothing
+  'all-clothing': 'All Clothing',
+  'fancy-wear': 'Fancy Wear',
+  'daily-wear': 'Daily Wear',
+  'party-wear': 'Party Wear',
+  'summer-collection': 'Summer Collection',
+  'winter-collection': 'Winter Collection',
+  'new-arrivals': 'New Arrivals',
+  'trending-now': 'Trending Now',
+
   // Cosmetics
   'face-cosmetics': 'Face Cosmetics',
   'eye-makeup': 'Eye Makeup',
@@ -14,19 +26,26 @@ const tovessa_CAT_LABELS = {
   'makeup-accessories': 'Makeup Accessories',
   
   // Jewelry
-  'bracelets':   'Bracelets',
-  'rings':       'Rings',
-  'earrings':    'Earrings',
-  'necklace':    'Necklaces',
-  'bangles':     'Bangles',
+  'all-jewelry': 'All Jewelry',
+  'ring': 'Rings',
+  'bracelet': 'Bracelets',
+  'necklace': 'Necklaces',
+  'bangles': 'Bangles',
+  'earrings': 'Earrings',
+  'payal': 'Payal',
+  'nose-pins': 'Nose Pins',
+  'belly-chain': 'Belly Chain',
   'jewelry-sets': 'Jewelry Sets',
+  'bracelets': 'Bracelets',
+  'rings': 'Rings',
   
   // Deals
   'deals': 'Deals'
 };
 
 const CATEGORY_HIERARCHY = {
-  'jewelry': ['bracelets', 'rings', 'earrings', 'necklace', 'bangles', 'jewelry-sets'],
+  'clothing': ['all-clothing', 'fancy-wear', 'daily-wear', 'party-wear', 'summer-collection', 'winter-collection', 'new-arrivals', 'trending-now'],
+  'jewelry': ['all-jewelry', 'ring', 'bracelet', 'necklace', 'bangles', 'earrings', 'payal', 'nose-pins', 'belly-chain', 'jewelry-sets'],
   'cosmetics': ['face-cosmetics', 'eye-makeup', 'lip-makeup', 'nail-cosmetics', 'skin-care', 'hand-foot-care', 'makeup-tools', 'makeup-accessories'],
   'deals': ['deals']
 };
