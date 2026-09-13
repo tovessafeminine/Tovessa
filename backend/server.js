@@ -569,15 +569,16 @@ app.use((err, req, res, next) => {
   } catch (e) { console.warn('Could not load data from Firestore:', e.message); }
 
   app.listen(PORT, () => {
-    console.log('\nâ•”â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•—');
-    console.log('â•‘       TOVESSA BACKEND v2.0                     â•‘');
-    console.log('â• â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•£');
-    console.log(`â•‘  Website:  http://localhost:${PORT}               â•‘`);
-    console.log(`â•‘  Admin:    http://localhost:${PORT}/admin          â•‘`);
-    console.log(`â•‘  API:      http://localhost:${PORT}/api/health     â•‘`);
-    console.log('â•šâ•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•\n');
+    console.log('\n==================================================');
+    console.log('            TOVESSA BACKEND v2.0                  ');
+    console.log('==================================================');
+    console.log('  Website:  http://localhost:' + PORT);
+    console.log('  Admin:    http://localhost:' + PORT + '/admin');
+    console.log('  API:      http://localhost:' + PORT + '/api/health');
+    console.log('==================================================\n');
   });
 })();
 
 module.exports = app;
+
 

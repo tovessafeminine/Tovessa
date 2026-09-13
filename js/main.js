@@ -284,7 +284,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 /* â”€â”€ Show/Hide Password Toggle â”€â”€
    Usage: <button onclick="toggleGolnisÃ Password('field-id', this)"><i class="fa-regular fa-eye"></i></button> */
-window.toggleGolnisÃ Password = (inputId, btn) => {
+window.toggleTOVESSAPassword = (inputId, btn) => {
   const input = document.getElementById(inputId);
   if (!input) return;
   const icon = btn.querySelector('i');
@@ -326,4 +326,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
+
+
 
