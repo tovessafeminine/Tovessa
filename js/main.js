@@ -1,10 +1,10 @@
-/* ============================================================
-   tovessa — Main JavaScript
+﻿/* ============================================================
+   tovessa â€” Main JavaScript
    ============================================================ */
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  /* ── Sticky Nav ── */
+  /* â”€â”€ Sticky Nav â”€â”€ */
   const nav = document.querySelector('body > nav');
   if (nav) {
     const handleScroll = () => nav.classList.toggle('scrolled', window.scrollY > 60);
@@ -12,14 +12,14 @@ document.addEventListener('DOMContentLoaded', () => {
     handleScroll();
   }
 
-  /* ── Scroll Reveal ── */
+  /* â”€â”€ Scroll Reveal â”€â”€ */
   const revealEls = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
   }, { threshold: 0.12 });
   revealEls.forEach(el => observer.observe(el));
 
-  /* ── Cart System ── */
+  /* â”€â”€ Cart System â”€â”€ */
   let cart = JSON.parse(localStorage.getItem('tovessa_cart') || '[]');
 
   const saveCart = () => localStorage.setItem('tovessa_cart', JSON.stringify(cart));
@@ -39,14 +39,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     itemsEl.innerHTML = cart.map((item, idx) => `
       <div class="cart-item">
-        <div class="cart-item-img" style="${item.image ? 'padding:0;' : ''}">${item.image ? `<img src="${item.image}" alt="${item.name.replace(/"/g, '&quot;')}" style="width:100%;height:100%;object-fit:cover;border-radius:4px;">` : (item.emoji || '👗')}</div>
+        <div class="cart-item-img" style="${item.image ? 'padding:0;' : ''}">${item.image ? `<img src="${item.image}" alt="${item.name.replace(/"/g, '&quot;')}" style="width:100%;height:100%;object-fit:cover;border-radius:4px;">` : (item.emoji || 'ðŸ‘—')}</div>
         <div class="cart-item-details">
           <div class="cart-item-name">${item.name}</div>
           <div class="cart-item-variant">${item.variant || 'Standard'}</div>
           <div class="cart-item-row">
             <span class="cart-item-price">PKR ${(item.price * item.qty).toLocaleString()}</span>
             <div class="qty-ctrl">
-              <button onclick="changeQty(${idx},-1)">−</button>
+              <button onclick="changeQty(${idx},-1)">âˆ’</button>
               <span>${item.qty}</span>
               <button onclick="changeQty(${idx},1)">+</button>
             </div>
@@ -66,13 +66,13 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addToCart = (name, price, emoji, variant, image) => {
     const existing = cart.find(i => i.name === name && i.variant === variant);
     if (existing) existing.qty++;
-    else cart.push({ name, price, emoji: emoji || '🛍️', variant: variant || 'Standard', image: image || null, qty: 1 });
+    else cart.push({ name, price, emoji: emoji || 'ðŸ›ï¸', variant: variant || 'Standard', image: image || null, qty: 1 });
     saveCart(); updateCartUI();
-    showToast('Added to bag ✓');
+    showToast('Added to bag âœ“');
     openCart();
   };
 
-  /* ── Buy It Now ──
+  /* â”€â”€ Buy It Now â”€â”€
      Goes straight to checkout with just this single item. The
      customer's existing bag is stashed (not lost) so it can be
      restored if they leave checkout without completing the order. */
@@ -81,14 +81,14 @@ document.addEventListener('DOMContentLoaded', () => {
     if (existingCart && existingCart !== '[]') {
       localStorage.setItem('tovessa_cart_stashed', existingCart);
     }
-    const buyNowCart = [{ name, price, emoji: emoji || '🛍️', variant: variant || 'Standard', image: image || null, qty: 1 }];
+    const buyNowCart = [{ name, price, emoji: emoji || 'ðŸ›ï¸', variant: variant || 'Standard', image: image || null, qty: 1 }];
     localStorage.setItem('tovessa_cart', JSON.stringify(buyNowCart));
     window.location.href = 'checkout';
   };
 
-  /* ── Buy It Now: restore stashed bag if the customer left checkout
+  /* â”€â”€ Buy It Now: restore stashed bag if the customer left checkout
      without completing the order (i.e. they're on any page other
-     than checkout.html and a stash exists) ── */
+     than checkout.html and a stash exists) â”€â”€ */
   const stashedCart = localStorage.getItem('tovessa_cart_stashed');
   if (stashedCart && !window.location.pathname.endsWith('checkout')) {
     localStorage.setItem('tovessa_cart', stashedCart);
@@ -96,7 +96,7 @@ document.addEventListener('DOMContentLoaded', () => {
     cart = JSON.parse(stashedCart);
   }
 
-  /* ── Cart Drawer ── */
+  /* â”€â”€ Cart Drawer â”€â”€ */
   const drawer  = document.getElementById('cart-drawer');
   const overlay = document.getElementById('overlay');
   const openCart  = () => { drawer?.classList.add('open'); overlay?.classList.add('active'); };
@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   updateCartUI();
 
-  /* ── Toast ── */
+  /* â”€â”€ Toast â”€â”€ */
   window.showToast = (msg) => {
     const t = document.getElementById('toast');
     if (!t) return;
@@ -117,7 +117,7 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => t.classList.remove('show'), 2800);
   };
 
-  /* ── Filter Buttons (Shop) ── */
+  /* â”€â”€ Filter Buttons (Shop) â”€â”€ */
   document.querySelectorAll('.filter-btn').forEach(btn => {
     btn.addEventListener('click', () => {
       document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
@@ -141,7 +141,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  /* ── Size / Color Options (Product Detail) ── */
+  /* â”€â”€ Size / Color Options (Product Detail) â”€â”€ */
   document.querySelectorAll('.size-opt').forEach(opt => {
     opt.addEventListener('click', () => {
       opt.closest('.size-options').querySelectorAll('.size-opt').forEach(o => o.classList.remove('active'));
@@ -155,32 +155,32 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  /* ── Newsletter Form ── (real backend) */
+  /* â”€â”€ Newsletter Form â”€â”€ (real backend) */
   document.querySelector('.newsletter-form')?.addEventListener('submit', async e => {
     e.preventDefault();
     const input = e.target.querySelector('input');
     if (!input?.value) return;
     const email = input.value.trim();
     const btn   = e.target.querySelector('button');
-    if (btn) { btn.disabled = true; btn.textContent = 'Subscribing…'; }
+    if (btn) { btn.disabled = true; btn.textContent = 'Subscribingâ€¦'; }
     try {
       const result = await apiSubscribeNewsletter(email);
       if (result.ok) {
-        showToast(result.data.message || "Welcome to Golnisà! 💛 You'll be the first to hear about new arrivals and offers.");
+        showToast(result.data.message || "Welcome to GolnisÃ ! ðŸ’› You'll be the first to hear about new arrivals and offers.");
         input.value = '';
       } else {
         showToast(result.data.error || 'Please try again.');
       }
     } catch {
-      /* Backend not available — graceful fallback */
-      showToast("Welcome to Golnisà! 💛 You'll be the first to hear about new arrivals and offers.");
+      /* Backend not available â€” graceful fallback */
+      showToast("Welcome to GolnisÃ ! ðŸ’› You'll be the first to hear about new arrivals and offers.");
       input.value = '';
     } finally {
       if (btn) { btn.disabled = false; btn.textContent = 'Subscribe'; }
     }
   });
 
-  /* ── Contact Form ── (real backend) */
+  /* â”€â”€ Contact Form â”€â”€ (real backend) */
   document.getElementById('contact-form')?.addEventListener('submit', async e => {
     e.preventDefault();
     const fd      = new FormData(e.target);
@@ -192,24 +192,24 @@ document.addEventListener('DOMContentLoaded', () => {
       message: fd.get('message') || '',
     };
     const btn = e.target.querySelector('button[type="submit"]');
-    if (btn) { btn.disabled = true; btn.textContent = 'Sending…'; }
+    if (btn) { btn.disabled = true; btn.textContent = 'Sendingâ€¦'; }
     try {
       const result = await apiSendContact(payload);
       if (result.ok) {
-        showToast('Message sent — we\'ll reply within 24h ✓');
+        showToast('Message sent â€” we\'ll reply within 24h âœ“');
         e.target.reset();
       } else {
         showToast(result.data.error || 'Please try again.');
       }
     } catch {
-      showToast('Message sent — we\'ll reply within 24h ✓');
+      showToast('Message sent â€” we\'ll reply within 24h âœ“');
       e.target.reset();
     } finally {
       if (btn) { btn.disabled = false; btn.textContent = 'Send Message'; }
     }
   });
 
-  /* ── Hamburger Mobile Menu ── */
+  /* â”€â”€ Hamburger Mobile Menu â”€â”€ */
   const ham = document.querySelector('.hamburger');
   const navLinks = document.querySelector('.nav-links');
   ham?.addEventListener('click', () => {
@@ -225,7 +225,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  /* ── Mobile: Shop dropdown touch toggle ── */
+  /* â”€â”€ Mobile: Shop dropdown touch toggle â”€â”€ */
   if (window.innerWidth <= 900) {
     const dropdownToggle = document.querySelector('.nav-dropdown > a');
     const dropdownParent = document.querySelector('.nav-dropdown');
@@ -238,19 +238,19 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
  /* ============================================================
-   tovessa — WhatsApp + Social Footer Builder
+   tovessa â€” WhatsApp + Social Footer Builder
    (append to end of existing script.js)
    ============================================================ */
 document.addEventListener('DOMContentLoaded', () => {
-  /* ── Set WhatsApp button link from config ── */
+  /* â”€â”€ Set WhatsApp button link from config â”€â”€ */
   const waBtn = document.getElementById('whatsapp-float');
-  if (waBtn && window.tovessa_CONFIG) {
-    waBtn.href = window.tovessa_CONFIG.social.whatsapp;
+  if (waBtn && window.TOVESSA_CONFIG) {
+    waBtn.href = window.TOVESSA_CONFIG.social.whatsapp;
   }
-  /* ── Build footer social links from config ── */
+  /* â”€â”€ Build footer social links from config â”€â”€ */
   const socialWrap = document.getElementById('footer-social-links');
-  if (socialWrap && window.tovessa_CONFIG) {
-    const cfg = window.tovessa_CONFIG.social;
+  if (socialWrap && window.TOVESSA_CONFIG) {
+    const cfg = window.TOVESSA_CONFIG.social;
     const links = [
       { url: cfg.instagram, icon: '<i class="fa-brands fa-instagram"></i>', label: 'Instagram' },
       { url: cfg.whatsapp,  icon: '<i class="fa-brands fa-whatsapp"></i>',   label: 'WhatsApp' },
@@ -261,7 +261,7 @@ document.addEventListener('DOMContentLoaded', () => {
           class="footer-social-item" aria-label="${l.label}">${l.icon}</a>`
     ).join('');
   }
-  /* ── Update account icon if logged in ── */
+  /* â”€â”€ Update account icon if logged in â”€â”€ */
   const user = JSON.parse(localStorage.getItem('tovessa_user') || 'null');
   if (user) {
     document.querySelectorAll('a[href="account"]').forEach(el => {
@@ -269,7 +269,7 @@ document.addEventListener('DOMContentLoaded', () => {
       el.style.color = 'var(--gold)';
     });
   }
-  /* ── Validate JWT token silently (don't block page) ── */
+  /* â”€â”€ Validate JWT token silently (don't block page) â”€â”€ */
   const token = localStorage.getItem('tovessa_token');
   if (token && user) {
     checkBackend().then(online => {
@@ -282,9 +282,9 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-/* ── Show/Hide Password Toggle ──
-   Usage: <button onclick="toggleGolnisàPassword('field-id', this)"><i class="fa-regular fa-eye"></i></button> */
-window.toggleGolnisàPassword = (inputId, btn) => {
+/* â”€â”€ Show/Hide Password Toggle â”€â”€
+   Usage: <button onclick="toggleGolnisÃ Password('field-id', this)"><i class="fa-regular fa-eye"></i></button> */
+window.toggleGolnisÃ Password = (inputId, btn) => {
   const input = document.getElementById(inputId);
   if (!input) return;
   const icon = btn.querySelector('i');
@@ -293,7 +293,7 @@ window.toggleGolnisàPassword = (inputId, btn) => {
   if (icon) icon.className = showing ? 'fa-regular fa-eye' : 'fa-regular fa-eye-slash';
   btn.setAttribute('aria-label', showing ? 'Show password' : 'Hide password');
 };
-/* ── Proceed to Checkout — cart check ── */
+/* â”€â”€ Proceed to Checkout â€” cart check â”€â”€ */
 window.proceedToCheckout = () => {
   const cart = JSON.parse(localStorage.getItem('tovessa_cart') || '[]');
   if (!cart.length) {
@@ -303,7 +303,7 @@ window.proceedToCheckout = () => {
   window.location.href = 'checkout';
 };
 
-/* ── Global Mouse drag-to-scroll for horizontal grids ── */
+/* â”€â”€ Global Mouse drag-to-scroll for horizontal grids â”€â”€ */
 document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.horizontal-scroll-grid').forEach(track => {
     let isDown = false, startX, scrollLeft;
@@ -326,3 +326,4 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
+

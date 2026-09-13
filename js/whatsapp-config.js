@@ -1,28 +1,28 @@
-/* ============================================================
-   TOVESSA — Site Configuration
+﻿/* ============================================================
+   TOVESSA â€” Site Configuration
    Edit this file to update your WhatsApp number, social links, etc.
    ============================================================ */
 const TOVESSA_CONFIG = {
-  /* ── WhatsApp ──
+  /* â”€â”€ WhatsApp â”€â”€
      Format: country code + number, no spaces, no +
-     Example: Pakistan 0315-0727131 → '923150727131'          */
+     Example: Pakistan 0315-0727131 â†’ '923364213502'          */
   whatsapp: {
-    number:  '923150727131',
+    number:  '923364213502',
     message: 'Hi! I found you on Tovessa and I have a question.',
   },
-  /* ── Social Media ──
+  /* â”€â”€ Social Media â”€â”€
      Replace these URLs with your actual profile links         */
   social: {
-    instagram: 'https://www.instagram.com/tovessa/',
+    instagram: 'https://www.instagram.com/tovessa_/',
     whatsapp:  '',                                    // auto-built from number above
-    tiktok:    '',                                    // optional — leave blank to hide
+    tiktok:    '',                                    // optional â€” leave blank to hide
   },
-  /* ── Contact ── */
+  /* â”€â”€ Contact â”€â”€ */
   contact: {
-    email:    'hello@tovessa.com',
-    phone:    '+92 315 0727131',
+    email:    'tovessafeminine@gmail.com',
+    phone:    '+92 336 4213502',
     location: 'Lahore, Punjab, Pakistan',
-    hours:    'Monday – Saturday: 10am – 7pm',
+    hours:    'Monday â€“ Saturday: 10am â€“ 7pm',
   },
 };
 /* Auto-build WhatsApp URL */
@@ -62,3 +62,4 @@ document.addEventListener('DOMContentLoaded', () => applyTovessaContactInfo());
 /* Expose globally so pages that inject HTML later (like policy.html)
    can re-run it on the newly added content */
 window.applyTovessaContactInfo = applyTovessaContactInfo;
+
