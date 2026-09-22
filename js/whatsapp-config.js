@@ -5,9 +5,9 @@
 const TOVESSA_CONFIG = {
   /* â”€â”€ WhatsApp â”€â”€
      Format: country code + number, no spaces, no +
-     Example: Pakistan 0315-0727131 â†’ '923364213502'          */
+     Example: Pakistan 0315-0727131 â†’ '923186138281'          */
   whatsapp: {
-    number:  '923364213502',
+    number:  '923186138281',
     message: 'Hi! I found you on Tovessa and I have a question.',
   },
   /* â”€â”€ Social Media â”€â”€
@@ -20,7 +20,7 @@ const TOVESSA_CONFIG = {
   /* â”€â”€ Contact â”€â”€ */
   contact: {
     email:    'tovessafeminine@gmail.com',
-    phone:    '+92 336 4213502',
+    phone:    '+92 318 6138281',
     location: 'Lahore, Punjab, Pakistan',
     hours:    'Monday â€“ Saturday: 10am â€“ 7pm',
   },

@@ -70,7 +70,7 @@ async function buildPdf(pdfPath, invId, snapshot, liveOrder, company) {
     doc.fontSize(8).fillColor(C_MUTED).font('Helvetica');
     const fWeb = company.website || 'tovessa.com';
     const fEmail = company.email || 'tovessafeminine@gmail.com';
-    const fPhone = company.phone || '+92 336 4213502';
+    const fPhone = company.phone || '+92 318 6138281';
     const fInsta = company.instagram || '@tovessa_';
     const fAddr = company.address || 'Lahore, Punjab, Pakistan';
 

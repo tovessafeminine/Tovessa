@@ -26,7 +26,7 @@ const store = {
     company: {
       name: 'Tovessa',
       address: '',
-      phone: '+92 336 4213502',
+      phone: '+92 318 6138281',
       email: 'tovessafeminine@gmail.com',
       website: '',
       socials: ''
