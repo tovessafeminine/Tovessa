@@ -317,13 +317,8 @@ select.filter-sel{background:var(--bg);border:1px solid var(--border);border-rad
     <div class="nav-item" onclick="showPage('products')" id="nav-products">
       <i class="fa-solid fa-tags"></i><span>Products</span>
     </div>
-    <div class="nav-item" onclick="showPage('stock')" id="nav-stock">
-      <i class="fa-solid fa-boxes-stacked"></i><span>Stock</span>
-    </div>
-    <div class="nav-item" onclick="showPage('stock-needed')" id="nav-stock-needed">
-      <i class="fa-solid fa-boxes-packing"></i><span>Stock Needed</span>
-      <span class="nav-badge" id="stock-needed-badge" style="display:none;background:#ff9800">0</span>
-    </div>
+    
+    
     <div class="nav-item" onclick="showPage('messages')" id="nav-messages">
       <i class="fa-solid fa-envelope"></i><span>Messages</span>
       <span class="nav-badge" id="unread-badge" style="display:none">0</span>
@@ -852,55 +847,6 @@ select.filter-sel{background:var(--bg);border:1px solid var(--border);border-rad
 </div>
 
 <!--  STOCK  -->
-<div id="page-stock" class="page" style="display:none">
-  <div class="page-header">
-    <div>
-      <h1><i class="fa-solid fa-boxes-stacked" style="color:#ff9800;margin-right:8px"></i>Inventory Stock</h1>
-      <p style="color:var(--muted);font-size:0.8rem;margin-top:2px;">Track and add stock for all products.</p>
-    </div>
-    <div class="ml-auto" style="display:flex;gap:8px;">
-      <div style="position:relative;">
-        <i class="fa-solid fa-search" style="position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--muted)"></i>
-        <input type="text" id="stock-search" placeholder="Search products..." oninput="filterStock()" style="width:260px;padding:8px 12px 8px 36px;border:1px solid #ddd;border-radius:20px;outline:none;font-size:0.9rem;transition:all 0.3s;box-shadow:inset 0 1px 3px rgba(0,0,0,0.05);" onfocus="this.style.borderColor='var(--gold)';this.style.boxShadow='0 0 0 2px rgba(212,175,55,0.2)'" onblur="this.style.borderColor='#ddd';this.style.boxShadow='inset 0 1px 3px rgba(0,0,0,0.05)'" />
-      </div>
-    </div>
-  </div>
-  <div class="card">
-    <table class="table">
-      <thead><tr>
-        <th>Product</th>
-        <th>Purchased</th>
-        <th>Sold</th>
-        <th>Current Stock</th>
-        <th>Status</th>
-        <th>Action</th>
-      </tr></thead>
-      <tbody id="stock-body"><tr><td colspan="6" class="empty-state"><div class="spinner"></div></td></tr></tbody>
-    </table>
-  </div>
-</div>
-
-<!--  STOCK NEEDED  -->
-<div id="page-stock-needed" class="page" style="display:none">
-  <div class="page-header">
-    <div>
-      <h1><i class="fa-solid fa-boxes-packing" style="color:#f44336;margin-right:8px"></i>Stock Needed</h1>
-      <p style="color:var(--muted);font-size:0.8rem;margin-top:2px;">Items with pending orders but no stock available.</p>
-    </div>
-  </div>
-  <div class="card">
-    <table class="table">
-      <thead><tr>
-        <th>Product</th>
-        <th>Needed Qty</th>
-        <th>Action</th>
-      </tr></thead>
-      <tbody id="stock-needed-body"><tr><td colspan="3" class="empty-state"><div class="spinner"></div></td></tr></tbody>
-    </table>
-  </div>
-</div>
-
-<!--  PRODUCTS  -->
 <div id="page-products" class="page" style="display:none">
   <div class="page-header">
     <div>

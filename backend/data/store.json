@@ -1,63 +1,39 @@
-﻿{
-    "adminUsers":  [
-                       {
-                           "id":  "super-admin-1",
-                           "username":  "admin",
-                           "email":  "admin",
-                           "passwordHash":  "$2a$10$hmLVxAZuvWMma6V3bdPJCeJz1ozGhwQQbooCwNNOwapHAdITb7GYq",
-                           "role":  "ceo",
-                           "fname":  "Super",
-                           "lname":  "Admin",
-                           "active":  true,
-                           "createdAt":  "2026-07-16T21:42:22.857Z",
-                           "lastLogin":  null
-                       }
-                   ],
-    "users":  [
-
-              ],
-    "orders":  [
-
-               ],
-    "products":  [
-
-                 ],
-    "messages":  [
-
-                 ],
-    "subscribers":  [
-
-                    ],
-    "settings":  {
-                     "company":  {
-                                     "name":  "Tovessa",
-                                     "address":  "",
-                                     "phone":  "+92 336 4213502",
-                                     "email":  "tovessafeminine@gmail.com",
-                                     "website":  "tovessa.com",
-                                     "socials":  "@tovessa_"
-                                 },
-                     "invoiceTrigger":  "manual"
-                 },
-    "spendings":  [
-
-                  ],
-    "invoices":  [
-
-                 ],
-    "coupons":  [
-
-                ],
-    "socialOrders":  [
-
-                     ],
-    "resellers":  [
-
-                  ],
-    "activityLogs":  [
-
-                     ],
-    "abandoned":  [
-
-                  ]
+{
+  "adminUsers": [
+    {
+      "id": "super-admin-1",
+      "username": "admin",
+      "email": "admin",
+      "passwordHash": "$2a$10$hmLVxAZuvWMma6V3bdPJCeJz1ozGhwQQbooCwNNOwapHAdITb7GYq",
+      "role": "ceo",
+      "fname": "Super",
+      "lname": "Admin",
+      "active": true,
+      "createdAt": "2026-07-16T21:42:22.857Z",
+      "lastLogin": null
+    }
+  ],
+  "users": [],
+  "orders": [],
+  "products": [],
+  "messages": [],
+  "subscribers": [],
+  "settings": {
+    "company": {
+      "name": "Tovessa",
+      "address": "",
+      "phone": "+92 336 4213502",
+      "email": "tovessafeminine@gmail.com",
+      "website": "tovessa.com",
+      "socials": "@tovessa_"
+    },
+    "invoiceTrigger": "manual"
+  },
+  "spendings": [],
+  "invoices": [],
+  "coupons": [],
+  "socialOrders": [],
+  "resellers": [],
+  "activityLogs": [],
+  "abandoned": []
 }
