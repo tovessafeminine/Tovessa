@@ -471,7 +471,13 @@ const STORE_FILE = path.join(__dirname, '..', 'data', 'store.json');
 
 try {
   if (fs.existsSync(STORE_FILE)) {
-    const data = JSON.parse(fs.readFileSync(STORE_FILE, 'utf8'));
+    let rawStoreFile = fs.readFileSync(STORE_FILE, 'utf8');
+    /* Strip BOM (Byte Order Mark) if present — some editors (VS Code on
+       Windows) save JSON with a leading \uFEFF, which breaks JSON.parse */
+    if (rawStoreFile.charCodeAt(0) === 0xFEFF) {
+      rawStoreFile = rawStoreFile.slice(1);
+    }
+    const data = JSON.parse(rawStoreFile);
     if (data.adminUsers) {
       store.adminUsers = data.adminUsers;
       /* Ensure super-admin-1 always exists and stays active */
