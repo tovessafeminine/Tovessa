@@ -794,10 +794,10 @@ select.filter-sel{background:var(--bg);border:1px solid var(--border);border-rad
       <!-- Auto-calculated totals -->
       <div style="background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:14px;font-size:0.88rem;">
         <div style="display:flex;justify-content:space-between;margin-bottom:6px"><span style="color:var(--muted)">Subtotal</span><span id="soc-subtotal">PKR 0</span></div>
-        <div style="display:flex;justify-content:space-between;margin-bottom:6px" id="soc-discount-row"><span style="color:var(--muted)">Discount</span><span id="soc-discount-display" style="color:var(--green)">Ã¢Ë†â€™ PKR 0</span></div>
+        <div style="display:flex;justify-content:space-between;margin-bottom:6px" id="soc-discount-row"><span style="color:var(--muted)">Discount</span><span id="soc-discount-display" style="color:var(--green)">- PKR 0</span></div>
         <div style="display:flex;justify-content:space-between;margin-bottom:6px"><span style="color:var(--muted)">Delivery Fee</span><span id="soc-delivery-display" style="color:var(--orange)">PKR 200</span></div>
         <div style="display:flex;justify-content:space-between;font-weight:700;font-size:1rem;border-top:1px solid var(--border);padding-top:8px;margin-top:2px"><span>Total</span><span id="soc-total-display" style="color:var(--gold)">PKR 200</span></div>
-        <div style="display:none;justify-content:space-between;margin-top:6px" id="soc-advance-row"><span style="color:var(--muted)">Advance Paid</span><span id="soc-advance-display" style="color:var(--green)">Ã¢Ë†â€™ PKR 0</span></div>
+        <div style="display:none;justify-content:space-between;margin-top:6px" id="soc-advance-row"><span style="color:var(--muted)">Advance Paid</span><span id="soc-advance-display" style="color:var(--green)">- PKR 0</span></div>
         <div style="display:none;justify-content:space-between;font-weight:700;font-size:1rem;margin-top:6px" id="soc-due-row"><span>Amount Due</span><span id="soc-due-display" style="color:var(--red)">PKR 200</span></div>
         <p id="soc-delivery-note" style="font-size:0.72rem;color:var(--muted);margin-top:6px">COD: Free delivery for orders PKR 5,000+, otherwise PKR 200.</p>
       </div>
@@ -968,7 +968,7 @@ select.filter-sel{background:var(--bg);border:1px solid var(--border);border-rad
 
 <div id="promo-modal" style="display:none;position:fixed;inset:0;z-index:9000;background:rgba(44,31,20,0.6);align-items:center;justify-content:center;padding:20px;">
   <div style="background:var(--card);border:1px solid var(--border);border-radius:16px;padding:32px;max-width:560px;width:100%;position:relative;max-height:90vh;overflow-y:auto;">
-    <button onclick="closePromoModal()" style="position:absolute;top:16px;right:16px;background:none;border:none;color:var(--muted);font-size:1.2rem;cursor:pointer;">Ã¢Å“â€¢</button>
+    <button onclick="closePromoModal()" style="position:absolute;top:16px;right:16px;background:none;border:none;color:var(--muted);font-size:1.2rem;cursor:pointer;"><i class="fa-solid fa-xmark"></i></button>
     <h3 style="margin-bottom:4px;color:var(--text);">Send Promotion Email</h3>
     <p style="font-size:.78rem;color:var(--muted);margin-bottom:22px;">This will be sent to <strong id="promo-sub-count" style="color:var(--gold);">all</strong> active subscribers.</p>
 
@@ -1290,7 +1290,7 @@ select.filter-sel{background:var(--bg);border:1px solid var(--border);border-rad
   <div class="modal" style="max-width:520px;">
     <div class="modal-header">
       <h2>Pinned Collections</h2>
-      <button class="btn btn-outline btn-sm" onclick="closePinnedModal()">Ã¢Å“â€¢</button>
+      <button class="btn btn-outline btn-sm" onclick="closePinnedModal()"><i class="fa-solid fa-xmark"></i></button>
     </div>
     <div class="modal-body">
       <p style="margin-bottom:15px;color:var(--muted);font-size:0.9rem;">Pinned collections appear as horizontal scrolling rows on the homepage before the featured sections.</p>
@@ -2775,7 +2775,7 @@ function viewSocialOrder(id) {
     <h4 style="margin-bottom:10px;font-size:0.88rem;color:var(--muted)">Items</h4>
     ${(o.items||[]).map(i => `<div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--border);font-size:0.85rem"><span><i class="fa-solid fa-tags"></i> ${esc(i.name)} (Ãƒ—${i.qty})</span><span>PKR ${(i.price*i.qty).toLocaleString()}</span></div>`).join('')}
     <div style="display:flex;justify-content:space-between;padding:10px 0"><span style="color:var(--muted)">Subtotal</span><span>PKR ${(o.subtotal||0).toLocaleString()}</span></div>
-    ${o.discount > 0 ? `<div style="display:flex;justify-content:space-between;padding:10px 0;color:var(--gold)"><span>Discount${o.coupon?.code ? ' — Coupon "' + esc(o.coupon.code) + '"' : ''}</span><span>Ã¢Ë†â€™ PKR ${o.discount.toLocaleString()}</span></div>` : ''}
+    ${o.discount > 0 ? `<div style="display:flex;justify-content:space-between;padding:10px 0;color:var(--gold)"><span>Discount${o.coupon?.code ? ' — Coupon "' + esc(o.coupon.code) + '"' : ''}</span><span>- PKR ${o.discount.toLocaleString()}</span></div>` : ''}
     <div style="display:flex;justify-content:space-between;padding:10px 0;font-weight:600"><span>Delivery</span><span>PKR ${(o.deliveryFee||0).toLocaleString()}</span></div>
     <div style="display:flex;justify-content:space-between;padding:10px 0;font-weight:700;font-size:1.05rem"><span>Total</span><span style="color:var(--gold)">PKR ${(o.total||0).toLocaleString()}</span></div>
     ${(o.advanceAmount || 0) > 0 ? `<div style="display:flex;justify-content:space-between;padding:10px 0;border-top:1px dashed var(--border);margin-top:8px;padding-top:12px;"><span style="color:var(--muted)">Advance Paid</span><span style="color:var(--green)">- PKR ${Number(o.advanceAmount).toLocaleString()}</span></div><div style="display:flex;justify-content:space-between;padding:10px 0;font-weight:700;font-size:1.05rem"><span>Remaining Balance</span><span style="color:var(--orange)">PKR ${(Math.max(0, (o.total||0) - Number(o.advanceAmount))).toLocaleString()}</span></div>` : ''}
@@ -2934,7 +2934,7 @@ function addSocialItem(prefill = null) {
     <input type="number" placeholder="Sale" id="si-price-${idx}" value="${sale}" oninput="recalcSocialTotal()" title="Unit Sale Price"/>
     <div class="soc-price-display" id="si-row-total-${idx}">PKR ${total.toLocaleString()}</div>
     <button class="soc-item-remove" onclick="toggleSocCustomItem(${idx})" title="Toggle custom item" id="si-custom-btn-${idx}" style="background:${isCustom ? 'rgba(184,136,58,0.2)' : 'rgba(100,100,120,0.12)'};border-color:${isCustom ? 'var(--gold)' : 'var(--border)'};color:${isCustom ? 'var(--gold)' : 'var(--muted)'};font-size:0.75rem;">Ã¢Å“Â</button>
-    <button class="soc-item-remove" onclick="removeSocialItem(${idx})" title="Remove">Ã¢Å“â€¢</button>
+    <button class="soc-item-remove" onclick="removeSocialItem(${idx})" title="Remove"><i class="fa-solid fa-xmark"></i></button>
   `;
   document.getElementById('soc-items-container').appendChild(row);
   if (isCustom) {
@@ -3157,7 +3157,7 @@ function recalcSocialTotal() {
   document.getElementById('soc-subtotal').textContent       = 'PKR ' + subtotal.toLocaleString();
   const discountRow = document.getElementById('soc-discount-row');
   if (discountRow) discountRow.style.display = discount > 0 ? 'flex' : 'none';
-  document.getElementById('soc-discount-display').textContent = 'Ã¢Ë†â€™ PKR ' + discount.toLocaleString();
+  document.getElementById('soc-discount-display').textContent = '- PKR ' + discount.toLocaleString();
   document.getElementById('soc-delivery-display').textContent = 'PKR ' + delFee.toLocaleString();
   document.getElementById('soc-total-display').textContent  = 'PKR ' + total.toLocaleString();
 
@@ -3166,7 +3166,7 @@ function recalcSocialTotal() {
   const dueRow = document.getElementById('soc-due-row');
   if (dueRow) dueRow.style.display = advance > 0 ? 'flex' : 'none';
 
-  if (document.getElementById('soc-advance-display')) document.getElementById('soc-advance-display').textContent = 'Ã¢Ë†â€™ PKR ' + advance.toLocaleString();
+  if (document.getElementById('soc-advance-display')) document.getElementById('soc-advance-display').textContent = '- PKR ' + advance.toLocaleString();
   if (document.getElementById('soc-due-display')) document.getElementById('soc-due-display').textContent = 'PKR ' + due.toLocaleString();
 
   const noteEl = document.getElementById('soc-delivery-note');
@@ -3502,7 +3502,7 @@ function viewOrder(id) {
     <h4 style="margin-bottom:10px;font-size:0.88rem;color:var(--muted)">Items</h4>
     ${(o.items || []).map(i => `<div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--border);font-size:0.85rem"><span>${i.emoji||'<i class="fa-solid fa-tags"></i>'} ${i.name} (Ãƒ—${i.qty})</span><span>PKR ${(i.price * i.qty).toLocaleString()}</span></div>`).join('')}
     <div style="display:flex;justify-content:space-between;padding:10px 0"><span style="color:var(--muted)">Subtotal</span><span>PKR ${(o.subtotal||0).toLocaleString()}</span></div>
-    ${o.discount > 0 ? `<div style="display:flex;justify-content:space-between;padding:10px 0;color:var(--gold)"><span>Discount${o.coupon?.code ? ' — Coupon "' + esc(o.coupon.code) + '"' : ''}</span><span>Ã¢Ë†â€™ PKR ${o.discount.toLocaleString()}</span></div>` : ''}
+    ${o.discount > 0 ? `<div style="display:flex;justify-content:space-between;padding:10px 0;color:var(--gold)"><span>Discount${o.coupon?.code ? ' — Coupon "' + esc(o.coupon.code) + '"' : ''}</span><span>- PKR ${o.discount.toLocaleString()}</span></div>` : ''}
     <div style="display:flex;justify-content:space-between;padding:10px 0;font-weight:600"><span>Delivery</span><span>PKR ${(o.deliveryFee||0).toLocaleString()}</span></div>
     <div style="display:flex;justify-content:space-between;padding:10px 0;font-weight:700;font-size:1.05rem"><span>Total</span><span style="color:var(--gold)">PKR ${(o.total||0).toLocaleString()}</span></div>
     ${isCod ? advanceSection : ''}
@@ -4213,7 +4213,7 @@ function renderImageGalleryPreview() {
     <div style="position:relative;width:80px;height:80px;">
       <img src="${url}" style="width:100%;height:100%;object-fit:cover;border-radius:6px;border:1px solid var(--border);${idx===0?'outline:2px solid var(--gold);':''}"/>
       ${idx===0 ? '<span style="position:absolute;bottom:2px;left:2px;background:var(--gold);color:#1a1a1a;font-size:0.55rem;padding:1px 5px;border-radius:3px;">MAIN</span>' : ''}
-      <button type="button" onclick="removeGalleryImage(${idx})" style="position:absolute;top:-6px;right:-6px;width:20px;height:20px;border-radius:50%;background:#c0392b;color:#fff;border:none;cursor:pointer;font-size:0.7rem;line-height:1;">Ã¢Å“â€¢</button>
+      <button type="button" onclick="removeGalleryImage(${idx})" style="position:absolute;top:-6px;right:-6px;width:20px;height:20px;border-radius:50%;background:#c0392b;color:#fff;border:none;cursor:pointer;font-size:0.7rem;line-height:1;"><i class="fa-solid fa-xmark"></i></button>
     </div>`).join('');
 }
 
@@ -4228,7 +4228,7 @@ function renderVideoPreview() {
   wrap.innerHTML = `
     <div style="position:relative;width:160px;">
       <video src="${productVideo}" controls style="width:100%;border-radius:6px;border:1px solid var(--border);"></video>
-      <button type="button" onclick="removeVideo()" style="position:absolute;top:-8px;right:-8px;width:22px;height:22px;border-radius:50%;background:#c0392b;color:#fff;border:none;cursor:pointer;font-size:0.7rem;">Ã¢Å“â€¢</button>
+      <button type="button" onclick="removeVideo()" style="position:absolute;top:-8px;right:-8px;width:22px;height:22px;border-radius:50%;background:#c0392b;color:#fff;border:none;cursor:pointer;font-size:0.7rem;"><i class="fa-solid fa-xmark"></i></button>
     </div>`;
 }
 
@@ -4362,7 +4362,7 @@ function renderTagChips(field) {
   const wrap = document.getElementById(`p-${field}-chips`);
   const arr  = field === 'sizes' ? productSizes : productColors;
   wrap.innerHTML = arr.map((val, i) => `
-    <span class="tag-chip">${val}<button type="button" onclick="removeTag('${field}',${i})">Ã¢Å“â€¢</button></span>
+    <span class="tag-chip">${val}<button type="button" onclick="removeTag('${field}',${i})"><i class="fa-solid fa-xmark"></i></button></span>
   `).join('');
 }
 
