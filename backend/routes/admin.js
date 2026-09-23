@@ -450,6 +450,30 @@ router.get('/debug-product', async (req, res) => {
   }
 });
 
+
+/* FACTORY RESET FOR DEMO MODE - CLEARS EVERYTHING BUT ADMIN & PRODUCTS */
+router.post('/factory-reset', requireRole('ceo', 'super_admin'), (req, res) => {
+  store.orders = [];
+  store.socialOrders = [];
+  store.messages = [];
+  store.subscribers = [];
+  store.activityLogs = [];
+  store.spendings = [];
+  store.invoices = [];
+  store.abandoned = [];
+  store.coupons = [];
+  store.users = [];
+  
+  store.logActivity({
+    staffId: req.user.id || req.user.uid,
+    staffName: req.user.fname || req.user.username,
+    action: 'Factory Reset',
+    details: 'Cleared all transactional data (Demo Mode Reset)'
+  });
+  
+  res.json({ message: 'All demo data cleared successfully!' });
+});
+
 module.exports = router;
 
 

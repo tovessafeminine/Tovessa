@@ -18,6 +18,13 @@
   "products": [],
   "messages": [],
   "subscribers": [],
+  "spendings": [],
+  "invoices": [],
+  "coupons": [],
+  "socialOrders": [],
+  "resellers": [],
+  "activityLogs": [],
+  "abandoned": [],
   "settings": {
     "company": {
       "name": "Tovessa",
@@ -28,12 +35,5 @@
       "socials": "@tovessa_"
     },
     "invoiceTrigger": "manual"
-  },
-  "spendings": [],
-  "invoices": [],
-  "coupons": [],
-  "socialOrders": [],
-  "resellers": [],
-  "activityLogs": [],
-  "abandoned": []
+  }
 }

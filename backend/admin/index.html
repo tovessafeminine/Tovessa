@@ -8,7 +8,31 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet"/>
 <!-- SheetJS for Excel export -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js">
+async function factoryReset() {
+  if (!confirm('Are you absolutely sure you want to WIPE ALL DATA? This will delete all orders, messages, and invoices. Products and Admin Users will remain.')) return;
+  if (!confirm('Final warning: This action CANNOT BE UNDONE. Type "yes" in the prompt to continue.')) return;
+  
+  const p = prompt('Type "wipe" to confirm:');
+  if (p !== 'wipe') {
+    alert('Aborted.');
+    return;
+  }
+  
+  try {
+    const res = await apiFetch('/admin/factory-reset', { method: 'POST' });
+    const data = await res.json();
+    if (res.ok) {
+      alert(data.message || 'Data wiped successfully!');
+      location.reload();
+    } else {
+      alert(data.error || 'Failed to wipe data.');
+    }
+  } catch(e) {
+    alert('Error wiping data.');
+  }
+}
+</script>
 <style>
 :root { --font-display: "Cormorant Garamond", serif; --font-body: "Montserrat", sans-serif; --bg:#fdf8fb; --card:#ffffff; --card2:#f9eef5; --border:rgba(96,36,66,0.20); --gold:#602442; --gold2:#a04a74; --text:#2B101E; --muted:#88697A; --green:#22c55e; --red:#ef4444; --blue:#3b82f6; --orange:#f59e0b; --sidebar:240px; }
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -1190,6 +1214,13 @@ select.filter-sel{background:var(--bg);border:1px solid var(--border);border-rad
   <div class="settings-section">
     <h3><i class="fa-solid fa-server" style="color:var(--gold);margin-right:8px"></i>System Info</h3>
     <div id="sys-info" style="font-size:0.84rem;color:var(--muted);line-height:2;"></div>
+  </div>
+
+  
+  <div class="settings-section" id="factory-reset-section">
+    <h3 style="color:var(--red)"><i class="fa-solid fa-triangle-exclamation" style="margin-right:8px"></i>Danger Zone</h3>
+    <p style="font-size:0.82rem;color:var(--muted);margin-bottom:14px;">Wipe all test/demo data (Orders, Social Orders, Messages, Subscribers, Spendings, Invoices, Abandoned Checkouts) from memory and the local JSON file. <b style="color:var(--red)">This cannot be undone.</b> Use this to provide a clean slate to the client.</p>
+    <button class="btn btn-outline" style="border-color:var(--red);color:var(--red);" onclick="factoryReset()">Factory Reset (Wipe All Demo Data)</button>
   </div>
 
   <div class="settings-section">
