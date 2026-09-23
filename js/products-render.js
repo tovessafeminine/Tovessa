@@ -44,8 +44,8 @@ const tovessa_CAT_LABELS = {
 };
 
 const CATEGORY_HIERARCHY = {
-  'fancy-wear', 'daily-wear', 'party-wear', 'summer-collection', 'winter-collection', 'new-arrivals', 'trending-now'],
-  'ring', 'bracelet', 'necklace', 'bangles', 'earrings', 'payal', 'nose-pins', 'belly-chain', 'jewelry-sets'],
+  'clothing': ['fancy-wear', 'daily-wear', 'party-wear', 'summer-collection', 'winter-collection', 'new-arrivals', 'trending-now'],
+  'jewellery': ['ring', 'bracelet', 'necklace', 'bangles', 'earrings', 'payal', 'nose-pins', 'belly-chain', 'jewelry-sets'],
   'cosmetics': ['face-cosmetics', 'eye-makeup', 'lip-makeup', 'nail-cosmetics', 'skin-care', 'hand-foot-care', 'makeup-tools', 'makeup-accessories'],
   'deals': ['deals']
 };
