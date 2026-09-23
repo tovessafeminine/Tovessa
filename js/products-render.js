@@ -387,6 +387,7 @@ async function tovessaRenderShopGrid() {
 
 /* ── Load & render featured and pinned grids (index.html homepage) ── */
 async function tovessaRenderHomepageGrids() {
+  console.log("Running tovessaRenderHomepageGrids...");
   const isHome = document.getElementById('featured-jewelry');
   if (!isHome) return;
 
