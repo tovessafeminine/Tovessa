@@ -44,8 +44,8 @@ const tovessa_CAT_LABELS = {
 };
 
 const CATEGORY_HIERARCHY = {
-  'clothing': ['all-clothing', 'fancy-wear', 'daily-wear', 'party-wear', 'summer-collection', 'winter-collection', 'new-arrivals', 'trending-now'],
-  'jewellery': ['all-jewelry', 'ring', 'bracelet', 'necklace', 'bangles', 'earrings', 'payal', 'nose-pins', 'belly-chain', 'jewelry-sets'],
+  'fancy-wear', 'daily-wear', 'party-wear', 'summer-collection', 'winter-collection', 'new-arrivals', 'trending-now'],
+  'ring', 'bracelet', 'necklace', 'bangles', 'earrings', 'payal', 'nose-pins', 'belly-chain', 'jewelry-sets'],
   'cosmetics': ['face-cosmetics', 'eye-makeup', 'lip-makeup', 'nail-cosmetics', 'skin-care', 'hand-foot-care', 'makeup-tools', 'makeup-accessories'],
   'deals': ['deals']
 };
@@ -252,7 +252,7 @@ function tovessaSetupShopFilters(products, grid, mainCat) {
       } else {
         let inMain = false;
         if (CATEGORY_HIERARCHY[activeMain]) {
-          inMain = CATEGORY_HIERARCHY[activeMain].includes(s) || CATEGORY_HIERARCHY[activeMain].includes(c) || additional.some(a => CATEGORY_HIERARCHY[activeMain].includes(a));
+          inMain = c === activeMain || CATEGORY_HIERARCHY[activeMain].includes(s) || CATEGORY_HIERARCHY[activeMain].includes(c) || additional.some(a => CATEGORY_HIERARCHY[activeMain].includes(a));
         } else {
           inMain = (c === activeMain || s === activeMain || additional.includes(activeMain));
         }
@@ -367,7 +367,7 @@ async function tovessaRenderShopGrid() {
       const c = p.category === 'catchers' ? 'clips' : p.category;
       const s = p.subcategory === 'catchers' ? 'clips' : p.subcategory;
       const resolvedCat = s || c;
-      return CATEGORY_HIERARCHY['jewellery'].includes(resolvedCat) || CATEGORY_HIERARCHY['cosmetics'].includes(resolvedCat);
+      return c === 'jewellery' || c === 'cosmetics' || CATEGORY_HIERARCHY['jewellery'].includes(resolvedCat) || CATEGORY_HIERARCHY['cosmetics'].includes(resolvedCat);
     });
 
     // We do NOT pre-filter products here anymore, so that the sidebar "All Collections" works correctly on any page!
@@ -399,7 +399,7 @@ async function tovessaRenderHomepageGrids() {
       const c = p.category === 'catchers' ? 'clips' : p.category;
       const s = p.subcategory === 'catchers' ? 'clips' : p.subcategory;
       const resolvedCat = s || c;
-      return CATEGORY_HIERARCHY['jewellery'].includes(resolvedCat) || CATEGORY_HIERARCHY['cosmetics'].includes(resolvedCat);
+      return c === 'jewellery' || c === 'cosmetics' || CATEGORY_HIERARCHY['jewellery'].includes(resolvedCat) || CATEGORY_HIERARCHY['cosmetics'].includes(resolvedCat);
     });
 
     // --- 1. Render Pinned Collections ---
@@ -474,7 +474,7 @@ async function tovessaRenderHomepageGrids() {
     // Jewelry
     const jewGrid = document.getElementById('featured-jewelry-grid');
     if (jewGrid) {
-      const jProds = featuredProducts.filter(p => CATEGORY_HIERARCHY['jewellery'].includes(p.subcategory || p.category));
+      const jProds = featuredProducts.filter(p => p.category === 'jewellery' || CATEGORY_HIERARCHY['jewellery'].includes(p.subcategory || p.category));
       
       if (jProds.length) {
         jewGrid.innerHTML = jProds.map(p => tovessaProductCardHTML(p).replace('class="product-card"', 'class="product-card" style="flex: 0 0 280px; scroll-snap-align: start;"')).join('');

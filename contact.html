@@ -85,12 +85,48 @@
   <section style="max-width: 1200px; margin: 80px auto; display:grid; grid-template-columns: 1fr 1fr; gap: 60px; padding: 0 40px;">
     <div style="background:#fff; padding:50px; border:1px solid #eee; border-top: 4px solid var(--gold);">
       <h3 style="font-family:var(--font-display); font-size:2rem; color:var(--gold); margin-bottom: 20px;">Send a Message</h3>
-      <form class="contact-form" onsubmit="event.preventDefault(); alert('Message sent to Tovessa!');">
-        <input type="text" placeholder="Your Elegant Name" required style="width:100%; padding:15px; margin-bottom:20px; border:1px solid #ccc; font-family:var(--font-body);" />
-        <input type="email" placeholder="Your Email Address" required style="width:100%; padding:15px; margin-bottom:20px; border:1px solid #ccc; font-family:var(--font-body);" />
-        <textarea placeholder="How can we assist you today?" rows="5" required style="width:100%; padding:15px; margin-bottom:20px; border:1px solid #ccc; font-family:var(--font-body);"></textarea>
-        <button type="submit" class="btn-primary" style="width:100%; border-radius:0;">Send Message</button>
-      </form>
+      <form class="contact-form" id="tovessa-contact-form">
+          <input type="text" id="c-name" placeholder="Your Elegant Name" required style="width:100%; padding:15px; margin-bottom:20px; border:1px solid #ccc; font-family:var(--font-body);" />
+          <input type="email" id="c-email" placeholder="Your Email Address" required style="width:100%; padding:15px; margin-bottom:20px; border:1px solid #ccc; font-family:var(--font-body);" />
+          <textarea id="c-msg" placeholder="How can we assist you today?" rows="5" required style="width:100%; padding:15px; margin-bottom:20px; border:1px solid #ccc; font-family:var(--font-body);"></textarea>
+          <button type="submit" id="c-btn" class="btn-primary" style="width:100%; border-radius:0;">Send Message</button>
+        </form>
+        
+        <script>
+        document.getElementById('tovessa-contact-form').addEventListener('submit', async (e) => {
+          e.preventDefault();
+          const btn = document.getElementById('c-btn');
+          const orig = btn.innerText;
+          btn.innerText = 'Sending...';
+          btn.disabled = true;
+          
+          try {
+            const res = await fetch((window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' ? 'http://localhost:3002/api' : 'https://tovessa.com/api') + '/contact', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({
+                name: document.getElementById('c-name').value,
+                email: document.getElementById('c-email').value,
+                message: document.getElementById('c-msg').value
+              })
+            });
+            if(res.ok) {
+              document.getElementById('tovessa-contact-form').reset();
+              // Beautiful popup
+              const pop = document.createElement('div');
+              pop.innerHTML = '<div style="position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:9999;display:flex;align-items:center;justify-content:center;"><div style="background:#fff;padding:40px;border-radius:12px;text-align:center;max-width:400px;box-shadow:0 10px 30px rgba(0,0,0,0.2);animation:fadeIn 0.3s ease;"><i class="fa-solid fa-envelope-circle-check" style="font-size:3rem;color:var(--gold);margin-bottom:15px;"></i><h2 style="font-family:var(--font-display);font-size:1.8rem;color:var(--text);margin:0 0 10px;">Message Sent!</h2><p style="color:var(--muted);margin:0 0 24px;font-size:0.95rem;">Thank you for reaching out to TOVESSA. We will get back to you shortly.</p><button onclick="this.parentElement.parentElement.remove()" class="btn-primary" style="padding:10px 30px;font-size:0.9rem;">Close</button></div></div>';
+              document.body.appendChild(pop);
+            } else {
+              alert('Failed to send message. Please try again.');
+            }
+          } catch(e) {
+            alert('Connection error. Please try again.');
+          } finally {
+            btn.innerText = orig;
+            btn.disabled = false;
+          }
+        });
+        </script>
     </div>
     <div style="display:flex; flex-direction:column; justify-content:center;">
       <h3 style="font-family:var(--font-display); font-size:2.5rem; color:var(--gold); margin-bottom: 30px;">Contact Information</h3>

@@ -77,12 +77,12 @@ async function buildPdf(pdfPath, invId, snapshot, liveOrder, company) {
     const logoYOffset = startY + 60; // Shift down to make room for logo
 
     doc.text(fWeb, 50, logoYOffset, { link: 'https://' + fWeb.replace(/^https?:\/\//, '') });
-    doc.text(fEmail, 50, logoYOffset + 12, { link: 'mailto:' + fEmail });
-    doc.text(fPhone, 50, logoYOffset + 24, { link: 'https://wa.me/' + fPhone.replace(/[\+\s]/g, '') });
+    doc.text(fEmail, 50, logoYOffset + 12, { link: 'mailto:' + fEmail, underline: false });
+    doc.text(fPhone, 50, logoYOffset + 24, { link: 'https://wa.me/' + fPhone.replace(/[\\+\\s]/g, ''), underline: false });
     
     const instaSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#888888" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>`;
     SVGtoPDF(doc, instaSvg, 50, logoYOffset + 34, { width: 10, height: 10 });
-    doc.text(fInsta, 65, logoYOffset + 36, { link: 'https://instagram.com/' + fInsta.replace('@', '') });
+    doc.text(fInsta, 65, logoYOffset + 36, { link: 'https://instagram.com/' + fInsta.replace('@', ''), underline: false });
     
     doc.text(fAddr, 50, logoYOffset + 48, { width: 200 });
     
@@ -233,7 +233,7 @@ async function buildPdf(pdfPath, invId, snapshot, liveOrder, company) {
     doc.font('Helvetica').text(pStatus, 200, y + 24);
     
     doc.font('Helvetica-Bold').text('Advance Status', 320, y + 12);
-    doc.font('Helvetica').text(statusOrder.advanceStatus || 'â€”', 320, y + 24);
+    doc.font('Helvetica').text(statusOrder.advanceStatus || '-', 320, y + 24);
 
     doc.font('Helvetica-Bold').text('Delivery Status', 430, y + 12);
     doc.font('Helvetica').text(deliveryStatus, 430, y + 24);
