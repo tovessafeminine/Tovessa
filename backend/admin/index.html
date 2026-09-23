@@ -742,7 +742,7 @@ select.filter-sel{background:var(--bg);border:1px solid var(--border);border-rad
           <span style="font-size:0.68rem;color:var(--muted);text-transform:uppercase">Cost</span>
           <span style="font-size:0.68rem;color:var(--muted);text-transform:uppercase">Sale</span>
           <span style="font-size:0.68rem;color:var(--muted);text-transform:uppercase">Total</span>
-          <span style="font-size:0.68rem;color:var(--muted);text-transform:uppercase" title="Toggle custom item">Ã¢Å“Â</span>
+          <span style="font-size:0.68rem;color:var(--muted);text-transform:uppercase" title="Toggle custom item"><i class="fa-solid fa-pen"></i></span>
           <span></span>
         </div>
         <div id="soc-items-container"></div>
@@ -2933,7 +2933,7 @@ function addSocialItem(prefill = null) {
     <input type="number" placeholder="Cost" id="si-cost-${idx}" value="${cost}" oninput="recalcSocialTotal()" title="Unit Purchase Price" ${isCustom ? '' : ''}/>
     <input type="number" placeholder="Sale" id="si-price-${idx}" value="${sale}" oninput="recalcSocialTotal()" title="Unit Sale Price"/>
     <div class="soc-price-display" id="si-row-total-${idx}">PKR ${total.toLocaleString()}</div>
-    <button class="soc-item-remove" onclick="toggleSocCustomItem(${idx})" title="Toggle custom item" id="si-custom-btn-${idx}" style="background:${isCustom ? 'rgba(184,136,58,0.2)' : 'rgba(100,100,120,0.12)'};border-color:${isCustom ? 'var(--gold)' : 'var(--border)'};color:${isCustom ? 'var(--gold)' : 'var(--muted)'};font-size:0.75rem;">Ã¢Å“Â</button>
+    <button class="soc-item-remove" onclick="toggleSocCustomItem(${idx})" title="Toggle custom item" id="si-custom-btn-${idx}" style="background:${isCustom ? 'rgba(184,136,58,0.2)' : 'rgba(100,100,120,0.12)'};border-color:${isCustom ? 'var(--gold)' : 'var(--border)'};color:${isCustom ? 'var(--gold)' : 'var(--muted)'};font-size:0.75rem;"><i class="fa-solid fa-pen"></i></button>
     <button class="soc-item-remove" onclick="removeSocialItem(${idx})" title="Remove"><i class="fa-solid fa-xmark"></i></button>
   `;
   document.getElementById('soc-items-container').appendChild(row);
