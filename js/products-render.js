@@ -242,13 +242,16 @@ function tovessaSetupShopFilters(products, grid, mainCat) {
 
   function applyFiltersAndSort() {
     let filtered = products.filter(p => {
-      const c = p.category === 'catchers' ? 'clips' : p.category;
-      const s = p.subcategory === 'catchers' ? 'clips' : p.subcategory;
-      const additional = p.additionalCategories || [];
+      const rawC = (p.category || '').toLowerCase();
+      const rawS = (p.subcategory || '').toLowerCase();
+      const c = rawC === 'catchers' ? 'clips' : rawC;
+      const s = rawS === 'catchers' ? 'clips' : rawS;
+      const additional = (p.additionalCategories || []).map(a => (a || '').toLowerCase());
       
       let show = false;
       if (activeMain === 'all') {
-        show = true;
+        if (!activeSub) show = true;
+        else show = (s === activeSub || c === activeSub || additional.includes(activeSub));
       } else {
         let inMain = false;
         if (CATEGORY_HIERARCHY[activeMain]) {
