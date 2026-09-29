@@ -394,7 +394,7 @@
   min-height: auto !important;
 }
 .page-hero .section-label {
-  color: var(--muted) !important;
+  color: var(--text) !important;
   font-family: var(--font-body);
   letter-spacing: 4px;
   text-transform: uppercase;
@@ -443,7 +443,7 @@
 }
 .sidebar-link {
   font-family: var(--font-body) !important;
-  color: var(--muted) !important;
+  color: var(--text) !important;
   font-size: 0.95rem !important;
   padding: 8px 0 !important;
   transition: color 0.3s ease;
