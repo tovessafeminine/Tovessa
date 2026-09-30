@@ -331,24 +331,54 @@
   .shop-layout {
     grid-template-columns: 1fr;
     gap: 24px;
+    padding: 0 20px !important;
   }
   .shop-mobile-controls {
-    display: block;
+    display: none !important;
   }
   .shop-sidebar {
-    display: none;
-    position: fixed;
-    top: 0; left: 0; bottom: 0;
-    width: 300px;
-    max-width: 80vw;
-    background: var(--bg);
-    z-index: 3000;
-    padding: 30px 20px;
-    overflow-y: auto;
-    box-shadow: 2px 0 20px rgba(0,0,0,0.1);
+    display: block !important;
+    position: static !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    background: transparent !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    order: 1 !important;
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(96,36,66,0.1);
+    padding-bottom: 20px !important;
   }
-  .shop-sidebar.active {
-    display: block;
+  .shop-main {
+    order: 2 !important;
+  }
+  .sidebar-block {
+    margin-bottom: 20px;
+  }
+  .sidebar-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .sidebar-list li {
+    margin-bottom: 0;
+  }
+  .sidebar-link {
+    background: rgba(96,36,66,0.04) !important;
+    border-radius: 20px !important;
+    padding: 8px 16px !important;
+    font-size: 0.85rem !important;
+    white-space: nowrap;
+    text-align: center;
+    width: auto !important;
+  }
+  .sidebar-link::before {
+    display: none !important;
+  }
+  .sidebar-link:hover, .sidebar-link.active {
+    background: var(--gold) !important;
+    color: #fff !important;
+    padding-left: 16px !important;
   }
 }
 
