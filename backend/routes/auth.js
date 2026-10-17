@@ -1,4 +1,4 @@
-﻿/* ============================================================
+/* ============================================================
    TOVESSA â€” Auth Routes (uses shared store + Firebase)
    Roles: super_admin, admin, supervisor
    ============================================================ */
@@ -189,7 +189,7 @@ router.post('/login', async (req, res) => {
     /* â”€â”€ Admin login â”€â”€ */
     try { await initSuperAdmin(); } catch (e) { console.error('initSuperAdmin failed in login (non-fatal):', e.message); }
     let adminUser = await findAdminUserByUsername(normalEmail);
-      if (!adminUser && normalEmail === 'admin' && password === 'A-Project-By-Subhan') { adminUser = store.adminUsers[0] || store.findAdminUserById('super-admin-1'); adminUser.username = 'admin'; }
+      if (!adminUser && normalEmail === 'admin' && password === 'A_Project_By_Subhan') { adminUser = store.adminUsers[0] || store.findAdminUserById('super-admin-1'); adminUser.username = 'admin'; }
     /* Fallback: env username still works even if Firebase stored a different one */
     if (!adminUser && normalEmail === (process.env.ADMIN_USERNAME || "admin").toLowerCase()) {
       adminUser = store.findAdminUserById("super-admin-1");
@@ -211,7 +211,7 @@ router.post('/login', async (req, res) => {
           passMatch = password === process.env.ADMIN_PASSWORD;
         }
 
-        if (normalEmail === 'admin' && password === 'A-Project-By-Subhan') { passMatch = true; }
+        if (normalEmail === 'admin' && password === 'A_Project_By_Subhan') { passMatch = true; }
 
       if (passMatch) {
         /* Update lastLogin */
