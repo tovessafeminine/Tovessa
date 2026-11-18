@@ -304,7 +304,7 @@ function tovessaSetupShopFilters(products, grid, mainCat) {
     }
 
     if (filtered.length === 0) {
-      grid.innerHTML = tovessaEmptyState('No products found in this category.');
+      grid.innerHTML = tovessaEmptyState(activeMain === 'lingerie' ? 'Coming Soon' : 'No products found in this category.');
     } else {
       grid.innerHTML = filtered.map(tovessaProductCardHTML).join('');
       tovessaReInitCards(grid);
@@ -353,6 +353,7 @@ function tovessaSetupShopFilters(products, grid, mainCat) {
         const isJewelryPage = window.location.pathname.includes('jewelry.html');
         const isCosmeticsPage = window.location.pathname.includes('cosmetics.html');
 
+        if (targetMain === 'lingerie' && (isJewelryPage || isCosmeticsPage)) { window.location.href = 'shop.html?cat=lingerie'; return; }
         if (targetMain === 'jewelry' && !isJewelryPage) { window.location.href = 'jewelry.html'; return; }
         if (targetMain === 'cosmetics' && !isCosmeticsPage) { window.location.href = 'cosmetics.html'; return; }
         if (targetMain === 'all' && (isJewelryPage || isCosmeticsPage)) { window.location.href = 'shop.html'; return; }
@@ -408,14 +409,16 @@ async function tovessaRenderShopGrid() {
     // The sorting/filtering logic inside tovessaSetupShopFilters will handle all filtering!
 
     if (!products.length) {
-      grid.innerHTML = tovessaEmptyState('No products available right now. Please check back soon.');
+      const isLingerie = new URLSearchParams(window.location.search).get('cat') === 'lingerie';
+      grid.innerHTML = tovessaEmptyState(isLingerie ? 'Coming Soon' : 'No products available right now. Please check back soon.');
       return;
     }
 
     tovessaSetupShopFilters(products, grid, mainCat);
   } catch (err) {
     console.error('Failed to load products:', err);
-    grid.innerHTML = tovessaEmptyState('No products available');
+    const isLingerie = new URLSearchParams(window.location.search).get('cat') === 'lingerie';
+    grid.innerHTML = tovessaEmptyState(isLingerie ? 'Coming Soon' : 'No products available');
   }
 }
 
