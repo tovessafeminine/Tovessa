@@ -50,6 +50,14 @@ const CATEGORY_HIERARCHY = {
   'deals': ['deals']
 };
 
+const JEWELRY_PRICE_FILTERS = {
+  'under-500': 500,
+  'under-800': 800,
+  'under-1000': 1000,
+  'under-1500': 1500,
+  'under-2000': 2000,
+};
+
 function velorCatLabel(cat) {
   if (!cat) return '';
   return tovessa_CAT_LABELS[cat.toLowerCase()] || cat;
@@ -190,6 +198,8 @@ function tovessaSetupShopFilters(products, grid, mainCat) {
   const subContainer = document.getElementById('sub-filter-container');
   const subList = document.getElementById('sidebar-sub-collections');
   const sortBtns = document.querySelectorAll('#sidebar-sort .sidebar-link');
+  const priceFilterBtns = document.querySelectorAll('#jewelry-price-filters [data-price-filter]');
+  const priceFilterBlock = document.getElementById('jewelry-price-filter-block');
   const mobileToggle = document.getElementById('mobile-sidebar-toggle');
   
   // Hide Collections sidebar block if a brand is selected
@@ -198,6 +208,7 @@ function tovessaSetupShopFilters(products, grid, mainCat) {
     if (activeBrand) {
       collectionsBlock.style.display = 'none';
       subContainer.style.display = 'none';
+      if (priceFilterBlock) priceFilterBlock.style.display = 'none';
     } else {
       collectionsBlock.style.display = 'block';
     }
@@ -249,6 +260,11 @@ function tovessaSetupShopFilters(products, grid, mainCat) {
   let activeSort = 'featured';
 
   function applyFiltersAndSort() {
+    const priceLimit = activeMain === 'jewellery' ? JEWELRY_PRICE_FILTERS[activeSub] : null;
+    priceFilterBtns.forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.priceFilter === activeSub);
+    });
+
     let filtered = products.filter(p => {
       const rawC = (p.category || '').toLowerCase();
       const rawS = (p.subcategory || '').toLowerCase();
@@ -268,7 +284,8 @@ function tovessaSetupShopFilters(products, grid, mainCat) {
           inMain = (c === activeMain || s === activeMain || additional.includes(activeMain));
         }
         if (inMain) {
-          if (!activeSub) show = true;
+          if (priceLimit) show = Number(p.price) < priceLimit;
+          else if (!activeSub) show = true;
           else show = (s === activeSub || c === activeSub || additional.includes(activeSub));
         }
       }
@@ -317,6 +334,18 @@ function tovessaSetupShopFilters(products, grid, mainCat) {
   }
 
   if (collectionsBtns.length > 0) {
+    priceFilterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        collectionsBtns.forEach(b => {
+          b.classList.toggle('active', b.dataset.mainFilter === 'jewellery');
+        });
+        activeMain = 'jewellery';
+        activeSub = btn.dataset.priceFilter;
+        applyFiltersAndSort();
+        if (window.innerWidth <= 991 && sidebar) sidebar.classList.remove('active');
+      });
+    });
+
     // Bind Main buttons
     collectionsBtns.forEach(btn => {
       btn.addEventListener('click', () => {
