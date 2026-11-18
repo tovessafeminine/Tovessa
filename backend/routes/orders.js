@@ -49,11 +49,11 @@ router.post('/', async (req, res) => {
     const subtotal   = enrichedItems.reduce((s, i) => s + (i.price * i.qty), 0);
     const payMethod  = paymentMethod || 'cod';
     /* ── Delivery fee rules ──
-       Bank Deposit → always FREE delivery.
-       COD          → PKR 200, waived once subtotal reaches PKR 5,000. */
+       Bank Deposit → PKR 250, waived once subtotal reaches PKR 1,000.
+       COD          → PKR 250, waived once subtotal reaches PKR 5,000. */
     const deliveryFee = payMethod === 'bank_deposit'
-      ? (subtotal >= 1000 ? 0 : 200)
-      : (subtotal >= 5000 ? 0 : 200);
+      ? (subtotal >= 1000 ? 0 : 250)
+      : (subtotal >= 5000 ? 0 : 250);
 
     /* ── Coupon (optional) ──
        Re-validate server-side even though the checkout page already
@@ -186,7 +186,7 @@ router.post('/from-abandoned', requireAdmin, async (req, res) => {
 
     const subtotal   = enrichedItems.reduce((s, i) => s + (i.price * i.qty), 0);
     const payMethod  = delivery.paymentMethod || 'cod';
-    const deliveryFee = payMethod === 'bank_deposit' ? (subtotal >= 1000 ? 0 : 200) : (subtotal >= 5000 ? 0 : 200);
+    const deliveryFee = payMethod === 'bank_deposit' ? (subtotal >= 1000 ? 0 : 250) : (subtotal >= 5000 ? 0 : 250);
     const total      = subtotal + deliveryFee;
     const orderRef    = 'ZH-' + uuidv4().replace(/-/g, '').toUpperCase().slice(0, 8);
 

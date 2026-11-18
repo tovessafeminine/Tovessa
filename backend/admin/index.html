@@ -819,11 +819,11 @@ select.filter-sel{background:var(--bg);border:1px solid var(--border);border-rad
       <div style="background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:14px;font-size:0.88rem;">
         <div style="display:flex;justify-content:space-between;margin-bottom:6px"><span style="color:var(--muted)">Subtotal</span><span id="soc-subtotal">PKR 0</span></div>
         <div style="display:flex;justify-content:space-between;margin-bottom:6px" id="soc-discount-row"><span style="color:var(--muted)">Discount</span><span id="soc-discount-display" style="color:var(--green)">- PKR 0</span></div>
-        <div style="display:flex;justify-content:space-between;margin-bottom:6px"><span style="color:var(--muted)">Delivery Fee</span><span id="soc-delivery-display" style="color:var(--orange)">PKR 200</span></div>
-        <div style="display:flex;justify-content:space-between;font-weight:700;font-size:1rem;border-top:1px solid var(--border);padding-top:8px;margin-top:2px"><span>Total</span><span id="soc-total-display" style="color:var(--gold)">PKR 200</span></div>
+        <div style="display:flex;justify-content:space-between;margin-bottom:6px"><span style="color:var(--muted)">Delivery Fee</span><span id="soc-delivery-display" style="color:var(--orange)">PKR 250</span></div>
+        <div style="display:flex;justify-content:space-between;font-weight:700;font-size:1rem;border-top:1px solid var(--border);padding-top:8px;margin-top:2px"><span>Total</span><span id="soc-total-display" style="color:var(--gold)">PKR 250</span></div>
         <div style="display:none;justify-content:space-between;margin-top:6px" id="soc-advance-row"><span style="color:var(--muted)">Advance Paid</span><span id="soc-advance-display" style="color:var(--green)">- PKR 0</span></div>
-        <div style="display:none;justify-content:space-between;font-weight:700;font-size:1rem;margin-top:6px" id="soc-due-row"><span>Amount Due</span><span id="soc-due-display" style="color:var(--red)">PKR 200</span></div>
-        <p id="soc-delivery-note" style="font-size:0.72rem;color:var(--muted);margin-top:6px">COD: Free delivery for orders PKR 5,000+, otherwise PKR 200.</p>
+        <div style="display:none;justify-content:space-between;font-weight:700;font-size:1rem;margin-top:6px" id="soc-due-row"><span>Amount Due</span><span id="soc-due-display" style="color:var(--red)">PKR 250</span></div>
+        <p id="soc-delivery-note" style="font-size:0.72rem;color:var(--muted);margin-top:6px">COD: Free delivery for orders PKR 5,000+, otherwise PKR 250.</p>
       </div>
 
     </div>
@@ -3161,8 +3161,8 @@ function recalcSocialTotal() {
   } else if (delivOverride === 'custom') {
     delFee = Number(document.getElementById('soc-delivery-custom-val')?.value) || 0;
   } else {
-    // Auto: bank_deposit = 200 (free >= 1000), COD = 200 (free >= 5000)
-    delFee = pay === 'bank_deposit' ? (subtotal >= 1000 ? 0 : 200) : (subtotal >= 5000 ? 0 : 200);
+    // Auto: bank_deposit = 250 (free >= 1000), COD = 250 (free >= 5000)
+    delFee = pay === 'bank_deposit' ? (subtotal >= 1000 ? 0 : 250) : (subtotal >= 5000 ? 0 : 250);
   }
 
   let discount = 0;
@@ -3204,9 +3204,11 @@ function recalcSocialTotal() {
   if (noteEl) {
     if (delivOverride === 'free') noteEl.textContent = 'Delivery: Free (manually overridden).';
     else if (delivOverride === 'custom') noteEl.textContent = `Delivery: PKR ${delFee.toLocaleString()} (manually set).`;
-    else if (pay === 'bank_deposit') noteEl.textContent = 'Bank Deposit: Free delivery always.';
+    else if (pay === 'bank_deposit') noteEl.textContent = subtotal >= 1000
+      ? 'Bank Deposit: Free delivery for orders PKR 1,000+.'
+      : `Bank Deposit: PKR 250 delivery (waived at PKR 1,000). Subtotal PKR ${subtotal.toLocaleString()}.`;
     else if (subtotal >= 5000)  noteEl.textContent = 'COD: Free delivery for orders PKR 5,000+.';
-    else noteEl.textContent = `COD: PKR 200 delivery (waived at PKR 5,000). Subtotal PKR ${subtotal.toLocaleString()}.`;
+    else noteEl.textContent = `COD: PKR 250 delivery (waived at PKR 5,000). Subtotal PKR ${subtotal.toLocaleString()}.`;
   }
 }
 

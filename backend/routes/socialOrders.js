@@ -69,7 +69,7 @@ router.post('/', requireAdmin, async (req, res) => {
     } else if (deliveryOverride === 'custom' && deliveryCustomVal != null) {
       deliveryFee = Math.max(0, Number(deliveryCustomVal) || 0);
     } else {
-      deliveryFee = payMethod === 'bank_deposit' ? (subtotal >= 1000 ? 0 : 200) : (subtotal >= 5000 ? 0 : 200);
+      deliveryFee = payMethod === 'bank_deposit' ? (subtotal >= 1000 ? 0 : 250) : (subtotal >= 5000 ? 0 : 250);
     }
 
     /* ── Coupon (optional) — same rule set as website checkout ── */
@@ -255,7 +255,7 @@ router.put('/:id', requireAdmin, async (req, res) => {
     } else if (deliveryOverride === 'custom' && deliveryCustomVal != null) {
       deliveryFee = Math.max(0, Number(deliveryCustomVal) || 0);
     } else {
-      deliveryFee = payMethod === 'bank_deposit' ? (subtotal >= 1000 ? 0 : 200) : (subtotal >= 5000 ? 0 : 200);
+      deliveryFee = payMethod === 'bank_deposit' ? (subtotal >= 1000 ? 0 : 250) : (subtotal >= 5000 ? 0 : 250);
     }
 
     let discount = 0;
