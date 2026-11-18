@@ -525,7 +525,7 @@ footer { background: #ffffff; padding: 100px 0 40px; border-top: 1px solid var(-
   
 }
 @media (max-width: 480px) {
-  .products-grid { grid-template-columns: 1fr; }
+  .products-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .hero-title { font-size: 2.5rem; }
   .container { padding: 0 24px; }
   
@@ -1603,7 +1603,7 @@ footer .css-logo-main, footer .css-logo-sub, footer .css-logo i {
 }
 @media (max-width: 480px) {
   .products-grid {
-    grid-template-columns: 1fr !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
   }
   .cat-grid, .cat-grid-5 {
     grid-template-columns: 1fr !important;

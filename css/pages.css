@@ -486,3 +486,13 @@
 /* FIX SIDEBAR ORDER */
 .shop-sidebar { order: 1 !important; }
 .shop-main { order: 2 !important; }
+
+@media (max-width: 991px) {
+  .shop-layout {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+  .shop-main {
+    min-width: 0;
+  }
+}
